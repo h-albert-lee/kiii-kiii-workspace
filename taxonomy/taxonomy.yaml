@@ -1,0 +1,41 @@
+# kfinpii PII taxonomy — 원본 파일. 코드와 논문 표가 여기서 생성됨.
+version: 0.1-draft
+updated: 2026-09-08
+
+tiers:
+  L: {name_ko: 법적 개인정보, name_en: Legal PII}
+  I: {name_ko: 식별가능성 정보, name_en: Identifiability}
+
+# 아래는 골격 예시. M1에서 법령 매핑 후 채움.
+categories:
+  - id: rrn
+    tier: L
+    name_ko: 주민등록번호
+    name_en: Resident registration number
+    legal_basis: "개인정보보호법 §24, 시행령 §19 (고유식별정보)"
+    format: "\\d{6}-?[1-4]\\d{6}  # 체크섬 규칙 적용"
+    examples: []
+    notes: "합성 시 유효 체크섬 생성. 규칙 베이스라인이 잡는 것과 모델이 잡는 것 구분용"
+
+  - id: bank_account
+    tier: L
+    name_ko: 계좌번호
+    name_en: Bank account number
+    legal_basis: "신용정보법 §2 (개인신용정보), 금융분야 가명·익명처리 안내서"
+    format: "[?] 은행별 자릿수 규칙 정리 필요"
+    examples: []
+    notes: ""
+
+  - id: investment_profile
+    tier: I
+    name_ko: 투자성향
+    name_en: Investment risk profile
+    legal_basis: null
+    format: null
+    examples: []
+    notes: "스팬으로 잡을지 문서 단위 속성으로 잡을지 결정 필요 (kickoff 열린 질문)"
+
+changelog:
+  - version: 0.1-draft
+    date: 2026-09-08
+    note: 골격 생성. 카테고리 3개 예시만.

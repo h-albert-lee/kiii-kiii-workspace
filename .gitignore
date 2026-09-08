@@ -1,0 +1,36 @@
+# 비밀
+.env
+*.key
+secrets/
+
+# 대용량 데이터 · 모델
+data/
+!data/README.md
+*.ckpt
+*.safetensors
+*.bin
+experiments/results/*.preds.jsonl
+experiments/results/*.preds.jsonl.gz
+!experiments/results/leaderboard.csv
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+*.egg-info/
+.ipynb_checkpoints/
+
+# LaTeX 빌드 (paper/는 submodule이므로 자체 관리)
+*.aux
+*.log
+*.synctex.gz
+*.bbl
+*.blg
+*.out
+*.fdb_latexmk
+*.fls
+
+# OS · 에디터
+.DS_Store
+.vscode/
+.idea/

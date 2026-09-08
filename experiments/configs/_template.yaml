@@ -1,0 +1,17 @@
+# 실행 설정 템플릿. 복사해서 <run_id>.yaml 로 저장.
+run_id: MMDD-NN
+task: span_extraction        # span_extraction | deidentification
+model:
+  name: ""
+  type: local                # api | local | rule | generator
+  endpoint_or_path: ""
+  params: {temperature: 0.0, max_tokens: 4096}
+data:
+  version: v0.x              # taxonomy/taxonomy.yaml 및 데이터 릴리스 버전
+  split: test
+  filters: {num_subjects: [1, 3, 8], context_len: [1k, 4k, 16k]}
+prompt:
+  version: p1
+  path: src/prompts/span_p1.txt
+seed: 0
+run_by: ""
