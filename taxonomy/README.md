@@ -3,15 +3,18 @@
 ## 파일
 
 - `taxonomy.yaml` — **원본**. 코드(생성·평가)와 논문 표가 모두 이 파일에서 나옵니다.
-- `taxonomy.md` — 사람이 읽는 설명과 법령 근거 (yaml에서 생성하거나 손으로 유지, 어긋나면 yaml이 맞음)
-- `mapping_thunder_deid.md` — Thunder-DeID 레이블과의 대응표 (리뷰어 대응용, 예정)
+- `taxonomy.md` — 설계 근거와 법령 매핑 (영어, 논문 §2 원천). 어긋나면 yaml이 맞음
+- `mapping_prior_work.md` — Thunder-DeID·KDPII/Jang·ko-pii·Gretel·ai4privacy·TAB 대응표 (리뷰어 대응용)
+- 근거 자료: `literature/notes/legal-sources-ko.md` (조문 원문), `literature/notes/prior-pii-schemas.md` (선행 레이블 체계)
 
-## 구조 (2-tier)
+## 구조 (2 tier × 2 kind) — v1.0-draft: L-identifier 18, L-attribute 7, I-attribute 13
 
 | Tier | 의미 | 근거 | 평가 |
 |---|---|---|---|
 | **L — Legal PII** | 법령상 개인정보·고유식별정보·개인신용정보로 명시된 식별자 | 개인정보보호법 §2·§23·§24, 신용정보법 §2, 금융분야 가명·익명처리 안내서 | 스팬 추출 필수, 비식별화 필수 |
 | **I — Identifiability** | 법령상 직접 규제 대상은 아니나 결합 시 금융고객을 식별·프로파일링 가능하게 하는 준식별자·행동정보 | TAB의 quasi-identifier, Baroud et al. 간접식별자 개념 차용. **법적 판단 아님**을 명시 | 스팬 추출 평가, 비식별화는 선택(옵션 트랙) |
+
+`kind`: identifier(단독 식별 스팬) / attribute(개인에 관한 정보). `span_policy`: must_mask / mask_if_linked(신용정보법 결합 조건) / detect_only. 자세한 정의는 yaml 상단 주석.
 
 ## 카테고리 작성 규칙
 

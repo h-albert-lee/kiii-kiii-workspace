@@ -1,41 +1,595 @@
-# kfinpii PII taxonomy — 원본 파일. 코드와 논문 표가 여기서 생성됨.
-version: 0.1-draft
-updated: 2026-09-08
+# kfinpii PII taxonomy — SOURCE OF TRUTH. Code (generation, evaluation) and paper tables are generated from this file.
+# Human-readable rationale: taxonomy.md. Mapping to prior schemas: mapping_prior_work.md. Design decisions: docs/decisions/0004-taxonomy-design.md
+#
+# Field semantics
+#   id            stable snake_case key. Never rename; deprecate instead.
+#   tier          L = Legal (enumerated in Korean statute/regulation) | I = Identifiability (not enumerated; enables re-identification/profiling)
+#   kind          identifier = a span that on its own points at a person/account | attribute = information about the person that is regulated or risky but not self-identifying
+#   legal_basis   statute + article. null for tier I (NOT a legal claim).
+#   span_policy   must_mask       -> de-identification task must remove/replace every mention
+#                 mask_if_linked  -> regulated as 개인신용정보 only when co-occurring with an identifier (신용정보법 §2 1호 가목 괄호); de-id task: generalize or keep per config
+#                 detect_only     -> span extraction is scored; de-identification is an optional track
+#   deid_default  surrogate (replace with format-valid fake) | generalize (e.g. 10-year age band, 시/군/구 level) | suppress (delete) | keep
+#   format        regex-ish description for generation + rule baseline. checksum: true means a validation algorithm exists and synthetic values must pass it.
+#   subtypes      finer labels attached to the same category (annotation may record them; scoring is at category level)
+#   thunder_deid  closest label(s) in Thunder-DeID (Hahm et al., Findings EMNLP 2025); "-" = no counterpart
+#   jang2024      PNE tag in Jang et al. 2024 / KDPII; "-" = none
+#   notes         boundary cases, decisions, [?] = unverified
+
+version: 1.0-draft
+updated: 2026-09-10
+language: ko
+domain: finance (bank, securities, card, insurance, lending)
 
 tiers:
-  L: {name_ko: 법적 개인정보, name_en: Legal PII}
-  I: {name_ko: 식별가능성 정보, name_en: Identifiability}
+  L:
+    name_ko: 법적 개인(신용)정보
+    name_en: Legal PII
+    definition: >
+      Categories enumerated in 개인정보보호법 (PIPA) §23/§24 and 시행령 §18/§19, 신용정보법 (Credit Information Act, CIA) §2 and 시행령 §2,
+      금융실명법 §4, 전자금융거래법 §2. Membership is a legal fact, cited per category.
+  I:
+    name_ko: 식별가능성 정보
+    name_en: Identifiability
+    definition: >
+      Not enumerated in the statutes above, but (a) quasi-identifiers in the TAB sense (Pilán et al. 2022) or (b) behavioural/contextual
+      information whose aggregation enables profiling or hyper-personalised social engineering against a financial customer.
+      Inclusion is an empirical/security judgment, not a legal one.
 
-# 아래는 골격 예시. M1에서 법령 매핑 후 채움.
+kinds:
+  identifier: 단독으로 개인·계정을 가리키는 스팬
+  attribute:  개인에 관한 정보이나 단독으로는 식별하지 않는 스팬
+
+# ---------------------------------------------------------------------------
 categories:
-  - id: rrn
-    tier: L
-    name_ko: 주민등록번호
-    name_en: Resident registration number
-    legal_basis: "개인정보보호법 §24, 시행령 §19 (고유식별정보)"
-    format: "\\d{6}-?[1-4]\\d{6}  # 체크섬 규칙 적용"
-    examples: []
-    notes: "합성 시 유효 체크섬 생성. 규칙 베이스라인이 잡는 것과 모델이 잡는 것 구분용"
 
-  - id: bank_account
-    tier: L
-    name_ko: 계좌번호
-    name_en: Bank account number
-    legal_basis: "신용정보법 §2 (개인신용정보), 금융분야 가명·익명처리 안내서"
-    format: "[?] 은행별 자릿수 규칙 정리 필요"
-    examples: []
-    notes: ""
+# ===== Tier L / identifiers =====
 
-  - id: investment_profile
-    tier: I
-    name_ko: 투자성향
-    name_en: Investment risk profile
-    legal_basis: null
-    format: null
-    examples: []
-    notes: "스팬으로 잡을지 문서 단위 속성으로 잡을지 결정 필요 (kickoff 열린 질문)"
+- id: person_name
+  tier: L
+  kind: identifier
+  name_ko: 성명
+  name_en: Person name
+  legal_basis: "PIPA §2 1호 가; CIA §2 1호의2 가목 1)"
+  span_policy: must_mask
+  deid_default: surrogate
+  format: {pattern: "한글 2~4자 (성+이름); 외국인 로마자/한글 표기 포함", checksum: false}
+  subtypes: [full_name, given_name_only, romanized]
+  thunder_deid: "인명 > 내국인이름 / 외국인이름"
+  jang2024: PS_NAME
+  notes: "2자 이름 단독 언급(예: '민지 씨')도 스팬. 직원 이름(상담사)도 포함 — 정보주체가 아니라도 개인정보."
+
+- id: rrn
+  tier: L
+  kind: identifier
+  name_ko: 주민등록번호
+  name_en: Resident registration number
+  legal_basis: "PIPA §24조의2; PIPA 시행령 §19 1호 (고유식별정보); CIA 시행령 §2② 1호 (개인식별번호)"
+  span_policy: must_mask
+  deid_default: surrogate
+  format:
+    pattern: "\\d{6}-?[1-4]\\d{6}"
+    checksum: true
+    rule: "weights 2,3,4,5,6,7,8,9,2,3,4,5 on d1..d12; c = (11 - sum mod 11) mod 10. Valid for numbers issued before 2020-10-05; later numbers have 6 random rear digits (no checksum). Generate both populations; tag which."
+  subtypes: [full, masked_rear]   # '900101-1******' 형태도 스팬
+  thunder_deid: "주민등록번호"
+  jang2024: QT_RESIDENT_NUMBER
+  notes: "부분 마스킹된 형태('-1******')도 must_mask 스팬으로 어노테이션 (앞 6자리만으로 생년월일 노출)."
+
+- id: foreigner_reg_no
+  tier: L
+  kind: identifier
+  name_ko: 외국인등록번호
+  name_en: Foreigner registration number
+  legal_basis: "PIPA 시행령 §19 4호; CIA 시행령 §2② 4호"
+  span_policy: must_mask
+  deid_default: surrogate
+  format: {pattern: "\\d{6}-?[5-8]\\d{6}", checksum: true, rule: "same as rrn for legacy numbers [?] post-2020 scheme unverified"}
+  thunder_deid: "-"
+  jang2024: QT_ALIEN_NUMBER
+
+- id: passport_no
+  tier: L
+  kind: identifier
+  name_ko: 여권번호
+  name_en: Passport number
+  legal_basis: "PIPA 시행령 §19 2호; CIA 시행령 §2② 2호"
+  span_policy: must_mask
+  deid_default: surrogate
+  format: {pattern: "[MSDRO]\\d{8} (legacy) | [MSDRO]\\d{3}[A-Z]\\d{4} (2021.12~)", checksum: false}
+  thunder_deid: "고유번호 (leaf)"
+  jang2024: QT_PASSPORT_NUMBER
+
+- id: driver_license_no
+  tier: L
+  kind: identifier
+  name_ko: 운전면허번호
+  name_en: Driver's license number
+  legal_basis: "PIPA 시행령 §19 3호; CIA 시행령 §2② 3호"
+  span_policy: must_mask
+  deid_default: surrogate
+  format: {pattern: "(1[1-9]|2[0-8])-\\d{2}-\\d{6}-\\d{2}", checksum: false, rule: "region code 11~28; check-digit algorithm unpublished [?]"}
+  thunder_deid: "고유번호 > licenses"
+  jang2024: QT_DRIVER_NUMBER
+
+- id: phone_no
+  tier: L
+  kind: identifier
+  name_ko: 전화번호
+  name_en: Phone number
+  legal_basis: "CIA §2 1호의2 가목 1) ('전화번호')"
+  span_policy: must_mask
+  deid_default: surrogate
+  format: {pattern: "010-\\d{4}-\\d{4} | 0[2-6]\\d?-\\d{3,4}-\\d{4} | 1[5-8]\\d{2}-\\d{4} | +82-…", checksum: false}
+  subtypes: [mobile, landline, fax, representative_1588]
+  thunder_deid: "고유번호 > phone numbers"
+  jang2024: "QT_MOBILE / QT_PHONE"
+  notes: "은행 대표번호(1588-xxxx)는 개인정보 아님 → 스팬 제외. 지점 직통번호는 조직 정보 → 제외."
+
+- id: address
+  tier: L
+  kind: identifier
+  name_ko: 주소
+  name_en: Address
+  legal_basis: "CIA §2 1호의2 가목 1) ('주소')"
+  span_policy: must_mask
+  deid_default: generalize   # 시/군/구 단위까지 유지 (개인정보위 가명정보 가이드라인 p.32)
+  format: {pattern: "도로명/지번 주소, 상세주소(동·호), 우편번호", checksum: false}
+  subtypes: [road_address, lot_address, detail_unit, postal_code]
+  thunder_deid: "지리정보 > 주소"
+  jang2024: LC_ADDRESS
+  notes: "시/도·시/군/구만 언급된 것은 address가 아니라 I/location_mention."
+
+- id: email
+  tier: L
+  kind: identifier
+  name_ko: 전자우편주소
+  name_en: Email address
+  legal_basis: "CIA 시행령 §2① 1호"
+  span_policy: must_mask
+  deid_default: surrogate
+  format: {pattern: "RFC 5322", checksum: false}
+  thunder_deid: "이메일주소"
+  jang2024: TMI_EMAIL
+
+- id: online_handle
+  tier: L
+  kind: identifier
+  name_ko: SNS 주소·아이디
+  name_en: Online handle / SNS address
+  legal_basis: "CIA 시행령 §2① 2호 ('사회 관계망 서비스 주소')"
+  span_policy: must_mask
+  deid_default: surrogate
+  format: {pattern: "@handle, 프로필 URL, 서비스 로그인 ID", checksum: false}
+  subtypes: [sns_url, login_id, nickname]
+  thunder_deid: "인명 > 아이디·닉네임; URL"
+  jang2024: "PS_ID / PS_NICKNAME / TMI_SITE"
+
+- id: customer_id
+  tier: L
+  kind: identifier
+  name_ko: 고객식별번호
+  name_en: Customer / member identifier
+  legal_basis: "CIA 시행령 §2③ 2호 (신용정보회사등이 개인식별번호 없이 특정 개인을 식별하기 위해 부여한 정보); §2③ 1호 (CI/DI)"
+  span_policy: must_mask
+  deid_default: surrogate
+  format: {pattern: "기관별 자유 형식 (예: 고객번호 8~12자리, 회원번호, CI 88자 Base64 [?])", checksum: false}
+  subtypes: [customer_no, member_no, ci_di, employee_no]
+  thunder_deid: "고유번호 > management numbers / registrations"
+  jang2024: "-"
+  notes: "우리 벤치마크의 차별 카테고리 중 하나. 기존 한국어 스킴에 전용 레이블 없음."
+
+- id: business_reg_no
+  tier: L
+  kind: identifier
+  name_ko: 사업자등록번호
+  name_en: Business registration number
+  legal_basis: "CIA 시행령 §2④ 2호; 부가가치세법 시행령 §12"
+  span_policy: must_mask
+  deid_default: surrogate
+  format:
+    pattern: "\\d{3}-\\d{2}-\\d{5}"
+    checksum: true
+    rule: "weights 1,3,7,1,3,7,1,3,5 on d1..d9, plus floor(d9*5/10); c = (10 - sum mod 10) mod 10. Middle 2 digits encode entity type (01-79 개인, 81/86/87/88 법인 등)."
+  thunder_deid: "고유번호 > corporate registrations"
+  jang2024: "-"
+  notes: "개인사업자의 사업자번호는 개인신용정보. 법인 것은 기업신용정보이나 벤치마크에서는 구분 없이 스팬."
+
+- id: corp_reg_no
+  tier: L
+  kind: identifier
+  name_ko: 법인등록번호
+  name_en: Corporate registration number
+  legal_basis: "CIA 시행령 §2④ 1호"
+  span_policy: must_mask
+  deid_default: surrogate
+  format:
+    pattern: "\\d{6}-\\d{7}"
+    checksum: true
+    rule: "legacy (≤2025-01-30): alternating weights 1,2 on d1..d12; c = (10 - sum mod 10) mod 10. From 2025-01-31 new numbers drop the check digit (7-digit serial)."
+  thunder_deid: "고유번호 > corporate registrations"
+  jang2024: "-"
+
+- id: bank_account_no
+  tier: L
+  kind: identifier
+  name_ko: 계좌번호
+  name_en: Bank account number
+  legal_basis: "금융실명법 §2 3호·§4 (거래정보등); 전자금융거래법 시행령 §7④ 3호 ('거래계좌의 명칭 또는 번호'); CIA §2 1호의3 나목"
+  span_policy: must_mask
+  deid_default: surrogate
+  format:
+    pattern: "은행별 11~14자리. 국민 14 (6-2-6), 신한 12 (3-3-6), 우리 13 (4-3-6), 하나 14 (3-6-5), 농협 13 (3-4-4-2), 카카오 13 (3333-2-7), 토스 12 (1000-4-4), 케이 12"
+    checksum: false
+    rule: "bank-specific check digits exist but are unpublished [?]; generate by bank template. Store bank_name alongside for the anchor baseline."
+  subtypes: [deposit, virtual_account, overseas_iban]
+  thunder_deid: "고유번호 > bank accounts"
+  jang2024: QT_ACCOUNT_NUMBER
+  notes: "Thunder-DeID·KDPII 모두 전용 상위 레이블 없음/체크섬 없음. 은행명 없이 숫자만 나오는 케이스를 반드시 포함 (ko-pii 류 앵커 베이스라인이 놓치는 지점)."
+
+- id: securities_account_no
+  tier: L
+  kind: identifier
+  name_ko: 증권계좌번호
+  name_en: Securities account number
+  legal_basis: "금융실명법 §4; CIA §2 1호의3 라목 (금융투자상품 매매 명세)"
+  span_policy: must_mask
+  deid_default: surrogate
+  format: {pattern: "8자리 계좌 + 2자리 상품코드 (XXXXXXXX-XX) 또는 10~11자리, 증권사별 상이 [?]", checksum: false}
+  thunder_deid: "고유번호 (leaf)"
+  jang2024: "-"
+  notes: "은행 계좌와 분리 — 토스증권 등 증권 도메인 문서에서 빈도 높음; 포맷이 달라 규칙 베이스라인 실패 지점."
+
+- id: card_no
+  tier: L
+  kind: identifier
+  name_ko: 카드번호
+  name_en: Payment card number
+  legal_basis: "CIA §2 1호의3 가목 2) (신용카드 거래); 전자금융거래법 §2 10호 가목 (접근매체: 전자식 카드 및 이에 준하는 전자적 정보)"
+  span_policy: must_mask
+  deid_default: surrogate
+  format:
+    pattern: "\\d{4}-\\d{4}-\\d{4}-\\d{4} (16) | 15 (Amex) | 마스킹형 1234-56**-****-7890"
+    checksum: true
+    rule: "Luhn mod 10. Korean domestic BINs start with 9 (BC 등) — generate mix of 4/5/9 prefixes."
+  subtypes: [pan, cvc, expiry, masked_pan]
+  thunder_deid: "고유번호 > cards"
+  jang2024: QT_CARD_NUMBER
+  notes: "CVC(3자리)·유효기간(MM/YY)은 단독으로는 애매하나 카드번호와 동일 문서 내 공출현 시 must_mask. KDPII 카드번호는 88% Luhn 불통과 (ko-pii 보고) → 우리는 항상 유효 생성."
+
+- id: contract_no
+  tier: L
+  kind: identifier
+  name_ko: 계약·증권·거래번호
+  name_en: Contract / policy / transaction reference number
+  legal_basis: "전자금융거래법 시행령 §7④ 3호 ('보험증권번호'); CIA §2 1호의3 다목 (보험계약 정보); 금융실명법 §4"
+  span_policy: must_mask
+  deid_default: surrogate
+  format: {pattern: "기관별 자유 형식 (보험증권번호, 대출계약번호, 거래승인번호, 접수번호)", checksum: false}
+  subtypes: [insurance_policy_no, loan_contract_no, approval_no, receipt_no, case_no]
+  thunder_deid: "고유번호 > receipts / guarantees / complaints / case numbers"
+  jang2024: "-"
+
+- id: access_credential
+  tier: L
+  kind: identifier
+  name_ko: 접근매체
+  name_en: Access credential
+  legal_basis: "전자금융거래법 §2 10호 나·다·마목 (인증서, 등록된 이용자번호, 비밀번호)"
+  span_policy: must_mask
+  deid_default: suppress
+  format: {pattern: "비밀번호·PIN 4~6자리, OTP 6자리, 보안카드 번호, 인증서 일련번호", checksum: false}
+  subtypes: [password_pin, otp, security_card, certificate_serial]
+  thunder_deid: "고유번호 > passwords"
+  jang2024: "-"
+  notes: "합성 데이터에서는 피싱 시나리오(“OTP 번호 알려주세요”) 문서에 주로 등장."
+
+- id: crypto_wallet
+  tier: L
+  kind: identifier
+  name_ko: 가상자산 지갑주소
+  name_en: Crypto wallet address
+  legal_basis: "특정금융정보법 §2 3호 (가상자산) [?] — 지갑주소 자체의 법적 분류는 미확정; 거래정보로서 금융실명법 유추"
+  span_policy: must_mask
+  deid_default: surrogate
+  format: {pattern: "BTC base58 26~35자 | ETH 0x + 40 hex", checksum: true, rule: "BTC base58check; ETH EIP-55 optional"}
+  thunder_deid: "고유번호 > bitcoin wallets; 금융서비스 > 가상자산"
+  jang2024: "-"
+  notes: "법적 근거가 약해 L 유지 여부는 ADR-0004 열린 질문. 빈도 낮게 생성."
+
+# ===== Tier L / attributes (개인신용정보 속성: 식별자와 결합 시 규제 대상) =====
+
+- id: credit_transaction
+  tier: L
+  kind: attribute
+  name_ko: 신용거래정보
+  name_en: Credit transaction terms
+  legal_basis: "CIA §2 1호의3 (거래의 종류·기간·금액·금리·한도)"
+  span_policy: mask_if_linked
+  deid_default: generalize
+  format: {pattern: "대출 잔액·한도·금리·만기, 카드 한도·이용액, 보험료·보험금, 보유 종목·수량", checksum: false}
+  subtypes: [loan_terms, card_terms, insurance_terms, securities_holdings]
+  thunder_deid: "- (금액은 PII 아님); 금융서비스 > 대출/보험/투자상품 (상품명만)"
+  jang2024: "-"
+  notes: "스팬 = 수치+단위 (예: '대출 잔액 3,200만 원'). 상품명만 언급되면 스팬 아님 (상품명은 공개 정보)."
+
+- id: transaction_record
+  tier: L
+  kind: attribute
+  name_ko: 거래내역
+  name_en: Transaction record
+  legal_basis: "전자금융거래법 시행령 §7④ 1·2호 (거래 종류·금액·상대방·일시); 금융실명법 §4 (거래정보등)"
+  span_policy: mask_if_linked
+  deid_default: generalize
+  format: {pattern: "일시 + 금액 + 상대방/가맹점 (거래명세서 행)", checksum: false}
+  subtypes: [transfer, card_purchase, withdrawal_deposit, securities_trade]
+  thunder_deid: "-"
+  jang2024: "-"
+  notes: "long-context 문서(명세서)에서 다수 등장. 행 단위로 스팬."
+
+- id: delinquency_info
+  tier: L
+  kind: attribute
+  name_ko: 신용도판단정보
+  name_en: Creditworthiness event
+  legal_basis: "CIA §2 1호의4 (연체·대위변제·부도·명의도용·사기)"
+  span_policy: mask_if_linked
+  deid_default: suppress
+  format: {pattern: "연체 N일/개월, 대위변제, 부도, 채무불이행, 명의도용 사실", checksum: false}
+  thunder_deid: "-"
+  jang2024: "-"
+
+- id: financial_capacity
+  tier: L
+  kind: attribute
+  name_ko: 신용거래능력판단정보
+  name_en: Financial capacity
+  legal_basis: "CIA §2 1호의5 가목 (직업·재산·채무·소득의 총액·납세실적)"
+  span_policy: mask_if_linked
+  deid_default: generalize
+  format: {pattern: "연소득, 직업/직종, 보유 부동산·차량 가액, 총부채, 납세액", checksum: false}
+  subtypes: [income, occupation, assets, debts, tax]
+  thunder_deid: "-"
+  jang2024: "- (CV_POSITION은 직위)"
+  notes: "occupation = 직종(회사원·자영업). 직장명은 I/employer_affiliation."
+
+- id: credit_score
+  tier: L
+  kind: attribute
+  name_ko: 개인신용평점
+  name_en: Credit score / grade
+  legal_basis: "CIA §2 1호의6 라목"
+  span_policy: mask_if_linked
+  deid_default: generalize
+  format: {pattern: "NICE/KCB 점수 (0~1000), 등급 1~10, 내부 등급", checksum: false}
+  thunder_deid: "-"
+  jang2024: "-"
+
+- id: public_record
+  tier: L
+  kind: attribute
+  name_ko: 공공정보
+  name_en: Public record
+  legal_basis: "CIA §2 1호의6 가~다목 (재판·행정처분, 조세·국가채권, 채무조정)"
+  span_policy: mask_if_linked
+  deid_default: suppress
+  format: {pattern: "파산·회생 결정, 세금 체납, 압류, 개인워크아웃", checksum: false}
+  thunder_deid: "사건관계인이력 (부분)"
+  jang2024: "-"
+
+- id: sensitive_info
+  tier: L
+  kind: attribute
+  name_ko: 민감정보
+  name_en: Sensitive information
+  legal_basis: "PIPA §23; PIPA 시행령 §18 (건강·유전·범죄경력·인종·민족·사상·신념·노조·정당·정치적 견해·성생활)"
+  span_policy: must_mask
+  deid_default: suppress
+  format: {pattern: "질병명·진단·수술 (보험청구), 범죄경력, 종교, 정치 성향 언급", checksum: false}
+  subtypes: [health, criminal_record, belief_religion_politics, union, ethnicity, sexual_life]
+  thunder_deid: "사건관계인이력 > 범죄경력"
+  jang2024: OGG_RELIGION
+  notes: "보험금 청구·상담 문서에서 health가 지배적. 국적은 민감정보 아님 → I/nationality."
+
+# ===== Tier I / identifiability (법령 미열거; 재식별·프로파일링 위험) =====
+
+- id: dob_age
+  tier: I
+  kind: attribute
+  name_ko: 생년월일·연령
+  name_en: Date of birth / age
+  legal_basis: null
+  span_policy: detect_only
+  deid_default: generalize   # 10세 단위 (가명정보 가이드라인)
+  format: {pattern: "YYYY년 M월 D일, 90년생, 만 34세, 30대", checksum: false}
+  subtypes: [full_dob, birth_year, age, age_band]
+  thunder_deid: "연령정보"
+  jang2024: "DT_BIRTH / QT_AGE"
+  notes: "PIPA §2상 개인정보이나 CIA 식별정보 열거에 없음 → I. 리뷰어가 L 주장 가능; taxonomy.md에 근거 서술."
+
+- id: gender
+  tier: I
+  kind: attribute
+  name_ko: 성별
+  name_en: Gender
+  legal_basis: null
+  span_policy: detect_only
+  deid_default: keep
+  format: {pattern: "남/여, 남성/여성, 호칭(아버님·여사님)", checksum: false}
+  thunder_deid: "-"
+  jang2024: CV_SEX
+
+- id: nationality
+  tier: I
+  kind: attribute
+  name_ko: 국적
+  name_en: Nationality
+  legal_basis: null
+  span_policy: detect_only
+  deid_default: generalize
+  format: {pattern: "국가명, '외국인', 체류자격(F-4 등)", checksum: false}
+  thunder_deid: "-"
+  jang2024: LCP_COUNTRY
+  notes: "인종·민족은 L/sensitive_info. 국적은 아님."
+
+- id: family_relation
+  tier: I
+  kind: attribute
+  name_ko: 가족관계
+  name_en: Family relation
+  legal_basis: null
+  span_policy: detect_only
+  deid_default: generalize
+  format: {pattern: "배우자·자녀 N명·부양가족, 가족 이름과의 관계 표현", checksum: false}
+  thunder_deid: "-"
+  jang2024: "-"
+  notes: "가족 '이름'은 person_name. 여기는 관계 표현만."
+
+- id: employer_affiliation
+  tier: I
+  kind: attribute
+  name_ko: 직장·소속
+  name_en: Employer / affiliation
+  legal_basis: null
+  span_policy: detect_only
+  deid_default: generalize
+  format: {pattern: "회사명, 부서, 직위/직급, 재직기간", checksum: false}
+  subtypes: [employer_name, department, position, tenure]
+  thunder_deid: "사업체 / 조직 > 조직 내 세부부서·업무·권한"
+  jang2024: "OG_WORKPLACE / OG_DEPARTMENT / CV_POSITION"
+  notes: "직종(회사원·자영업)은 L/financial_capacity.occupation. 여기는 특정 조직명·직위."
+
+- id: education
+  tier: I
+  kind: attribute
+  name_ko: 학력
+  name_en: Education
+  legal_basis: null
+  span_policy: detect_only
+  deid_default: generalize
+  format: {pattern: "학교명, 전공, 졸업연도, 학위", checksum: false}
+  thunder_deid: "기관 및 시설 > 교육기관"
+  jang2024: "OGG_EDUCATION / FD_MAJOR / QT_GRADE"
+
+- id: life_event
+  tier: I
+  kind: attribute
+  name_ko: 생애 사건
+  name_en: Life event
+  legal_basis: null
+  span_policy: detect_only
+  deid_default: generalize
+  format: {pattern: "결혼·출산·이직·퇴직·상속·이혼·이사·유학 등 상담 중 언급", checksum: false}
+  thunder_deid: "-"
+  jang2024: "-"
+  notes: "초개인화 피싱의 핵심 재료 (예: '최근 퇴직금 수령'). 사건 + 시점 표현을 하나의 스팬으로."
+
+- id: investment_profile
+  tier: I
+  kind: attribute
+  name_ko: 투자성향
+  name_en: Investment risk profile
+  legal_basis: null   # 자본시장법 §46 적합성 원칙상 수집 의무는 있으나 CIA 신용정보 열거에 없음
+  span_policy: detect_only
+  deid_default: generalize
+  format: {pattern: "공격투자형/적극/위험중립/안정추구/안정형, 투자 목적·경험·기간, 위험등급 1~5", checksum: false}
+  thunder_deid: "-"
+  jang2024: "-"
+  notes: "증권 도메인 고유. 보유 종목·수량은 L/credit_transaction.securities_holdings."
+
+- id: consultation_content
+  tier: I
+  kind: attribute
+  name_ko: 상담·민원 내용
+  name_en: Consultation / complaint content
+  legal_basis: null
+  span_policy: detect_only
+  deid_default: generalize
+  format: {pattern: "불만 사유, 문의 주제, 요청 사항, 상담사 메모 요약 (절 단위 스팬)", checksum: false}
+  subtypes: [complaint_reason, inquiry_topic, request, agent_note]
+  thunder_deid: "-"
+  jang2024: "-"
+  notes: "가장 경계가 모호한 카테고리. 어노테이션 가이드: '이 문장을 제3자가 알면 고객을 특정·설득하는 데 쓸 수 있는가'. IAA를 별도 보고."
+
+- id: service_usage
+  tier: I
+  kind: attribute
+  name_ko: 서비스 이용 패턴
+  name_en: Service usage pattern
+  legal_basis: null
+  span_policy: detect_only
+  deid_default: generalize
+  format: {pattern: "접속 시간대·빈도, 이용 채널(앱/ATM/지점), 주 이용 서비스, 알림 설정", checksum: false}
+  thunder_deid: "-"
+  jang2024: "-"
+  notes: "성현 제안 항목. 로그 성 문서(이용내역, CS 시스템 메모)에서 등장."
+
+- id: device_network
+  tier: I
+  kind: attribute
+  name_ko: 기기·네트워크 정보
+  name_en: Device / network identifier
+  legal_basis: null   # IP는 PIPA상 개인정보로 해석되는 경우 많음 — 경계 사례 [?]
+  span_policy: detect_only
+  deid_default: surrogate
+  format: {pattern: "IPv4/IPv6, 기기 모델·OS, 앱 설치 ID, MAC", checksum: false}
+  subtypes: [ip, device_model, install_id]
+  thunder_deid: "-"
+  jang2024: QT_IP
+  notes: "IP를 L로 올릴지 ADR-0004 열린 질문. v1은 I."
+
+- id: location_mention
+  tier: I
+  kind: attribute
+  name_ko: 위치·지역 언급
+  name_en: Location mention (non-address)
+  legal_basis: null
+  span_policy: detect_only
+  deid_default: generalize
+  format: {pattern: "거주 시/군/구·동 단위 언급, 방문 지점명, 근무지 지역, 해외 체류지", checksum: false}
+  subtypes: [residence_area, branch_visited, travel]
+  thunder_deid: "지리정보 > 지역명; 사건 관련 장소"
+  jang2024: LC_PLACE
+  notes: "완전 주소는 L/address. '분당 사는', '강남역 지점 방문'은 여기."
+
+- id: lifestyle_indicator
+  tier: I
+  kind: attribute
+  name_ko: 생활·소비 지표
+  name_en: Lifestyle / consumption indicator
+  legal_basis: null
+  span_policy: detect_only
+  deid_default: generalize
+  format: {pattern: "보유 차량 모델, 주거 형태(자가/전세), 취미, 반복 소비 카테고리(해외직구·골프)", checksum: false}
+  thunder_deid: "상품 일반 (부분)"
+  jang2024: "-"
+  notes: "재산 '가액'은 L/financial_capacity.assets. 여기는 정성적 지표."
+
+# ---------------------------------------------------------------------------
+exclusions:
+  - biometric: "PIPA 시행령 §18 3호·CIA §2 1호의2 가목 3). 텍스트 스팬으로 나타나지 않아 벤치마크 범위 밖. 논문 Limitations에 명시."
+  - organization_names_public: "은행·증권사·상품명 등 공개 정보는 단독 스팬 아님. Thunder-DeID와의 차이점 (그들은 판결문 맥락상 준식별자로 처리)."
+  - monetary_amount_alone: "금액 단독은 스팬 아님. 계약 조건·거래 행 맥락에서 credit_transaction/transaction_record로 잡음."
+
+document_types:   # 합성 코퍼스 생성용 인벤토리 (초안). 각 문서에 등장 가능한 카테고리 힌트.
+  - {id: kyc_form, name_ko: 계좌개설·KYC 신청서, dominant: [person_name, rrn, address, phone_no, email, financial_capacity, investment_profile]}
+  - {id: bank_statement, name_ko: 입출금 거래명세서, dominant: [bank_account_no, transaction_record, person_name]}
+  - {id: card_statement, name_ko: 카드 이용명세서, dominant: [card_no, transaction_record, credit_transaction]}
+  - {id: loan_contract, name_ko: 대출 계약서·약정서, dominant: [contract_no, credit_transaction, rrn, address, financial_capacity]}
+  - {id: insurance_claim, name_ko: 보험금 청구서·심사 메모, dominant: [contract_no, sensitive_info.health, person_name, bank_account_no]}
+  - {id: cs_transcript, name_ko: 고객상담 녹취록·채팅, dominant: [person_name, phone_no, consultation_content, life_event, customer_id]}
+  - {id: complaint_case, name_ko: 민원 접수·처리 기록, dominant: [consultation_content, contract_no, delinquency_info, public_record]}
+  - {id: securities_trade_report, name_ko: 증권 거래내역·잔고, dominant: [securities_account_no, credit_transaction.securities_holdings, investment_profile]}
+  - {id: internal_memo, name_ko: 내부 심사·검토 메모 (다수 고객 언급), dominant: [multi-subject: person_name, customer_id, credit_score, delinquency_info]}
+  - {id: phishing_report, name_ko: 사기·피싱 신고 접수, dominant: [access_credential, phone_no, bank_account_no, transaction_record]}
 
 changelog:
+  - version: 1.0-draft
+    date: 2026-09-10
+    note: >
+      Full v1: 18 L-identifier, 7 L-attribute, 13 I categories (38 total) with statute citations, formats/checksums, prior-schema mapping,
+      span policies, exclusions, and 10 document types. Grounded in law.go.kr text (literature/notes/legal-sources-ko.md) and prior schema
+      extraction (literature/notes/prior-pii-schemas.md).
   - version: 0.1-draft
     date: 2026-09-08
     note: 골격 생성. 카테고리 3개 예시만.
