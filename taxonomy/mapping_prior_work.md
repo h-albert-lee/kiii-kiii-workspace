@@ -22,7 +22,7 @@
 | Financial institution / product names | **excluded** (public) | 금융·세무 (18 types), 금융서비스, 가상자산 | — | bank names as anchors | company | BANK, CARDISSUER | ORG |
 | Investment profile | investment_profile | — | — | — | — | — | — |
 | Consultation content / usage / life event | consultation_content, service_usage, life_event | — | — | — | — | — | MISC |
-| Crypto | crypto_wallet | bitcoin wallets; 가상자산 | — | — | — | CRYPTOADDRESS | CODE |
+| Crypto | *excluded (v1.1)* | bitcoin wallets; 가상자산 | — | — | — | CRYPTOADDRESS | CODE |
 | Korean coverage | yes | yes (legal) | yes (dialogue) | yes (rules) | **no** | **no** (APAC 3M commercial only) | no |
 
 ## Category-level mapping (ours → prior)
@@ -46,7 +46,6 @@
 | card_no | 고유번호 > cards | QT_CARD_NUMBER | CARD |
 | contract_no | 고유번호 > receipts/guarantees/complaints/case numbers | — | PETITION_ID, COURT_CASE, DOC_ID |
 | access_credential | 고유번호 > passwords | — | — |
-| crypto_wallet | 고유번호 > bitcoin wallets | — | — |
 | credit_transaction | — | — | — |
 | transaction_record | — | — | — |
 | delinquency_info | — | — | — |
@@ -66,9 +65,19 @@
 | service_usage | — | — | — |
 | device_network | — | QT_IP | IP |
 | location_mention | 지리정보 > 지역명; 사건 관련 장소 | LC_PLACE | — |
-| lifestyle_indicator | 상품 일반 (partial) | — | — |
 
-Prior labels with **no** counterpart in ours (deliberate): Thunder-DeID 기관·시설/사업체/상품/방송통신/사회·문화 (public entities → excluded), Jang QT_LENGTH/QT_WEIGHT/TM_BLOOD_TYPE (not financial; would fall under sensitive_info.health only if medical), CV_MILITARY_CAMP, QT_PLATE_NUMBER (could be added as a subtype of lifestyle_indicator if vehicle finance documents are generated), ko-pii PNU/EDI_DRUG.
+Prior labels with **no** counterpart in ours (deliberate): Thunder-DeID 기관·시설/사업체/상품/방송통신/사회·문화 (public entities → excluded), Jang QT_LENGTH/QT_WEIGHT/TM_BLOOD_TYPE (not financial; would fall under sensitive_info.health only if medical), CV_MILITARY_CAMP, QT_PLATE_NUMBER (revisit if vehicle-finance documents are generated), ko-pii PNU/EDI_DRUG.
+
+## Variation axis vs prior robustness work
+
+| Resource | Variation / robustness dimension | Overlap with our T-levels |
+|---|---|---|
+| Mind the Gap (Zafar & Nowaczyk 2026) | 7 English OOD shifts: run-on, conversational, overlapping entities, abbreviations, mixed context, typos, code-switching | T1 (run-on ≈ sep_drop), T2 (typo, code-switch), T3 (overlapping ≈ multi_subject_interleave) |
+| REDACT (Vats et al. 2026) | stratification by sensitivity tier and "disclosure form"; 4,127 surface-form patterns across 25 languages | T0/T1 surface patterns; no dictation, splitting, or encoding |
+| AmBench (Pham et al. 2026) | name regularity bias, benign prompt injection | T2 name_obfuscation (partial), T3 negation_hypothetical (partial) |
+| PII-Bench (Shen et al. 2025) | single vs multi-subject | T3 multi_subject_interleave |
+| ko-pii | checksum validation; anchor-based account detection | defines exactly what T1 sep/regroup and T3 anchor_missing/anchor_wrong break |
+| **Not covered anywhere** | Korean-numeral dictation (STT), cross-turn chunk splitting, partial-mask leakage, Hanja/fullwidth digits, encoded exfiltration | T2 hangul_digits, T3 chunk_split, T1 partial_mask, T2 unicode_variant/mixed_digits, T4 |
 
 ## Reuse decisions
 

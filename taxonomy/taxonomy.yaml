@@ -16,7 +16,7 @@
 #   jang2024      PNE tag in Jang et al. 2024 / KDPII; "-" = none
 #   notes         boundary cases, decisions, [?] = unverified
 
-version: 1.0-draft
+version: 1.1-draft
 updated: 2026-09-10
 language: ko
 domain: finance (bank, securities, card, insurance, lending)
@@ -284,18 +284,6 @@ categories:
   jang2024: "-"
   notes: "합성 데이터에서는 피싱 시나리오(“OTP 번호 알려주세요”) 문서에 주로 등장."
 
-- id: crypto_wallet
-  tier: L
-  kind: identifier
-  name_ko: 가상자산 지갑주소
-  name_en: Crypto wallet address
-  legal_basis: "특정금융정보법 §2 3호 (가상자산) [?] — 지갑주소 자체의 법적 분류는 미확정; 거래정보로서 금융실명법 유추"
-  span_policy: must_mask
-  deid_default: surrogate
-  format: {pattern: "BTC base58 26~35자 | ETH 0x + 40 hex", checksum: true, rule: "BTC base58check; ETH EIP-55 optional"}
-  thunder_deid: "고유번호 > bitcoin wallets; 금융서비스 > 가상자산"
-  jang2024: "-"
-  notes: "법적 근거가 약해 L 유지 여부는 ADR-0004 열린 질문. 빈도 낮게 생성."
 
 # ===== Tier L / attributes (개인신용정보 속성: 식별자와 결합 시 규제 대상) =====
 
@@ -552,24 +540,198 @@ categories:
   jang2024: LC_PLACE
   notes: "완전 주소는 L/address. '분당 사는', '강남역 지점 방문'은 여기."
 
-- id: lifestyle_indicator
-  tier: I
-  kind: attribute
-  name_ko: 생활·소비 지표
-  name_en: Lifestyle / consumption indicator
-  legal_basis: null
-  span_policy: detect_only
-  deid_default: generalize
-  format: {pattern: "보유 차량 모델, 주거 형태(자가/전세), 취미, 반복 소비 카테고리(해외직구·골프)", checksum: false}
-  thunder_deid: "상품 일반 (부분)"
-  jang2024: "-"
-  notes: "재산 '가액'은 L/financial_capacity.assets. 여기는 정성적 지표."
+
+# ---------------------------------------------------------------------------
+# SURFACE-FORM VARIATION — the DLP axis.
+# Canonical forms of numeric identifiers are regex-solvable; the benchmark's difficulty comes from how the same value appears
+# in real text (dictated, split, partially masked, OCR-mangled, encoded, referenced). Every synthetic document is generated with a
+# controlled variation level T0..T4; results are reported per level. regex_catchable answers "does a well-written pattern still
+# match this surface form?" — the rule baseline's ceiling by construction.
+#
+#   applies_to selectors: numeric_id (rrn, foreigner_reg_no, passport_no, driver_license_no, phone_no, business_reg_no, corp_reg_no,
+#                          bank_account_no, securities_account_no, card_no, contract_no, customer_id, access_credential, device_network.ip)
+#                         text_id (person_name, address, email, online_handle)
+#                         attribute (all L-attribute and I-attribute categories)
+#                         all
+
+variation:
+  levels:
+    T0: {name: canonical,   desc: "표준 표기 그대로 (하이픈 포함, 키워드 앵커 있음). regex 상한선 측정용", regex_catchable: true}
+    T1: {name: formatting,  desc: "구분자·그룹핑·공백·마스킹 변화. 잘 쓴 regex는 대부분 잡음", regex_catchable: mostly}
+    T2: {name: lexical,     desc: "한글 숫자 표기, 유니코드 변형, OCR·오타. regex 실패, 문자 정규화 필요", regex_catchable: false}
+    T3: {name: structural,  desc: "분할·발화 간 분산·앵커 오류·간접 지칭. 문맥 이해 필요", regex_catchable: false}
+    T4: {name: encoded,     desc: "인코딩·역순·치환. 의도적 우회 (exfiltration 시나리오)", regex_catchable: false}
+
+  ops:
+    # ---- T1 formatting ----
+    - id: sep_drop
+      level: T1
+      applies_to: numeric_id
+      desc: 구분자 제거 (연속 숫자)
+      example: {from: "110-123-456789", to: "110123456789"}
+    - id: sep_swap
+      level: T1
+      applies_to: numeric_id
+      desc: 하이픈을 공백·점·슬래시·가운뎃점으로
+      example: {from: "010-1234-5678", to: "010.1234.5678 / 010 1234 5678 / 010·1234·5678"}
+    - id: regroup
+      level: T1
+      applies_to: numeric_id
+      desc: 비표준 그룹핑 (은행 표준과 다른 자리 나눔)
+      example: {from: "110-123-456789", to: "1101-2345-6789 / 110 12 34 56 789"}
+    - id: partial_mask
+      level: T1
+      applies_to: numeric_id
+      desc: 부분 마스킹된 형태 — 여전히 스팬 (누출 정보 있음)
+      example: {from: "900101-1234567", to: "900101-1****** / 9001**-*******"}
+      notes: "DLP가 '이미 마스킹됨'으로 통과시키는 실패 모드. gold는 여전히 must_mask."
+    - id: prefix_suffix_noise
+      level: T1
+      applies_to: numeric_id
+      desc: 앞뒤에 문자·기호 부착
+      example: {from: "1234-5678-9012-3456", to: "카드#1234-5678-9012-3456. / (1234567890123456)"}
+    - id: honorific_wrap
+      level: T1
+      applies_to: text_id
+      desc: 이름에 호칭·직함·조사 부착
+      example: {from: "김민지", to: "김민지 고객님께서 / 민지 씨가 / 김 부장님"}
+    - id: address_granularity
+      level: T1
+      applies_to: [address, location_mention]
+      desc: 지번↔도로명, 축약, 상세주소만
+      example: {from: "서울특별시 강남구 테헤란로 152 강남파이낸스센터 12층", to: "서울 강남구 테헤란로152 / 강남파이낸스 12층 / 역삼동 737"}
+
+    # ---- T2 lexical ----
+    - id: hangul_digits
+      level: T2
+      applies_to: numeric_id
+      desc: 한글 숫자 발음 표기 (상담 녹취 STT 산출물 형태)
+      example: {from: "010-3344-5566", to: "공일공 삼삼사사 오오육육 / 영일영에 삼삼사사에 오오육육"}
+      notes: "STT는 숫자를 그대로 쓰기도 하고 한글로 쓰기도 함. 두 형태 모두 생성. 핵심 DLP 실패 모드."
+    - id: mixed_digits
+      level: T2
+      applies_to: numeric_id
+      desc: 숫자·한글·한자 숫자 혼합
+      example: {from: "110-123-456789", to: "110-일이삼-456789 / 一一〇-123-456789"}
+    - id: unicode_variant
+      level: T2
+      applies_to: numeric_id
+      desc: 전각 숫자·원문자·위첨자·유사 문자
+      example: {from: "1234", to: "１２３４ / ①②③④ / ¹²³⁴"}
+    - id: ocr_confusable
+      level: T2
+      applies_to: [numeric_id, text_id]
+      desc: OCR 혼동 문자 (스캔 문서 시나리오)
+      example: {from: "800101-2345678", to: "8O0l01-2345678 / 8001O1-23456?8"}
+    - id: typo
+      level: T2
+      applies_to: [text_id, attribute]
+      desc: 오타·자모 분리·띄어쓰기 오류
+      example: {from: "김민지", to: "김민 지 / 김민지 / 김밍지"}
+    - id: name_obfuscation
+      level: T2
+      applies_to: person_name
+      desc: 부분 익명 표기·초성·로마자·한자
+      example: {from: "김민지", to: "김O지 / 김ㅁㅁ / ㄱㅁㅈ / Kim Min-ji / KMJ / 金民智"}
+      notes: "'김O지'는 마스킹된 것처럼 보이나 성+글자수+끝글자 노출 → 스팬."
+    - id: romanization_codeswitch
+      level: T2
+      applies_to: [text_id, attribute]
+      desc: 영문 표기·코드스위칭
+      example: {from: "서울 강남구", to: "Gangnam-gu, Seoul / 강남 Gu"}
+    - id: verbal_amount
+      level: T2
+      applies_to: attribute
+      desc: 금액·수치의 구어·약식 표기
+      example: {from: "32,000,000원", to: "삼천이백만 원 / 3.2천만 / 3200만원 / 3,200만"}
+
+    # ---- T3 structural ----
+    - id: chunk_split
+      level: T3
+      applies_to: numeric_id
+      desc: 하나의 값이 여러 발화·줄·셀에 분산 (받아쓰기 상황)
+      example: {from: "110-123-456789", to: "\"신한 110이고요\" … (3 turns later) … \"뒤는 123에 456789요\""}
+      notes: "gold는 불연속 스팬 집합 + 동일 entity id. 스팬 채점은 조각 단위 partial-overlap 허용."
+    - id: anchor_missing
+      level: T3
+      applies_to: numeric_id
+      desc: 키워드 앵커 없이 숫자만 등장
+      example: {from: "계좌번호 110-123-456789", to: "거기로 보내주세요. 110-123-456789"}
+      notes: "ko-pii류 앵커 기반 탐지기의 실패 지점."
+    - id: anchor_wrong
+      level: T3
+      applies_to: numeric_id
+      desc: 잘못된 앵커 (전화번호 자리에 계좌번호 등) — 타입 분류 혼동
+      example: {from: "계좌번호 110-123-456789", to: "연락처는 110-123-456789 입니다 (실제로는 계좌)"}
+    - id: coref_reference
+      level: T3
+      applies_to: all
+      desc: 값은 한 번만 등장, 이후 대용 표현으로 지칭 — 일관성 채점 대상
+      example: {from: "김민지 (2회 언급)", to: "김민지 … 해당 고객 … 위 고객의 배우자 … 그분"}
+    - id: multi_subject_interleave
+      level: T3
+      applies_to: all
+      desc: 여러 고객의 식별자가 교차 등장 (누구 것인지 결정 필요)
+      example: {from: "고객 A 계좌", to: "A·B·C 세 고객의 계좌·전화가 한 표/한 메모에 섞임"}
+      notes: "PII-Bench multi-subject split의 확장. subject 수는 실험 통제변수."
+    - id: table_cell
+      level: T3
+      applies_to: [numeric_id, attribute]
+      desc: 표·CSV·키-값 나열 (헤더와 값이 멀리 떨어짐)
+      example: {from: "계좌: 110-…", to: "| 성명 | 계좌 | … |\n| 김민지 | 110-123-456789 | … |"}
+    - id: negation_hypothetical
+      level: T3
+      applies_to: all
+      desc: 부정·가정·예시 문맥 ('예를 들어 010-0000-0000 같은') — 실제 PII가 아닐 수 있음
+      example: {from: "010-1234-5678", to: "예시로 010-1234-5678 같은 형식으로 적어주세요"}
+      notes: "hard negative. gold는 non-PII (또는 별도 플래그). 과탐 측정."
+
+    # ---- T4 encoded ----
+    - id: reversed
+      level: T4
+      applies_to: numeric_id
+      desc: 역순 표기
+      example: {from: "1234567890123456", to: "6543210987654321 (거꾸로 읽으세요)"}
+    - id: base64_hex
+      level: T4
+      applies_to: [numeric_id, email]
+      desc: base64·hex·URL 인코딩
+      example: {from: "900101-1234567", to: "OTAwMTAxLTEyMzQ1Njc="}
+    - id: arithmetic_hint
+      level: T4
+      applies_to: numeric_id
+      desc: 값을 계산식·힌트로 전달
+      example: {from: "010-3344-5566", to: "제 번호는 010 다음에 33 두 번, 55 두 번, 66"}
+    - id: homoglyph_substitution
+      level: T4
+      applies_to: [numeric_id, text_id]
+      desc: 의도적 유사 글리프 치환 (키릴 о, 그리스 ο 등)
+      example: {from: "010", to: "0l0 / О1О (Cyrillic О)"}
+
+  hard_negatives:
+    desc: 스팬처럼 보이지만 PII가 아닌 값 — precision 측정. 문서당 일정 비율 삽입.
+    types:
+      - {id: lookalike_number, desc: "자릿수·구분자가 같은 비개인 번호 (주문번호·운송장·상품코드·사업자 아닌 공시 번호)", example: "주문번호 2024-0912-3456"}
+      - {id: checksum_invalid, desc: "체크섬 불통과 유사 번호 — 규칙 베이스라인은 걸러야 함", example: "사업자 123-45-67890 (검증 실패)"}
+      - {id: public_entity, desc: "은행 대표번호·지점 주소·기관명·상품명", example: "1588-8000, KB국민은행 강남역지점"}
+      - {id: date_as_rrn_prefix, desc: "날짜가 주민번호 앞자리와 동일 형식", example: "계약일 240912"}
+      - {id: example_placeholder, desc: "예시·플레이스홀더 값", example: "010-0000-0000, 홍길동"}
+      - {id: generic_amount, desc: "고객 귀속이 없는 금액·수치", example: "수수료 0.015%, 한도 5천만원(상품 설명)"}
+
+  generation_policy:
+    per_document_level: "문서 단위로 T0..T4 중 하나를 배정 (기본 분포 T0 25% / T1 30% / T2 20% / T3 20% / T4 5%). 문서 안 개별 스팬은 해당 레벨 이하 op를 무작위 적용."
+    per_span_record: "각 gold 스팬에 applied_ops 기록 → 스팬 단위로 op별 recall 분석 가능."
+    hard_negative_rate: "문서당 gold 스팬 수의 30%±10%."
+    stt_realism: "cs_transcript 문서유형은 T2 hangul_digits·chunk_split 확률 상향 (STT 산출물 재현)."
+    reporting: "F1을 (tier×kind) × (T0..T4) 격자로 보고. 헤드라인 figure: regex/rule 베이스라인 vs LLM의 T-level별 곡선."
 
 # ---------------------------------------------------------------------------
 exclusions:
   - biometric: "PIPA 시행령 §18 3호·CIA §2 1호의2 가목 3). 텍스트 스팬으로 나타나지 않아 벤치마크 범위 밖. 논문 Limitations에 명시."
   - organization_names_public: "은행·증권사·상품명 등 공개 정보는 단독 스팬 아님. Thunder-DeID와의 차이점 (그들은 판결문 맥락상 준식별자로 처리)."
   - monetary_amount_alone: "금액 단독은 스팬 아님. 계약 조건·거래 행 맥락에서 credit_transaction/transaction_record로 잡음."
+  - crypto_wallet: "가상자산 지갑주소. 특정금융정보법은 사업자 의무를 규정하고 지갑주소를 개인정보로 열거하지 않음 → L 근거 부족. 후속 연구에서 I 후보로 재검토 (v1.1에서 제거)."
+  - lifestyle_indicator: "차량·주거형태·소비 카테고리. 법령·선행 스킴 어디에도 근거 없고 경계가 모호 → 제거. 재산 가액은 L/financial_capacity.assets, 반복 소비는 transaction_record가 커버 (v1.1에서 제거)."
 
 document_types:   # 합성 코퍼스 생성용 인벤토리 (초안). 각 문서에 등장 가능한 카테고리 힌트.
   - {id: kyc_form, name_ko: 계좌개설·KYC 신청서, dominant: [person_name, rrn, address, phone_no, email, financial_capacity, investment_profile]}
@@ -584,10 +746,16 @@ document_types:   # 합성 코퍼스 생성용 인벤토리 (초안). 각 문서
   - {id: phishing_report, name_ko: 사기·피싱 신고 접수, dominant: [access_credential, phone_no, bank_account_no, transaction_record]}
 
 changelog:
+  - version: 1.1-draft
+    date: 2026-09-10
+    note: >
+      (a) 근거 약한 카테고리 제거 — crypto_wallet, lifestyle_indicator → 36개 (17 / 7 / 12).
+      (b) DLP 축 추가 — variation: 5 levels (T0 canonical … T4 encoded), 26 ops with applies_to selectors, hard_negatives 6종, generation_policy.
+      Rationale: canonical numeric forms are regex-solvable; difficulty must come from surface-form variation.
   - version: 1.0-draft
     date: 2026-09-10
     note: >
-      Full v1: 18 L-identifier, 7 L-attribute, 13 I categories (38 total) with statute citations, formats/checksums, prior-schema mapping,
+      Full v1: 18 L-identifier, 7 L-attribute, 13 I categories (38 total; superseded by 1.1) with statute citations, formats/checksums, prior-schema mapping,
       span policies, exclusions, and 10 document types. Grounded in law.go.kr text (literature/notes/legal-sources-ko.md) and prior schema
       extraction (literature/notes/prior-pii-schemas.md).
   - version: 0.1-draft

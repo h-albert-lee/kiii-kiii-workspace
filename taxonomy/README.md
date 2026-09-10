@@ -7,7 +7,7 @@
 - `mapping_prior_work.md` — Thunder-DeID·KDPII/Jang·ko-pii·Gretel·ai4privacy·TAB 대응표 (리뷰어 대응용)
 - 근거 자료: `literature/notes/legal-sources-ko.md` (조문 원문), `literature/notes/prior-pii-schemas.md` (선행 레이블 체계)
 
-## 구조 (2 tier × 2 kind) — v1.0-draft: L-identifier 18, L-attribute 7, I-attribute 13
+## 구조 (2 tier × 2 kind) — v1.1-draft: L-identifier 17, L-attribute 7, I-attribute 12 + 변형 축 (T0~T4, 26 ops)
 
 | Tier | 의미 | 근거 | 평가 |
 |---|---|---|---|
@@ -15,6 +15,8 @@
 | **I — Identifiability** | 법령상 직접 규제 대상은 아니나 결합 시 금융고객을 식별·프로파일링 가능하게 하는 준식별자·행동정보 | TAB의 quasi-identifier, Baroud et al. 간접식별자 개념 차용. **법적 판단 아님**을 명시 | 스팬 추출 평가, 비식별화는 선택(옵션 트랙) |
 
 `kind`: identifier(단독 식별 스팬) / attribute(개인에 관한 정보). `span_policy`: must_mask / mask_if_linked(신용정보법 결합 조건) / detect_only. 자세한 정의는 yaml 상단 주석.
+
+**변형 축 (`variation`)**: 정형 표기는 regex로 잡히므로 벤치마크 난이도는 표면형 변형에서 나옵니다. T0 canonical → T1 formatting → T2 lexical(한글 숫자·OCR·유니코드) → T3 structural(분할·앵커 누락·대용 지칭) → T4 encoded. 문서마다 레벨을 배정하고 스팬마다 적용 op를 기록합니다. hard negative 6종 포함. 설명은 `taxonomy.md` §8.
 
 ## 카테고리 작성 규칙
 

@@ -1,10 +1,10 @@
-# Kiii Kiii Taxonomy v1.0-draft — Rationale and Legal Grounding
+# Kiii Kiii Taxonomy v1.1-draft — Rationale, Legal Grounding, and the Variation Axis
 
 *Source of truth is `taxonomy.yaml`; this document explains it. English, because it feeds the paper's §2. Korean statute names are kept verbatim. Statute quotations are in `literature/notes/legal-sources-ko.md`.*
 
 ## 1. Design in one paragraph
 
-Two tiers, two kinds. **Tier L (Legal)** contains every category that a Korean statute or its enforcement decree *enumerates* as personal (credit) information — we cite the article for each. **Tier I (Identifiability)** contains categories no statute enumerates but which either act as quasi-identifiers (TAB's sense) or, when aggregated, enable profiling and hyper-personalised social engineering against a financial customer. Orthogonally, each category is an **identifier** (a span that alone points at a person or account) or an **attribute** (information about the person). The 2×2 gives: L-identifiers (18) — the must-mask core; L-attributes (7) — 개인신용정보 attributes regulated *when linked* to an identifier; I-attributes (13) — scored for extraction, optional for de-identification. There are no I-identifiers by construction: if something identifies on its own, Korean law already covers it.
+Two tiers, two kinds. **Tier L (Legal)** contains every category that a Korean statute or its enforcement decree *enumerates* as personal (credit) information — we cite the article for each. **Tier I (Identifiability)** contains categories no statute enumerates but which either act as quasi-identifiers (TAB's sense) or, when aggregated, enable profiling and hyper-personalised social engineering against a financial customer. Orthogonally, each category is an **identifier** (a span that alone points at a person or account) or an **attribute** (information about the person). The 2×2 gives: L-identifiers (17) — the must-mask core; L-attributes (7) — 개인신용정보 attributes regulated *when linked* to an identifier; I-attributes (12) — scored for extraction, optional for de-identification. A third, orthogonal axis — **surface-form variation** (§8) — controls how each value appears in text, because canonical numeric identifiers are regex-solvable and the benchmark's difficulty has to come from somewhere else. There are no I-identifiers by construction: if something identifies on its own, Korean law already covers it.
 
 ## 2. Why the legal tier is wider than "주민번호·계좌·이름"
 
@@ -37,7 +37,6 @@ Result: the Legal tier is a *citable* list, which is the differentiator against 
 | card_no | 카드번호 (+CVC·유효기간) | CIA §2 1호의3 가2); 전자금융거래법 §2 10호 가 | identifier | must_mask |
 | contract_no | 계약·증권·거래번호 | 전자금융거래법 시행령 §7④ 3호; CIA §2 1호의3 다 | identifier | must_mask |
 | access_credential | 접근매체 (비밀번호·OTP·인증서) | 전자금융거래법 §2 10호 나·다·마 | identifier | must_mask (suppress) |
-| crypto_wallet | 가상자산 지갑주소 | 특정금융정보법 §2 3호 [?] | identifier | must_mask — *weakest basis, see §6* |
 | credit_transaction | 신용거래정보 | CIA §2 1호의3 | attribute | mask_if_linked |
 | transaction_record | 거래내역 | 전자금융거래법 시행령 §7④ 1·2호; 금융실명법 §4 | attribute | mask_if_linked |
 | delinquency_info | 신용도판단정보 | CIA §2 1호의4 | attribute | mask_if_linked |
@@ -62,7 +61,6 @@ Result: the Legal tier is a *citable* list, which is the differentiator against 
 | service_usage | 서비스 이용 패턴 | Time/channel habits → timing of attacks | — |
 | device_network | IP·기기 | Borderline legal (IP often held to be PII); v1 keeps in I | Jang QT_IP |
 | location_mention | 거주 지역·방문 지점 | Sub-address geography | Thunder 지역명; Jang LC_PLACE |
-| lifestyle_indicator | 차량·주거형태·소비 카테고리 | Qualitative wealth/lifestyle signals | — |
 
 Tier I is explicitly **not a legal claim**. The paper should say so in one sentence and cite TAB (quasi-identifiers), Baroud et al. 2025 (indirect identifiers) and Staab et al. 2024 (attribute inference) as the conceptual lineage.
 
@@ -74,13 +72,32 @@ Tier I is explicitly **not a legal claim**. The paper should say so in one sente
 
 ## 6. Open questions for review (→ ADR-0004 list)
 
+*Removed in v1.1 for weak grounding: `crypto_wallet` (특금법 regulates VASPs, not wallet addresses as personal data) and `lifestyle_indicator` (no statutory or prior-schema lineage; overlaps financial_capacity and transaction_record). Both are recorded under `exclusions` with rationale.*
+
 1. **dob_age: L or I?** PIPA treats DOB as personal information; CIA does not list it as an identifier; 가명정보 가이드라인 treats age as 식별가능정보 (generalise to 10-year bands). v1: I, with `generalize`. Reviewer risk: moderate.
 2. **device_network (IP): L or I?** Korean case law and PIPC guidance often treat IP as personal information [?]. v1: I. Consider promoting if a citable PIPC decision is found.
-3. **crypto_wallet basis.** 특금법 covers 가상자산사업자 obligations, not wallet addresses as personal data. Keep in L with [?] or move to I? v1: L (a wallet is a unique identifier in practice).
-4. **consultation_content boundary.** Highest annotation ambiguity. Need a written guideline + IAA on a 100-doc pilot before generation at scale.
-5. **Employee names.** Agent/상담사 names are personal information but not the customer's. v1 tags them as person_name with `subject_role: staff` so analysis can split. Decide whether the de-id task must mask them (likely yes).
-6. **Scoring subtypes.** v1 no. Revisit if card CVC vs PAN or deposit vs securities account shows divergent behaviour worth a table.
+3. **consultation_content boundary.** Highest annotation ambiguity. Need a written guideline + IAA on a 100-doc pilot before generation at scale.
+4. **Employee names.** Agent/상담사 names are personal information but not the customer's. v1 tags them as person_name with `subject_role: staff` so analysis can split. Decide whether the de-id task must mask them (likely yes).
+5. **Scoring subtypes.** v1 no. Revisit if card CVC vs PAN or deposit vs securities account shows divergent behaviour worth a table.
 
 ## 7. What differs from Thunder-DeID (for the related-work paragraph)
 
 Thunder-DeID's 729 labels are induced from court judgments and organised by *judicial* relevance (사건관계인 vs 기타). Financial identifiers (bank accounts, cards, bills, bonds, checks) sit as leaves inside a single generic bucket 고유번호 with no format or checksum modelling; financial *institutions* and *products* are rich (18 institution types, loan/insurance/investment products, crypto exchanges) but those are public names, not customer data; and monetary amounts, transaction rows, credit scores, delinquency, income and consultation content are absent because judgments do not contain them as customer records. Our taxonomy inverts the emphasis: account/card/contract/customer identifiers get dedicated, format-validated categories; credit-information attributes are first-class; institution and product names are *excluded* as public information. Overlap is real for names, RRN, address, age, email, organisations and locations — the mapping table (`mapping_prior_work.md`) lets us reuse their label semantics there.
+
+## 8. The variation axis — why this is a DLP benchmark and not an NER benchmark
+
+If every 주민등록번호 appeared as `900101-1234567` and every account as `110-123-456789`, a regex with a checksum would score near 1.0 and the leaderboard would measure nothing. Real AI-DLP inputs — chat logs, STT transcripts of call-centre audio, OCR'd scans, pasted tables, and deliberate exfiltration — carry the same values in forms no pattern anticipates. So `taxonomy.yaml: variation` defines five **levels** and 26 **operations**, each with an `applies_to` selector (numeric_id / text_id / attribute / specific ids) and a `regex_catchable` flag:
+
+| Level | Name | What changes | Regex? | Representative ops |
+|---|---|---|---|---|
+| T0 | canonical | nothing — standard notation with keyword anchor | yes | — (ceiling for the rule baseline) |
+| T1 | formatting | separators, grouping, partial masking, affixes, honorifics, address granularity | mostly | sep_drop, regroup, partial_mask, honorific_wrap |
+| T2 | lexical | Korean-numeral dictation (STT), mixed/Hanja digits, fullwidth/circled Unicode, OCR confusables, typos, name obfuscation (김O지, KMJ), romanisation, verbal amounts | no | hangul_digits, unicode_variant, ocr_confusable, name_obfuscation |
+| T3 | structural | value split across turns/lines/cells, missing or wrong keyword anchor, coreference-only mentions, multi-subject interleaving, table layouts, negation/hypothetical | no | chunk_split, anchor_missing, anchor_wrong, coref_reference |
+| T4 | encoded | reversed, base64/hex, arithmetic hints, homoglyph substitution (intentional evasion) | no | reversed, base64_hex, arithmetic_hint |
+
+Each document is generated at one level (default mix T0 25 / T1 30 / T2 20 / T3 20 / T4 5 %); every gold span records its `applied_ops`, so recall can be analysed per operation. **Hard negatives** (six types: look-alike numbers, checksum-invalid values, public entities, dates shaped like RRN prefixes, placeholders, unattributed amounts) are injected at ~30 % of gold span count to make precision meaningful — a system that flags every 13-digit string should pay for it.
+
+This gives the paper its third controlled variable alongside subject count and context length, and its most practitioner-relevant figure: rule/regex baselines vs. LLMs vs. Korean local LLMs as a function of T-level. The expected shape — rules collapse at T2, general LLMs hold through T2 and degrade at T3 (chunk_split, coref), everything struggles at T4 — is a hypothesis to test, not a result to assume. Two ops deserve a sentence each in the paper: `partial_mask` (DLP systems routinely pass "already masked" strings that still leak birth date and gender) and `hangul_digits` (call-centre STT output is the dominant unstructured PII source in Korean finance, and it is invisible to every digit regex).
+
+Prior art for the axis: Mind the Gap (Zafar & Nowaczyk 2026) has 7 OOD shift categories for English PII; REDACT stratifies by "disclosure form"; AmBench isolates name ambiguity. None cover dictated Korean numerals, cross-turn splitting, or partial-mask leakage, and none tie variation to a legal tier.
