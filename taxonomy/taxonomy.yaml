@@ -16,8 +16,8 @@
 #   jang2024      PNE tag in Jang et al. 2024 / KDPII; "-" = none
 #   notes         boundary cases, decisions, [?] = unverified
 
-version: 1.1-draft
-updated: 2026-09-10
+version: 1.2-draft
+updated: 2026-09-11
 language: ko
 domain: finance (bank, securities, card, insurance, lending)
 
@@ -545,7 +545,7 @@ categories:
 # SURFACE-FORM VARIATION — the DLP axis.
 # Canonical forms of numeric identifiers are regex-solvable; the benchmark's difficulty comes from how the same value appears
 # in real text (dictated, split, partially masked, OCR-mangled, encoded, referenced). Every synthetic document is generated with a
-# controlled variation level T0..T4; results are reported per level. regex_catchable answers "does a well-written pattern still
+# controlled variation level T0..T3; results are reported per level. regex_catchable answers "does a well-written pattern still
 # match this surface form?" — the rule baseline's ceiling by construction.
 #
 #   applies_to selectors: numeric_id (rrn, foreigner_reg_no, passport_no, driver_license_no, phone_no, business_reg_no, corp_reg_no,
@@ -560,7 +560,7 @@ variation:
     T1: {name: formatting,  desc: "구분자·그룹핑·공백·마스킹 변화. 잘 쓴 regex는 대부분 잡음", regex_catchable: mostly}
     T2: {name: lexical,     desc: "한글 숫자 표기, 유니코드 변형, OCR·오타. regex 실패, 문자 정규화 필요", regex_catchable: false}
     T3: {name: structural,  desc: "분할·발화 간 분산·앵커 오류·간접 지칭. 문맥 이해 필요", regex_catchable: false}
-    T4: {name: encoded,     desc: "인코딩·역순·치환. 의도적 우회 (exfiltration 시나리오)", regex_catchable: false}
+    # T4 (encoded: base64/역순/계산식 힌트/유사 글리프) 는 v1.2에서 제외 — 의도적 우회는 DLP 벤치가 아닌 adversarial 트랙. exclusions 참고.
 
   ops:
     # ---- T1 formatting ----
@@ -639,6 +639,18 @@ variation:
       applies_to: [text_id, attribute]
       desc: 영문 표기·코드스위칭
       example: {from: "서울 강남구", to: "Gangnam-gu, Seoul / 강남 Gu"}
+    - id: stt_digit_error
+      level: T2
+      applies_to: numeric_id
+      desc: STT 유사 발음 치환·탈락 (이↔일, 삼↔사, 십↔식; 긴 번호에서 한 자리 누락, 앞 0 탈락)
+      example: {from: "010-1234-5678", to: "010-1224-5678 / 10-1234-5678 / 01012345 678"}
+      notes: "gold 스팬은 유지 (값이 깨져도 PII 시도). HCLT 2021 '유사 발음 오류', Kakao Ent. '탈락 오류' 근거. 주입률 3~5%/번호."
+    - id: separator_artifact
+      level: T2
+      applies_to: numeric_id
+      desc: 구어 구분자('에', '다시')가 전사에 남거나 잘못 하이픈화
+      example: {from: "010-1234-5678", to: "010 에 1234 에 5678 / 공일공 다시 일이삼사 다시 오육칠팔 / 010-에-1234"}
+      notes: "국어원: '다시'는 dash의 일본식 표현으로 통화 중 흔함. 리턴제로 ITN은 '에'→'-' 변환."
     - id: verbal_amount
       level: T2
       applies_to: attribute
@@ -652,6 +664,12 @@ variation:
       desc: 하나의 값이 여러 발화·줄·셀에 분산 (받아쓰기 상황)
       example: {from: "110-123-456789", to: "\"신한 110이고요\" … (3 turns later) … \"뒤는 123에 456789요\""}
       notes: "gold는 불연속 스팬 집합 + 동일 entity id. 스팬 채점은 조각 단위 partial-overlap 허용."
+    - id: agent_readback
+      level: T3
+      applies_to: numeric_id
+      desc: 고객은 한글 숫자로 말하고 상담사가 아라비아 숫자로 되읽음 — 같은 값이 두 표면형으로 한 문서에 공존
+      example: {from: "110-123-456789", to: "고객: 일일공 에 일이삼 에 사오육칠팔구요\n상담사: 110-123-456789 맞으시죠?"}
+      notes: "regex는 상담사 발화만 잡음 → 고객 발화 누출. 두 스팬은 동일 entity id (일관성 채점)."
     - id: anchor_missing
       level: T3
       applies_to: numeric_id
@@ -686,27 +704,6 @@ variation:
       example: {from: "010-1234-5678", to: "예시로 010-1234-5678 같은 형식으로 적어주세요"}
       notes: "hard negative. gold는 non-PII (또는 별도 플래그). 과탐 측정."
 
-    # ---- T4 encoded ----
-    - id: reversed
-      level: T4
-      applies_to: numeric_id
-      desc: 역순 표기
-      example: {from: "1234567890123456", to: "6543210987654321 (거꾸로 읽으세요)"}
-    - id: base64_hex
-      level: T4
-      applies_to: [numeric_id, email]
-      desc: base64·hex·URL 인코딩
-      example: {from: "900101-1234567", to: "OTAwMTAxLTEyMzQ1Njc="}
-    - id: arithmetic_hint
-      level: T4
-      applies_to: numeric_id
-      desc: 값을 계산식·힌트로 전달
-      example: {from: "010-3344-5566", to: "제 번호는 010 다음에 33 두 번, 55 두 번, 66"}
-    - id: homoglyph_substitution
-      level: T4
-      applies_to: [numeric_id, text_id]
-      desc: 의도적 유사 글리프 치환 (키릴 о, 그리스 ο 등)
-      example: {from: "010", to: "0l0 / О1О (Cyrillic О)"}
 
   hard_negatives:
     desc: 스팬처럼 보이지만 PII가 아닌 값 — precision 측정. 문서당 일정 비율 삽입.
@@ -718,12 +715,30 @@ variation:
       - {id: example_placeholder, desc: "예시·플레이스홀더 값", example: "010-0000-0000, 홍길동"}
       - {id: generic_amount, desc: "고객 귀속이 없는 금액·수치", example: "수수료 0.015%, 한도 5천만원(상품 설명)"}
 
+  stt_profile:   # cs_transcript / phishing_report 문서유형에 적용. 근거: literature/notes/stt-korean-numbers.md
+    digit_rendering:
+      arabic_itn: 0.70      # 리턴제로 use_itn 기본 true, CLOVA·Google 숫자 출력 고정, Azure ko-KR display form → 상용 전사 대부분
+      hangul_phonetic: 0.20 # KsponSpeech 발음전사·AI Hub directText 형태: "공일공 일이삼사 오육칠팔" (음절 사이 공백 변형 포함)
+      mixed_inconsistent: 0.10  # Whisper형: 토큰 분할 "010 1234 5678", 부분 ITN "1 2 3 번", 앞 0 탈락 "10-1234-5678"
+    zero_word: {공: 0.8, 영: 0.2}          # 국어원: 둘 다 허용, 실무는 '공' 우세
+    spoken_separator: {에: 0.55, 다시: 0.35, pause_only: 0.10}
+    liaison_variants: ["오륙(56)", "심뉵(16)"]   # 한글 표기 시 가끔 반영
+    chunking: "전화 3-4-4 / ARS 4-4 / 계좌는 은행 하이픈 그룹 또는 연속 읽기; 그룹 반복 확인('일이삼, 일이삼 맞으시죠')"
+    error_injection_per_number_token: {stt_digit_error: 0.04, separator_artifact: 0.02, unit_spacing_variant: 0.03, itn_partial: 0.03}
+    disfluency: "간투어(어/음/그) 및 자기수정('일 일 이 삼') 100토큰당 1~2회 — use_disfluency_filter off 재현"
+    diarization_labels: {"상담사:/고객:": 0.70, "화자1/화자2 or SPEAKER_00/01": 0.20, "상담사1/고객1/고객2 (3자 통화)": 0.10}
+    timestamps: {sentence_level: 0.30}   # 예: "[00:01:23]" (CLOVA 문장 분리·타임스탬프)
+    pre_masked_subset:
+      rate: 0.20
+      desc: "다운스트림 regex 마스킹을 거친 전사 재현: 아라비아 숫자 PII는 '010-****-5678' / '[전화번호]' 로 가려졌으나 한글 숫자·분할 발화·되읽기 전 고객 발화는 그대로 남음. 가장 현실적인 누출 패턴 (STT 단 한국어 PII 마스킹을 지원하는 상용 엔진 없음: AWS Transcribe redaction ko-KR 미지원)."
+      gold: "가려진 스팬은 partial_mask 규칙 적용 (정보 남으면 스팬), 남은 한글 숫자 스팬은 must_mask."
+
   generation_policy:
-    per_document_level: "문서 단위로 T0..T4 중 하나를 배정 (기본 분포 T0 25% / T1 30% / T2 20% / T3 20% / T4 5%). 문서 안 개별 스팬은 해당 레벨 이하 op를 무작위 적용."
+    per_document_level: "문서 단위로 T0..T3 중 하나를 배정 (기본 분포 T0 25% / T1 30% / T2 25% / T3 20%). 문서 안 개별 스팬은 해당 레벨 이하 op를 무작위 적용."
     per_span_record: "각 gold 스팬에 applied_ops 기록 → 스팬 단위로 op별 recall 분석 가능."
     hard_negative_rate: "문서당 gold 스팬 수의 30%±10%."
-    stt_realism: "cs_transcript 문서유형은 T2 hangul_digits·chunk_split 확률 상향 (STT 산출물 재현)."
-    reporting: "F1을 (tier×kind) × (T0..T4) 격자로 보고. 헤드라인 figure: regex/rule 베이스라인 vs LLM의 T-level별 곡선."
+    stt_realism: "cs_transcript 문서유형은 아래 stt_profile을 따름 (증거 기반; literature/notes/stt-korean-numbers.md)."
+    reporting: "F1을 (tier×kind) × (T0..T3) 격자로 보고. 헤드라인 figure: regex/rule 베이스라인 vs LLM의 T-level별 곡선."
 
 # ---------------------------------------------------------------------------
 exclusions:
@@ -731,6 +746,7 @@ exclusions:
   - organization_names_public: "은행·증권사·상품명 등 공개 정보는 단독 스팬 아님. Thunder-DeID와의 차이점 (그들은 판결문 맥락상 준식별자로 처리)."
   - monetary_amount_alone: "금액 단독은 스팬 아님. 계약 조건·거래 행 맥락에서 credit_transaction/transaction_record로 잡음."
   - crypto_wallet: "가상자산 지갑주소. 특정금융정보법은 사업자 의무를 규정하고 지갑주소를 개인정보로 열거하지 않음 → L 근거 부족. 후속 연구에서 I 후보로 재검토 (v1.1에서 제거)."
+  - T4_encoded_variation: "base64/hex·역순·계산식 힌트·유사 글리프 치환 등 의도적 우회. 실제 DLP 입력 분포가 아니라 공격 시나리오이므로 본 벤치마크에서 제외 (v1.2). 후속 adversarial 트랙 후보. 유니코드 전각·원문자는 OCR/입력기 산출물로 흔하므로 T2에 유지."
   - lifestyle_indicator: "차량·주거형태·소비 카테고리. 법령·선행 스킴 어디에도 근거 없고 경계가 모호 → 제거. 재산 가액은 L/financial_capacity.assets, 반복 소비는 transaction_record가 커버 (v1.1에서 제거)."
 
 document_types:   # 합성 코퍼스 생성용 인벤토리 (초안). 각 문서에 등장 가능한 카테고리 힌트.
@@ -746,6 +762,13 @@ document_types:   # 합성 코퍼스 생성용 인벤토리 (초안). 각 문서
   - {id: phishing_report, name_ko: 사기·피싱 신고 접수, dominant: [access_credential, phone_no, bank_account_no, transaction_record]}
 
 changelog:
+  - version: 1.2-draft
+    date: 2026-09-11
+    note: >
+      (a) T4 encoded 레벨 제외 (4 ops → exclusions). 레벨 분포 T0 25 / T1 30 / T2 25 / T3 20.
+      (b) STT 실태 조사 반영 — ops 추가: stt_digit_error, separator_artifact (T2), agent_readback (T3); stt_profile 신설
+      (숫자 표기 70/20/10, 공/영 80/20, 구분자 에/다시, 오류 주입률, 화자 라벨, pre-masked 20%).
+      근거: literature/notes/stt-korean-numbers.md. 25 ops.
   - version: 1.1-draft
     date: 2026-09-10
     note: >

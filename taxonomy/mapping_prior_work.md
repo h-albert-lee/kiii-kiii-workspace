@@ -77,7 +77,7 @@ Prior labels with **no** counterpart in ours (deliberate): Thunder-DeID 기관·
 | AmBench (Pham et al. 2026) | name regularity bias, benign prompt injection | T2 name_obfuscation (partial), T3 negation_hypothetical (partial) |
 | PII-Bench (Shen et al. 2025) | single vs multi-subject | T3 multi_subject_interleave |
 | ko-pii | checksum validation; anchor-based account detection | defines exactly what T1 sep/regroup and T3 anchor_missing/anchor_wrong break |
-| **Not covered anywhere** | Korean-numeral dictation (STT), cross-turn chunk splitting, partial-mask leakage, Hanja/fullwidth digits, encoded exfiltration | T2 hangul_digits, T3 chunk_split, T1 partial_mask, T2 unicode_variant/mixed_digits, T4 |
+| **Not covered anywhere** | Korean-numeral dictation (STT), STT digit errors / leftover 에·다시, agent read-back, cross-turn chunk splitting, partial-mask leakage, Hanja/fullwidth digits | T2 hangul_digits/stt_digit_error/separator_artifact, T3 agent_readback/chunk_split, T1 partial_mask, T2 unicode_variant/mixed_digits |
 
 ## Reuse decisions
 
