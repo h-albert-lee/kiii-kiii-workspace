@@ -20,16 +20,17 @@
 
 결론: 국제 표준 세트는 {GPT-4급 API, Claude, Llama-3.1-8B, Qwen2.5-7B, DeepSeek, Presidio, GLiNER, OPF}. 이 중 한국어로 평가된 것은 없다. 우리 리더보드는 이 세트와의 **연속성**(리뷰어가 아는 행)과 **한국어 로컬 LLM**(우리 기여)을 함께 갖춰야 한다.
 
-## 2. 리더보드 (15 모델 + 4 베이스라인)
+## 2. 리더보드 (14 모델 + 4 베이스라인)
 
-### Frontier API (5) — ID는 2026-09-13 공식 문서 기준
+> 접근성 원칙 (2026-09-13, 한울): **가입·심사가 필요한 한국 모델은 제외.** 한국어 모델은 OpenRouter에서 호출 가능한 것 또는 HF 공개 오픈 가중치만. HCX-007(NCP 가입+서비스앱 심사) 제외.
+
+### Frontier API (4) — ID는 2026-09-13 공식 문서 기준
 | # | 모델 | 정확한 API ID | 가격 in/out per 1M | ctx | 이유 |
 |---|---|---|---|---|---|
 | 1 | GPT-5.6 Sol (플래그십) + Luna (저비용 전량) | `gpt-5.6-sol`, `gpt-5.6-luna` | Sol $4/$20 (프로모 $2/$10 ~2026-11-21 ⚠ 두 페이지 불일치), Luna $0.20/$1.20 | 1.05M / out 128K | PII-Bench·AmBench·REDACT GPT 행 연속. gpt-5.4/5.5 ID는 문서에서 사라짐 |
 | 2 | Claude Sonnet 5 (전량) + Opus 5 (서브셋) | `claude-sonnet-5`, `claude-opus-5` | $2/$10, $5/$25 (batch 반값) | 1M 정가 | REDACT Sonnet 4.6 연속 |
 | 3 | Gemini 3.8 Flash (stable, 전량) + 3.1 Pro (preview, 서브셋) | `gemini-3.8-flash`, `gemini-3.1-pro-preview` | $0.75/$3.75 (~2026-12-31, 이후 2배); Pro $2/$12 | 1,048,576 / out 65,536 | AmBench Gemini 행. **GA 3.x Pro 없음** — Pro는 preview 표기 |
-| 4 | **HyperCLOVA X HCX-007** | `HCX-007` via CLOVA Studio | KRW/1K 토큰, 콘솔에서 확인 [?] | 128K / out 4,096 | **한국어 우선 API**. 접근 가능 (아래 §2b) |
-| 5 | **Solar Pro 4** (Upstage) | `solar-pro4` (`https://api.upstage.ai/v1`, OpenAI 호환) 또는 OpenRouter `upstage/solar-pro4` | $0.30/$1.20 (프로모 $0.09/$0.36 ~2026-10-10) | 524K [?] 384K~524K 보고 상이 | 한국어 우선 API 2호. HCX 접근·한도 문제 시 대체. 유일하게 3rd-party 게이트웨이에 있는 한국 모델 |
+| 4 | **Solar Pro 4** (Upstage) | OpenRouter `upstage/solar-pro4` (`api.upstage.ai/v1`도 OpenAI 호환) | $0.30/$1.20 (프로모 $0.09/$0.36 ~2026-10-10) | 524K [?] 384K~524K 보고 상이 | **한국어 우선 API 유일 채택** — 3rd-party 게이트웨이(OpenRouter)에서 호출 가능한 유일한 한국 모델 |
 
 ### 오픈 범용 대형 (4) — 80GB 1장
 | # | 모델 | 이유 |
@@ -65,7 +66,6 @@
 
 | 모델 | 접근 경로 | 게이트 | 라이선스 | 논문 발표 | 3rd-party 호스팅 | 제약 |
 |---|---|---|---|---|---|---|
-| **HCX-007** | NCP 콘솔 → CLOVA Studio 이용 신청(셀프서브) → 테스트 API 키(계정당 10개) → (선택) 서비스 앱 심사 → 서비스 키. **OpenAI 호환**: `base_url=https://clovastudio.stream.ntruss.com/v1/openai` (기본 `max_tokens` 512 — 반드시 올릴 것; `response_format` 미지원) | 계정 신청 | NCP 약관 (본문 미확인 [?]) | 금지 조항 없음 | 없음 (NCP만) | **테스트 키 60 QPM / 60K TPM**, 서비스 키 180 QPM / 300K TPM. 16k 문서는 TPM 병목 → 서비스 앱 심사 즉시 신청 (심사 기간 미명시). max output 4,096 |
 | Solar Pro 4 | console.upstage.ai 셀프 가입, `api.upstage.ai/v1` OpenAI 호환; OpenRouter | 없음 | 상용 API | 제한 없음 | **OpenRouter** | VAT 10% |
 | HyperCLOVAX-SEED | HF 직접 | 없음 | SEED License (10M MAU 이상·경쟁 서비스 시 별도) | OK | Friendli dedicated만 | 표기 의무 |
 | Kanana-2 | HF 직접 | 없음 | Kanana License | OK | 없음 | 표기 의무 |
@@ -73,7 +73,7 @@
 | A.X | HF 직접 | 없음 | Apache-2.0 / Qwen | OK | 없음 | **공개 API 없음** (K1 API는 정부 선정 3개 스타트업만) |
 | Mi:dm 2.0 | HF 직접 | 없음 | MIT | OK | Friendli dedicated | 2.5 Pro 미공개 |
 
-**결론:** 한국어 API 행은 HCX-007 + Solar Pro 4 두 개로 가고(HCX 한도 이슈 시 Solar가 보험), 나머지 한국어 모델은 전부 로컬 80GB로 돌린다. 논문 acknowledgement에 "Powered by HyperCLOVA X", "Powered by Kanana" 표기.
+**결론:** 한국어 API 행은 Solar Pro 4(OpenRouter) 하나. HCX-007은 NCP 가입·서비스앱 심사가 필요해 제외(§4). 나머지 한국어 모델은 HF 오픈 가중치를 로컬 80GB로. 논문 acknowledgement에 "Powered by HyperCLOVA X", "Powered by Kanana" 표기.
 
 ## 3. 실행 프로토콜 (요약)
 
@@ -81,10 +81,11 @@
 - 비식별화: 동일 문서, surrogate 규칙 프롬프트. 일관성은 entity_id 기준.
 - 3 seed 평균 (API는 1 seed + temperature 0).
 - 결과 파일 `model_type ∈ {api, local, rule, generator}`; 생성기(gpt-5.6-sol 또는 claude-sonnet-5, Qwen3.6-35B-A3B)는 `generator`로 표기하고 헤드라인 순위에서 제외 (ADR-0002).
-- HCX-007은 테스트 키 TPM(60K) 기준 3k 문서 × 2과업 ≈ 6k 호출: 1k 문서는 ~2시간, 16k 문서는 분당 3~4건 → 16k 버킷은 서비스 키 확보 후 실행.
 - 80GB 1장 가능: 5, 6, 7, 8, 9, 10, 11, 12, 13, 14 전부. A.X-4.0 72B·Llama 4 Scout는 4-bit. Solar Open 100B/250B, A.X K2, K-EXAONE, Motif-3는 단일 GPU 불가 → 포함 시 hosted API [?].
 
 ## 4. 제외한 후보와 이유
+
+- **HCX-007 (Naver CLOVA Studio)** — 호출은 가능하지만 NCP 가입 + 테스트 키 60 QPM/60K TPM + 서비스 앱 심사(기간 미명시)가 필요. 접근성 원칙에 따라 제외. Limitations에 "가입형 한국어 API 미평가"로 명시.
 
 - Solar Open 100B / Open 2 250B, A.X K1/K2, K-EXAONE 236B/750B, Motif-3 314B — 단일 GPU 불가, 4페이지 논문 범위 밖. 후속에서 API로.
 - Llama 4 Maverick, DeepSeek V3/V4, GLM-5.1, Kimi K2/K3 — 한국어 검증 부족 + 규모. DeepSeek는 선행 4편에 등장하므로 hosted API 서브셋 후보 [?].
@@ -96,6 +97,6 @@
 
 ## 5. 논문 표 구성 제안
 
-Table 1 (main): 19행 × {L-id F1, L-attr F1, I F1, T0/T1/T2/T3 F1, de-id risk-weighted recall, consistency}. 
+Table 1 (main): 18행 × {L-id F1, L-attr F1, I F1, T0/T1/T2/T3 F1, de-id risk-weighted recall, consistency}. 
 Figure 2: T-level별 F1 곡선 — 규칙(B1·B2) / 국제 오픈 / 한국어 오픈 / API 4군 평균선 + 개별 점.
 Table 2 (analysis): op별 recall 상위·하위 5개 (hangul_digits, chunk_split, partial_mask, agent_readback 포함).

@@ -36,4 +36,4 @@ git -C "$PAPER" commit -m "sync figures/bib from kfinpii $(git -C "$ROOT" rev-pa
 git -C "$PAPER" push
 echo "▶ 레포의 submodule 포인터 갱신"
 git -C "$ROOT" add paper
-echo "완료. 'git commit -m \"paper: figure/bib 동기화\"' 로 마무리하세요."
+echo "완료. 다음: (1) 'git commit -m \"paper: figure/bib 동기화\"' (2) Overleaf 메뉴 → GitHub → Pull GitHub changes"

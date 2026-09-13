@@ -37,7 +37,7 @@ kfinpii/
 │   └── out/             ← 생성된 pdf/png (Overleaf로 복사되는 파일)
 ├── src/                 ← 데이터 생성·평가 코드
 ├── scripts/             ← 잡무 스크립트 (figure 동기화, 노트 생성 등)
-└── paper/               ← Overleaf 프로젝트 (git submodule). 설정은 docs/guide/overleaf.md
+└── paper/               ← 논문 (submodule → github.com/h-albert-lee/ICAIF-workshop ⇄ Overleaf). docs/guide/overleaf.md
 ```
 
 ## 무엇을 어디에 쓰나
@@ -57,7 +57,7 @@ kfinpii/
 ```bash
 git clone <repo-url> kfinpii
 cd kfinpii
-git submodule update --init   # Overleaf 연동 후부터 필요
+git submodule update --init   # paper/ (ICAIF-workshop) 받기
 ```
 
 협업 규칙(브랜치, 커밋 메시지, PR)은 [`docs/guide/workflow.md`](docs/guide/workflow.md)에 있습니다. 짧습니다. 한 번만 읽어주세요.
