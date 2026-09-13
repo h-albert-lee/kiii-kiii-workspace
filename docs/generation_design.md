@@ -108,7 +108,7 @@ gold 스팬 수 × 0.3 ± 0.1 개를 문서에 삽입. 삽입 위치는 LLM이 �
   "num_subjects": 3,
   "context_len_bucket": "4k",
   "n_tokens": 4120,
-  "generator": {"model": "gpt-5.5", "prompt_version": "compose_v1", "slice": "api-main"},
+  "generator": {"model": "gpt-5.6-sol", "prompt_version": "compose_v1", "slice": "api-main"},
   "taxonomy_version": "1.2",
   "text": "상담사: 안녕하세요 … ",
   "spans": [
@@ -166,4 +166,4 @@ gold 스팬 수 × 0.3 ± 0.1 개를 문서에 삽입. 삽입 위치는 LLM이 �
 
 ## 10. 비용·시간 추정 (참고)
 
-2,500 문서 × 평균 5k 토큰 출력 ≈ 12.5M 출력 토큰. 재생성률 30% 가정 시 ~16M. frontier API 출력 단가 기준 수십만 원대 [?] 파일럿 후 실측. 로컬 20% 슬라이스는 80GB GPU 1장에서 Qwen3.5-35B-A3B로 수 시간.
+2,500 문서 × 평균 5k 토큰 출력 ≈ 12.5M 출력 토큰. 재생성률 30% 가정 시 ~16M. 출력 16M 토큰 × claude-sonnet-5 $10/M ≈ $160, gpt-5.6-sol $20/M ≈ $320 (프로모 시 절반) — 파일럿 후 실측. 로컬 20% 슬라이스는 80GB GPU 1장에서 Qwen3.6-35B-A3B로 수 시간.

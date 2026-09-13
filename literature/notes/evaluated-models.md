@@ -67,3 +67,26 @@ Qwen3.5-35B-A3B / 27B / 122B-A10B / 397B-A17B (Apache-2.0, 256k, 2026-02~03); Qw
 
 ## D. 미확인 [?]
 KDPII 모델 목록(IEEE 접근 불가); REDACT 25개 언어에 한국어 포함 여부; Claude/Gemini 2026-09 정확한 모델 ID; Kanana-2 SLM 출시일; DeepSeek V4 라이선스; ETRI·Samsung 오픈 가중치(없음으로 보임).
+
+
+## E. 2026-09-13 재검증 — 정확한 API ID·접근성 (1차 출처)
+
+### 표준 세트 ID
+| 벤더 | 현행 ID | 가격 in/out /1M | ctx | 출처 |
+|---|---|---|---|---|
+| OpenAI | `gpt-5.6-sol` (=`gpt-5.6`), `gpt-5.6-terra`, `gpt-5.6-luna`; open `gpt-oss-120b`/`20b` | Sol $4/$20 (프로모 $2/$10 ~11/21 ⚠), Terra $2/$12, Luna $0.20/$1.20 | 1.05M / out 128K | developers.openai.com/api/docs/models |
+| Anthropic | `claude-fable-5-1`, `claude-opus-5`, `claude-sonnet-5`, `claude-haiku-4-5-20251001` | $10/$50, $5/$25, $2/$10, $1/$5 | 1M (Haiku 200K) | platform.claude.com/docs/en/about-claude/models/overview |
+| Google | `gemini-3.8-flash` (stable), `gemini-3.7/3.6-flash`, `gemini-3.5-flash`, `gemini-3.1-pro-preview` (preview), `gemini-2.5-pro` (유일 stable Pro) | 3.8 Flash $0.75/$3.75 (~12/31), 3.1 Pro $2/$12 | 1,048,576 / out 65,536 | ai.google.dev/gemini-api/docs/models |
+| Qwen | `Qwen/Qwen3.6-35B-A3B` (Apache, 262K→1M), `Qwen/Qwen3.8-27B` (dense, 2026-08). **Qwen3.8 A3B 없음** | — | | huggingface.co/Qwen |
+| Meta | Llama 4 Scout/Maverick 이후 신규 없음 (Llama 5 기사는 추측) | | | huggingface.co/meta-llama |
+| Google open | Gemma 4 (2026-04-02): E2B/E4B/26B-A4B/31B, Apache-2.0, 게이트 없음 | | 128K/256K | blog.google …/gemma-4/ |
+| DeepSeek | `DeepSeek-V4-Pro` (1.6T/49B), `DeepSeek-V4-Flash` (284B/13B), MIT, 1M. R2 없음 | | | huggingface.co/deepseek-ai |
+| Mistral | `Mistral-Small-4-119B-2603` (Apache, 256K); Ministral 3 3B/8B/14B | | | |
+
+### 한국어 모델 접근성
+- **CLOVA Studio (HCX-007/005/DASH-002)**: NCP 콘솔 이용 신청(셀프서브) → 테스트 API 키 → 서비스 앱 심사(AI 윤리·오남용 모니터링 계획 요구, 기간 미명시). 네이티브 `POST https://clovastudio.stream.ntruss.com/v3/chat-completions/HCX-007`; **OpenAI 호환 `https://clovastudio.stream.ntruss.com/v1/openai`** (기본 max_tokens 512, response_format 미지원). Rate limit (2025-07-17 기준): 테스트 HCX-007 60 QPM/60K TPM, 서비스 180 QPM/300K TPM. ctx 128K, out 4,096. 가격 KRW/1K 토큰 — 콘솔 JS 렌더로 미추출 [?]. 출처 guide.ncloud-docs.com/docs/clovastudio-ratelimiting, api.ncloud-docs.com/docs/clovastudio-openaicompatibility
+- **Solar Pro 4**: `api.upstage.ai/v1` `solar-pro4`, OpenRouter `upstage/solar-pro4`; $0.30/$1.20 (프로모 $0.09/$0.36 ~10/10); ctx 384K~524K 보고 상이.
+- **HF 게이트**: HyperCLOVAX-SEED·Kanana-2·EXAONE-4.x·A.X·Mi:dm 전부 `gated: false`.
+- **라이선스 핵심**: SEED — 10M MAU/경쟁 서비스 시 별도, "Powered by HyperCLOVA X"; Kanana — 출력물은 파생물 아님, "Powered by Kanana"; EXAONE 1.2-NC — 연구 전용, **§2.1b 논문 발표 명시 허용**; A.X-4.0-Light·3.1-Light Apache-2.0, A.X-4.0 72B Qwen license; Mi:dm 2.0 MIT.
+- **외부 API 없음**: A.X (K1 API는 중기부 챌린지 3개사 한정, a.x@sk.com), Mi:dm (K 2.5 Pro 미공개).
+- **3rd-party 호스팅**: OpenRouter에 `upstage/solar-pro4`만. Friendli는 EXAONE·SEED·Mi:dm dedicated endpoint만 (K-EXAONE-2.0 serverless 2026-08-06~09-06 후 종료). Bedrock·Azure Foundry·Together·Fireworks에 한국 모델 없음.
