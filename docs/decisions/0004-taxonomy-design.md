@@ -1,6 +1,6 @@
 # ADR-0004: 택소노미 v1 설계 — 2 tier × 2 kind, 법령 조문 단위 근거, 표면형 변형 축
 
-- 상태: proposed (한울 결정으로 accepted 전환 예정; 성현 리뷰 불필요 — 콜센터 실태는 자체 조사로 대체)
+- 상태: **accepted** (2026-09-13). 열린 질문은 아래 '결정 10~13'으로 해소. 파일럿 후 조정 항목은 '후속' 참고.
 - 날짜: 2026-09-10
 - 결정자: 한울
 - 관련: ADR-0001, `taxonomy/taxonomy.yaml`, `taxonomy/taxonomy.md`, `literature/notes/legal-sources-ko.md`
@@ -24,6 +24,11 @@ Thunder-DeID는 계좌·카드번호를 `고유번호` 버킷에 두고 금액·
 8. **표면형 변형 축 (DLP 축)**: 정형 숫자 식별자는 regex로 풀리므로, 문서 단위 변형 레벨 T0(canonical)~T3(structural) 4단계와 25개 변형 연산(한글 숫자 받아쓰기, STT 오류, 분할 발화, 상담사 되읽기, 부분 마스킹, OCR 혼동, 앵커 누락 등)을 정의한다. **T4(encoded: base64·역순·계산식·유사 글리프)는 제외** — 공격 분포이지 DLP 입력 분포가 아님; adversarial 트랙 후보. 스팬마다 `applied_ops`를 기록하고, F1을 (tier×kind)×(T-level) 격자로 보고한다. hard negative 6종을 gold의 ~30% 비율로 삽입해 precision을 의미 있게 만든다.
 9. **STT 프로필은 실태 조사로 고정** (`literature/notes/stt-korean-numbers.md`): 상용 한국어 STT는 ITN 기본(리턴제로 `use_itn` true, CLOVA·Google 숫자 고정) → 아라비아 70% / 한글 발음 20% (KsponSpeech·AI Hub directText 형태) / 혼합 10% (Whisper 토큰 분할). 0은 공 80%·영 20%, 구어 구분자 에 55%·다시 35%. STT 단 한국어 PII 마스킹 상용 엔진 부재(AWS Transcribe ko-KR redaction 미지원) → regex 마스킹 후 한글 숫자·분할 발화가 남는 pre-masked 전사 20%.
 
+10. **`dob_age`는 I 유지.** 신용정보법 식별정보 열거(§2 1호의2, 시행령 §2①~③)에 생년월일·연령이 없고, 개인정보위 가명정보 처리 가이드라인(2024)이 연령을 '식별정보'가 아닌 '식별가능정보'(결합 시 식별 가능)로 분류하며 10세 단위 범주화를 권고한다. TAB도 age를 DEM(quasi)로 둔다. 리뷰어 반론("PIPA §2상 개인정보 아니냐")에는 "PIPA 개인정보 여부와 우리 L tier 기준(열거 여부)은 다르다"로 답한다. 단, 주민번호 앞 6자리(partial_mask)는 rrn으로 잡히므로 생년월일 누출의 법적 부분은 L에서 커버된다.
+11. **`device_network`(IP)는 I 유지.** 어느 조문도 IP를 열거하지 않는다. 개인정보위 해석은 '다른 정보와 결합 시' 개인정보라는 맥락 의존적 판단이며, 이는 정확히 I tier 정의다. 인용 가능한 결정례가 나오면 v2에서 재검토.
+12. **`consultation_content` 운영 규칙 확정.** 스팬 = (a) 고객의 요청·불만 사유를 서술하는 절, (b) 상담사가 고객 상황을 기록한 메모 절. 상품 일반 문의("이 카드 연회비 얼마예요")·절차 안내는 스팬이 아니다. 판정 질문: "이 절을 제3자가 알면 이 고객을 특정하거나 설득하는 데 쓸 수 있는가." 파일럿 100건 IAA를 별도 보고하고, κ < 0.6이면 subtype `complaint_reason`·`agent_note`만 남기고 `inquiry_topic`·`request`를 제거한다.
+13. **직원(상담사) 이름은 de-id 과업에서 must_mask.** PIPA §2 1호는 정보주체를 고객으로 한정하지 않는다. 채점은 `subject_role: staff`로 분리 보고해 "고객 PII 성능"과 "전체 PII 성능"을 모두 제시한다.
+
 ## 이유
 
 - 조문 단위 인용이 Thunder-DeID·KDPII와의 결정적 차별점이고, 리뷰어가 "왜 이게 PII냐"를 물을 때 답이 된다.
@@ -37,19 +42,15 @@ Thunder-DeID는 계좌·카드번호를 `고유번호` 버킷에 두고 금액·
 - **flat 33-tag (Jang/KDPII) 확장** — 법령 근거·tier 구조가 없어 기여가 약함.
 - **I tier를 문서 단위 속성으로** — 과업이 둘로 갈라져 4페이지에 안 맞음. v1은 전부 스팬. 문서 속성은 후속.
 
-## 열린 질문 (리뷰 요청)
+## 후속 (파일럿 후 조정)
 
-1. `dob_age`를 L로 올릴지 (PIPA 개인정보 vs 신용정보법 미열거). v1: I.
-2. `device_network`(IP)를 L로 올릴지. 개인정보위 결정례 인용 가능하면 L.
-3. `consultation_content` 경계 — 100건 파일럿 IAA 후 가이드라인 확정.
-4. 직원 이름을 de-id 과업에서 must_mask로 볼지.
-5. 변형 레벨 기본 분포(T0 25/T1 30/T2 25/T3 20%)와 hard negative 비율(30%)의 적정성 — 파일럿 후 조정.
-
-해결됨: T4 제외 (2026-09-11, 한울). STT 프로필 수치는 자체 조사로 확정 (결정 9).
+- 변형 레벨 기본 분포(T0 25/T1 30/T2 25/T3 20%)와 hard negative 비율(30%) — 100건 파일럿에서 규칙 베이스라인 F1이 T-level별로 단조 감소하는지 확인 후 조정.
+- consultation_content IAA (결정 12).
+- 이력: 열린 질문 1~4는 결정 10~13으로 해소 (2026-09-13). T4 제외 (2026-09-11). STT 프로필 확정 (결정 9).
 
 ## 영향
 
 - `src/generate`는 `taxonomy.yaml`의 `format`·`document_types`·`variation`을 읽어 생성. 변형 연산은 값 생성 후 후처리 단계로 구현 (op별 함수 1개). 체크섬 유틸은 ko-pii 구현(MIT) 인용·재사용.
 - `src/eval/metrics.py`는 (tier×kind)×(T-level) 격자와 op별 recall, hard-negative precision을 내야 함. chunk_split은 불연속 스팬 partial-overlap 채점.
 - 논문 §2 표는 `taxonomy.md` §3·§4에서 생성.
-- 다음 단계: 한울 결정(열린 질문 1~4) → accepted → 어노테이션 가이드라인 초안 → 생성 파이프라인.
+- 다음 단계: 생성 파이프라인 (`docs/generation_design.md`, ADR-0002) → 파일럿 100건 → IAA·분포 점검.

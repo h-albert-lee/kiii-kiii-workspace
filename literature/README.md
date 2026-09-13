@@ -10,6 +10,7 @@
 
 - `notes/legal-sources-ko.md` — 개인정보보호법·신용정보법·금융실명법·전자금융거래법 조문 원문 인용 + 식별자 형식/체크섬 표. 택소노미 L tier의 근거.
 - `notes/prior-pii-schemas.md` — Thunder-DeID·KDPII·Jang 2024·ko-pii·Gretel·ai4privacy·TAB 레이블 체계 전체 추출. 매핑표의 근거.
+- `notes/evaluated-models.md` — 선행 PII 벤치마크 12편의 평가 모델 목록 + 2026-09 한국어·오픈 모델 현황·라이선스·GPU 가능 여부. `docs/models.md`의 근거.
 - `notes/stt-korean-numbers.md` — 한국어 상용 STT의 숫자 출력(ITN)·공개 코퍼스 전사 규약·구어 구분자·오류 유형·금융권 마스킹 관행. `variation.stt_profile`의 근거.
 
 ## 노트 쓰는 기준

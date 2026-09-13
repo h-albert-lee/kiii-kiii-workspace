@@ -1,1 +1,1 @@
-task,model,model_type,data_version,prompt_version,n_seeds,f1_micro,f1_micro_std,f1_legal,f1_identifiability,consistency,run_ids,notes
+task,model,model_type,model_group,data_version,prompt_version,n_seeds,f1_micro,f1_micro_std,f1_legal,f1_identifiability,consistency,run_ids,notes

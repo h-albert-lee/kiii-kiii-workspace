@@ -16,8 +16,9 @@
 #   jang2024      PNE tag in Jang et al. 2024 / KDPII; "-" = none
 #   notes         boundary cases, decisions, [?] = unverified
 
-version: 1.2-draft
-updated: 2026-09-11
+version: 1.2
+updated: 2026-09-13
+status: accepted (ADR-0004)
 language: ko
 domain: finance (bank, securities, card, insurance, lending)
 
@@ -57,7 +58,7 @@ categories:
   subtypes: [full_name, given_name_only, romanized]
   thunder_deid: "인명 > 내국인이름 / 외국인이름"
   jang2024: PS_NAME
-  notes: "2자 이름 단독 언급(예: '민지 씨')도 스팬. 직원 이름(상담사)도 포함 — 정보주체가 아니라도 개인정보."
+  notes: "2자 이름 단독 언급(예: '민지 씨')도 스팬. 직원(상담사) 이름도 must_mask — PIPA §2는 정보주체를 고객으로 한정하지 않음. 스팬에 subject_role: customer|staff|third_party 기록, 채점은 분리 보고 (ADR-0004 결정 13)."
 
 - id: rrn
   tier: L
@@ -393,7 +394,7 @@ categories:
   subtypes: [full_dob, birth_year, age, age_band]
   thunder_deid: "연령정보"
   jang2024: "DT_BIRTH / QT_AGE"
-  notes: "PIPA §2상 개인정보이나 CIA 식별정보 열거에 없음 → I. 리뷰어가 L 주장 가능; taxonomy.md에 근거 서술."
+  notes: "I 확정 (ADR-0004 결정 10): CIA 식별정보 열거에 없고, 개인정보위 가명정보 가이드라인(2024)이 연령을 '식별가능정보'로 분류(10세 단위 범주화 권고). TAB도 DEM(quasi). 주민번호 앞 6자리 누출은 rrn/partial_mask가 커버."
 
 - id: gender
   tier: I
@@ -497,7 +498,7 @@ categories:
   subtypes: [complaint_reason, inquiry_topic, request, agent_note]
   thunder_deid: "-"
   jang2024: "-"
-  notes: "가장 경계가 모호한 카테고리. 어노테이션 가이드: '이 문장을 제3자가 알면 고객을 특정·설득하는 데 쓸 수 있는가'. IAA를 별도 보고."
+  notes: "운영 규칙(ADR-0004 결정 12): 스팬 = (a) 고객의 요청·불만 사유 절, (b) 상담사의 고객 상황 메모 절. 상품 일반 문의·절차 안내는 스팬 아님. 판정 질문: '이 절을 제3자가 알면 이 고객을 특정·설득하는 데 쓸 수 있는가'. 파일럿 IAA κ<0.6이면 subtype을 complaint_reason·agent_note로 축소."
 
 - id: service_usage
   tier: I
@@ -524,7 +525,7 @@ categories:
   subtypes: [ip, device_model, install_id]
   thunder_deid: "-"
   jang2024: QT_IP
-  notes: "IP를 L로 올릴지 ADR-0004 열린 질문. v1은 I."
+  notes: "I 확정 (ADR-0004 결정 11): 어느 조문도 IP를 열거하지 않음. 개인정보위 해석은 결합 시 개인정보 — 정확히 I 정의. 인용 가능한 결정례 나오면 v2 재검토."
 
 - id: location_mention
   tier: I
@@ -762,6 +763,9 @@ document_types:   # 합성 코퍼스 생성용 인벤토리 (초안). 각 문서
   - {id: phishing_report, name_ko: 사기·피싱 신고 접수, dominant: [access_credential, phone_no, bank_account_no, transaction_record]}
 
 changelog:
+  - version: "1.2"
+    date: 2026-09-13
+    note: accepted (ADR-0004). 열린 질문 해소 — dob_age·device_network I 유지, consultation_content 운영 규칙, 직원 이름 must_mask + subject_role 분리 보고. 스팬 스키마에 subject_role 필드 추가 (docs/generation_design.md).
   - version: 1.2-draft
     date: 2026-09-11
     note: >

@@ -1,4 +1,4 @@
-# Kiii Kiii Taxonomy v1.2-draft — Rationale, Legal Grounding, and the Variation Axis
+# Kiii Kiii Taxonomy v1.2 (accepted) — Rationale, Legal Grounding, and the Variation Axis
 
 *Source of truth is `taxonomy.yaml`; this document explains it. English, because it feeds the paper's §2. Korean statute names are kept verbatim. Statute quotations are in `literature/notes/legal-sources-ko.md`.*
 
@@ -70,15 +70,17 @@ Tier I is explicitly **not a legal claim**. The paper should say so in one sente
 - **De-identification** is scored on `must_mask` categories (all L-identifiers + sensitive_info) with TAB-style risk-weighted recall, plus `mask_if_linked` categories evaluated under the *linked* condition (the document contains ≥1 identifier of the same subject — always true in our corpus). Utility is information loss on non-PII tokens. **Cross-mention consistency**: the same entity (by gold coreference id) must map to the same surrogate throughout a document.
 - **Identifiability probe** (small, optional): on de-identified outputs, an attacker LLM tries to infer subject attributes from I-tier spans; report inference accuracy. This is the one paragraph that carries the phishing motivation.
 
-## 6. Open questions for review (→ ADR-0004 list)
+## 6. Resolved design questions (ADR-0004 decisions 10–13)
 
 *Removed in v1.1 for weak grounding: `crypto_wallet` (특금법 regulates VASPs, not wallet addresses as personal data) and `lifestyle_indicator` (no statutory or prior-schema lineage; overlaps financial_capacity and transaction_record). Both are recorded under `exclusions` with rationale.*
 
-1. **dob_age: L or I?** PIPA treats DOB as personal information; CIA does not list it as an identifier; 가명정보 가이드라인 treats age as 식별가능정보 (generalise to 10-year bands). v1: I, with `generalize`. Reviewer risk: moderate.
-2. **device_network (IP): L or I?** Korean case law and PIPC guidance often treat IP as personal information [?]. v1: I. Consider promoting if a citable PIPC decision is found.
-3. **consultation_content boundary.** Highest annotation ambiguity. Need a written guideline + IAA on a 100-doc pilot before generation at scale.
-4. **Employee names.** Agent/상담사 names are personal information but not the customer's. v1 tags them as person_name with `subject_role: staff` so analysis can split. Decide whether the de-id task must mask them (likely yes).
-5. **Scoring subtypes.** v1 no. Revisit if card CVC vs PAN or deposit vs securities account shows divergent behaviour worth a table.
+1. **dob_age → I.** Not enumerated in CIA's identifier list; PIPC's 2024 pseudonymisation guideline classes age as 식별가능정보 (identifiable-in-combination) and recommends 10-year banding; TAB treats age as DEM (quasi). The legally protected part of a birth date — the first six digits of an RRN — is already covered by `rrn` via `partial_mask`.
+2. **device_network (IP) → I.** No statute enumerates IP; PIPC's position is "personal information when combined with other information", which is the definition of Tier I. Revisit if a citable PIPC decision appears.
+3. **consultation_content operational rule.** A span is (a) a clause stating the customer's request or complaint reason, or (b) an agent note describing the customer's circumstances. Generic product Q&A and procedural guidance are not spans. Decision test: "could a third party use this clause to identify or persuade this customer?" Pilot IAA on 100 documents is reported; if κ < 0.6 the category is narrowed to `complaint_reason` + `agent_note`.
+4. **Staff names are must_mask** in the de-identification task — PIPA §2 does not restrict data subjects to customers. Every span carries `subject_role ∈ {customer, staff, third_party}` and results are reported both overall and customer-only.
+5. **Subtypes are not scored** in v1.
+6. Level mix and hard-negative rate are pilot-adjustable (see ADR-0004 follow-ups).
+
 
 ## 7. What differs from Thunder-DeID (for the related-work paragraph)
 

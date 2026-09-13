@@ -14,8 +14,9 @@
 | # | 제목 | 상태 | 날짜 |
 |---|---|---|---|
 | 0001 | 프레이밍 A 채택 — 규제 기반 택소노미 + long-context 벤치마크 | accepted | 2026-09-08 |
-| 0002 | 합성 데이터 생성 모델 및 리더보드 제외 규칙 | proposed | — |
+| 0002 | 합성 데이터 생성 방식(슬롯 채우기)·생성 모델·리더보드 표기 규칙 | accepted | 2026-09-13 |
+| 0005 | 리더보드 모델 선정 | accepted | 2026-09-13 |
 | 0003 | 타겟 venue | proposed | — |
-| 0004 | 택소노미 v1 설계 — 2 tier × 2 kind, 조문 단위 근거, 변형 축(T0~T3) | proposed | 2026-09-10 |
+| 0004 | 택소노미 v1 설계 — 2 tier × 2 kind, 조문 단위 근거, 변형 축(T0~T3) | **accepted** | 2026-09-13 |
 
 새 ADR: `cp docs/decisions/0000-template.md docs/decisions/000N-제목.md`
