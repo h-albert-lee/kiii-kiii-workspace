@@ -4,7 +4,7 @@
 코드만이 아니라 자료조사, 결정사항, 회의록, 실험 결과, figure, 논문 본문(Overleaf 연동)까지
 "이 연구에 대해 우리가 알고 있는 것 전부"를 이 레포 하나에서 찾을 수 있게 하는 것이 목표입니다.
 
-> 처음 오셨다면 이 README → `STATUS.md` → `docs/decisions/` 순서로 읽으면 10분 안에 현재 상황을 파악할 수 있습니다.
+> 처음 오셨다면 이 README → `STATUS.md` → `docs/HANDOFF.md` → `docs/decisions/` 순서로. Claude Code 사용자는 `CLAUDE.md`가 자동 로드됩니다.
 
 ## 연구 한 줄 요약
 
@@ -22,6 +22,7 @@ kfinpii/
 ├── OWNERS.md            ← 누가 무엇을 맡는지
 ├── docs/                ← 사람이 읽는 문서
 │   ├── related_work.md  ← 선행연구 조사 + 포지셔닝 (영어, 논문 related work 원천)
+│   ├── HANDOFF.md       ← 세션·도구 인수인계용 전체 맥락 (결정 이력, 현재 상태, 다음 할 일, 함정)
 │   ├── decisions/       ← 결정 기록 (ADR). 번호 순, 한 결정 = 한 파일
 │   ├── meetings/        ← 회의·논의 기록. 날짜 파일명
 │   └── guide/           ← 협업 가이드 (git, Overleaf, 실험 수합, figure)

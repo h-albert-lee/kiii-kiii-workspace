@@ -24,7 +24,7 @@ run.py         CLI: plan / compose / fill / dryrun
 python -m pytest tests -q                                   # 9 tests
 python -m src.generate.run dryrun --text sample.txt --level T2   # LLM 없이 fill+validate 확인
 python -m src.generate.run plan --n 100 --out data/corpus/pilot-0.1/plan.jsonl
-python -m src.generate.run compose --plan … --model gpt-5.5 --out …/raw.jsonl      # API 키 필요
+python -m src.generate.run compose --plan … --model gpt-5.6-sol --out …/raw.jsonl      # API 키 필요
 python -m src.generate.run fill --raw …/raw.jsonl --out …/docs.jsonl
 ```
 
