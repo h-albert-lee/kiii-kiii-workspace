@@ -1,0 +1,28 @@
+# Hand-authored synthetic illustration; not corpus data or model results.
+canonical: 010-3344-5566
+category: phone_no
+subject: A
+panels:
+  - level: T0
+    title: Canonical
+    context: Form field
+    surface: 010-3344-5566
+    note: Standard digit pattern
+  - level: T1
+    title: Formatting
+    context: Copied text
+    surface: 010 3344 5566
+    note: Changed separators
+  - level: T2
+    title: Lexical
+    context: Transcribed speech
+    lines: [공일공 삼삼사사, 오오육육]
+    note: Korean digit words
+  - level: T3
+    title: Structural
+    context: Interleaved dialogue
+    turns:
+      - {subject: A, surface: 010-3344, target: true}
+      - {subject: B, surface: 제 것도요., target: false}
+      - {subject: A, surface: '5566', target: true}
+    note: One entity across turns

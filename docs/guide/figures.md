@@ -22,10 +22,11 @@ figures/
 
 ## 스크립트 규칙
 
-- 입력은 `experiments/results/leaderboard.csv` 또는 `results/*.json`만. 스크립트 안에 숫자를 직접 적지 않습니다.
+- 실험 수치의 입력은 `experiments/results/leaderboard.csv` 또는 `results/*.json`만. 스크립트 안에 실험 수치를 직접 적지 않습니다.
+- 개념도는 `figures/specs/*.yaml`의 명시적 합성 예시와 `taxonomy/taxonomy.yaml`을 사용합니다. 카테고리 수는 taxonomy에서 계산하며 실험 결과와 구분합니다.
 - `python figures/src/fig2_subjects_curve.py` 한 줄로 `out/`에 pdf와 png가 둘 다 나와야 합니다.
 - 스타일은 `_style.py`에서만 정합니다. 개별 스크립트에서 색·폰트를 새로 정하지 않습니다.
-- 크기: 단일 컬럼 3.3in, 더블 컬럼 7in (ACL 템플릿 기준). 폰트 8–9pt.
+- 크기: ACM sigconf 기준 단일 컬럼 약 3.337in, 더블 컬럼 약 7.006in. 폰트 8–9pt. 삽입 시 글자 크기가 바뀌지 않도록 PDF 캔버스 폭을 고정합니다.
 
 ## Overleaf 반영
 
