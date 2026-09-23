@@ -19,7 +19,9 @@
 
 Validation: **106 tests passed** (offline provider fixtures, budget/resume/capacity/export guards, generation/release regressions). Verified release → two-document smoke → actual Presidio/ko-pii extraction/scoring completed. Smoke scores are not benchmark findings. Native paid providers and GPU model loading were not exercised.
 
-Ownership and delivery: [assignment roster](experiments/ASSIGNMENTS.md) (성현: API; 은빈: GPU LLM + OpenMed; 한울: CPU rules; aggregation owner pending). Each operator must push completed results and interruption reports to GitHub under the [result-sharing procedure](experiments/results/README.md); large raw artifacts use repository Release assets. ADR-0030.
+Ownership and delivery: [assignment roster](experiments/ASSIGNMENTS.md) (성현: API; 은빈: GPU LLM + OpenMed; 한울: CPU rules; 사라: context-effect research; operational aggregation owner pending). Each operator must push completed results and interruption reports to GitHub under the [result-sharing procedure](experiments/results/README.md); large raw artifacts use repository Release assets. ADR-0030.
+
+Research work can start immediately: 사라 follows [the context-analysis brief](docs/research/sara-context-analysis.md) to freeze a pre-result analysis plan and implement fixture-tested analysis/figures, then interpret existing paired runs and write concise results/discussion. No additional inference conditions. ADR-0032.
 
 ## Next actions
 

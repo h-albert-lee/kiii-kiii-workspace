@@ -12,7 +12,7 @@
 
 ## 모델별 담당자와 결과 공유
 
-**LLM 4개 × 두 조건 + baseline 3개 = 총 11개 실행 조건**입니다. [담당 배정표](experiments/ASSIGNMENTS.md)에 모델별 담당자·상태·결과 링크를 관리합니다. **성현: Claude·Gemini / 은빈: Qwen·Kanana·OpenMed / 한울: Presidio·ko-pii**로 배정했습니다. 취합 담당자는 미정입니다. Qwen·Kanana는 FP16 + vLLM 계열 서빙 후 API 연결을 권장하며, OpenMed는 별도 Transformers GPU 경로를 사용합니다.
+**LLM 4개 × 두 조건 + baseline 3개 = 총 11개 실행 조건**입니다. [담당 배정표](experiments/ASSIGNMENTS.md)에 모델별 담당자·상태·결과 링크를 관리합니다. **성현: Claude·Gemini / 은빈: Qwen·Kanana·OpenMed / 한울: Presidio·ko-pii**로 배정했습니다. 사라는 **문맥 효과의 가설·통계 분석·오류 해석·결과/논의 집필**을 맡습니다. [사라/에이전트 시작 문서](docs/research/sara-context-analysis.md)에 즉시 할 작업과 4페이지 범위를 정리했습니다. 운영 취합 담당자는 미정입니다. Qwen·Kanana는 FP16 + vLLM 계열 서빙 후 API 연결을 권장하며, OpenMed는 별도 Transformers GPU 경로를 사용합니다.
 
 **각 담당자는 모델·조건별 완료 결과를 이 GitHub 레포에 커밋·푸시합니다.** 위치와 제출 규칙은 [결과 공유 가이드](experiments/results/README.md)를 따릅니다. 중단 시에도 진행 기록과 장애를 푸시하며 부분 점수는 최종 결과로 공유하지 않습니다.
 

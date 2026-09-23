@@ -63,3 +63,7 @@ git push origin HEAD
 팀 레포의 main에서 작업 중이면 main에 푸시합니다. 별도 브랜치라면 `codex/<작업명>` 등을 사용하고 PR 링크를 배정표에 기록합니다. 원격 업데이트로 push가 거부되면 변경을 가져와 충돌을 해결한 뒤 다시 푸시하며 force push하지 않습니다. 다른 담당자의 결과 디렉토리·과거 결과는 덮어쓰지 않습니다. 재실행은 새 run ID와 사유를 기록하고 실패했던 실행도 보존합니다.
 
 공유 완료 기준: GitHub에서 결과/REPORT/artifact 링크를 열 수 있고, 배정표에 담당자·상태·결과 링크가 반영되어 있어야 합니다. 연구책임자에게는 그 링크를 전달합니다.
+
+## 사라의 문맥 효과 분석
+
+모델 실행 결과와 별도로 `experiments/results/analyses/<analysis-id>/`에 입력 run 목록·해시, 분석 설정, 통계 JSON, 표 CSV와 REPORT를 저장하고 푸시합니다. 사전 분석 계획과 실행 전 코드 준비는 [연구 작업 문서](../../docs/research/sara-context-analysis.md)를 따릅니다. 가상 fixture 수치나 미완료 paired run은 본 분석 결과로 올리지 않습니다. 상세 분석은 저장소에 보존하고 논문 본문에는 제한된 표·그림·해석만 반영합니다.
