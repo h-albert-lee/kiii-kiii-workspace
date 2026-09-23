@@ -1,0 +1,16 @@
+{
+  "status": "offline_inventory_not_a_model_run",
+  "documents": 1440,
+  "spans": 218664,
+  "requests_per_model_per_condition": 13723,
+  "context_characters_full": 263942634,
+  "context_characters_local": 44259940,
+  "unrepresentable_spans": 0,
+  "core_chars": 1200,
+  "halo_chars": 1200,
+  "max_output_tokens": 4096,
+  "settings_frozen": false,
+  "tokenizer_preflight": "pending",
+  "tests": "91 passed",
+  "dataset_sha256": "d57b1cb0b8b67fe48a9b45ee985fb01e63b919147a8527f8231459a68b57456d"
+}

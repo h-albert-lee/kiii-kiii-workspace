@@ -39,8 +39,10 @@ def _role(subject: str) -> str:
 
 
 class Filler:
-    def __init__(self, tax: Taxonomy, level: str, rng: random.Random, doc_type: str, stt: bool = False):
+    def __init__(self, tax: Taxonomy, level: str, rng: random.Random, doc_type: str, stt: bool = False,
+                 profiles=None, profile_seed: int | None = None):
         self.tax, self.level, self.rng, self.doc_type, self.stt = tax, level, rng, doc_type, stt
+        self.profiles, self.profile_seed = profiles, profile_seed
         self.entities: dict[tuple[str, str], EntityState] = {}
         self.subjects: dict[str, Subject] = {}
         self._eid = 0
@@ -56,7 +58,22 @@ class Filler:
             if category in ("email", "online_handle"):
                 name = self.entities.get(("person_name", subject))
                 kw["name_meta"] = name.meta if name else None
-            canonical, meta = ids.generate(category, self.rng, **kw)
+            entity_rng = self.rng
+            if self.profiles is not None:
+                from .profiles import profile_rng
+                if subject not in self.profiles:
+                    raise ValueError(f"unknown profile subject: {subject}")
+                profile = self.profiles[subject]
+                if category in ("rrn", "foreigner_reg_no"):
+                    if (category == "rrn") != (profile.nationality == "대한민국"):
+                        raise ValueError(f"identifier nationality mismatch: {category}:{subject}")
+                    kw.update(birth=profile.birth, sex=profile.sex)
+                if category == "passport_no" and profile.nationality != "대한민국":
+                    raise ValueError(f"Korean passport generator used for foreign profile: {subject}")
+                if category in ("rrn", "foreigner_reg_no", "address"):
+                    group = profile.household if category == "address" else subject
+                    entity_rng = profile_rng(self.profile_seed, f"{category}:{group}")
+            canonical, meta = ids.generate(category, entity_rng, **kw)
             self.entities[key] = EntityState(f"e{self._eid}", canonical, meta, {})
         if subject not in self.subjects:
             self.subjects[subject] = Subject(id=subject, role=_role(subject))
@@ -97,6 +114,8 @@ class Filler:
         sid = 0
 
         while i < len(llm_text):
+            if open_tags and llm_text.startswith("{{NEG}}", i):
+                raise ValueError("hard negative inside attribute tag: place {{NEG}} outside all tags")
             m_slot = SLOT_RE.match(llm_text, i)
             m_open = TAG_OPEN_RE.match(llm_text, i)
             m_close = TAG_CLOSE_RE.match(llm_text, i)
@@ -127,6 +146,8 @@ class Filler:
                 category, subject, subtype = m_open.groups()
                 if category not in self.tax.categories or self.tax[category].kind != "attribute":
                     raise ValueError(f"tag must be an attribute category: {category}")
+                if open_tags:
+                    raise ValueError("nested attribute tags are not allowed")
                 open_tags.append((category, subject, subtype, pos)); i = m_open.end()
             elif m_close:
                 category = m_close.group(1)

@@ -1,0 +1,21 @@
+{
+  "model": "REPLACE_VERIFIED_SERVED_MODEL_ID",
+  "model_revision": "REPLACE_IMMUTABLE_VERSION",
+  "tokenizer_revision": "REPLACE_PROVIDER_API_VERSION_OR_TOKENIZER_COMMIT",
+  "operator": "REPLACE_OPERATOR",
+  "run_id": "REPLACE_MMDD_NN",
+  "price_date": "REPLACE_YYYY_MM_DD",
+  "provider": "gemini",
+  "base_url": "https://generativelanguage.googleapis.com/v1beta",
+  "api_key_env": "GEMINI_API_KEY",
+  "input_limit": null,
+  "output_limit": null,
+  "total_limit": null,
+  "input_usd_per_million": null,
+  "output_usd_per_million": null,
+  "budget_usd": 0,
+  "settings_frozen": false,
+  "concurrency": 1,
+  "timeout_seconds": 180,
+  "generation": {}
+}

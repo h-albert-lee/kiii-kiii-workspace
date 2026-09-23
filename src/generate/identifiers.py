@@ -67,10 +67,10 @@ def _rand_birth(rng: random.Random, lo=1950, hi=2004) -> date:
     return start + timedelta(days=rng.randrange((date(hi, 12, 31) - start).days))
 
 
-def generate_rrn(rng: random.Random, post2020_rate: float = 0.3) -> tuple[str, dict]:
-    b = _rand_birth(rng)
+def generate_rrn(rng: random.Random, post2020_rate: float = 0.3, birth: str | None = None, sex: str | None = None) -> tuple[str, dict]:
+    b = date.fromisoformat(birth) if birth else _rand_birth(rng)
     century_male = 1 if b.year < 2000 else 3
-    sex = century_male + rng.randrange(2)          # 1/2 or 3/4
+    sex = century_male + (0 if sex == "M" else 1) if sex else century_male + rng.randrange(2)
     front = b.strftime("%y%m%d")
     if rng.random() < post2020_rate:
         rear = f"{sex}{rng.randrange(10**6):06d}"
@@ -84,9 +84,9 @@ def generate_rrn(rng: random.Random, post2020_rate: float = 0.3) -> tuple[str, d
     return f"{front}-{rear}", meta
 
 
-def generate_foreigner_reg_no(rng: random.Random) -> tuple[str, dict]:
-    b = _rand_birth(rng)
-    sex = (5 if b.year < 2000 else 7) + rng.randrange(2)
+def generate_foreigner_reg_no(rng: random.Random, birth: str | None = None, sex: str | None = None) -> tuple[str, dict]:
+    b = date.fromisoformat(birth) if birth else _rand_birth(rng)
+    sex = (5 if b.year < 2000 else 7) + ((0 if sex == "M" else 1) if sex else rng.randrange(2))
     front = b.strftime("%y%m%d")
     region = f"{rng.randrange(100):02d}{rng.randrange(100):02d}"
     serial = str(rng.randrange(10))

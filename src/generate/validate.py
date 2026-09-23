@@ -70,9 +70,7 @@ def validate(doc: Document, tax: Taxonomy) -> list[str]:
             errors.append(f"attribute span too short {s.id}: {s.surface!r}")
 
     # 6. dominant categories present
-    dom = tax.document_types.get(doc.doc_type, {}).get("dominant", [])
-    dom_ids = {d.split(".")[0].split(":")[-1].strip() for d in dom if not d.startswith("multi-subject")}
-    dom_ids = {d for d in dom_ids if d in tax.categories}
+    dom_ids = set(tax.dominant_ids(doc.doc_type))
     present = {s.category for s in doc.spans}
     if dom_ids and not (dom_ids & present):
         errors.append(f"no dominant category present for {doc.doc_type}: need one of {sorted(dom_ids)}")

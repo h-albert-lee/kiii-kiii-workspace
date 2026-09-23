@@ -184,3 +184,7 @@ Pure evaluation of existing tools (Presidio, ko-pii, OPF, GLiNER, GPT/Claude, Ko
 - Beyond Memorization — https://arxiv.org/abs/2310.07298 ; AutoProfiler — https://aclanthology.org/2026.findings-acl.485/ ; AgentHarm — https://arxiv.org/abs/2410.09024
 - Heiding et al. — https://ieeexplore.ieee.org/document/10466545/ ; https://arxiv.org/abs/2412.00586 ; https://arxiv.org/abs/2511.11759 ; Francia et al. — https://arxiv.org/abs/2406.13049 ; https://arxiv.org/abs/2609.04410
 - The Good and The Bad (RAG) — https://aclanthology.org/2024.findings-acl.267/ ; Spill the Beans — https://arxiv.org/abs/2402.17840 ; InjecAgent — https://aclanthology.org/2024.findings-acl.624/ ; AgentDojo — https://arxiv.org/abs/2406.13352 ; AgentDAM — https://arxiv.org/abs/2503.09780 ; Scammer4U — https://arxiv.org/abs/2606.00497 ; AgentLeak — https://arxiv.org/abs/2602.11510 ; PLeak — https://arxiv.org/abs/2405.06823
+
+## Korean financial evaluation (2026-09-23 update)
+
+The paper now cites TWICE / KorFinMTEB (`hwang2025twice`) and NMIXX / KorFinSTS (`lee2025nmixx`), together with KFinEval-Pilot (`hwang2025kfineval`) and KRX Bench (`son2024krx`). They motivate language- and domain-specific evaluation; Kiii² targets typed PII extraction and controlled surface variation rather than embedding similarity or company/financial knowledge. Verified sources and venue notes: `literature/notes/korean-financial-evaluation.md`.

@@ -1,0 +1,18 @@
+{
+  "dataset": {
+    "repo_id": "nmixx-fin/kiii-kiii",
+    "revision": "2df0589d695c18665fd83d4ca5512e03ca0767f6",
+    "split": "test",
+    "documents": 1440,
+    "release_version": "kiii-v1",
+    "license": "cc-by-nc-4.0"
+  },
+  "training_on_benchmark": false,
+  "calibration": "separate pilot data only",
+  "protocols": [
+    "full_context_targeted",
+    "local_window"
+  ],
+  "headline_excludes_generators": true,
+  "status": "dataset_ready; tokenizer preflight and provider adapters required before paid evaluation"
+}

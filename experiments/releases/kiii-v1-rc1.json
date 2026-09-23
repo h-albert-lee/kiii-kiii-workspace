@@ -1,0 +1,49 @@
+{
+  "version": "kiii-v1-rc1",
+  "expected_documents": 1440,
+  "plan": "data/corpus/main-1440-v1/plan.jsonl",
+  "sources": [
+    {
+      "kind": "jsonl",
+      "path": "data/corpus/main-720-v2/parallel-0920-02/docs.jsonl"
+    },
+    {
+      "kind": "jsonl",
+      "path": "data/corpus/main-720-v2/hybrid-0920-03/astra/docs.jsonl"
+    },
+    {
+      "kind": "jsonl",
+      "path": "data/corpus/main-720-v2/hybrid-0920-03/glm-8/docs.jsonl"
+    },
+    {
+      "kind": "accepted_states",
+      "path": "data/corpus/main-720-v2/completion-0921-glm"
+    },
+    {
+      "kind": "jsonl",
+      "path": "data/corpus/main-720-v2/resume-0921-glm/docs.jsonl"
+    },
+    {
+      "kind": "jsonl",
+      "path": "data/corpus/main-1440-v1/stage2-0921/astra/docs.jsonl"
+    },
+    {
+      "kind": "jsonl",
+      "path": "data/corpus/main-1440-v1/stage2-0921/glm-200/docs.jsonl"
+    },
+    {
+      "kind": "jsonl",
+      "path": "data/corpus/main-1440-v1/completion-0921-glm/docs.jsonl"
+    },
+    {
+      "kind": "jsonl",
+      "path": "data/corpus/main-1440-v1/final12-astra/docs.jsonl"
+    }
+  ],
+  "evaluation_policy": {
+    "split": "test",
+    "documents": 1440,
+    "training_on_benchmark": false,
+    "calibration": "separate pilot corpus"
+  }
+}

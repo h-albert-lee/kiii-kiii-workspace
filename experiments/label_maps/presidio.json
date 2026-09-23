@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "mapping": {
+    "KR_BRN": "business_reg_no",
+    "KR_DRIVER_LICENSE": "driver_license_no",
+    "KR_FRN": "foreigner_reg_no",
+    "KR_PASSPORT": "passport_no",
+    "KR_RRN": "rrn",
+    "EMAIL_ADDRESS": "email",
+    "PHONE_NUMBER": "phone_no",
+    "KI_BANK_ACCOUNT": "bank_account_no",
+    "KI_CARD": "card_no"
+  },
+  "policy": "Frozen source-label mapping; null labels excluded explicitly. Uncovered benchmark categories remain false negatives. No gold-conditioned filtering or boundary expansion."
+}

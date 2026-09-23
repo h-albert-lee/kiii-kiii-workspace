@@ -34,3 +34,10 @@ __pycache__/
 .DS_Store
 .vscode/
 .idea/
+
+# Private endpoint configuration and reproducible-but-large evaluation artifacts
+.env.*
+!.env.example
+*.local.json
+experiments/runs/
+experiments/prepared/

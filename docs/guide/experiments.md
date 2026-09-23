@@ -1,6 +1,14 @@
+# Experiment artifacts
+
+Current execution instructions: [experiment-runbook.md](experiment-runbook.md). Native output is `result.json` from `src.eval.execute finalize` or `src.eval.baselines`, with `manifest`, `execution`, `metrics`, category/axis tables and `per_document`. Source/data/config hashes and native raw responses are retained alongside it. `src.eval.export` produces one CSV row per model/condition; use `src.eval.run compare` for paired document bootstrap.
+
+The following older schema is historical and is not the implemented API. ADR-0029 supersedes its multi-seed CSV/flat metadata assumptions. Do not invent absent metrics to satisfy this example.
+
 # 실험 결과 수합 가이드
 
 여러 사람이 각자 돌린 결과를 한 표로 모으는 방법입니다. 핵심은 **파일 하나 = 실행 하나**, **표 하나 = 논문 표 하나**.
+
+2026-09-20: 새 오프라인 평가 CLI와 실제 출력 스키마는 [evaluation.md](evaluation.md), 실험 조건은 ADR-0020 참조. 아래 JSON은 과거 수합 예시이며 아직 구현되지 않은 지표를 포함한다. 현재 구현은 `metrics.exact_micro`, `category_character_micro`, `entity_all_mentions_exact_recall`, `hard_negative_false_positive_rate`, `non_pii_character_mask_rate`, `by_category`, `by_axis`, `tier_kind_tlevel`, `op_exact_recall`, `subject_role_exact_recall`, `per_document`, `reliability`를 출력한다. TAB risk-weighted recall과 모델의 entity linking 일관성은 아직 구현하지 않았다.
 
 ## 실행 ID
 

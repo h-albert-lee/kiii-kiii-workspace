@@ -1,0 +1,5 @@
+-r requirements-eval.txt
+# GPU host: install a CUDA-compatible torch wheel for that host first.
+# Requires native OpenAIPrivacyFilterForTokenClassification support.
+transformers>=5.5,<6
+torch>=2.6

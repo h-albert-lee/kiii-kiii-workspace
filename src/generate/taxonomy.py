@@ -84,6 +84,17 @@ class Taxonomy:
         return [c.id for c in self.categories.values()
                 if (tier is None or c.tier == tier) and (kind is None or c.kind == kind)]
 
+    def dominant_ids(self, doc_type: str) -> list[str]:
+        result = []
+        for entry in self.document_types.get(doc_type, {}).get("dominant", []):
+            # YAML parses the unquoted "multi-subject: person_name" hint as a mapping.
+            if isinstance(entry, dict):
+                entry = entry["multi-subject"]
+            category = entry.split(":")[-1].strip().split(".")[0]
+            if category in self.categories and category not in result:
+                result.append(category)
+        return result
+
     def ops_for(self, category: Category, max_level: str) -> list[VariationOp]:
         li = self.levels.index(max_level)
         return [o for o in self.ops.values() if self.levels.index(o.level) <= li and o.applies(category)]
