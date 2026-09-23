@@ -10,6 +10,12 @@
 - 준비한 비교군: Claude Sonnet 5, Gemini 3.8 Flash, Qwen3.6-35B-A3B, Kanana2-30B-A3B-Instruct2601 + Presidio, ko-pii, OpenMed. 이름은 계획이며 **실제 접근 가능한 모델 ID·revision은 실행 담당자가 확인**합니다.
 - GLM/Astra는 데이터 생성기이므로 본 탐지 리더보드에서 제외합니다. 학습·validation 분할이나 이 데이터로 학습하는 베이스라인은 없습니다.
 
+## 모델별 담당자와 결과 공유
+
+**LLM 4개 × 두 조건 + baseline 3개 = 총 11개 실행 조건**입니다. [담당 배정표](experiments/ASSIGNMENTS.md)에 모델별 담당자·상태·결과 링크를 관리합니다. 담당자 이름은 현재 미정이며 API / GPU LLM / baseline / 취합 역할로 나눠 배정할 수 있습니다.
+
+**각 담당자는 모델·조건별 완료 결과를 이 GitHub 레포에 커밋·푸시합니다.** 위치와 제출 규칙은 [결과 공유 가이드](experiments/results/README.md)를 따릅니다. 중단 시에도 진행 기록과 장애를 푸시하며 부분 점수는 최종 결과로 공유하지 않습니다.
+
 ## 실험을 맡은 분 / 에이전트는 여기서 시작
 
 1. [AGENTS.md](AGENTS.md): 연구 결정과 작업 규칙.
@@ -19,7 +25,7 @@
 
 담당자가 에이전트에게 그대로 전달할 요청:
 
-> 이 레포의 AGENTS.md와 docs/guide/experiment-runbook.md를 읽고 실험 환경을 준비해줘. 공개된 고정 revision 데이터로 설치·오프라인 테스트·연결 점검을 수행하고, 별도 파일럿에서 설정을 고정해줘. 모델별 실제 ID, endpoint, revision, 토큰 한도, 단가와 배정 예산을 확인한 뒤 모든 모델·두 조건의 공통 평가 집합을 고정해줘. 키는 환경변수로만 받고, 기존 완료 요청은 다시 호출하지 마. 본 실행 전에 예상 비용과 확정 설정을 알려주고, 내가 승인한 예산 안에서 실행·재개·채점해줘. 논문 수치를 추정하거나 smoke 결과를 리더보드에 넣지 마.
+> 이 레포의 AGENTS.md와 docs/guide/experiment-runbook.md를 읽고 실험 환경을 준비해줘. 공개된 고정 revision 데이터로 설치·오프라인 테스트·연결 점검을 수행하고, 별도 파일럿에서 설정을 고정해줘. 모델별 실제 ID, endpoint, revision, 토큰 한도, 단가와 배정 예산을 확인한 뒤 모든 모델·두 조건의 공통 평가 집합을 고정해줘. 키는 환경변수로만 받고, 기존 완료 요청은 다시 호출하지 마. 본 실행 전에 예상 비용과 확정 설정을 알려주고, 내가 승인한 예산 안에서 실행·재개·채점해줘. experiments/ASSIGNMENTS.md에서 내 담당 모델을 확인하고, 완료 결과와 재현 자료를 experiments/results/에 정리해 GitHub에 커밋·푸시해줘. 중단 시 진행 기록도 공유해줘. 논문 수치를 추정하거나 smoke 결과를 리더보드에 넣지 마.
 
 ## 빠른 로컬 검증
 
@@ -48,4 +54,4 @@ python -m pytest tests -q
 | `paper/` | 별도 git submodule, Overleaf 연결 논문 |
 | `experiments/results/` | 검증된 결과·리더보드; 현재 헤더만 존재 |
 
-실제 데이터·응답·개인 설정은 git에 넣지 않습니다. `experiments/runs/`의 실행 저널과 결과는 담당자가 별도로 백업합니다. Overleaf 코멘트를 보존해야 하므로 논문 파일을 통째로 교체하거나 무조건 동기화하지 않습니다.
+데이터 본문·키·개인 접속 설정은 git에 넣지 않습니다. `experiments/runs/`는 로컬 재개용으로 보존하고, 최종 결과·재현 메타데이터는 `experiments/results/`에 복사해 푸시합니다. 큰 raw 응답·저널은 같은 GitHub 레포의 Release asset으로 공유하고 결과 보고서에 링크·해시를 남깁니다. Overleaf 코멘트를 보존해야 하므로 논문 파일을 통째로 교체하거나 무조건 동기화하지 않습니다.

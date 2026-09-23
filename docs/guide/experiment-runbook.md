@@ -2,6 +2,8 @@
 
 2026-09-23. 저장소 루트에서 실행합니다. 이 문서는 새 담당자가 환경을 준비하고 실제 실험을 수행하는 순서입니다. 연구 결정은 ADR-0019/0020/0026/0029를 따릅니다.
 
+먼저 [담당 배정표](../../experiments/ASSIGNMENTS.md)에 담당자와 run ID를 기록합니다. **완료 결과는 [공유 규칙](../../experiments/results/README.md)에 따라 이 GitHub 저장소에 커밋·푸시**합니다. 로컬 저장만으로 작업을 완료하지 않습니다.
+
 ## 1. 환경과 담당자 입력
 
 README의 Python 3.12 설치·전체 테스트를 먼저 수행합니다. API 실행에는 GPU가 필요 없습니다. ko-pii 1.16.0, presidio-analyzer 2.2.364를 고정했습니다. 모델 서버는 다른 환경에서 운영해도 됩니다.
@@ -132,6 +134,8 @@ python -m src.eval.baselines --name openmed \
 OpenMed 구현은 토큰 logits argmax + BIOES grouping이며 OpenMed wrapper의 Viterbi decoding 결과와 동일하다고 주장하지 않습니다. 창 설정은 별도 pilot에서 고정합니다. 모든 창을 처리하고 정확히 중복된 span만 제거합니다. 경계의 충돌/조각은 gold로 고치지 않습니다. 오류가 나면 현재 문서 기록 전에 중단하므로 같은 명령으로 재개할 수 있습니다. 원본 source label도 보관합니다.
 
 ## 6. 결과 제출
+
+각 모델·조건이 전체 완료되면 result와 재현 자료를 `experiments/results/runs/<run-id>/`에 정리하여 커밋·푸시하고 배정표에 링크를 남깁니다. 큰 원본 응답·계측·저널은 같은 GitHub 레포의 Release asset으로 올립니다. 구체적인 파일 목록·명령·중단 시 공유 방식은 [결과 공유 가이드](../../experiments/results/README.md)를 따릅니다.
 
 ```bash
 python -m src.eval.run compare --first experiments/runs/claude-full/result.json \

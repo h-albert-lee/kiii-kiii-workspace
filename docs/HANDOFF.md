@@ -31,3 +31,7 @@ Calibrate shared output partition/budget and provider settings on independent sy
 - Data provenance: experiments/releases/, docs/releases/, docs/guide/huggingface-release.md.
 - Current tasks: STATUS.md. Historical generation notes remain for reproducibility only.
 - Paper: separate submodule, XeLaTeX, anonymous review settings, `\anonv` macro; preserve native Overleaf comment threads.
+
+## Assignment and result delivery update
+
+ADR-0030: experiments/ASSIGNMENTS.md is the owner/status/result-link roster (names pending). Every operator must commit and push finalized result bundles to experiments/results/runs/<run-id>/ and report interruptions on GitHub. Large raw artifacts use the same repository’s Release assets with hashes. See experiments/results/README.md and docs/templates/experiment-report.md. This supersedes any instruction to keep results only in local backups.
