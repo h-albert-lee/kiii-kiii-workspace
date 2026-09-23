@@ -1,19 +1,26 @@
 # 실험 담당 배정표
 
-2026-09-23. **담당자 이름은 아직 미정**입니다. 아래 묶음은 배정 제안이며 실제 배정을 뜻하지 않습니다. 연구 책임자가 이름/GitHub ID를 채우고, 담당자는 착수 전에 이 표의 상태와 run ID를 커밋·푸시합니다. 한 사람이 여러 묶음을 맡아도 됩니다.
+2026-09-23. **사용자 확정 배정: API는 성현, GPU 실험은 은빈, GPU 불필요 규칙 베이스라인은 한울.** GitHub ID는 각 담당자가 기입합니다. 담당자는 착수 전에 상태와 run ID를 커밋·푸시합니다. 취합 담당자는 별도 지정 전까지 미정입니다.
 
 | 묶음 | 계획 모델 | 실행 조건 | 담당자 / GitHub ID | 상태 | run ID / 결과 링크 |
 |---|---|---|---|---|---|
-| A · API | Claude Sonnet 5 | full_context_targeted + local_window | 미정 | 미착수 | — |
-| A · API | Gemini 3.8 Flash | full_context_targeted + local_window | 미정 | 미착수 | — |
-| B · GPU LLM | Qwen3.6-35B-A3B | full_context_targeted + local_window | 미정 | 미착수 | — |
-| B · GPU LLM | Kanana2-30B-A3B-Instruct2601 | full_context_targeted + local_window | 미정 | 미착수 | — |
-| C · 베이스라인 | Presidio 한국형 규칙 + 계좌·카드 규칙 | 동일 평가 문서 전체, 1회 | 미정 | 미착수 | — |
-| C · 베이스라인 | ko-pii 1.16.0 | 동일 평가 문서 전체, 1회 | 미정 | 미착수 | — |
-| C · 베이스라인 | OpenMed/privacy-filter-multilingual | 동일 평가 문서, 겹침 토큰 창, 1회 | 미정 | 미착수 | — |
+| A · API | Claude Sonnet 5 | full_context_targeted + local_window | 성현 | 미착수 | — |
+| A · API | Gemini 3.8 Flash | full_context_targeted + local_window | 성현 | 미착수 | — |
+| B · GPU LLM | Qwen3.6-35B-A3B | full_context_targeted + local_window | 은빈 | 미착수 | — |
+| B · GPU LLM | Kanana2-30B-A3B-Instruct2601 | full_context_targeted + local_window | 은빈 | 미착수 | — |
+| C · CPU 베이스라인 | Presidio 한국형 규칙 + 계좌·카드 규칙 | 동일 평가 문서 전체, 1회 | 한울 | 미착수 | — |
+| C · CPU 베이스라인 | ko-pii 1.16.0 | 동일 평가 문서 전체, 1회 | 한울 | 미착수 | — |
+| B · GPU 베이스라인 | OpenMed/privacy-filter-multilingual | 동일 평가 문서, 겹침 토큰 창, 1회 | 은빈 | 미착수 | — |
 | D · 취합 | 공통 설정·평가 집합 확정 / 결과 통합 | 전체 모델 계측 취합, cohort gate, CSV·bootstrap | 미정 | 미착수 | — |
 
 총 **7개 시스템, 11개 실행 조건**입니다(LLM 4×2 + baseline 3×1). 이름은 계획 모델명이며 served model ID·revision·접근 가능 여부는 각 담당자가 확인합니다. 임의로 다른 모델로 바꾸지 않습니다. GLM/Astra는 생성기이므로 헤드라인 탐지 실험에서 제외합니다. 본 데이터로 학습하는 baseline도 없습니다.
+
+## GPU 실행 권장 방식
+
+- **은빈 — Qwen/Kanana:** FP16을 기본 권장 정밀도로 삼고, vLLM 등으로 모델을 서빙한 뒤 평가 실행기를 OpenAI-compatible API에 연결합니다. 현재 어댑터는 `/v1/chat/completions`와 실제 chat template을 적용하는 `/tokenize`를 사용합니다. 다른 서버도 이 계약을 충족하는지 먼저 확인합니다.
+- 모델 아키텍처·GPU·서버 버전의 FP16 지원과 메모리 여유는 별도 pilot에서 검증합니다. 자동 dtype이나 양자화로 조용히 바꾸지 않습니다. FP16이 지원되지 않거나 안정성 문제가 있으면 BF16 등 대안과 사유를 공유·기록한 뒤 설정을 확정합니다.
+- **은빈 — OpenMed:** GPU 베이스라인도 담당합니다. 현재 구현은 Transformers token-classification 경로이며 vLLM chat API에 그대로 연결하는 모델이 아닙니다. 해당 경로로 실행하고 dtype·가중치 revision·GPU·창 크기를 기록합니다. LLM의 FP16 서빙 권장을 OpenMed에 자동 적용하지 않습니다.
+- **한울 — Presidio/ko-pii:** CPU에서 실행합니다.
 
 ## 역할과 전달 순서
 

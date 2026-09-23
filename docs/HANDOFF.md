@@ -34,4 +34,6 @@ Calibrate shared output partition/budget and provider settings on independent sy
 
 ## Assignment and result delivery update
 
-ADR-0030: experiments/ASSIGNMENTS.md is the owner/status/result-link roster (names pending). Every operator must commit and push finalized result bundles to experiments/results/runs/<run-id>/ and report interruptions on GitHub. Large raw artifacts use the same repository’s Release assets with hashes. See experiments/results/README.md and docs/templates/experiment-report.md. This supersedes any instruction to keep results only in local backups.
+ADR-0030: experiments/ASSIGNMENTS.md is the owner/status/result-link roster (성현: Claude/Gemini; 은빈: Qwen/Kanana/OpenMed; 한울: Presidio/ko-pii; aggregation pending). Every operator must commit and push finalized result bundles to experiments/results/runs/<run-id>/ and report interruptions on GitHub. Large raw artifacts use the same repository’s Release assets with hashes. See experiments/results/README.md and docs/templates/experiment-report.md. This supersedes any instruction to keep results only in local backups.
+
+GPU deployment preference (ADR-0031): Qwen/Kanana should use verified FP16 vLLM-compatible serving and API-connected evaluation; preserve actual tokenizer/template counting. Verify support before freezing; record any dtype fallback explicitly. OpenMed remains a separate Transformers token-classification GPU workload assigned to 은빈, not a chat-completion endpoint.

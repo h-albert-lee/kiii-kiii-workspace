@@ -31,6 +31,8 @@ cp experiments/configs/evaluation/kanana.example.json experiments/configs/evalua
 
 환경변수: `ANTHROPIC_API_KEY`, `GEMINI_API_KEY`, `QWEN_API_KEY`, `KANANA_API_KEY`. 인증 없는 로컬 서버는 해당 `api_key_env` 항목을 삭제합니다. `.env`를 자동으로 읽지 않으므로 셸/비밀 관리 도구로 주입하세요. 키를 커맨드 인자나 문서에 붙이지 않습니다.
 
+**담당: 성현(API Claude/Gemini), 은빈(GPU Qwen/Kanana/OpenMed), 한울(CPU Presidio/ko-pii).** Qwen/Kanana는 **FP16으로 vLLM 등에서 서빙하고 평가 실행기를 API로 연결하는 방식**을 권장합니다. 실제 가중치·GPU·서버 버전의 FP16 지원/안정성·메모리 요구량을 pilot에서 확인합니다. dtype을 자동 결정하거나 양자화로 묵시적으로 바꾸지 않으며, 대안이 필요하면 사유와 실제 정밀도를 공유하고 고정합니다. 서버 실행 명령·버전·dtype·tensor parallel 설정을 결과 REPORT에 보관합니다.
+
 Qwen/Kanana는 OpenAI-compatible **vLLM 서버 + 네이티브 `/tokenize`**를 전제로 합니다. `/chat/completions`만 제공하는 서비스는 정확한 계측 어댑터 없이 사용하지 않습니다. 서버가 사용하는 모델·tokenizer·chat template·추론 설정을 고정하고 서버 로그와 실행 명령을 보관합니다. `/v1` inference 주소와 같은 origin의 `/tokenize`를 사용합니다. private HTTP는 필요할 때만 `allow_private_http: true`를 명시합니다. `chat_template_kwargs`를 쓰면 generation과 tokenize_options에 동일하게 넣습니다. 토큰 수가 생성 요청의 실제 framing과 일치하는지 별도 파일럿에서 확인합니다.
 
 ## 2. 데이터 고정 / 파일럿
@@ -121,6 +123,8 @@ python -m src.eval.execute finalize \
 python -m src.eval.baselines --name presidio --directory experiments/prepared/full_context_targeted --output experiments/runs/presidio
 python -m src.eval.baselines --name ko-pii --directory experiments/prepared/full_context_targeted --output experiments/runs/ko-pii
 ```
+
+**OpenMed 담당도 은빈입니다.** OpenMed는 chat LLM이 아닌 토큰 분류 모델이므로 현재 구현의 Transformers 경로로 실행합니다. FP16 vLLM chat 서빙 지침을 그대로 적용하지 않습니다.
 
 OpenMed는 호스트에 맞는 torch/CUDA와 `requirements-eval-openmed.txt`를 별도 환경에 설치합니다. native `OpenAIPrivacyFilterForTokenClassification`을 제공하는 transformers가 필요합니다. 설정만 맞춰 놓은 상태이며 **이 저장소 준비 세션에서 실제 GPU 모델을 로드/검증한 것은 아닙니다**. 설치 버전·모델 config 호환을 연결 점검에서 확인하고 고정하세요.
 

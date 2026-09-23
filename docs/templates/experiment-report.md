@@ -11,6 +11,8 @@
 - tokenizer / chat template / server revision:
 - core / halo / 최대 출력 / sampling / reasoning 설정:
 - 실행 환경 / dependency inventory / GPU(해당 시):
+- 실제 dtype / 양자화 여부 / tensor parallel / 서버 실행 명령(키 제외):
+- 권장 FP16 대신 다른 설정을 사용했다면 사유:
 - 배정 예산 / 단가·확인일 / 사용·예약 비용 / 실제 청구 차이:
 - 완료 요청 또는 문서 수 / 전체 수 / 실패·uncertain 수:
 - 장애·중단·한계와 처리:
