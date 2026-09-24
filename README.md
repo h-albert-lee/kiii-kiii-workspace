@@ -2,7 +2,7 @@
 
 **Korean Identifiers, Identifiability, and Ill-formed Inputs — A Regulation-Grounded Benchmark for Financial PII Detection.**
 
-한국 금융 문서의 개인정보 탐지를 평가하는 연구 저장소입니다. 법령 기반 36개 카테고리, 표면형 변형 T0–T3, 다중 정보주체·긴 문서를 다룹니다. **데이터 생성·공개는 완료했고, 현재는 본 실험 실행 준비 단계입니다. 실제 탐지 모델의 리더보드 결과는 아직 없습니다.**
+한국 금융 문서의 개인정보 탐지를 평가하는 연구 저장소입니다. 법령 기반 36개 카테고리, 표면형 변형 T0–T3, 다중 정보주체·긴 문서를 다룹니다. **데이터 생성·공개는 완료했고, 현재는 본 실험 실행 준비 단계입니다. Presidio·ko-pii는 전체 1,440건 실행을 완료했고, LLM 실험과 공통 평가 집합 확정은 남아 있습니다.**
 
 - 공개 데이터: [nmixx-fin/kiii-kiii](https://huggingface.co/datasets/nmixx-fin/kiii-kiii), **1,440문서 / 218,664스팬**, 단일 `test`.
 - 라이선스: **데이터 CC BY-NC 4.0**. Preview 버전이며 정식 버전은 추후 공개합니다. 코드·제3자 모델의 라이선스를 이 데이터 라이선스로 대체하지 않습니다.
@@ -54,6 +54,6 @@ python -m pytest tests -q
 | `docs/decisions/` | ADR: 최근 결정이 이전 결정을 대체 |
 | `literature/`, `docs/related_work.md` | 선행연구·BibTeX; TWICE/NMIXX 포함 |
 | `paper/` | 별도 git submodule, Overleaf 연결 논문 |
-| `experiments/results/` | 검증된 결과·리더보드; 현재 헤더만 존재 |
+| `experiments/results/` | 완료한 CPU baseline 결과·원본 예측; 통합 리더보드는 공통 cohort 확정 후 |
 
 데이터 본문·키·개인 접속 설정은 git에 넣지 않습니다. `experiments/runs/`는 로컬 재개용으로 보존하고, 최종 결과·재현 메타데이터는 `experiments/results/`에 복사해 푸시합니다. 큰 raw 응답·저널은 같은 GitHub 레포의 Release asset으로 공유하고 결과 보고서에 링크·해시를 남깁니다. Overleaf 코멘트를 보존해야 하므로 논문 파일을 통째로 교체하거나 무조건 동기화하지 않습니다.

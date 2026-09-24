@@ -30,6 +30,6 @@ Read README.md → STATUS.md → docs/guide/experiment-runbook.md before acting.
 
 ## Current remaining work
 
-Execution code exists. Rules and offline fixtures are tested; GPU OpenMed/Qwen/Kanana must be exercised on the operator's environment. No API model is required for the accepted core roster. Follow the runbook to provision, calibrate on separate pilot data, freeze, count, approve budget, and run. Do not describe the benchmark experiments as complete.
+Execution code exists. CPU Presidio/ko-pii completed all 1,440 documents on 2026-09-24; results and raw predictions are in experiments/results/runs/0924-01-*-full1440. Preserve these and rescore stored predictions on the eventual common LLM cohort; do not tune rules/maps from these outcomes. GPU OpenMed/Qwen/Kanana must be exercised on the operator's environment. No API model is required for the accepted core roster. Follow the runbook to provision, calibrate on separate pilot data, freeze, count, approve budget, and run. Do not describe the benchmark experiments as complete.
 
 Kanana-2-3B has a published 32,768-token limit; measure the full prompt plus output reservation and report common-cohort exclusions before inference. Do not silently shorten documents or substitute a bigger model. Model/server/tokenizer revisions, actual limits, dtype and hardware availability remain to be verified.

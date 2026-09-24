@@ -2,7 +2,7 @@
 
 ## Current outcome
 
-**Dataset complete and public; detector execution infrastructure prepared; actual detector experiments not yet run.** Experiment collaborators should begin with README.md → AGENTS.md → docs/guide/experiment-runbook.md.
+**Dataset complete and public; detector execution infrastructure prepared; CPU baseline runs complete on all 1,440 documents; LLM/GPU experiments pending.** Experiment collaborators should begin with README.md → AGENTS.md → docs/guide/experiment-runbook.md.
 
 | Item | Status |
 |---|---|
@@ -12,10 +12,10 @@
 | Practitioner review | Five financial-sector-experienced reviewers, each a different 10% sample, broad appropriateness only; not span validation/IAA |
 | Evaluation | Frozen full/local requests, exact/native token counters, common-capacity gate, budget/resume journal, strict metrics, breakdowns, bootstrap, CSV export |
 | Model adapters | Claude/Gemini/vLLM implemented and fixture-tested; native paid calls and GPU servers still require operator pilot |
-| Baselines | Presidio and ko-pii installed and exercised; OpenMed native token adapter implemented, GPU loading untested |
+| Baselines | Presidio/ko-pii completed all 1,440 docs on 9/24; raw predictions + results pushed under experiments/results/runs. Common LLM cohort rescore pending. OpenMed GPU untested |
 | Operator docs | README, AGENTS, runbook, config templates, label-map limitations prepared |
 | Paper/related work | Dataset/protocol/review scope updated; TWICE/NMIXX included; actual results remain placeholders |
-| Leaderboard | No detector scores yet; historical header only |
+| Leaderboard | Two full-release baseline results available; consolidated headline table deferred until common cohort is frozen |
 
 Validation: **106 tests passed** (offline provider fixtures, budget/resume/capacity/export guards, generation/release regressions). Verified release → two-document smoke → actual Presidio/ko-pii extraction/scoring completed. Smoke scores are not benchmark findings. Native paid providers and GPU model loading were not exercised.
 
@@ -24,6 +24,13 @@ Ownership and delivery: [assignment roster](experiments/ASSIGNMENTS.md) (성현:
 Research work can start immediately: 사라 follows [the context-analysis brief](docs/research/sara-context-analysis.md) to freeze a pre-result analysis plan and implement fixture-tested analysis/figures, then interpret existing paired runs and write concise results/discussion. No additional inference conditions. ADR-0032.
 
 Accepted roster (ADR-0034, 2026-09-24): Qwen3.5-2B, Qwen3.5-4B, Kanana-2-3B-Instruct + Presidio/ko-pii/OpenMed = **6 systems / 9 conditions**. Gemini is optional and deferred; Claude and previous large MoE runs are out of current scope. Config matrix and research handoff updated. GPU capacity and actual token limits remain unverified; no new inference/spending initiated.
+
+## CPU baseline execution — 2026-09-24
+
+한울 담당 Presidio/ko-pii 모두 1,440/1,440문서 완료, 유료 API 호출 0. 고정된 규칙과 라벨 매핑을 사용했으며 결과를 보고 수정하지 않았습니다. 전체 36-category strict micro F1: Presidio 0.10149098, ko-pii 0.09426134. 정답 218,664스팬을 모두 분모에 포함합니다. 이는 전체 릴리스 결과이며 LLM 공통 cohort가 확정되면 저장 예측을 동일 문서 집합으로 재집계합니다.
+
+- [Presidio report](experiments/results/runs/0924-01-presidio-full1440/REPORT.md)
+- [ko-pii report](experiments/results/runs/0924-01-ko-pii-full1440/REPORT.md)
 
 ## Next actions
 

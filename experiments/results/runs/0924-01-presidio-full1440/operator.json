@@ -1,0 +1,14 @@
+{
+  "operator": "한울",
+  "model": "presidio",
+  "started_at": "2026-09-24T06:34:00.569407+00:00",
+  "git_commit": "0f24a4962aeb9298282d03e5790a55d80de2098c",
+  "platform": "macOS-26.5-arm64-arm-64bit",
+  "python": "3.12.13",
+  "scope": "all_1440_baseline_complete_pending_common_llm_cohort",
+  "paid_api_calls": 0,
+  "status": "complete",
+  "elapsed_seconds": 25.16247845790349,
+  "finished_at": "2026-09-24T06:34:25.731864+00:00",
+  "documents": 1440
+}

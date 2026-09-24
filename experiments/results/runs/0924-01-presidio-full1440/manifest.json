@@ -1,0 +1,41 @@
+{
+  "task": "span_extraction",
+  "protocol": {
+    "mode": "full_context_targeted",
+    "core_chars": 1200,
+    "halo_chars": 1200,
+    "max_output_tokens": 4096,
+    "version": "span_p1"
+  },
+  "git_commit": "0f24a4962aeb9298282d03e5790a55d80de2098c",
+  "created_at": "2026-09-24T06:33:48.916233+00:00",
+  "taxonomy_sha256": "b9ec20e3491f9dcdabb626fc04b1b85cc73bb45ebbe9de69849a1c402c00ae7e",
+  "data_sha256": "d57b1cb0b8b67fe48a9b45ee985fb01e63b919147a8527f8231459a68b57456d",
+  "requests_sha256": "3542d46ed09a04f3ef09f2d6b368b756cf0bfe5746444fe3927aea39022e454f",
+  "documents": 1440,
+  "requests": 13723,
+  "source_sha256": {
+    "metrics.py": "cefad2855667643f524db9eedc45ec04866333eff6cbccd76f8eb557be77a72e",
+    "baselines.py": "6e98d212442e56cd8a8a4f3e5ebe0ebfe17001717f78819e4e108c9bccd8e628",
+    "run.py": "327b6b74d3733b2bb37d9eb5e6ade73946a3746d2e7d3dcb31be621c4507d30a",
+    "cohort.py": "da85e4f366023d0f4eaab66a22da2a54f2d7f0a56db7ac9859fc4cbe5e7107d0",
+    "protocol.py": "42a2eb13e5da34a8c67a8939fffb81c17ff9300a23ec3733bab7f55f2cfaf236",
+    "execute.py": "002dda31040c576aae4d33a803b1c9a42e47643c88e29ee6b68c093c8eb5a77a",
+    "__init__.py": "93dc538d3ddafec97e1a0337b78ae6dcf472988783f5d043d2a1bcc1fdb4d020",
+    "export.py": "4c629bb28501f5a11d87cf5ea0e1d1c056c925014809a7f2dd27a88db421a6b9",
+    "dataset.py": "80cae825524e0c8741ca83894f95859a1ca96b245ba70e8d12b5b4802a030836",
+    "providers.py": "ccc2d49495c1fbf77db1a4f3d927aa4c65a5a4a72436207a184b205c2b7e48f4"
+  },
+  "purpose": "benchmark",
+  "dataset_source": {
+    "release_version": "kiii-v1",
+    "release_manifest_sha256": "85581be7e1635368b576b98c7155d7380e68428af96b1e4d53ee3d5d3140e83b",
+    "split": "test",
+    "limit": null,
+    "documents": 1440,
+    "selected_doc_ids": null,
+    "provenance": {
+      "kind": "verified_local_release"
+    }
+  }
+}

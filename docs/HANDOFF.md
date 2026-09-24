@@ -1,3 +1,5 @@
+> 2026-09-24 execution update: Presidio and ko-pii completed all 1,440 documents. See experiments/results/runs/0924-01-{presidio,ko-pii}-full1440/REPORT.md. No rule/map tuning from outcomes. Full-release results are retained; rescore stored predictions on the eventual common LLM cohort before combined ranking. The older no-results notes below are historical.
+
 # Current scope update — 2026-09-24
 
 ADR-0034 accepts three small local LLMs (Qwen3.5-2B/4B, Kanana-2-3B-Instruct) and three existing baselines: six systems, nine conditions. Gemini is optional/deferred, Claude and the previous large MoE models are outside the current run scope. Use the updated matrix; do not restart older four-LLM runs. The history below preserves implemented capabilities, not an instruction to run every adapter.
