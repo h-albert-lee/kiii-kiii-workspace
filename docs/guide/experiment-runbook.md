@@ -1,6 +1,6 @@
 # 본 실험 실행 가이드
 
-2026-09-23. 저장소 루트에서 실행합니다. 이 문서는 새 담당자가 환경을 준비하고 실제 실험을 수행하는 순서입니다. 연구 결정은 ADR-0019/0020/0026/0029를 따릅니다.
+2026-09-24. 저장소 루트에서 실행합니다. 이 문서는 새 담당자가 환경을 준비하고 실제 실험을 수행하는 순서입니다. 연구 결정은 ADR-0020/0026/0029/0034를 따릅니다.
 
 먼저 [담당 배정표](../../experiments/ASSIGNMENTS.md)에 담당자와 run ID를 기록합니다. **완료 결과는 [공유 규칙](../../experiments/results/README.md)에 따라 이 GitHub 저장소에 커밋·푸시**합니다. 로컬 저장만으로 작업을 완료하지 않습니다.
 
@@ -23,15 +23,14 @@ README의 Python 3.12 설치·전체 테스트를 먼저 수행합니다. API �
 템플릿을 복사합니다. `REPLACE`, null, `settings_frozen: false`는 의도적인 실행 차단입니다.
 
 ```bash
-cp experiments/configs/evaluation/claude.example.json experiments/configs/evaluation/claude.local.json
-cp experiments/configs/evaluation/gemini.example.json experiments/configs/evaluation/gemini.local.json
-cp experiments/configs/evaluation/qwen.example.json experiments/configs/evaluation/qwen.local.json
+cp experiments/configs/evaluation/qwen-2b.example.json experiments/configs/evaluation/qwen-2b.local.json
+cp experiments/configs/evaluation/qwen-4b.example.json experiments/configs/evaluation/qwen-4b.local.json
 cp experiments/configs/evaluation/kanana.example.json experiments/configs/evaluation/kanana.local.json
 ```
 
-환경변수: `ANTHROPIC_API_KEY`, `GEMINI_API_KEY`, `QWEN_API_KEY`, `KANANA_API_KEY`. 인증 없는 로컬 서버는 해당 `api_key_env` 항목을 삭제합니다. `.env`를 자동으로 읽지 않으므로 셸/비밀 관리 도구로 주입하세요. 키를 커맨드 인자나 문서에 붙이지 않습니다.
+기본 실행 모델은 Qwen3.5-2B/4B와 Kanana-2-3B입니다. 환경변수: `QWEN_API_KEY`, `KANANA_API_KEY`. Claude/Gemini 템플릿은 보관용이며 기본 matrix에 포함하지 않습니다. 인증 없는 로컬 서버는 해당 `api_key_env` 항목을 삭제합니다. `.env`를 자동으로 읽지 않으므로 셸/비밀 관리 도구로 주입하세요. 키를 커맨드 인자나 문서에 붙이지 않습니다.
 
-**담당: 성현(API Claude/Gemini), 은빈(GPU Qwen/Kanana/OpenMed), 한울(CPU Presidio/ko-pii).** Qwen/Kanana는 **FP16으로 vLLM 등에서 서빙하고 평가 실행기를 API로 연결하는 방식**을 권장합니다. 실제 가중치·GPU·서버 버전의 FP16 지원/안정성·메모리 요구량을 pilot에서 확인합니다. dtype을 자동 결정하거나 양자화로 묵시적으로 바꾸지 않으며, 대안이 필요하면 사유와 실제 정밀도를 공유하고 고정합니다. 서버 실행 명령·버전·dtype·tensor parallel 설정을 결과 REPORT에 보관합니다.
+**담당: 성현(API 보류), 은빈(GPU Qwen3.5-2B/4B·Kanana-2-3B·OpenMed), 한울(CPU Presidio/ko-pii).** Qwen/Kanana는 **FP16으로 vLLM 등에서 서빙하고 평가 실행기를 API로 연결하는 방식**을 권장합니다. 실제 가중치·GPU·서버 버전의 FP16 지원/안정성·메모리 요구량을 pilot에서 확인합니다. dtype을 자동 결정하거나 양자화로 묵시적으로 바꾸지 않으며, 대안이 필요하면 사유와 실제 정밀도를 공유하고 고정합니다. 서버 실행 명령·버전·dtype·tensor parallel 설정을 결과 REPORT에 보관합니다.
 
 Qwen/Kanana는 OpenAI-compatible **vLLM 서버 + 네이티브 `/tokenize`**를 전제로 합니다. `/chat/completions`만 제공하는 서비스는 정확한 계측 어댑터 없이 사용하지 않습니다. 서버가 사용하는 모델·tokenizer·chat template·추론 설정을 고정하고 서버 로그와 실행 명령을 보관합니다. `/v1` inference 주소와 같은 origin의 `/tokenize`를 사용합니다. private HTTP는 필요할 때만 `allow_private_http: true`를 명시합니다. `chat_template_kwargs`를 쓰면 generation과 tokenize_options에 동일하게 넣습니다. 토큰 수가 생성 요청의 실제 framing과 일치하는지 별도 파일럿에서 확인합니다.
 
@@ -56,23 +55,23 @@ python -m src.eval.dataset --repo nmixx-fin/kiii-kiii \
 
 ## 3. 정확한 토큰 계측과 공통 평가 집합
 
-Claude는 native count_tokens, Gemini는 native countTokens, vLLM은 native tokenize를 호출합니다. 계측은 생성 호출을 하지 않지만 endpoint에 프롬프트를 전송하므로 제공자의 계측 과금/쿼터 정책을 확인합니다. 개별 요청을 순차 계측하며 기존 계측 파일로 재개할 수 있습니다.
+기본 세 로컬 LLM은 vLLM native tokenize로 계측합니다. 보관된 API 어댑터는 Claude count_tokens / Gemini countTokens를 지원하지만 이번 기본 실행 범위에는 포함하지 않습니다. 계측은 생성 호출을 하지 않지만 endpoint에 프롬프트를 전송하므로 제공자의 계측 과금/쿼터 정책을 확인합니다. 개별 요청을 순차 계측하며 기존 계측 파일로 재개할 수 있습니다.
 
-아래를 **네 모델 × 두 조건**에 대해 수행합니다 (`claude`/`full_context_targeted`를 바꿉니다).
+아래를 **세 모델 × 두 조건**에 대해 수행합니다 (`qwen-2b`/`full_context_targeted`를 바꿉니다).
 
 ```bash
-python -m src.eval.execute doctor --config experiments/configs/evaluation/claude.local.json
+python -m src.eval.execute doctor --config experiments/configs/evaluation/qwen-2b.local.json
 python -m src.eval.execute count \
-  --config experiments/configs/evaluation/claude.local.json \
+  --config experiments/configs/evaluation/qwen-2b.local.json \
   --directory experiments/prepared/full_context_targeted \
-  --output experiments/runs/counts/claude-full_context_targeted.jsonl
+  --output experiments/runs/counts/qwen-2b-full_context_targeted.jsonl
 python -m src.eval.execute estimate \
-  --config experiments/configs/evaluation/claude.local.json \
+  --config experiments/configs/evaluation/qwen-2b.local.json \
   --directory experiments/prepared/full_context_targeted \
-  --measurements experiments/runs/counts/claude-full_context_targeted.jsonl
+  --measurements experiments/runs/counts/qwen-2b-full_context_targeted.jsonl
 ```
 
-`doctor`는 오프라인 설정 확인이며 endpoint 연결 성공을 뜻하지 않습니다. 단가는 입력 캐시 할인을 가정하지 않는 상한을 사용합니다. reasoning 포함 최대 출력 비용을 예약하며 도구 사용 비용 등 추가 과금 기능은 사용하지 않습니다. 예산은 **run 폴더별**이므로 같은 budget을 8개 실행에 복제하면 총 예산도 8배가 됩니다. GPU 시간·서버 임대 비용은 토큰 과금 장부에 포함되지 않습니다.
+`doctor`는 오프라인 설정 확인이며 endpoint 연결 성공을 뜻하지 않습니다. 단가는 입력 캐시 할인을 가정하지 않는 상한을 사용합니다. reasoning 포함 최대 출력 비용을 예약하며 도구 사용 비용 등 추가 과금 기능은 사용하지 않습니다. 예산은 **run 폴더별**이므로 같은 budget을 6개 실행에 복제하면 총 예산도 6배가 됩니다. GPU 시간·서버 임대 비용은 토큰 과금 장부에 포함되지 않습니다.
 
 모든 입력이 각 endpoint의 한도에 들어가면:
 
@@ -82,7 +81,7 @@ python -m src.eval.cohort --matrix experiments/configs/evaluation/matrix.local.j
   --output experiments/runs/cohort.json
 ```
 
-matrix의 각 config/plan/counts 경로를 실제 경로에 맞춥니다. 모델을 줄이기로 결정하면 **양 조건에서 같은 모델 목록**으로 수정하고 ADR에 남깁니다. gate는 동일 데이터, 출력 partition, 모든 계측의 capacity/config/hash를 검사합니다. 기준 미달 문서가 하나라도 있으면 본 실행을 거부합니다.
+matrix 기본 목록은 qwen-2b/qwen-4b/kanana × 두 조건입니다. 각 config/plan/counts 경로를 실제 경로에 맞춥니다. Kanana의 공식 한도는 32,768이며 실제 배포 한도와 전체 prompt+출력 토큰 합계를 확인합니다. GPU 사양 미확인 상태에서 concurrency나 최대 문맥을 임의로 크게 잡지 않습니다. 모델을 줄이기로 결정하면 **양 조건에서 같은 모델 목록**으로 수정하고 ADR에 남깁니다. gate는 동일 데이터, 출력 partition, 모든 계측의 capacity/config/hash를 검사합니다. 기준 미달 문서가 하나라도 있으면 본 실행을 거부합니다.
 
 한도 초과가 있는 경우 해당 조건의 모델별 count JSONL을 합쳐 `src.eval.run preflight`를 실행하면 모델별 제외 ID와 common_eligible_doc_ids가 나옵니다. **양 조건의 eligible ID 교집합**을 JSON 배열로 저장하고 두 dataset 준비 명령 모두 `--doc-ids eligible.json`으로 새로 만듭니다. 모든 모델의 새 요청을 다시 계측하고 matrix 경로를 갱신합니다. 제외 사유/원래 모수/최종 모수를 결과와 함께 보관합니다. gold 내용이나 검출 성능에 따른 제외는 금지합니다. 각 모델마다 가능한 문서만 따로 쓰면 안 됩니다.
 
@@ -92,11 +91,11 @@ matrix의 각 config/plan/counts 경로를 실제 경로에 맞춥니다. 모델
 
 ```bash
 python -m src.eval.execute run --execute \
-  --config experiments/configs/evaluation/claude.local.json \
+  --config experiments/configs/evaluation/qwen-2b.local.json \
   --directory experiments/prepared/full_context_targeted \
-  --measurements experiments/runs/counts/claude-full_context_targeted.jsonl \
+  --measurements experiments/runs/counts/qwen-2b-full_context_targeted.jsonl \
   --cohort experiments/runs/cohort.json \
-  --output experiments/runs/claude-full
+  --output experiments/runs/qwen-2b-full
 ```
 
 - 같은 명령·같은 폴더로 재개합니다. `progress.json`에서 finished/planned, complete, spent_or_reserved, stop_reason을 확인합니다. `--max-new N`은 이번 실행의 호출 수만 제한합니다.
@@ -110,9 +109,9 @@ python -m src.eval.execute run --execute \
 
 ```bash
 python -m src.eval.execute finalize \
-  --config experiments/configs/evaluation/claude.local.json \
+  --config experiments/configs/evaluation/qwen-2b.local.json \
   --directory experiments/prepared/full_context_targeted \
-  --output experiments/runs/claude-full
+  --output experiments/runs/qwen-2b-full
 ```
 
 ## 5. 베이스라인
@@ -142,10 +141,10 @@ OpenMed 구현은 토큰 logits argmax + BIOES grouping이며 OpenMed wrapper의
 각 모델·조건이 전체 완료되면 result와 재현 자료를 `experiments/results/runs/<run-id>/`에 정리하여 커밋·푸시하고 배정표에 링크를 남깁니다. 큰 원본 응답·계측·저널은 같은 GitHub 레포의 Release asset으로 올립니다. 구체적인 파일 목록·명령·중단 시 공유 방식은 [결과 공유 가이드](../../experiments/results/README.md)를 따릅니다.
 
 ```bash
-python -m src.eval.run compare --first experiments/runs/claude-full/result.json \
-  --second experiments/runs/claude-local/result.json --output experiments/runs/claude-context-comparison.json
-python -m src.eval.export --results experiments/runs/claude-full/result.json \
-  experiments/runs/claude-local/result.json experiments/runs/presidio/result.json \
+python -m src.eval.run compare --first experiments/runs/qwen-2b-full/result.json \
+  --second experiments/runs/qwen-2b-local/result.json --output experiments/runs/qwen-2b-context-comparison.json
+python -m src.eval.export --results experiments/runs/qwen-2b-full/result.json \
+  experiments/runs/qwen-2b-local/result.json experiments/runs/presidio/result.json \
   --output experiments/results/leaderboard-0923-01.csv
 ```
 

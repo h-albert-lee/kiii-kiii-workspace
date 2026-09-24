@@ -2,11 +2,13 @@
 
 *조사일 2026-09-13, 모델 ID·접근성 1차 출처로 재검증 (같은 날, `literature/notes/evaluated-models.md` §E). `[?]` = 미확인. 가격은 변동이 잦으니 실험 직전 다시 볼 것.*
 
-> 2026-09-24: [소형 로컬 비교군 재선정 제안](research/small-model-roster-2026-09-24.md), ADR-0033(proposed). Qwen3.5-2B/4B + Kanana-2-3B와 기존 baseline 3개를 우선 검토합니다. 현재 accepted 실행 목록을 자동 대체하지 않습니다.
+## 현재 확정 범위 — 2026-09-24 (ADR-0034)
 
-## 현재 실행 범위 (2026-09-20, ADR-0019)
+**Qwen/Qwen3.5-2B, Qwen/Qwen3.5-4B, kakaocorp/kanana-2-3b-instruct**를 양 문맥 조건에서 평가하고 Presidio·ko-pii·OpenMed를 유지합니다. 총 **6시스템·9조건**. GPU 모델은 은빈, CPU 규칙은 한울, 문맥 효과 연구는 사라 담당입니다. 성현의 API 실행은 보류이며 Gemini는 별도 승인 시 선택 기준점입니다. Claude와 이전 대형 MoE는 현 실행 범위에서 제외합니다.
 
-목표 코퍼스는 총 1,440건이다. 평가 준비안은 **LLM 4개 + 베이스라인 3개**: Claude Sonnet 5, Gemini 3.8 Flash, Qwen3.6-35B-A3B, Kanana-2-30B-A3B-Instruct-2601; Presidio(한국형 규칙 포함), ko-pii, OpenMed/privacy-filter-multilingual. 아래 14+4는 과거 전체 후보 목록으로 보존하며 이번 실행 범위가 아니다. KLUE fine-tuning 등 본 벤치마크 데이터로 학습·튜닝하는 베이스라인은 제외한다(ADR-0026). Presidio·ko-pii·OpenMed는 기존 규칙/사전학습 가중치를 그대로 사용하는 추론 전용 조건으로만 포함한다. 추가 모델군·thinking ablation은 후순위. Astra/GLM 생성기는 헤드라인 평가에서 제외한다. 실행 ID·revision·접근성·토큰 한도는 평가 전 고정한다. 자세한 범위와 제한은 [ADR-0019](decisions/0019-corpus-1440-compact-evaluation.md).
+[최신 논문·공식 모델 카드 조사](research/small-model-roster-2026-09-24.md). 실제 revision·dtype·서버 한도와 Kanana 32K의 공통 평가 coverage는 계측으로 확인합니다. benchmark 학습 금지, 단일 test, GLM/Astra 생성기 제외 원칙을 유지합니다.
+
+**아래는 과거 후보 조사 기록입니다. 현재 실행 모델·하드웨어 가능 여부를 보장하지 않으며 위 범위가 우선합니다.**
 
 ## 1. 선행 논문이 무엇을 평가했나
 

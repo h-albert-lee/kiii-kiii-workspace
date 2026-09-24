@@ -1,3 +1,7 @@
+# Current scope update — 2026-09-24
+
+ADR-0034 accepts three small local LLMs (Qwen3.5-2B/4B, Kanana-2-3B-Instruct) and three existing baselines: six systems, nine conditions. Gemini is optional/deferred, Claude and the previous large MoE models are outside the current run scope. Use the updated matrix; do not restart older four-LLM runs. The history below preserves implemented capabilities, not an instruction to run every adapter.
+
 # Experiment handoff — 2026-09-23
 
 Start with [AGENTS.md](../AGENTS.md) and the [execution runbook](guide/experiment-runbook.md). This handoff supersedes the generation-stage September 13 handoff. Earlier reasoning remains in the numbered ADRs.
@@ -34,10 +38,10 @@ Calibrate shared output partition/budget and provider settings on independent sy
 
 ## Assignment and result delivery update
 
-ADR-0030: experiments/ASSIGNMENTS.md is the owner/status/result-link roster (성현: Claude/Gemini; 은빈: Qwen/Kanana/OpenMed; 한울: Presidio/ko-pii; aggregation pending). Every operator must commit and push finalized result bundles to experiments/results/runs/<run-id>/ and report interruptions on GitHub. Large raw artifacts use the same repository’s Release assets with hashes. See experiments/results/README.md and docs/templates/experiment-report.md. This supersedes any instruction to keep results only in local backups.
+ADR-0030: experiments/ASSIGNMENTS.md is the owner/status/result-link roster (current ADR-0034: 성현 API deferred; 은빈 Qwen3.5-2B/4B, Kanana-2-3B, OpenMed; 한울 Presidio/ko-pii; aggregation pending). Every operator must commit and push finalized result bundles to experiments/results/runs/<run-id>/ and report interruptions on GitHub. Large raw artifacts use the same repository’s Release assets with hashes. See experiments/results/README.md and docs/templates/experiment-report.md. This supersedes any instruction to keep results only in local backups.
 
 GPU deployment preference (ADR-0031): Qwen/Kanana should use verified FP16 vLLM-compatible serving and API-connected evaluation; preserve actual tokenizer/template counting. Verify support before freezing; record any dtype fallback explicitly. OpenMed remains a separate Transformers token-classification GPU workload assigned to 은빈, not a chat-completion endpoint.
 
 ## Context-effect research owner
 
-ADR-0032 assigns 사라 the full-versus-local context research contribution (hypotheses, statistics, error analysis, reproducible figures and results/discussion). Start at docs/research/sara-context-analysis.md. She can prepare and freeze the analysis plan and fixture-tested code before results arrive. Keep the existing 11 conditions and a main-paper footprint of one shared table, at most one analysis figure and concise interpretation. Operational cohort aggregation remains separately unassigned.
+ADR-0032 assigns 사라 the full-versus-local context research contribution (hypotheses, statistics, error analysis, reproducible figures and results/discussion). Start at docs/research/sara-context-analysis.md. She can prepare and freeze the analysis plan and fixture-tested code before results arrive. Keep the accepted 9 conditions and a main-paper footprint of one shared table, at most one analysis figure and concise interpretation. Operational cohort aggregation remains separately unassigned.

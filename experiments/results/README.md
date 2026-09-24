@@ -39,24 +39,24 @@ experiments/results/
 
 ## 제출 예시
 
-아래는 완료된 Claude/full 실행의 예입니다. 실제 run ID로 경로를 바꿉니다. 먼저 finalize를 수행하고, REPORT는 [템플릿](../../docs/templates/experiment-report.md)을 채웁니다. 복사한 메타데이터에 키·민감한 endpoint가 없는지 확인합니다.
+아래는 완료된 Qwen3.5-2B/full 실행의 예입니다. 실제 run ID로 경로를 바꿉니다. 먼저 finalize를 수행하고, REPORT는 [템플릿](../../docs/templates/experiment-report.md)을 채웁니다. 복사한 메타데이터에 키·민감한 endpoint가 없는지 확인합니다.
 
 ```bash
-mkdir -p experiments/results/runs/0924-01-claude-full
-cp experiments/runs/claude-full/result.json experiments/results/runs/0924-01-claude-full/
-cp experiments/runs/claude-full/run.json experiments/results/runs/0924-01-claude-full/
-cp experiments/runs/claude-full/progress.json experiments/results/runs/0924-01-claude-full/
-cp experiments/prepared/full_context_targeted/manifest.json experiments/results/runs/0924-01-claude-full/
-cp docs/templates/experiment-report.md experiments/results/runs/0924-01-claude-full/REPORT.md
+mkdir -p experiments/results/runs/0924-01-qwen-2b-full
+cp experiments/runs/qwen-2b-full/result.json experiments/results/runs/0924-01-qwen-2b-full/
+cp experiments/runs/qwen-2b-full/run.json experiments/results/runs/0924-01-qwen-2b-full/
+cp experiments/runs/qwen-2b-full/progress.json experiments/results/runs/0924-01-qwen-2b-full/
+cp experiments/prepared/full_context_targeted/manifest.json experiments/results/runs/0924-01-qwen-2b-full/
+cp docs/templates/experiment-report.md experiments/results/runs/0924-01-qwen-2b-full/REPORT.md
 ```
 
 REPORT와 artifact 목록/해시를 채운 다음, **자신의 결과 경로만** stage합니다. `git add .`로 로컬 작업물을 일괄 포함하지 않습니다.
 
 ```bash
-git add experiments/results/runs/0924-01-claude-full experiments/ASSIGNMENTS.md
+git add experiments/results/runs/0924-01-qwen-2b-full experiments/ASSIGNMENTS.md
 git diff --cached --check
 git diff --cached --stat
-git commit -m "exp: share 0924-01 claude full results"
+git commit -m "exp: share 0924-01 qwen-2b full results"
 git push origin HEAD
 ```
 

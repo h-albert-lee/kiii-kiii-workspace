@@ -1,22 +1,23 @@
 # 실험 담당 배정표
 
-2026-09-23. **사용자 확정 배정: API는 성현, GPU 실험은 은빈, GPU 불필요 규칙 베이스라인은 한울, 문맥 효과 연구는 사라.** GitHub ID는 각 담당자가 기입합니다. 담당자는 착수 전에 상태와 run ID를 커밋·푸시합니다. 취합 담당자는 별도 지정 전까지 미정입니다.
+2026-09-24 (ADR-0034). **사용자 확정 배정: API 실행은 보류(기존 담당 성현), GPU 실험은 은빈, GPU 불필요 규칙 베이스라인은 한울, 문맥 효과 연구는 사라.** GitHub ID는 각 담당자가 기입합니다. 담당자는 착수 전에 상태와 run ID를 커밋·푸시합니다. 취합 담당자는 별도 지정 전까지 미정입니다.
 
 | 묶음 | 계획 모델 | 실행 조건 | 담당자 / GitHub ID | 상태 | run ID / 결과 링크 |
 |---|---|---|---|---|---|
-| A · API | Claude Sonnet 5 | full_context_targeted + local_window | 성현 | 미착수 | — |
-| A · API | Gemini 3.8 Flash | full_context_targeted + local_window | 성현 | 미착수 | — |
-| B · GPU LLM | Qwen3.6-35B-A3B | full_context_targeted + local_window | 은빈 | 미착수 | — |
-| B · GPU LLM | Kanana2-30B-A3B-Instruct2601 | full_context_targeted + local_window | 은빈 | 미착수 | — |
+| B · GPU LLM | Qwen3.5-2B | full_context_targeted + local_window | 은빈 | 미착수 | — |
+| B · GPU LLM | Qwen3.5-4B | full_context_targeted + local_window | 은빈 | 미착수 | — |
+| B · GPU LLM | Kanana-2-3B-Instruct | full_context_targeted + local_window | 은빈 | 미착수 | — |
 | C · CPU 베이스라인 | Presidio 한국형 규칙 + 계좌·카드 규칙 | 동일 평가 문서 전체, 1회 | 한울 | 미착수 | — |
 | C · CPU 베이스라인 | ko-pii 1.16.0 | 동일 평가 문서 전체, 1회 | 한울 | 미착수 | — |
 | B · GPU 베이스라인 | OpenMed/privacy-filter-multilingual | 동일 평가 문서, 겹침 토큰 창, 1회 | 은빈 | 미착수 | — |
 | D · 취합 | 공통 설정·평가 집합 확정 / 결과 통합 | 전체 모델 계측 취합, cohort gate, CSV·bootstrap | 미정 | 미착수 | — |
 | E · 연구 분석 | 전체 문맥 대 지역 문맥 효과 | 가설·통계·오류 분석·표/그림·결과/논의 집필 | 사라 | 배정 완료·착수 전 | [시작 문서](../docs/research/sara-context-analysis.md) |
 
-총 **7개 시스템, 11개 실행 조건**입니다(LLM 4×2 + baseline 3×1). 이름은 계획 모델명이며 served model ID·revision·접근 가능 여부는 각 담당자가 확인합니다. 임의로 다른 모델로 바꾸지 않습니다. GLM/Astra는 생성기이므로 헤드라인 탐지 실험에서 제외합니다. 본 데이터로 학습하는 baseline도 없습니다.
+총 **6개 시스템, 9개 실행 조건**입니다(LLM 3×2 + baseline 3×1). 이름은 계획 모델명이며 served model ID·revision·접근 가능 여부는 각 담당자가 확인합니다. 임의로 다른 모델로 바꾸지 않습니다. GLM/Astra는 생성기이므로 헤드라인 탐지 실험에서 제외합니다. 본 데이터로 학습하는 baseline도 없습니다.
 
-사라는 [문맥 효과 연구 작업 문서](../docs/research/sara-context-analysis.md)를 따라 결과가 없어도 분석 계획·코드부터 시작합니다. 기존 11개 조건을 활용하며 새 모델 실행을 추가하지 않습니다. 운영 취합 담당과 별도의 연구 책임입니다.
+사라는 [문맥 효과 연구 작업 문서](../docs/research/sara-context-analysis.md)를 따라 결과가 없어도 분석 계획·코드부터 시작합니다. 확정된 9개 조건을 활용하며 새 모델 실행을 추가하지 않습니다. 운영 취합 담당과 별도의 연구 책임입니다.
+
+**보류:** 성현 담당 Gemini는 선택 기준점으로 남기되 별도 범위·예산 승인 전에는 실행하지 않습니다. Claude 및 기존 대형 Qwen/Kanana는 이번 범위에서 제외합니다. 성현에게 다른 업무를 임의 배정하지 않습니다. 과거 실행이 있다면 삭제하지 않고 이전 조건으로 보존합니다.
 
 ## GPU 실행 권장 방식
 

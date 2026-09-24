@@ -7,14 +7,14 @@
 - 공개 데이터: [nmixx-fin/kiii-kiii](https://huggingface.co/datasets/nmixx-fin/kiii-kiii), **1,440문서 / 218,664스팬**, 단일 `test`.
 - 라이선스: **데이터 CC BY-NC 4.0**. Preview 버전이며 정식 버전은 추후 공개합니다. 코드·제3자 모델의 라이선스를 이 데이터 라이선스로 대체하지 않습니다.
 - 실험 데이터 고정 revision: `2df0589d695c18665fd83d4ca5512e03ca0767f6`.
-- 준비한 비교군: Claude Sonnet 5, Gemini 3.8 Flash, Qwen3.6-35B-A3B, Kanana2-30B-A3B-Instruct2601 + Presidio, ko-pii, OpenMed. 이름은 계획이며 **실제 접근 가능한 모델 ID·revision은 실행 담당자가 확인**합니다.
+- 준비한 비교군: Qwen3.5-2B, Qwen3.5-4B, Kanana-2-3B-Instruct + Presidio, ko-pii, OpenMed. 이름은 계획이며 **실제 접근 가능한 모델 ID·revision은 실행 담당자가 확인**합니다.
 - GLM/Astra는 데이터 생성기이므로 본 탐지 리더보드에서 제외합니다. 학습·validation 분할이나 이 데이터로 학습하는 베이스라인은 없습니다.
 
-> **9/24 재검토 중:** API 비용을 줄이기 위한 [소형 로컬 모델 후보·논문 근거](docs/research/small-model-roster-2026-09-24.md)를 마련했습니다. 아래 배정/실행 목록은 아직 변경하지 않았습니다.
+> **9/24 확정 (ADR-0034):** 소형 로컬 LLM 3개와 기존 baseline 3개로 실행합니다. [선정 근거](docs/research/small-model-roster-2026-09-24.md). Claude·대형 MoE는 현 범위에서 제외하고 Gemini는 별도 승인 전까지 보류합니다.
 
 ## 모델별 담당자와 결과 공유
 
-**LLM 4개 × 두 조건 + baseline 3개 = 총 11개 실행 조건**입니다. [담당 배정표](experiments/ASSIGNMENTS.md)에 모델별 담당자·상태·결과 링크를 관리합니다. **성현: Claude·Gemini / 은빈: Qwen·Kanana·OpenMed / 한울: Presidio·ko-pii**로 배정했습니다. 사라는 **문맥 효과의 가설·통계 분석·오류 해석·결과/논의 집필**을 맡습니다. [사라/에이전트 시작 문서](docs/research/sara-context-analysis.md)에 즉시 할 작업과 4페이지 범위를 정리했습니다. 운영 취합 담당자는 미정입니다. Qwen·Kanana는 FP16 + vLLM 계열 서빙 후 API 연결을 권장하며, OpenMed는 별도 Transformers GPU 경로를 사용합니다.
+**LLM 3개 × 두 조건 + baseline 3개 = 총 9개 실행 조건**입니다. [담당 배정표](experiments/ASSIGNMENTS.md)에 모델별 담당자·상태·결과 링크를 관리합니다. **은빈: Qwen 2B·4B / Kanana 3B / OpenMed, 한울: Presidio·ko-pii**로 배정했습니다. 성현의 API 실행은 보류입니다. 사라는 **문맥 효과의 가설·통계 분석·오류 해석·결과/논의 집필**을 맡습니다. [사라/에이전트 시작 문서](docs/research/sara-context-analysis.md)에 즉시 할 작업과 4페이지 범위를 정리했습니다. 운영 취합 담당자는 미정입니다. Qwen·Kanana는 FP16 + vLLM 계열 서빙 후 API 연결을 권장하며, OpenMed는 별도 Transformers GPU 경로를 사용합니다.
 
 **각 담당자는 모델·조건별 완료 결과를 이 GitHub 레포에 커밋·푸시합니다.** 위치와 제출 규칙은 [결과 공유 가이드](experiments/results/README.md)를 따릅니다. 중단 시에도 진행 기록과 장애를 푸시하며 부분 점수는 최종 결과로 공유하지 않습니다.
 
@@ -47,7 +47,7 @@ python -m pytest tests -q
 | 경로 | 역할 |
 |---|---|
 | `src/eval/` | 데이터 로드, 고정 요청, 공급자 어댑터, 토큰 계측, 예산·재개, 베이스라인, 채점·CSV |
-| `experiments/configs/evaluation/` | 키 없는 설정 템플릿, 4모델 × 2조건 capacity matrix |
+| `experiments/configs/evaluation/` | 키 없는 설정 템플릿, 3모델 × 2조건 capacity matrix |
 | `experiments/label_maps/` | 소스 라벨 → 36개 택소노미, 제외 라벨 명시 |
 | `taxonomy/taxonomy.yaml` | 카테고리·변형 정의의 원본 |
 | `src/generate/` | 완료된 합성 생성 파이프라인; 실험 담당자는 재생성하지 않음 |
