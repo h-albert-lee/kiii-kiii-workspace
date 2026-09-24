@@ -2,6 +2,8 @@
 
 *조사일 2026-09-13, 모델 ID·접근성 1차 출처로 재검증 (같은 날, `literature/notes/evaluated-models.md` §E). `[?]` = 미확인. 가격은 변동이 잦으니 실험 직전 다시 볼 것.*
 
+> 2026-09-24: [소형 로컬 비교군 재선정 제안](research/small-model-roster-2026-09-24.md), ADR-0033(proposed). Qwen3.5-2B/4B + Kanana-2-3B와 기존 baseline 3개를 우선 검토합니다. 현재 accepted 실행 목록을 자동 대체하지 않습니다.
+
 ## 현재 실행 범위 (2026-09-20, ADR-0019)
 
 목표 코퍼스는 총 1,440건이다. 평가 준비안은 **LLM 4개 + 베이스라인 3개**: Claude Sonnet 5, Gemini 3.8 Flash, Qwen3.6-35B-A3B, Kanana-2-30B-A3B-Instruct-2601; Presidio(한국형 규칙 포함), ko-pii, OpenMed/privacy-filter-multilingual. 아래 14+4는 과거 전체 후보 목록으로 보존하며 이번 실행 범위가 아니다. KLUE fine-tuning 등 본 벤치마크 데이터로 학습·튜닝하는 베이스라인은 제외한다(ADR-0026). Presidio·ko-pii·OpenMed는 기존 규칙/사전학습 가중치를 그대로 사용하는 추론 전용 조건으로만 포함한다. 추가 모델군·thinking ablation은 후순위. Astra/GLM 생성기는 헤드라인 평가에서 제외한다. 실행 ID·revision·접근성·토큰 한도는 평가 전 고정한다. 자세한 범위와 제한은 [ADR-0019](decisions/0019-corpus-1440-compact-evaluation.md).

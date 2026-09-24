@@ -23,6 +23,8 @@ Ownership and delivery: [assignment roster](experiments/ASSIGNMENTS.md) (성현:
 
 Research work can start immediately: 사라 follows [the context-analysis brief](docs/research/sara-context-analysis.md) to freeze a pre-result analysis plan and implement fixture-tested analysis/figures, then interpret existing paired runs and write concise results/discussion. No additional inference conditions. ADR-0032.
 
+Candidate review (2026-09-24): [small local model proposal](docs/research/small-model-roster-2026-09-24.md), ADR-0033 **proposed**. GPU capacity is unknown; accepted assignments and inference settings remain unchanged. No new detector runs or spending initiated.
+
 ## Next actions
 
 1. Assign experiment operator and servers; verify exact four-model IDs/revisions, tokenizer/template versions, limits, prices and paid allocation.

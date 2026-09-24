@@ -10,6 +10,8 @@
 - 준비한 비교군: Claude Sonnet 5, Gemini 3.8 Flash, Qwen3.6-35B-A3B, Kanana2-30B-A3B-Instruct2601 + Presidio, ko-pii, OpenMed. 이름은 계획이며 **실제 접근 가능한 모델 ID·revision은 실행 담당자가 확인**합니다.
 - GLM/Astra는 데이터 생성기이므로 본 탐지 리더보드에서 제외합니다. 학습·validation 분할이나 이 데이터로 학습하는 베이스라인은 없습니다.
 
+> **9/24 재검토 중:** API 비용을 줄이기 위한 [소형 로컬 모델 후보·논문 근거](docs/research/small-model-roster-2026-09-24.md)를 마련했습니다. 아래 배정/실행 목록은 아직 변경하지 않았습니다.
+
 ## 모델별 담당자와 결과 공유
 
 **LLM 4개 × 두 조건 + baseline 3개 = 총 11개 실행 조건**입니다. [담당 배정표](experiments/ASSIGNMENTS.md)에 모델별 담당자·상태·결과 링크를 관리합니다. **성현: Claude·Gemini / 은빈: Qwen·Kanana·OpenMed / 한울: Presidio·ko-pii**로 배정했습니다. 사라는 **문맥 효과의 가설·통계 분석·오류 해석·결과/논의 집필**을 맡습니다. [사라/에이전트 시작 문서](docs/research/sara-context-analysis.md)에 즉시 할 작업과 4페이지 범위를 정리했습니다. 운영 취합 담당자는 미정입니다. Qwen·Kanana는 FP16 + vLLM 계열 서빙 후 API 연결을 권장하며, OpenMed는 별도 Transformers GPU 경로를 사용합니다.
