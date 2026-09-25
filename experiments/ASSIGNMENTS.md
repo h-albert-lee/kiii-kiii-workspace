@@ -4,12 +4,12 @@
 
 | 묶음 | 계획 모델 | 실행 조건 | 담당자 / GitHub ID | 상태 | run ID / 결과 링크 |
 |---|---|---|---|---|---|
-| B · GPU LLM | Qwen3.5-2B | full_context_targeted + local_window | 은빈 | 미착수 | — |
-| B · GPU LLM | Qwen3.5-4B | full_context_targeted + local_window | 은빈 | 미착수 | — |
-| B · GPU LLM | Kanana-2-3B-Instruct | full_context_targeted + local_window | 은빈 | 미착수 | — |
+| B · GPU LLM | Qwen3.5-2B | full_context_targeted + local_window | 은빈 | 환경 준비 | [0925-03-qwen-2b-full](results/runs/0925-03-qwen-2b-full/REPORT.md) / [0925-04-qwen-2b-local](results/runs/0925-04-qwen-2b-local/REPORT.md) |
+| B · GPU LLM | Qwen3.5-4B | full_context_targeted + local_window | 은빈 | 환경 준비 | [0925-05-qwen-4b-full](results/runs/0925-05-qwen-4b-full/REPORT.md) / [0925-06-qwen-4b-local](results/runs/0925-06-qwen-4b-local/REPORT.md) |
+| B · GPU LLM | Kanana-2-3B-Instruct | full_context_targeted + local_window | 은빈 | 환경 준비 (선행 실행) | [0925-01-kanana-3b-full](results/runs/0925-01-kanana-3b-full/REPORT.md) / [0925-02-kanana-3b-local](results/runs/0925-02-kanana-3b-local/REPORT.md) |
 | C · CPU 베이스라인 | Presidio 한국형 규칙 + 계좌·카드 규칙 | 동일 평가 문서 전체, 1회 | 한울 | 1,440건 완료·공통 cohort 재집계 대기 | [0924-01-presidio-full1440](results/runs/0924-01-presidio-full1440/REPORT.md) |
 | C · CPU 베이스라인 | ko-pii 1.16.0 | 동일 평가 문서 전체, 1회 | 한울 | 1,440건 완료·공통 cohort 재집계 대기 | [0924-01-ko-pii-full1440](results/runs/0924-01-ko-pii-full1440/REPORT.md) |
-| B · GPU 베이스라인 | OpenMed/privacy-filter-multilingual | 동일 평가 문서, 겹침 토큰 창, 1회 | 은빈 | 미착수 | — |
+| B · GPU 베이스라인 | OpenMed/privacy-filter-multilingual | 동일 평가 문서, 겹침 토큰 창, 1회 | 은빈 | 환경 준비 | [0925-07-openmed-windows](results/runs/0925-07-openmed-windows/REPORT.md) |
 | D · 취합 | 공통 설정·평가 집합 확정 / 결과 통합 | 전체 모델 계측 취합, cohort gate, CSV·bootstrap | 미정 | 미착수 | — |
 | E · 연구 분석 | 전체 문맥 대 지역 문맥 효과 | 가설·통계·오류 분석·표/그림·결과/논의 집필 | 사라 | 배정 완료·착수 전 | [시작 문서](../docs/research/sara-context-analysis.md) |
 
@@ -18,6 +18,20 @@
 사라는 [문맥 효과 연구 작업 문서](../docs/research/sara-context-analysis.md)를 따라 결과가 없어도 분석 계획·코드부터 시작합니다. 확정된 9개 조건을 활용하며 새 모델 실행을 추가하지 않습니다. 운영 취합 담당과 별도의 연구 책임입니다.
 
 **보류:** 성현 담당 Gemini는 선택 기준점으로 남기되 별도 범위·예산 승인 전에는 실행하지 않습니다. Claude 및 기존 대형 Qwen/Kanana는 이번 범위에서 제외합니다. 성현에게 다른 업무를 임의 배정하지 않습니다. 과거 실행이 있다면 삭제하지 않고 이전 조건으로 보존합니다.
+
+## 확정한 checkpoint (2026-09-25, 은빈)
+
+| 계획명 | served ID | revision | dtype | context | 비고 |
+|---|---|---|---|---|---|
+| Kanana-2-3B-Instruct | `kakaocorp/kanana-2-3b-instruct` | `6a5d7889964c4c590299d16e309eabab1f73f8a9` | BF16 | 32,768 | dense 3.51B, `Qwen3ForCausalLM` |
+| Qwen3.5-2B | `Qwen/Qwen3.5-2B` | `15852e8c16360a2fea060d615a32b45270f8a8fc` | BF16 | 262,144 | 2.27B, **멀티모달 VL checkpoint** |
+| Qwen3.5-4B | `Qwen/Qwen3.5-4B` | `851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a` | BF16 | 262,144 | 4.66B, **멀티모달 VL checkpoint** |
+
+세 모델 모두 공식 가중치가 **BF16**이므로 런북의 FP16 기본 권장 대신 배포 정밀도를 따릅니다. 양자화나 자동 dtype 변경이 아니며 사유를 각 REPORT에 기록했습니다.
+
+**Kanana의 32,768이 세 모델 중 최소**이므로 공통 cohort의 제약이 됩니다. `full_context_targeted`는 core 1,200자마다 문서 전문을 context로 싣는 구조라(요청당 평균 약 19,200자) 긴 문서에서 한도 초과가 발생할 수 있습니다. 실제 제외 여부는 Kanana full 조건 `count` 결과로 확정하며, 그래서 Kanana를 선행 실행합니다.
+
+배포 한도(`--max-model-len`), 단가, 예산, `settings_frozen`은 미확정입니다. 위 revision 외의 값은 추정하지 않았습니다.
 
 ## GPU 실행 권장 방식
 
