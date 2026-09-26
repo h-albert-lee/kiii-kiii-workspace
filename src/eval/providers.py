@@ -130,5 +130,5 @@ def normalize(provider, raw):
     normalized = {}
     if 'prompt_tokens' in usage and 'completion_tokens' in usage:
         normalized = {'input_tokens': usage['prompt_tokens'], 'output_tokens': usage['completion_tokens'],
-                      'reasoning_tokens': usage.get('completion_tokens_details', {}).get('reasoning_tokens', 0)}
+                      'reasoning_tokens': (usage.get('completion_tokens_details') or {}).get('reasoning_tokens', 0)}
     return text, reason, normalized
