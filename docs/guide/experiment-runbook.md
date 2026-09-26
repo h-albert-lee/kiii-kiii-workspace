@@ -4,6 +4,8 @@
 
 먼저 [담당 배정표](../../experiments/ASSIGNMENTS.md)에 담당자와 run ID를 기록합니다. **완료 결과는 [공유 규칙](../../experiments/results/README.md)에 따라 이 GitHub 저장소에 커밋·푸시**합니다. 로컬 저장만으로 작업을 완료하지 않습니다.
 
+> 2026-09-26 추가 모델: 은빈은 [중간 크기 모델 인계 문서](eunbin-medium-extension.md)를 함께 읽습니다. 기존 matrix/run/gate는 유지하고 확장 템플릿·계측 matrix를 별도로 사용합니다. 진행 중인 checkout의 실행 코드를 교체하지 않습니다.
+
 ## 1. 환경과 담당자 입력
 
 README의 Python 3.12 설치·전체 테스트를 먼저 수행합니다. API 실행에는 GPU가 필요 없습니다. ko-pii 1.16.0, presidio-analyzer 2.2.364를 고정했습니다. 모델 서버는 다른 환경에서 운영해도 됩니다.

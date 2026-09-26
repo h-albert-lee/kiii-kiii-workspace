@@ -8,6 +8,10 @@
 
 [최신 논문·공식 모델 카드 조사](research/small-model-roster-2026-09-24.md). 실제 revision·dtype·서버 한도와 Kanana 32K의 공통 평가 coverage는 계측으로 확인합니다. benchmark 학습 금지, 단일 test, GLM/Astra 생성기 제외 원칙을 유지합니다.
 
+## 추가 배정 — 2026-09-26 (ADR-0035)
+
+은빈에게 **Qwen/Qwen3.5-9B**(1순위), **kakaocorp/kanana-1.5-8b-instruct-2505**(2순위)를 각 full/local로 추가 배정합니다. 핵심 9조건을 유지하고 확장 4조건을 별도로 실행합니다. [공식 사양·선정 이유·실행 절차](guide/eunbin-medium-extension.md). Kanana는 기존 3B와 세대가 다르므로 순수 크기 비교로 해석하지 않습니다.
+
 **아래는 과거 후보 조사 기록입니다. 현재 실행 모델·하드웨어 가능 여부를 보장하지 않으며 위 범위가 우선합니다.**
 
 ## 1. 선행 논문이 무엇을 평가했나
