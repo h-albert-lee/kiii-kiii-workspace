@@ -1,0 +1,1621 @@
+{
+  "metrics": {
+    "f1_micro": 0.0015278838808250573,
+    "exact_micro": {
+      "precision": 0.5,
+      "recall": 0.0007651109410864575,
+      "f1": 0.0015278838808250573,
+      "tp": 1,
+      "fp": 1,
+      "fn": 1306
+    },
+    "category_character_micro": {
+      "precision": 0.6666666666666666,
+      "recall": 0.0007018364721020002,
+      "f1": 0.0014021967749474175,
+      "tp": 12,
+      "fp": 6,
+      "fn": 17086
+    },
+    "entity_all_mentions_exact_recall": 0.0,
+    "hard_negative_false_positive_rate": null,
+    "non_pii_character_mask_rate": 0.0
+  },
+  "by_axis": {
+    "doc_type": {
+      "pilot": {
+        "precision": 0.5,
+        "recall": 0.0007651109410864575,
+        "f1": 0.0015278838808250573,
+        "tp": 1,
+        "fp": 1,
+        "fn": 1306
+      }
+    },
+    "variation_level": {
+      "pilot": {
+        "precision": 0.5,
+        "recall": 0.0007651109410864575,
+        "f1": 0.0015278838808250573,
+        "tp": 1,
+        "fp": 1,
+        "fn": 1306
+      }
+    },
+    "context_len_bucket": {
+      "pilot": {
+        "precision": 0.5,
+        "recall": 0.0007651109410864575,
+        "f1": 0.0015278838808250573,
+        "tp": 1,
+        "fp": 1,
+        "fn": 1306
+      }
+    },
+    "num_subjects": {
+      "1": {
+        "precision": 0.5,
+        "recall": 0.00078003120124805,
+        "f1": 0.001557632398753894,
+        "tp": 1,
+        "fp": 1,
+        "fn": 1281
+      },
+      "5": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 25
+      }
+    },
+    "generator_model": {
+      "unknown": {
+        "precision": 0.5,
+        "recall": 0.0007651109410864575,
+        "f1": 0.0015278838808250573,
+        "tp": 1,
+        "fp": 1,
+        "fn": 1306
+      }
+    }
+  },
+  "by_category": {
+    "access_credential": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 34
+    },
+    "address": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 41
+    },
+    "bank_account_no": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 51
+    },
+    "business_reg_no": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 36
+    },
+    "card_no": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 34
+    },
+    "consultation_content": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 33
+    },
+    "contract_no": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 34
+    },
+    "corp_reg_no": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 36
+    },
+    "credit_score": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 34
+    },
+    "credit_transaction": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 34
+    },
+    "customer_id": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 38
+    },
+    "delinquency_info": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 34
+    },
+    "device_network": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 33
+    },
+    "dob_age": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 33
+    },
+    "driver_license_no": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 38
+    },
+    "education": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 33
+    },
+    "email": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 38
+    },
+    "employer_affiliation": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 33
+    },
+    "family_relation": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 33
+    },
+    "financial_capacity": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 39
+    },
+    "foreigner_reg_no": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 38
+    },
+    "gender": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 33
+    },
+    "investment_profile": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 33
+    },
+    "life_event": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 33
+    },
+    "location_mention": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 33
+    },
+    "nationality": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 33
+    },
+    "online_handle": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 38
+    },
+    "passport_no": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 38
+    },
+    "person_name": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 55
+    },
+    "phone_no": {
+      "precision": 0.5,
+      "recall": 0.023255813953488372,
+      "f1": 0.044444444444444446,
+      "tp": 1,
+      "fp": 1,
+      "fn": 42
+    },
+    "public_record": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 34
+    },
+    "rrn": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 43
+    },
+    "securities_account_no": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 34
+    },
+    "sensitive_info": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 33
+    },
+    "service_usage": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 33
+    },
+    "transaction_record": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 34
+    }
+  },
+  "tier_kind_tlevel": {
+    "I/attribute/pilot": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 396
+    },
+    "L/attribute/pilot": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 242
+    },
+    "L/identifier/pilot": {
+      "precision": 0.5,
+      "recall": 0.0014947683109118087,
+      "f1": 0.0029806259314456036,
+      "tp": 1,
+      "fp": 1,
+      "fn": 668
+    }
+  },
+  "op_exact_recall": {},
+  "subject_role_exact_recall": {
+    "customer": {
+      "total": 1307,
+      "hit": 1,
+      "recall": 0.0007651109410864575
+    }
+  },
+  "per_document": [
+    {
+      "doc_id": "pilot-cats-01",
+      "exact": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 36
+      },
+      "character": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 467
+      },
+      "entity_all_mentions_exact": {
+        "hit": 0,
+        "total": 36
+      },
+      "hard_negative": {
+        "hit": 0,
+        "total": 0
+      },
+      "non_pii_masked_chars": 0,
+      "non_pii_chars": 1039,
+      "doc_type": "pilot",
+      "variation_level": "pilot",
+      "context_len_bucket": "pilot",
+      "num_subjects": 1,
+      "generator_model": "unknown"
+    },
+    {
+      "doc_id": "pilot-cats-02",
+      "exact": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 36
+      },
+      "character": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 476
+      },
+      "entity_all_mentions_exact": {
+        "hit": 0,
+        "total": 36
+      },
+      "hard_negative": {
+        "hit": 0,
+        "total": 0
+      },
+      "non_pii_masked_chars": 0,
+      "non_pii_chars": 1061,
+      "doc_type": "pilot",
+      "variation_level": "pilot",
+      "context_len_bucket": "pilot",
+      "num_subjects": 1,
+      "generator_model": "unknown"
+    },
+    {
+      "doc_id": "pilot-dense-01",
+      "exact": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 370
+      },
+      "character": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 4877
+      },
+      "entity_all_mentions_exact": {
+        "hit": 0,
+        "total": 62
+      },
+      "hard_negative": {
+        "hit": 0,
+        "total": 0
+      },
+      "non_pii_masked_chars": 0,
+      "non_pii_chars": 1136,
+      "doc_type": "pilot",
+      "variation_level": "pilot",
+      "context_len_bucket": "pilot",
+      "num_subjects": 1,
+      "generator_model": "unknown"
+    },
+    {
+      "doc_id": "pilot-emoji-01",
+      "exact": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 12
+      },
+      "character": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 161
+      },
+      "entity_all_mentions_exact": {
+        "hit": 0,
+        "total": 12
+      },
+      "hard_negative": {
+        "hit": 0,
+        "total": 0
+      },
+      "non_pii_masked_chars": 0,
+      "non_pii_chars": 193,
+      "doc_type": "pilot",
+      "variation_level": "pilot",
+      "context_len_bucket": "pilot",
+      "num_subjects": 1,
+      "generator_model": "unknown"
+    },
+    {
+      "doc_id": "pilot-repeat-01",
+      "exact": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 24
+      },
+      "character": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 204
+      },
+      "entity_all_mentions_exact": {
+        "hit": 0,
+        "total": 2
+      },
+      "hard_negative": {
+        "hit": 0,
+        "total": 0
+      },
+      "non_pii_masked_chars": 0,
+      "non_pii_chars": 571,
+      "doc_type": "pilot",
+      "variation_level": "pilot",
+      "context_len_bucket": "pilot",
+      "num_subjects": 1,
+      "generator_model": "unknown"
+    },
+    {
+      "doc_id": "pilot-boundary-01",
+      "exact": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 3
+      },
+      "character": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 66
+      },
+      "entity_all_mentions_exact": {
+        "hit": 0,
+        "total": 1
+      },
+      "hard_negative": {
+        "hit": 0,
+        "total": 0
+      },
+      "non_pii_masked_chars": 0,
+      "non_pii_chars": 4743,
+      "doc_type": "pilot",
+      "variation_level": "pilot",
+      "context_len_bucket": "pilot",
+      "num_subjects": 1,
+      "generator_model": "unknown"
+    },
+    {
+      "doc_id": "pilot-multi-01",
+      "exact": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 25
+      },
+      "character": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 284
+      },
+      "entity_all_mentions_exact": {
+        "hit": 0,
+        "total": 25
+      },
+      "hard_negative": {
+        "hit": 0,
+        "total": 0
+      },
+      "non_pii_masked_chars": 0,
+      "non_pii_chars": 618,
+      "doc_type": "pilot",
+      "variation_level": "pilot",
+      "context_len_bucket": "pilot",
+      "num_subjects": 5,
+      "generator_model": "unknown"
+    },
+    {
+      "doc_id": "pilot-len-4k",
+      "exact": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 46
+      },
+      "character": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 607
+      },
+      "entity_all_mentions_exact": {
+        "hit": 0,
+        "total": 39
+      },
+      "hard_negative": {
+        "hit": 0,
+        "total": 0
+      },
+      "non_pii_masked_chars": 0,
+      "non_pii_chars": 3407,
+      "doc_type": "pilot",
+      "variation_level": "pilot",
+      "context_len_bucket": "pilot",
+      "num_subjects": 1,
+      "generator_model": "unknown"
+    },
+    {
+      "doc_id": "pilot-len-19k",
+      "exact": {
+        "precision": 0.5,
+        "recall": 0.0043859649122807015,
+        "f1": 0.008695652173913044,
+        "tp": 1,
+        "fp": 1,
+        "fn": 227
+      },
+      "character": {
+        "precision": 0.6666666666666666,
+        "recall": 0.004034969737726967,
+        "f1": 0.008021390374331552,
+        "tp": 12,
+        "fp": 6,
+        "fn": 2962
+      },
+      "entity_all_mentions_exact": {
+        "hit": 0,
+        "total": 61
+      },
+      "hard_negative": {
+        "hit": 0,
+        "total": 0
+      },
+      "non_pii_masked_chars": 0,
+      "non_pii_chars": 16248,
+      "doc_type": "pilot",
+      "variation_level": "pilot",
+      "context_len_bucket": "pilot",
+      "num_subjects": 1,
+      "generator_model": "unknown"
+    },
+    {
+      "doc_id": "pilot-len-45k",
+      "exact": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 527
+      },
+      "character": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 6982
+      },
+      "entity_all_mentions_exact": {
+        "hit": 0,
+        "total": 64
+      },
+      "hard_negative": {
+        "hit": 0,
+        "total": 0
+      },
+      "non_pii_masked_chars": 0,
+      "non_pii_chars": 38094,
+      "doc_type": "pilot",
+      "variation_level": "pilot",
+      "context_len_bucket": "pilot",
+      "num_subjects": 1,
+      "generator_model": "unknown"
+    }
+  ],
+  "model": "Qwen/Qwen3.5-2B",
+  "task": "span_extraction",
+  "manifest": {
+    "task": "span_extraction",
+    "protocol": {
+      "mode": "local_window",
+      "core_chars": 1200,
+      "halo_chars": 1200,
+      "max_output_tokens": 4096,
+      "version": "span_p1"
+    },
+    "git_commit": "c1c7c48bf5d233149d47660f2257131fb49c5ad7",
+    "created_at": "2026-09-25T15:43:46.749350+00:00",
+    "taxonomy_sha256": "b9ec20e3491f9dcdabb626fc04b1b85cc73bb45ebbe9de69849a1c402c00ae7e",
+    "data_sha256": "1bf54566826b4ed785678b625ff938411e84ee02566f671ffd5166c5aef9bdf0",
+    "requests_sha256": "301111a4a1bc73501d6a5225b376057290b39518e1086ee3dd1c50176f7c1df9",
+    "documents": 10,
+    "requests": 77,
+    "source_sha256": {
+      "protocol.py": "42a2eb13e5da34a8c67a8939fffb81c17ff9300a23ec3733bab7f55f2cfaf236",
+      "run.py": "327b6b74d3733b2bb37d9eb5e6ade73946a3746d2e7d3dcb31be621c4507d30a",
+      "providers.py": "80c47d79012fb5844af49c58b0899077d01bce02d4520dd83055324fbe6e3430",
+      "cohort.py": "da85e4f366023d0f4eaab66a22da2a54f2d7f0a56db7ac9859fc4cbe5e7107d0",
+      "__init__.py": "93dc538d3ddafec97e1a0337b78ae6dcf472988783f5d043d2a1bcc1fdb4d020",
+      "baselines.py": "6e98d212442e56cd8a8a4f3e5ebe0ebfe17001717f78819e4e108c9bccd8e628",
+      "dataset.py": "80cae825524e0c8741ca83894f95859a1ca96b245ba70e8d12b5b4802a030836",
+      "execute.py": "002dda31040c576aae4d33a803b1c9a42e47643c88e29ee6b68c093c8eb5a77a",
+      "metrics.py": "cefad2855667643f524db9eedc45ec04866333eff6cbccd76f8eb557be77a72e",
+      "export.py": "4c629bb28501f5a11d87cf5ea0e1d1c056c925014809a7f2dd27a88db421a6b9"
+    }
+  },
+  "response_sha256": "77117b3437d7d352d3b436ef1b0f15859599d238dc62f06bdfd952eeded8c3d4",
+  "reliability": {
+    "requests": 77,
+    "failed_requests": 74,
+    "failure_rate": 0.961038961038961,
+    "failures": [
+      {
+        "request_id": "pilot-cats-01:0000",
+        "errors": [
+          "invalid_json_or_schema"
+        ]
+      },
+      {
+        "request_id": "pilot-cats-01:0001",
+        "errors": [
+          "invalid_json_or_schema"
+        ]
+      },
+      {
+        "request_id": "pilot-cats-02:0000",
+        "errors": [
+          "invalid_json_or_schema"
+        ]
+      },
+      {
+        "request_id": "pilot-cats-02:0001",
+        "errors": [
+          "invalid_json_or_schema"
+        ]
+      },
+      {
+        "request_id": "pilot-dense-01:0000",
+        "errors": [
+          "invalid_json_or_schema"
+        ]
+      },
+      {
+        "request_id": "pilot-dense-01:0001",
+        "errors": [
+          "invalid_json_or_schema"
+        ]
+      },
+      {
+        "request_id": "pilot-dense-01:0002",
+        "errors": [
+          "invalid_json_or_schema"
+        ]
+      },
+      {
+        "request_id": "pilot-dense-01:0003",
+        "errors": [
+          "item_1:quote_not_found",
+          "item_2:label_or_quote",
+          "item_3:outside_owned_core"
+        ]
+      },
+      {
+        "request_id": "pilot-dense-01:0004",
+        "errors": [
+          "item_4:quote_not_found",
+          "item_8:quote_not_found",
+          "item_9:label_or_quote"
+        ]
+      },
+      {
+        "request_id": "pilot-dense-01:0005",
+        "errors": [
+          "invalid_json_or_schema"
+        ]
+      },
+      {
+        "request_id": "pilot-emoji-01:0000",
+        "errors": [
+          "invalid_json_or_schema"
+        ]
+      },
+      {
+        "request_id": "pilot-repeat-01:0000",
+        "errors": [
+          "invalid_json_or_schema"
+        ]
+      },
+      {
+        "request_id": "pilot-boundary-01:0000",
+        "errors": [
+          "invalid_json_or_schema"
+        ]
+      },
+      {
+        "request_id": "pilot-boundary-01:0001",
+        "errors": [
+          "invalid_json_or_schema"
+        ]
+      },
+      {
+        "request_id": "pilot-boundary-01:0002",
+        "errors": [
+          "invalid_json_or_schema"
+        ]
+      },
+      {
+        "request_id": "pilot-boundary-01:0003",
+        "errors": [
+          "invalid_json_or_schema"
+        ]
+      },
+      {
+        "request_id": "pilot-boundary-01:0004",
+        "errors": [
+          "invalid_json_or_schema"
+        ]
+      },
+      {
+        "request_id": "pilot-multi-01:0000",
+        "errors": [
+          "item_1:quote_not_found",
+          "item_2:quote_not_found",
+          "item_3:quote_not_found",
+          "item_4:quote_not_found",
+          "item_5:quote_not_found",
+          "item_6:quote_not_found",
+          "item_7:quote_not_found",
+          "item_8:quote_not_found",
+          "item_9:quote_not_found",
+          "item_10:quote_not_found",
+          "item_11:quote_not_found",
+          "item_12:quote_not_found",
+          "item_13:quote_not_found",
+          "item_14:quote_not_found",
+          "item_15:quote_not_found",
+          "item_16:quote_not_found",
+          "item_17:quote_not_found",
+          "item_18:quote_not_found",
+          "item_19:quote_not_found",
+          "item_20:quote_not_found",
+          "item_21:quote_not_found",
+          "item_22:quote_not_found",
+          "item_23:quote_not_found",
+          "item_24:quote_not_found",
+          "item_25:quote_not_found",
+          "item_26:quote_not_found",
+          "item_27:quote_not_found",
+          "item_28:quote_not_found",
+          "item_29:quote_not_found",
+          "item_30:quote_not_found",
+          "item_31:quote_not_found",
+          "item_32:quote_not_found",
+          "item_33:quote_not_found",
+          "item_34:quote_not_found",
+          "item_35:quote_not_found",
+          "item_36:quote_not_found",
+          "item_37:quote_not_found",
+          "item_38:quote_not_found",
+          "item_39:quote_not_found",
+          "item_40:quote_not_found",
+          "item_41:quote_not_found",
+          "item_42:quote_not_found",
+          "item_43:quote_not_found",
+          "item_44:quote_not_found",
+          "item_45:quote_not_found",
+          "item_46:quote_not_found",
+          "item_47:quote_not_found",
+          "item_48:quote_not_found",
+          "item_49:quote_not_found",
+          "item_50:quote_not_found"
+        ]
+      },
+      {
+        "request_id": "pilot-len-4k:0000",
+        "errors": [
+          "item_1:quote_not_found",
+          "item_2:quote_not_found"
+        ]
+      },
+      {
+        "request_id": "pilot-len-4k:0001",
+        "errors": [
+          "invalid_json_or_schema"
+        ]
+      },
+      {
+        "request_id": "pilot-len-4k:0002",
+        "errors": [
+          "item_0:occurrence",
+          "item_1:occurrence",
+          "item_2:occurrence",
+          "item_3:occurrence",
+          "item_4:occurrence",
+          "item_5:occurrence",
+          "item_6:occurrence",
+          "item_7:occurrence"
+        ]
+      },
+      {
+        "request_id": "pilot-len-4k:0003",
+        "errors": [
+          "item_0:quote_not_found"
+        ]
+      },
+      {
+        "request_id": "pilot-len-19k:0000",
+        "errors": [
+          "invalid_json_or_schema"
+        ]
+      },
+      {
+        "request_id": "pilot-len-19k:0001",
+        "errors": [
+          "invalid_json_or_schema"
+        ]
+      },
+      {
+        "request_id": "pilot-len-19k:0002",
+        "errors": [
+          "invalid_json_or_schema"
+        ]
+      },
+      {
+        "request_id": "pilot-len-19k:0003",
+        "errors": [
+          "invalid_json_or_schema"
+        ]
+      },
+      {
+        "request_id": "pilot-len-19k:0004",
+        "errors": [
+          "invalid_json_or_schema"
+        ]
+      },
+      {
+        "request_id": "pilot-len-19k:0005",
+        "errors": [
+          "invalid_json_or_schema"
+        ]
+      },
+      {
+        "request_id": "pilot-len-19k:0006",
+        "errors": [
+          "item_0:quote_not_found",
+          "item_1:quote_not_found",
+          "item_2:quote_not_found",
+          "item_3:quote_not_found",
+          "item_4:outside_owned_core",
+          "item_5:quote_not_found",
+          "item_6:label_or_quote",
+          "item_7:label_or_quote",
+          "item_8:label_or_quote",
+          "item_9:label_or_quote",
+          "item_10:quote_not_found",
+          "item_11:label_or_quote"
+        ]
+      },
+      {
+        "request_id": "pilot-len-19k:0007",
+        "errors": [
+          "invalid_json_or_schema"
+        ]
+      },
+      {
+        "request_id": "pilot-len-19k:0008",
+        "errors": [
+          "invalid_json_or_schema"
+        ]
+      },
+      {
+        "request_id": "pilot-len-19k:0009",
+        "errors": [
+          "invalid_json_or_schema"
+        ]
+      },
+      {
+        "request_id": "pilot-len-19k:0010",
+        "errors": [
+          "item_0:quote_not_found",
+          "item_1:quote_not_found",
+          "item_2:quote_not_found",
+          "item_3:quote_not_found",
+          "item_4:quote_not_found",
+          "item_5:quote_not_found",
+          "item_6:quote_not_found",
+          "item_7:quote_not_found",
+          "item_8:quote_not_found"
+        ]
+      },
+      {
+        "request_id": "pilot-len-19k:0011",
+        "errors": [
+          "item_0:outside_owned_core",
+          "item_1:quote_not_found",
+          "item_2:quote_not_found"
+        ]
+      },
+      {
+        "request_id": "pilot-len-19k:0012",
+        "errors": [
+          "item_0:quote_not_found",
+          "item_1:quote_not_found",
+          "item_2:quote_not_found",
+          "item_3:quote_not_found",
+          "item_4:quote_not_found",
+          "item_5:quote_not_found",
+          "item_6:quote_not_found",
+          "item_7:quote_not_found",
+          "item_8:quote_not_found",
+          "item_9:quote_not_found",
+          "item_10:quote_not_found",
+          "item_11:quote_not_found",
+          "item_12:quote_not_found",
+          "item_13:quote_not_found",
+          "item_14:quote_not_found",
+          "item_15:quote_not_found",
+          "item_16:quote_not_found",
+          "item_17:quote_not_found",
+          "item_18:quote_not_found",
+          "item_19:quote_not_found",
+          "item_20:quote_not_found",
+          "item_21:quote_not_found",
+          "item_22:quote_not_found",
+          "item_23:quote_not_found",
+          "item_24:quote_not_found",
+          "item_25:quote_not_found",
+          "item_26:quote_not_found",
+          "item_27:quote_not_found",
+          "item_28:quote_not_found",
+          "item_29:quote_not_found",
+          "item_30:quote_not_found",
+          "item_31:quote_not_found",
+          "item_32:quote_not_found",
+          "item_33:quote_not_found",
+          "item_34:quote_not_found",
+          "item_35:quote_not_found",
+          "item_36:quote_not_found",
+          "item_37:quote_not_found",
+          "item_38:quote_not_found",
+          "item_39:quote_not_found",
+          "item_40:quote_not_found",
+          "item_41:quote_not_found",
+          "item_42:quote_not_found",
+          "item_43:quote_not_found",
+          "item_44:quote_not_found",
+          "item_45:quote_not_found",
+          "item_46:quote_not_found",
+          "item_47:quote_not_found",
+          "item_48:quote_not_found",
+          "item_49:quote_not_found",
+          "item_50:quote_not_found",
+          "item_51:quote_not_found",
+          "item_52:quote_not_found",
+          "item_53:quote_not_found",
+          "item_54:quote_not_found",
+          "item_55:quote_not_found",
+          "item_56:quote_not_found",
+          "item_57:quote_not_found",
+          "item_58:quote_not_found",
+          "item_59:quote_not_found",
+          "item_60:quote_not_found",
+          "item_61:quote_not_found",
+          "item_62:quote_not_found",
+          "item_63:quote_not_found",
+          "item_64:quote_not_found",
+          "item_65:quote_not_found",
+          "item_66:quote_not_found",
+          "item_67:quote_not_found",
+          "item_68:quote_not_found",
+          "item_69:quote_not_found",
+          "item_70:quote_not_found",
+          "item_71:quote_not_found",
+          "item_72:quote_not_found",
+          "item_73:quote_not_found",
+          "item_74:quote_not_found",
+          "item_75:quote_not_found",
+          "item_76:quote_not_found",
+          "item_77:quote_not_found",
+          "item_78:quote_not_found",
+          "item_79:quote_not_found",
+          "item_80:quote_not_found",
+          "item_81:quote_not_found",
+          "item_82:quote_not_found",
+          "item_83:quote_not_found",
+          "item_84:quote_not_found",
+          "item_85:quote_not_found",
+          "item_86:quote_not_found",
+          "item_87:quote_not_found",
+          "item_88:quote_not_found",
+          "item_89:quote_not_found",
+          "item_90:quote_not_found",
+          "item_91:quote_not_found",
+          "item_92:quote_not_found",
+          "item_93:quote_not_found",
+          "item_94:quote_not_found",
+          "item_95:quote_not_found",
+          "item_96:quote_not_found",
+          "item_97:quote_not_found",
+          "item_98:quote_not_found",
+          "item_99:quote_not_found",
+          "item_100:quote_not_found",
+          "item_101:quote_not_found",
+          "item_102:quote_not_found",
+          "item_103:quote_not_found",
+          "item_104:quote_not_found",
+          "item_105:quote_not_found",
+          "item_106:quote_not_found",
+          "item_107:quote_not_found",
+          "item_108:quote_not_found",
+          "item_109:quote_not_found",
+          "item_110:quote_not_found",
+          "item_111:quote_not_found",
+          "item_112:quote_not_found",
+          "item_113:quote_not_found",
+          "item_114:quote_not_found",
+          "item_115:quote_not_found",
+          "item_116:quote_not_found",
+          "item_117:quote_not_found"
+        ]
+      },
+      {
+        "request_id": "pilot-len-19k:0014",
+        "errors": [
+          "item_0:label_or_quote",
+          "item_1:label_or_quote",
+          "item_2:label_or_quote",
+          "item_3:label_or_quote",
+          "item_4:label_or_quote",
+          "item_5:label_or_quote",
+          "item_6:label_or_quote",
+          "item_7:label_or_quote",
+          "item_8:label_or_quote"
+        ]
+      },
+      {
+        "request_id": "pilot-len-19k:0015",
+        "errors": [
+          "invalid_json_or_schema"
+        ]
+      },
+      {
+        "request_id": "pilot-len-45k:0000",
+        "errors": [
+          "invalid_json_or_schema"
+        ]
+      },
+      {
+        "request_id": "pilot-len-45k:0001",
+        "errors": [
+          "invalid_json_or_schema"
+        ]
+      },
+      {
+        "request_id": "pilot-len-45k:0002",
+        "errors": [
+          "request_failed_or_truncated"
+        ]
+      },
+      {
+        "request_id": "pilot-len-45k:0003",
+        "errors": [
+          "invalid_json_or_schema"
+        ]
+      },
+      {
+        "request_id": "pilot-len-45k:0004",
+        "errors": [
+          "invalid_json_or_schema"
+        ]
+      },
+      {
+        "request_id": "pilot-len-45k:0005",
+        "errors": [
+          "invalid_json_or_schema"
+        ]
+      },
+      {
+        "request_id": "pilot-len-45k:0006",
+        "errors": [
+          "invalid_json_or_schema"
+        ]
+      },
+      {
+        "request_id": "pilot-len-45k:0007",
+        "errors": [
+          "item_0:quote_not_found",
+          "item_1:quote_not_found",
+          "item_2:quote_not_found",
+          "item_3:quote_not_found",
+          "item_4:quote_not_found",
+          "item_5:quote_not_found",
+          "item_6:quote_not_found",
+          "item_7:quote_not_found",
+          "item_8:quote_not_found",
+          "item_9:quote_not_found",
+          "item_10:quote_not_found",
+          "item_11:quote_not_found",
+          "item_12:quote_not_found",
+          "item_13:quote_not_found",
+          "item_14:quote_not_found",
+          "item_15:quote_not_found"
+        ]
+      },
+      {
+        "request_id": "pilot-len-45k:0008",
+        "errors": [
+          "invalid_json_or_schema"
+        ]
+      },
+      {
+        "request_id": "pilot-len-45k:0009",
+        "errors": [
+          "invalid_json_or_schema"
+        ]
+      },
+      {
+        "request_id": "pilot-len-45k:0010",
+        "errors": [
+          "invalid_json_or_schema"
+        ]
+      },
+      {
+        "request_id": "pilot-len-45k:0011",
+        "errors": [
+          "invalid_json_or_schema"
+        ]
+      },
+      {
+        "request_id": "pilot-len-45k:0012",
+        "errors": [
+          "invalid_json_or_schema"
+        ]
+      },
+      {
+        "request_id": "pilot-len-45k:0013",
+        "errors": [
+          "item_0:label_or_quote",
+          "item_1:label_or_quote",
+          "item_2:label_or_quote",
+          "item_3:label_or_quote",
+          "item_4:label_or_quote",
+          "item_5:label_or_quote"
+        ]
+      },
+      {
+        "request_id": "pilot-len-45k:0014",
+        "errors": [
+          "invalid_json_or_schema"
+        ]
+      },
+      {
+        "request_id": "pilot-len-45k:0015",
+        "errors": [
+          "item_1:quote_not_found"
+        ]
+      },
+      {
+        "request_id": "pilot-len-45k:0016",
+        "errors": [
+          "invalid_json_or_schema"
+        ]
+      },
+      {
+        "request_id": "pilot-len-45k:0017",
+        "errors": [
+          "invalid_json_or_schema"
+        ]
+      },
+      {
+        "request_id": "pilot-len-45k:0018",
+        "errors": [
+          "invalid_json_or_schema"
+        ]
+      },
+      {
+        "request_id": "pilot-len-45k:0019",
+        "errors": [
+          "invalid_json_or_schema"
+        ]
+      },
+      {
+        "request_id": "pilot-len-45k:0020",
+        "errors": [
+          "invalid_json_or_schema"
+        ]
+      },
+      {
+        "request_id": "pilot-len-45k:0021",
+        "errors": [
+          "item_0:quote_not_found",
+          "item_1:quote_not_found",
+          "item_2:quote_not_found"
+        ]
+      },
+      {
+        "request_id": "pilot-len-45k:0022",
+        "errors": [
+          "invalid_json_or_schema"
+        ]
+      },
+      {
+        "request_id": "pilot-len-45k:0023",
+        "errors": [
+          "invalid_json_or_schema"
+        ]
+      },
+      {
+        "request_id": "pilot-len-45k:0024",
+        "errors": [
+          "invalid_json_or_schema"
+        ]
+      },
+      {
+        "request_id": "pilot-len-45k:0025",
+        "errors": [
+          "invalid_json_or_schema"
+        ]
+      },
+      {
+        "request_id": "pilot-len-45k:0026",
+        "errors": [
+          "invalid_json_or_schema"
+        ]
+      },
+      {
+        "request_id": "pilot-len-45k:0027",
+        "errors": [
+          "invalid_json_or_schema"
+        ]
+      },
+      {
+        "request_id": "pilot-len-45k:0028",
+        "errors": [
+          "invalid_json_or_schema"
+        ]
+      },
+      {
+        "request_id": "pilot-len-45k:0029",
+        "errors": [
+          "invalid_json_or_schema"
+        ]
+      },
+      {
+        "request_id": "pilot-len-45k:0030",
+        "errors": [
+          "invalid_json_or_schema"
+        ]
+      },
+      {
+        "request_id": "pilot-len-45k:0031",
+        "errors": [
+          "item_0:quote_not_found",
+          "item_1:quote_not_found",
+          "item_2:quote_not_found",
+          "item_3:quote_not_found",
+          "item_4:quote_not_found"
+        ]
+      },
+      {
+        "request_id": "pilot-len-45k:0032",
+        "errors": [
+          "invalid_json_or_schema"
+        ]
+      },
+      {
+        "request_id": "pilot-len-45k:0034",
+        "errors": [
+          "request_failed_or_truncated"
+        ]
+      },
+      {
+        "request_id": "pilot-len-45k:0035",
+        "errors": [
+          "invalid_json_or_schema"
+        ]
+      },
+      {
+        "request_id": "pilot-len-45k:0036",
+        "errors": [
+          "invalid_json_or_schema"
+        ]
+      },
+      {
+        "request_id": "pilot-len-45k:0037",
+        "errors": [
+          "invalid_json_or_schema"
+        ]
+      }
+    ]
+  },
+  "usage": {
+    "input_tokens": 456541,
+    "output_tokens": 27105,
+    "reasoning_tokens": 0,
+    "latency_seconds": 130.81794778443873
+  },
+  "requests_missing_usage": 0,
+  "execution": {
+    "cohort_sha256": null,
+    "config_sha256": "860379b4e6e74f91244760273f3d42f847c35b367e4f533a5cb4b91cf8037350",
+    "requests_sha256": "301111a4a1bc73501d6a5225b376057290b39518e1086ee3dd1c50176f7c1df9",
+    "data_sha256": "1bf54566826b4ed785678b625ff938411e84ee02566f671ffd5166c5aef9bdf0",
+    "source_sha256": {
+      "__init__.py": "93dc538d3ddafec97e1a0337b78ae6dcf472988783f5d043d2a1bcc1fdb4d020",
+      "baselines.py": "6e98d212442e56cd8a8a4f3e5ebe0ebfe17001717f78819e4e108c9bccd8e628",
+      "cohort.py": "da85e4f366023d0f4eaab66a22da2a54f2d7f0a56db7ac9859fc4cbe5e7107d0",
+      "dataset.py": "80cae825524e0c8741ca83894f95859a1ca96b245ba70e8d12b5b4802a030836",
+      "execute.py": "002dda31040c576aae4d33a803b1c9a42e47643c88e29ee6b68c093c8eb5a77a",
+      "export.py": "4c629bb28501f5a11d87cf5ea0e1d1c056c925014809a7f2dd27a88db421a6b9",
+      "metrics.py": "cefad2855667643f524db9eedc45ec04866333eff6cbccd76f8eb557be77a72e",
+      "protocol.py": "42a2eb13e5da34a8c67a8939fffb81c17ff9300a23ec3733bab7f55f2cfaf236",
+      "providers.py": "80c47d79012fb5844af49c58b0899077d01bce02d4520dd83055324fbe6e3430",
+      "run.py": "327b6b74d3733b2bb37d9eb5e6ade73946a3746d2e7d3dcb31be621c4507d30a"
+    },
+    "config": {
+      "model": "Qwen/Qwen3.5-2B",
+      "model_revision": "15852e8c16360a2fea060d615a32b45270f8a8fc",
+      "tokenizer_revision": "15852e8c16360a2fea060d615a32b45270f8a8fc",
+      "operator": "은빈",
+      "run_id": "0925-03",
+      "price_date": "2026-09-25",
+      "provider": "openai_compatible",
+      "base_url": "http://127.0.0.1:8003/v1",
+      "input_limit": 262144,
+      "output_limit": 4096,
+      "total_limit": 262144,
+      "input_usd_per_million": 0,
+      "output_usd_per_million": 0,
+      "budget_usd": 0,
+      "settings_frozen": true,
+      "concurrency": 1,
+      "timeout_seconds": 180,
+      "generation": {
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      },
+      "tokenize_options": {
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      }
+    },
+    "git_commit": "c1c7c48bf5d233149d47660f2257131fb49c5ad7",
+    "created_at": "2026-09-25T16:00:13.339212+00:00",
+    "dependencies": {
+      "pandas": "3.0.6",
+      "spacy-legacy": "3.0.12",
+      "xxhash": "4.0.1",
+      "idna": "3.20",
+      "smart_open": "8.0.1",
+      "pydantic_core": "2.46.5",
+      "thinc": "8.3.13",
+      "blis": "1.3.3",
+      "setuptools": "84.0.0",
+      "multiprocess": "0.70.19",
+      "aiohappyeyeballs": "2.7.1",
+      "h11": "0.16.0",
+      "jiter": "0.17.0",
+      "spacy-loggers": "1.0.5",
+      "tqdm": "4.70.1",
+      "annotated-types": "0.8.0",
+      "requests": "2.34.2",
+      "anyio": "4.15.1",
+      "preshed": "3.0.13",
+      "six": "1.17.0",
+      "truststore": "0.10.4",
+      "phonenumbers": "9.0.39",
+      "frozenlist": "1.8.0",
+      "attrs": "26.1.0",
+      "pip": "24.0",
+      "rich": "15.0.0",
+      "pyarrow": "25.0.1",
+      "fsspec": "2026.2.0",
+      "weasel": "1.0.0",
+      "wrapt": "2.4.1",
+      "typing_extensions": "4.16.0",
+      "httpcore": "1.0.9",
+      "click": "8.5.0",
+      "hf-xet": "1.6.0",
+      "datasets": "4.8.4",
+      "multidict": "6.9.1",
+      "wasabi": "1.1.3",
+      "typer": "0.27.2",
+      "PyYAML": "6.0.3",
+      "propcache": "0.5.4",
+      "dill": "0.4.1",
+      "contourpy": "1.4.0",
+      "yarl": "1.25.1",
+      "mdurl": "0.1.2",
+      "numpy": "2.4.6",
+      "matplotlib": "3.11.2",
+      "httpx2": "2.13.1",
+      "fonttools": "4.65.0",
+      "regex": "2026.9.10",
+      "cymem": "2.0.13",
+      "requests-file": "3.0.1",
+      "pydantic": "2.13.5",
+      "httpx": "0.28.1",
+      "presidio_analyzer": "2.2.364",
+      "kiwisolver": "1.5.1",
+      "sniffio": "1.3.1",
+      "catalogue": "2.0.10",
+      "charset-normalizer": "3.5.1",
+      "Jinja2": "3.1.6",
+      "urllib3": "2.8.0",
+      "typing-inspection": "0.4.4",
+      "filelock": "4.0.1",
+      "srsly": "2.5.3",
+      "cycler": "0.12.1",
+      "tldextract": "5.3.2",
+      "murmurhash": "1.0.15",
+      "packaging": "26.3",
+      "certifi": "2026.7.22",
+      "pyparsing": "3.3.3",
+      "shellingham": "1.5.4",
+      "huggingface_hub": "1.32.0",
+      "aiosignal": "1.4.0",
+      "Pygments": "2.21.0",
+      "pluggy": "1.6.0",
+      "openai": "3.19.0",
+      "annotated-doc": "0.0.5",
+      "pillow": "12.3.0",
+      "iniconfig": "2.3.0",
+      "MarkupSafe": "3.0.3",
+      "cloudpathlib": "0.25.0",
+      "aiohttp": "3.14.3",
+      "ko-pii": "1.16.0",
+      "httpcore2": "2.13.1",
+      "markdown-it-py": "4.2.0",
+      "spacy": "3.8.16",
+      "confection": "1.3.3",
+      "pytest": "9.1.1",
+      "python-dateutil": "2.9.0.post0"
+    },
+    "accounting": {
+      "model": "Qwen/Qwen3.5-2B",
+      "complete": true,
+      "finished_requests": 77,
+      "planned_requests": 77,
+      "spent_or_reserved_usd": 0.0,
+      "budget_usd": 0,
+      "stop_reason": "complete"
+    }
+  }
+}
