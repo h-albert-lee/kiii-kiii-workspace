@@ -14,7 +14,7 @@
 | Model adapters | Claude/Gemini/vLLM implemented and fixture-tested; native paid calls and GPU servers still require operator pilot |
 | Baselines | Presidio/ko-pii completed all 1,440 docs on 9/24; raw predictions + results pushed under experiments/results/runs. Common LLM cohort rescore pending. OpenMed GPU untested |
 | Operator docs | README, AGENTS, runbook, config templates, label-map limitations prepared |
-| Paper/related work | Dataset/protocol/review scope updated; TWICE/NMIXX included; actual results remain placeholders |
+| Paper/related work | 9/26 framing revised in Overleaf and synced (`1d96f32`): explicit detection policy, controlled inputs and matched context comparison; TWICE/NMIXX retained; results pending. [Review receipt](docs/reviews/2026-09-26-paper-framing.md) |
 | Leaderboard | Two full-release baseline results available; consolidated headline table deferred until common cohort is frozen |
 
 Validation: **106 tests passed** (offline provider fixtures, budget/resume/capacity/export guards, generation/release regressions). Verified release → two-document smoke → actual Presidio/ko-pii extraction/scoring completed. Smoke scores are not benchmark findings. Native paid providers and GPU model loading were not exercised.
