@@ -109,3 +109,5 @@ API 기준점은 필수가 아닙니다. Gemini 추가는 별도 결정이며 �
 ## 2026-09-27 사후 응답 진단
 
 [ADR-0036](../decisions/0036-posthoc-response-diagnostics.md)과 [부분점수 가이드](../guide/response-diagnostics.md)에 따라 별도 오프라인 분석 모듈을 추가했습니다. 원본 strict, 항목별 처리, 전체 JSON 코드펜스 처리의 3단계마다 exact와 category-aware character coverage를 제공합니다. strict 실패 양상을 확인한 뒤 정의했으므로 사전 계획 분석으로 쓰지 않습니다. 잘못된 항목 FP를 포함한 exact precision과 문자 점수를 함께 해석하고, 형식 효과와 추출 성능의 인과 분리라고 주장하지 않습니다. 원본 추론·prompt·공통 cohort는 수정하지 않습니다.
+
+완료 자료: [9/27 3조건 진단 보고서](../../experiments/results/analyses/0927-response-diagnostics-v1/REPORT.md), [분해 CSV](../../experiments/results/analyses/0927-response-diagnostics-v1/tables/breakdowns.csv). Kanana full/local과 Qwen 2B full만 본 실험 완료 자료입니다. Qwen local/4B 업로드의 10건 pilot은 제외했습니다. 기존 첫머리의 9/24 대기 상태는 그날의 기록이며 현재 상태는 이 항목과 STATUS를 따릅니다.

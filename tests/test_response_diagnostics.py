@@ -132,6 +132,17 @@ def test_end_to_end_replay_immutable_inputs_and_audit(tmp_path):
     for line in (output/'ARTIFACTS.sha256').read_text().splitlines():
         digest, name = line.split('  ')
         assert digest == file_sha(output/name)
+    from src.analysis.export_diagnostics import export, breakdown_rows
+    import csv
+    assert export([output/'analysis.json'], tmp_path/'tables') > 0
+    with (tmp_path/'tables'/'breakdowns.csv').open() as stream:
+        table = list(csv.DictReader(stream))
+    row = next(r for r in table if r['stage'] == 'itemwise' and r['metric'] == 'exact_with_invalid_item_fp'
+               and r['axis'] == 'category' and r['group'] == 'person_name')
+    assert (int(row['tp']), int(row['fp']), int(row['fn'])) == (1, 1, 1)
+    analysis['input_scope'] = 'pilot_or_smoke'
+    with pytest.raises(ValueError, match='completed benchmark'):
+        list(breakdown_rows(analysis, 'pilot'))
     with pytest.raises(ValueError, match='new directory'):
         analyze(gold, responses, reference, output)
 

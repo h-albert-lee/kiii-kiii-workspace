@@ -1,15 +1,15 @@
 # 실험 담당 배정표
 
-2026-09-26 (ADR-0034/0035). **사용자 확정 배정: API 실행은 보류(기존 담당 성현), GPU 실험은 은빈, GPU 불필요 규칙 베이스라인은 한울, 문맥 효과 연구는 사라.** GitHub ID는 각 담당자가 기입합니다. 담당자는 착수 전에 상태와 run ID를 커밋·푸시합니다. 취합 담당자는 별도 지정 전까지 미정입니다.
+2026-09-27 (ADR-0034/0035/0036). **사용자 확정 배정: API 실행은 보류(기존 담당 성현), GPU 실험은 은빈, GPU 불필요 규칙 베이스라인은 한울, 문맥 효과 연구는 사라.** GitHub ID는 각 담당자가 기입합니다. 담당자는 착수 전에 상태와 run ID를 커밋·푸시합니다. 취합 담당자는 별도 지정 전까지 미정입니다.
 
 | 묶음 | 계획 모델 | 실행 조건 | 담당자 / GitHub ID | 상태 | run ID / 결과 링크 |
 |---|---|---|---|---|---|
-| B · GPU LLM | Qwen3.5-2B | full_context_targeted + local_window | 은빈 | 사용자 보고상 진행 중; 개별 진척 미확인 | [feat/exp-eb 기록](https://github.com/h-albert-lee/kiii-kiii-workspace/tree/feat/exp-eb/experiments/results/runs) · 0925-03/04-qwen-2b-full/local |
-| B · GPU LLM | Qwen3.5-4B | full_context_targeted + local_window | 은빈 | 사용자 보고상 진행 중; 개별 진척 미확인 | [feat/exp-eb 기록](https://github.com/h-albert-lee/kiii-kiii-workspace/tree/feat/exp-eb/experiments/results/runs) · 0925-05/06-qwen-4b-full/local |
-| B · GPU LLM | Kanana-2-3B-Instruct | full_context_targeted + local_window | 은빈 | 사용자 보고상 진행 중; 개별 진척 미확인 | [feat/exp-eb 기록](https://github.com/h-albert-lee/kiii-kiii-workspace/tree/feat/exp-eb/experiments/results/runs) · 0925-01/02-kanana-3b-full/local |
+| B · GPU LLM | Qwen3.5-2B | full_context_targeted + local_window | 은빈 | full 1,440건 재현 검증; local 업로드는 10건 pilot | [feat/exp-eb 기록](https://github.com/h-albert-lee/kiii-kiii-workspace/tree/feat/exp-eb/experiments/results/runs) · 0925-03/04-qwen-2b-full/local |
+| B · GPU LLM | Qwen3.5-4B | full_context_targeted + local_window | 은빈 | full 업로드는 10건 pilot; local은 REPORT만 있음 | [feat/exp-eb 기록](https://github.com/h-albert-lee/kiii-kiii-workspace/tree/feat/exp-eb/experiments/results/runs) · 0925-05/06-qwen-4b-full/local |
+| B · GPU LLM | Kanana-2-3B-Instruct | full_context_targeted + local_window | 은빈 | full/local 각 1,440건 재현 검증; native 계측/gate 원본 확인 대기 | [feat/exp-eb 기록](https://github.com/h-albert-lee/kiii-kiii-workspace/tree/feat/exp-eb/experiments/results/runs) · 0925-01/02-kanana-3b-full/local |
 | C · CPU 베이스라인 | Presidio 한국형 규칙 + 계좌·카드 규칙 | 동일 평가 문서 전체, 1회 | 한울 | 1,440건 완료·공통 cohort 재집계 대기 | [0924-01-presidio-full1440](results/runs/0924-01-presidio-full1440/REPORT.md) |
 | C · CPU 베이스라인 | ko-pii 1.16.0 | 동일 평가 문서 전체, 1회 | 한울 | 1,440건 완료·공통 cohort 재집계 대기 | [0924-01-ko-pii-full1440](results/runs/0924-01-ko-pii-full1440/REPORT.md) |
-| B · GPU 베이스라인 | OpenMed/privacy-filter-multilingual | 동일 평가 문서, 겹침 토큰 창, 1회 | 은빈 | 브랜치에 실행 폴더 등록·진척 미확인 | [0925-07-openmed-windows](https://github.com/h-albert-lee/kiii-kiii-workspace/blob/feat/exp-eb/experiments/results/runs/0925-07-openmed-windows/REPORT.md) |
+| B · GPU 베이스라인 | OpenMed/privacy-filter-multilingual | 동일 평가 문서, 겹침 토큰 창, 1회 | 은빈 | REPORT만 업로드; 완료 결과 미확인 | [0925-07-openmed-windows](https://github.com/h-albert-lee/kiii-kiii-workspace/blob/feat/exp-eb/experiments/results/runs/0925-07-openmed-windows/REPORT.md) |
 | B+ · GPU 확장 1순위 | Qwen3.5-9B | full_context_targeted + local_window | 은빈 | 추가 배정·미착수 | [실행 인계](../docs/guide/eunbin-medium-extension.md) |
 | B+ · GPU 확장 2순위 | Kanana-1.5-8B-Instruct-2505 | full_context_targeted + local_window | 은빈 | 추가 배정·미착수 | [실행 인계](../docs/guide/eunbin-medium-extension.md) |
 | D · 취합 | 공통 설정·평가 집합 확정 / 결과 통합 | 전체 모델 계측 취합, cohort gate, CSV·bootstrap | 미정 | 미착수 | — |
@@ -40,3 +40,5 @@ ADR-0035 확장은 2개 LLM × 두 조건을 추가하여 완료 시 **총 8개 
 상태: 미착수 → 환경 준비 → pilot → 계측 완료 → 공통 집합 확정 → 본 실행 → 완료 / 중단(사유 기록).
 
 모델별 담당자가 정해지면 이 표를 먼저 갱신합니다. 새로운 실행 ID는 날짜와 작업 식별자를 함께 쓰고(예: `0924-01-claude-full`), 다른 담당자의 경로를 재사용하지 않습니다.
+
+9/27: 위 업로드 상태는 `feat/exp-eb@b4f76f4` 기준입니다. [완료 3조건의 응답 분해·부분점수](results/analyses/0927-response-diagnostics-v1/REPORT.md)를 공유했습니다. strict 원본은 그대로이며, native 계측/cohort 원본·담당자 환경 기록과 나머지 본 실험 결과의 제출은 계속 필요합니다. 파일럿 업로드를 본 실험 완료로 집계하지 않습니다.

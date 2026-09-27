@@ -1,0 +1,70 @@
+analysis_id,stage,error,requests,total_requests
+0925-01-kanana-3b-full,strict,invalid_json_or_schema,2647,13723
+0925-01-kanana-3b-full,strict,label_or_quote,830,13723
+0925-01-kanana-3b-full,strict,occurrence,17,13723
+0925-01-kanana-3b-full,strict,outside_owned_core,2145,13723
+0925-01-kanana-3b-full,strict,quote_not_found,9593,13723
+0925-01-kanana-3b-full,strict,request_failed_or_truncated,10,13723
+0925-01-kanana-3b-full,strict,schema,101,13723
+0925-01-kanana-3b-full,itemwise,invalid_json_or_schema,2647,13723
+0925-01-kanana-3b-full,itemwise,label_or_quote,830,13723
+0925-01-kanana-3b-full,itemwise,occurrence,17,13723
+0925-01-kanana-3b-full,itemwise,outside_owned_core,2145,13723
+0925-01-kanana-3b-full,itemwise,quote_not_found,9593,13723
+0925-01-kanana-3b-full,itemwise,request_failed_or_truncated,10,13723
+0925-01-kanana-3b-full,itemwise,schema,101,13723
+0925-01-kanana-3b-full,fence_itemwise,invalid_json_or_schema,2623,13723
+0925-01-kanana-3b-full,fence_itemwise,label_or_quote,832,13723
+0925-01-kanana-3b-full,fence_itemwise,occurrence,17,13723
+0925-01-kanana-3b-full,fence_itemwise,outside_owned_core,2146,13723
+0925-01-kanana-3b-full,fence_itemwise,quote_not_found,9611,13723
+0925-01-kanana-3b-full,fence_itemwise,request_failed_or_truncated,10,13723
+0925-01-kanana-3b-full,fence_itemwise,schema,101,13723
+0925-02-kanana-3b-local,strict,invalid_json_or_schema,2288,13723
+0925-02-kanana-3b-local,strict,label_or_quote,921,13723
+0925-02-kanana-3b-local,strict,occurrence,15,13723
+0925-02-kanana-3b-local,strict,outside_owned_core,2527,13723
+0925-02-kanana-3b-local,strict,quote_not_found,6956,13723
+0925-02-kanana-3b-local,strict,request_failed_or_truncated,1,13723
+0925-02-kanana-3b-local,strict,schema,120,13723
+0925-02-kanana-3b-local,itemwise,invalid_json_or_schema,2288,13723
+0925-02-kanana-3b-local,itemwise,label_or_quote,921,13723
+0925-02-kanana-3b-local,itemwise,occurrence,15,13723
+0925-02-kanana-3b-local,itemwise,outside_owned_core,2527,13723
+0925-02-kanana-3b-local,itemwise,quote_not_found,6956,13723
+0925-02-kanana-3b-local,itemwise,request_failed_or_truncated,1,13723
+0925-02-kanana-3b-local,itemwise,schema,120,13723
+0925-02-kanana-3b-local,fence_itemwise,invalid_json_or_schema,2270,13723
+0925-02-kanana-3b-local,fence_itemwise,label_or_quote,925,13723
+0925-02-kanana-3b-local,fence_itemwise,occurrence,15,13723
+0925-02-kanana-3b-local,fence_itemwise,outside_owned_core,2529,13723
+0925-02-kanana-3b-local,fence_itemwise,quote_not_found,6967,13723
+0925-02-kanana-3b-local,fence_itemwise,request_failed_or_truncated,1,13723
+0925-02-kanana-3b-local,fence_itemwise,schema,120,13723
+0925-03-qwen-2b-full,strict,invalid_json_or_schema,8791,13723
+0925-03-qwen-2b-full,strict,label_or_quote,932,13723
+0925-03-qwen-2b-full,strict,occurrence,166,13723
+0925-03-qwen-2b-full,strict,outside_owned_core,463,13723
+0925-03-qwen-2b-full,strict,quote_not_found,3442,13723
+0925-03-qwen-2b-full,strict,request_failed_or_truncated,637,13723
+0925-03-qwen-2b-full,strict,schema,181,13723
+0925-03-qwen-2b-full,strict,unhashable type: 'dict',1,13723
+0925-03-qwen-2b-full,strict,unhashable type: 'list',1,13723
+0925-03-qwen-2b-full,itemwise,invalid_json_or_schema,8791,13723
+0925-03-qwen-2b-full,itemwise,label_or_quote,932,13723
+0925-03-qwen-2b-full,itemwise,occurrence,166,13723
+0925-03-qwen-2b-full,itemwise,outside_owned_core,463,13723
+0925-03-qwen-2b-full,itemwise,quote_not_found,3442,13723
+0925-03-qwen-2b-full,itemwise,request_failed_or_truncated,637,13723
+0925-03-qwen-2b-full,itemwise,schema,181,13723
+0925-03-qwen-2b-full,itemwise,unhashable type: 'dict',1,13723
+0925-03-qwen-2b-full,itemwise,unhashable type: 'list',1,13723
+0925-03-qwen-2b-full,fence_itemwise,invalid_json_or_schema,4523,13723
+0925-03-qwen-2b-full,fence_itemwise,label_or_quote,1772,13723
+0925-03-qwen-2b-full,fence_itemwise,occurrence,321,13723
+0925-03-qwen-2b-full,fence_itemwise,outside_owned_core,988,13723
+0925-03-qwen-2b-full,fence_itemwise,quote_not_found,6882,13723
+0925-03-qwen-2b-full,fence_itemwise,request_failed_or_truncated,637,13723
+0925-03-qwen-2b-full,fence_itemwise,schema,331,13723
+0925-03-qwen-2b-full,fence_itemwise,unhashable type: 'dict',1,13723
+0925-03-qwen-2b-full,fence_itemwise,unhashable type: 'list',2,13723

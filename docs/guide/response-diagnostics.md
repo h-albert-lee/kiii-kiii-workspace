@@ -48,3 +48,11 @@ pilot/smoke는 기본 거절합니다. 개발자가 로컬에서 명시적으로
 실험 담당자는 원본 result/응답/계측/cohort/환경 기록을 계속 기존 공유 규칙대로 제출합니다. 보조 분석의 JSON은 `src.eval.export`용 result 형식이 아니며 공식 리더보드에 넣지 않습니다. 사라는 strict 결과와 함께 이 자료를 오류 해석에 활용할 수 있습니다. 세 단계 차이는 독립적인 요인 분해가 아니며, 일부 항목 복구와 FP 벌점 때문에 F1이 항상 오르지는 않습니다. 사후 선택한 분석임을 논문/부록에 밝히고, 4페이지 본문에는 필요한 보조 결과만 요약합니다.
 
 완료 분석은 코드·입력의 고정 commit/link·해시와 함께 GitHub `experiments/results/analyses/`에 푸시합니다. 원본 실행 아티팩트는 수정하거나 재추론하지 않습니다.
+
+JSON의 카테고리·문서 축·tier/kind/T 격자를 비교하기 쉬운 CSV로 펼칠 수도 있습니다. 재채점하거나 서로 다른 run을 합산하지 않고 각 run/stage의 값을 그대로 옮깁니다. `metric=exact_with_invalid_item_fp`와 `anchored_character_coverage`를 구별합니다.
+
+```bash
+python -m src.analysis.export_diagnostics \
+  --analyses experiments/results/analyses/response-v1/*/analysis.json \
+  --output experiments/results/analyses/response-v1/tables
+```

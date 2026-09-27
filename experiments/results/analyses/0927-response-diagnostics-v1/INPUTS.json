@@ -1,0 +1,29 @@
+{
+  "0925-01-kanana-3b-full": {
+    "source_commit": "b4f76f4b3cd1542f50980144baa9e6874c9a7d6a",
+    "result": "https://github.com/h-albert-lee/kiii-kiii-workspace/blob/b4f76f4b3cd1542f50980144baa9e6874c9a7d6a/experiments/results/runs/0925-01-kanana-3b-full/result.json",
+    "responses": "https://github.com/h-albert-lee/kiii-kiii-workspace/blob/b4f76f4b3cd1542f50980144baa9e6874c9a7d6a/experiments/results/runs/0925-01-kanana-3b-full/responses.jsonl",
+    "gold_sha256": "d57b1cb0b8b67fe48a9b45ee985fb01e63b919147a8527f8231459a68b57456d",
+    "responses_sha256": "1b278c3e3da16654b1f7e92781f897068448c1a8e808975e92daca095fee0b0f",
+    "strict_result_sha256": "646c8ab95d67f796a9c0ad858fcf5e2d454a4e5c088c65b74b6492e58b2a32f5",
+    "taxonomy_sha256": "b9ec20e3491f9dcdabb626fc04b1b85cc73bb45ebbe9de69849a1c402c00ae7e"
+  },
+  "0925-02-kanana-3b-local": {
+    "source_commit": "b4f76f4b3cd1542f50980144baa9e6874c9a7d6a",
+    "result": "https://github.com/h-albert-lee/kiii-kiii-workspace/blob/b4f76f4b3cd1542f50980144baa9e6874c9a7d6a/experiments/results/runs/0925-02-kanana-3b-local/result.json",
+    "responses": "https://github.com/h-albert-lee/kiii-kiii-workspace/blob/b4f76f4b3cd1542f50980144baa9e6874c9a7d6a/experiments/results/runs/0925-02-kanana-3b-local/responses.jsonl",
+    "gold_sha256": "d57b1cb0b8b67fe48a9b45ee985fb01e63b919147a8527f8231459a68b57456d",
+    "responses_sha256": "295d7f8af4dc0c70ff5e5afdf73bbeb7dec158130b15c5b065f7c161632219d9",
+    "strict_result_sha256": "37226040b870dbd569714daf5de5a5760f7c1327c4203012f629098a5278b173",
+    "taxonomy_sha256": "b9ec20e3491f9dcdabb626fc04b1b85cc73bb45ebbe9de69849a1c402c00ae7e"
+  },
+  "0925-03-qwen-2b-full": {
+    "source_commit": "b4f76f4b3cd1542f50980144baa9e6874c9a7d6a",
+    "result": "https://github.com/h-albert-lee/kiii-kiii-workspace/blob/b4f76f4b3cd1542f50980144baa9e6874c9a7d6a/experiments/results/runs/0925-03-qwen-2b-full/result.json",
+    "responses": "https://github.com/h-albert-lee/kiii-kiii-workspace/blob/b4f76f4b3cd1542f50980144baa9e6874c9a7d6a/experiments/results/runs/0925-03-qwen-2b-full/responses.jsonl",
+    "gold_sha256": "d57b1cb0b8b67fe48a9b45ee985fb01e63b919147a8527f8231459a68b57456d",
+    "responses_sha256": "881e668223246c7be8c6d6b143a6652f6305c01f9afa30477f3b6cbf08997573",
+    "strict_result_sha256": "b7828d40ca73b5675068600f5039bc00a953f14d06a41d5290984d85dd4f49fe",
+    "taxonomy_sha256": "b9ec20e3491f9dcdabb626fc04b1b85cc73bb45ebbe9de69849a1c402c00ae7e"
+  }
+}

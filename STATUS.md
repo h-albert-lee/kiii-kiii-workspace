@@ -1,8 +1,8 @@
-# STATUS — 2026-09-26
+# STATUS — 2026-09-27
 
 ## Current outcome
 
-**Dataset complete and public; detector execution infrastructure prepared; CPU baseline runs complete on all 1,440 documents; GPU experiments reported in progress by the operator; finalized GPU results not yet verified here.** Experiment collaborators should begin with README.md → AGENTS.md → docs/guide/experiment-runbook.md.
+**Dataset complete and public; detector execution infrastructure prepared; CPU baseline runs complete on all 1,440 documents; three completed GPU conditions replay-verified (Kanana 3B full/local, Qwen 2B full); remaining GPU results and underlying native-count/cohort artifacts pending.** Experiment collaborators should begin with README.md → AGENTS.md → docs/guide/experiment-runbook.md.
 
 | Item | Status |
 |---|---|
@@ -17,7 +17,7 @@
 | Paper/related work | 9/26 framing revised in Overleaf and synced (`1d96f32`): explicit detection policy, controlled inputs and matched context comparison; TWICE/NMIXX retained; results pending. [Review receipt](docs/reviews/2026-09-26-paper-framing.md) |
 | Leaderboard | Two full-release baseline results available; consolidated headline table deferred until common cohort is frozen |
 
-Validation: **106 tests passed** (offline provider fixtures, budget/resume/capacity/export guards, generation/release regressions). Verified release → two-document smoke → actual Presidio/ko-pii extraction/scoring completed. Smoke scores are not benchmark findings. Native paid providers and GPU model loading were not exercised.
+Validation: **128 tests passed** (offline provider fixtures, budget/resume/capacity/export guards, generation/release regressions). Verified release → two-document smoke → actual Presidio/ko-pii extraction/scoring completed. Smoke scores are not benchmark findings. Native paid providers and GPU model loading were not exercised locally; archived GPU responses from the operator were replayed offline.
 
 Ownership and delivery: [assignment roster](experiments/ASSIGNMENTS.md) (성현: API deferred; 은빈: Qwen3.5-2B/4B + Kanana-2-3B + OpenMed; 한울: CPU rules; 사라: context-effect research; operational aggregation owner pending). Each operator must push completed results and interruption reports to GitHub under the [result-sharing procedure](experiments/results/README.md); large raw artifacts use repository Release assets. ADR-0030.
 
@@ -29,7 +29,15 @@ Accepted roster (ADR-0034, 2026-09-24): Qwen3.5-2B, Qwen3.5-4B, Kanana-2-3B-Inst
 
 ADR-0035 assigns Qwen3.5-9B (priority 1) and Kanana-1.5-8B-Instruct-2505 (priority 2), both full/local, to 은빈. Core remains six systems/nine conditions; extension adds four conditions (eight systems/thirteen total). This follows a user report of format errors, so extension analysis is exploratory. [Handoff and raw response requirements](docs/guide/eunbin-medium-extension.md). No new GPU/paid inference initiated here.
 
-Remote `feat/exp-eb` at `757d707` contains run folders/checkpoint notes and a nullable usage adapter fix. Exact run completion/error rates are unverified; preserve that branch and all live source/config/gate hashes. Main executor was not changed. The extended capacity matrix is separate; current exporter rejects different cohort-gate hashes, so do not silently combine core and extension runs.
+Remote `feat/exp-eb` at `b4f76f4` includes three completed benchmark conditions and two 10-document pilot uploads. The three full runs each cover 1,440 documents / 13,723 requests; strict replay and raw hashes are verified. Qwen 2B local and Qwen 4B full uploads are pilot data, not benchmark completion. Qwen 4B local/OpenMed have report templates only. Preserve the collaborator branch and live source/config/gate hashes. Main executor was not changed. The extended capacity matrix is separate; current exporter rejects different cohort-gate hashes, so do not silently combine core and extension runs.
+
+## Response diagnostics — 2026-09-27
+
+ADR-0036 adds separate post-hoc analysis in `src/analysis/`; live evaluator hashes and archived strict results are unchanged. Three completed GPU conditions were replayed, then scored under itemwise validation and whole-response JSON-fence handling. All stages retain 218,664 gold spans and invalid parsed items add exact FP. Category-aware character coverage is supplemental and cannot assign character FP to unanchorable items. Code frozen at `66e4b46` before computing secondary scores. **128 offline tests pass**; no new inference.
+
+[Completed analysis and caveats](experiments/results/analyses/0927-response-diagnostics-v1/REPORT.md) · [1,290-row breakdown CSV](experiments/results/analyses/0927-response-diagnostics-v1/tables/breakdowns.csv) · [Usage](docs/guide/response-diagnostics.md).
+
+Strict → fence/itemwise exact F1 (0–100): Kanana full 1.0230 → 3.1682; Kanana local 1.6156 → 4.0934; Qwen 2B full 0.1169 → 1.6351. These exploratory diagnostics do not replace headline results. Qwen local/4B uploaded pilot scores are excluded. All-model native capacity and complete operator records still need verification.
 
 ## CPU baseline execution — 2026-09-24
 
