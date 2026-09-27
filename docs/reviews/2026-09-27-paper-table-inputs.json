@@ -1,0 +1,22 @@
+[
+  {
+    "path": "experiments/results/analyses/0927-response-diagnostics-v1/0925-01-kanana-3b-full/analysis.json",
+    "sha256": "5307d96e2ed86266c1a65e663da7f483950eb6dc153398d16eb90f7e05ca7cba",
+    "row": "Kanana-2-3B & F & 1.02 & 3.16 & 3.17 & 1.87 & 5.64 & 2.20 & 75,465 & 92.33 \\\\"
+  },
+  {
+    "path": "experiments/results/analyses/0927-response-diagnostics-v1/0925-02-kanana-3b-local/analysis.json",
+    "sha256": "7220109b3f0031d1fbc7217f100c940725905e958bcc8c61c0ef1495e0cb7b6b",
+    "row": "Kanana-2-3B & L & 1.62 & 4.09 & 4.09 & 1.97 & 12.02 & 2.47 & 31,764 & 76.68 \\\\"
+  },
+  {
+    "path": "experiments/results/analyses/0927-response-diagnostics-v1/0925-03-qwen-2b-full/analysis.json",
+    "sha256": "b3b4e70cb4ee92e4474b84c924f243b1cfbdf2c22f19b7ac350abe6908e37008",
+    "row": "Qwen3.5-2B & F & 0.12 & 0.87 & 1.64 & 0.66 & 3.39 & 1.08 & 64,498 & 97.66 \\\\"
+  },
+  {
+    "path": "experiments/results/analyses/0927-response-diagnostics-v1-update-ac25513/0925-06-qwen-4b-local/analysis.json",
+    "sha256": "d3948f73d2516b15cac51f2dccece71a11e466af92c81c04f1bc22a510c5e697",
+    "row": "Qwen3.5-4B & L & 0.97 & 5.92 & 8.59 & 5.46 & 12.59 & 6.52 & 83,370 & 89.98 \\\\"
+  }
+]

@@ -64,3 +64,5 @@ python -m pytest tests -q
 > **9/27 보조 분석 (ADR-0036):** [응답 분해·부분점수 가이드](docs/guide/response-diagnostics.md). 공식 strict 점수는 보존하며, 저장된 완료 응답만으로 항목별 유효 추출·코드펜스 처리·카테고리별 문자 겹침을 따로 평가합니다. 사후 탐색적 분석이며 추론 코드는 변경하지 않습니다. [완료 3조건 분석](experiments/results/analyses/0927-response-diagnostics-v1/REPORT.md)과 [세부 CSV](experiments/results/analyses/0927-response-diagnostics-v1/tables/breakdowns.csv)를 제공합니다.
 
 > **추가 업로드 검토 (`ac25513`):** [Qwen 4B local 1,440건 결과·부분점수](experiments/results/analyses/0927-response-diagnostics-v1-update-ac25513/REPORT.md)를 확인했습니다. Qwen 4B full과 Qwen 2B local의 현재 업로드는 여전히 pilot이며 native count/cohort 자료 보완이 필요합니다.
+
+> **논문 결과표 준비:** [표별 입력·검증·편집 안내](docs/guide/paper-results-handoff.md). 본문 비교표와 부록 L/I 분해·paired CI·보조 점수표를 Overleaf에 준비했습니다. 최종 비교는 공통 cohort 검증 후 채웁니다.
