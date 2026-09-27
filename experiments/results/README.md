@@ -71,3 +71,7 @@ git push origin HEAD
 ## 사라의 문맥 효과 분석
 
 모델 실행 결과와 별도로 `experiments/results/analyses/<analysis-id>/`에 입력 run 목록·해시, 분석 설정, 통계 JSON, 표 CSV와 REPORT를 저장하고 푸시합니다. 사전 분석 계획과 실행 전 코드 준비는 [연구 작업 문서](../../docs/research/sara-context-analysis.md)를 따릅니다. 가상 fixture 수치나 미완료 paired run은 본 분석 결과로 올리지 않습니다. 상세 분석은 저장소에 보존하고 논문 본문에는 제한된 표·그림·해석만 반영합니다.
+
+## 응답 분해·부분점수 공유 (9/27, ADR-0036)
+
+[보조 분석 가이드](../../docs/guide/response-diagnostics.md)에 따라 `src.analysis.response_diagnostics`로 완료 응답을 오프라인 분석할 수 있습니다. 코드·입력의 고정 commit/link·해시와 `analysis.json`, `summary.csv`, `per_request.jsonl.gz`, REPORT를 `analyses/<analysis-id>/`에 함께 공유합니다. 원본 strict result와 headline CSV는 바꾸지 않습니다. itemwise exact에는 거절 항목 FP가 포함되지만 문자 점수에는 그 항목의 알 수 없는 문자 길이를 넣을 수 없으므로 두 지표와 거절 수를 함께 표시합니다.

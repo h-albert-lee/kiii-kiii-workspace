@@ -105,3 +105,7 @@ API 기준점은 필수가 아닙니다. Gemini 추가는 별도 결정이며 �
 ## 사라의 에이전트에게 전달할 요청
 
 > 이 레포의 AGENTS.md와 docs/research/sara-context-analysis.md를 읽고, 사라가 담당하는 전체 문맥 대 지역 문맥 효과 연구를 시작해줘. 먼저 결과를 보지 않은 상태의 분석 계획을 작성·고정하고, 기존 result 스키마를 이용하는 분석 코드와 fixture 테스트, 재생성 가능한 표/그림 코드를 준비해서 GitHub에 커밋·푸시해줘. 은빈·한울의 모델 실행을 중복하지 말고 확정된 9개 조건을 활용해. 실제 결과가 아직 없으면 수치를 만들지 말고 준비 작업을 완료해줘. 결과가 들어오면 모델별 paired 분석·오류 해석을 수행하고, 본문 4페이지에 들어갈 주 표 1개·그림 최대 1개·짧은 영문 결과/논의 초안을 마련해줘. 상세 분석도 GitHub에 남겨줘.
+
+## 2026-09-27 사후 응답 진단
+
+[ADR-0036](../decisions/0036-posthoc-response-diagnostics.md)과 [부분점수 가이드](../guide/response-diagnostics.md)에 따라 별도 오프라인 분석 모듈을 추가했습니다. 원본 strict, 항목별 처리, 전체 JSON 코드펜스 처리의 3단계마다 exact와 category-aware character coverage를 제공합니다. strict 실패 양상을 확인한 뒤 정의했으므로 사전 계획 분석으로 쓰지 않습니다. 잘못된 항목 FP를 포함한 exact precision과 문자 점수를 함께 해석하고, 형식 효과와 추출 성능의 인과 분리라고 주장하지 않습니다. 원본 추론·prompt·공통 cohort는 수정하지 않습니다.

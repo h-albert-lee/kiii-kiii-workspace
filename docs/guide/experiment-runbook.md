@@ -155,3 +155,7 @@ python -m src.eval.export --results experiments/runs/qwen-2b-full/result.json \
 제출 묶음: 사용 git commit + 코드 SHA, frozen config(키 제외), 데이터 revision/해시, 모델·tokenizer/server revision, dependency inventory, count 파일, cohort gate, 제외 내역, raw 응답 저널, result JSON, leaderboard, paired bootstrap JSON, 실제 청구와 장부의 차이 설명. rule baseline에는 token 비용 대신 환경·wall-clock 기록을 첨부합니다. 모델별 실패율과 길이·T·생성기별 성능도 result에서 보고합니다. bootstrap은 문서 단위 2,000회 seed 0이며 차이 방향은 first − second입니다.
 
 API/모델 호출, 토큰 비용, 검출 성능은 실행 전에는 알려져 있지 않습니다. `experiments/preflight/0923-inventory.json`의 문자 수를 토큰 수나 비용으로 인용하지 마세요.
+
+## 완료 응답의 부분점수·오류 분해 (9/27)
+
+[사후 진단 가이드](response-diagnostics.md)를 따라 별도 분석 checkout에서 실행합니다. 원본 strict 결과·진행 중 실행 코드는 그대로 두고, 완료 응답에만 항목 단위 보조 점수와 문자 겹침 점수를 계산합니다. 재호출이나 프롬프트 조정은 하지 않습니다. 보조 결과는 analyses 경로에 공유하며 headline export를 대체하지 않습니다.

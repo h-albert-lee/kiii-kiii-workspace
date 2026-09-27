@@ -59,3 +59,5 @@ python -m pytest tests -q
 | `experiments/results/` | 완료한 CPU baseline 결과·원본 예측; 통합 리더보드는 공통 cohort 확정 후 |
 
 데이터 본문·키·개인 접속 설정은 git에 넣지 않습니다. `experiments/runs/`는 로컬 재개용으로 보존하고, 최종 결과·재현 메타데이터는 `experiments/results/`에 복사해 푸시합니다. 큰 raw 응답·저널은 같은 GitHub 레포의 Release asset으로 공유하고 결과 보고서에 링크·해시를 남깁니다. Overleaf 코멘트를 보존해야 하므로 논문 파일을 통째로 교체하거나 무조건 동기화하지 않습니다.
+
+> **9/27 보조 분석 (ADR-0036):** [응답 분해·부분점수 가이드](docs/guide/response-diagnostics.md). 공식 strict 점수는 보존하며, 저장된 완료 응답만으로 항목별 유효 추출·코드펜스 처리·카테고리별 문자 겹침을 따로 평가합니다. 사후 탐색적 분석이며 추론 코드는 변경하지 않습니다.
