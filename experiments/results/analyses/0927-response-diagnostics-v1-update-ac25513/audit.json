@@ -1,0 +1,73 @@
+{
+  "commit": "ac25513b9bfc9b08daab86b378ec67305e456cea",
+  "runs": [
+    {
+      "run": "0925-06-qwen-4b-local",
+      "benchmark": true,
+      "documents": 1440,
+      "requests": 13723,
+      "complete": true,
+      "failure_rate": 0.8998032500182176,
+      "failed_requests": 12348,
+      "data_sha256": "d57b1cb0b8b67fe48a9b45ee985fb01e63b919147a8527f8231459a68b57456d",
+      "cohort_sha256": "248501516ba8a0d5a3b07bc4ea8b4dc86fb3f6ad92ba51c0e765678381714810",
+      "protocol": {
+        "mode": "local_window",
+        "core_chars": 1200,
+        "halo_chars": 1200,
+        "max_output_tokens": 4096,
+        "version": "span_p1"
+      },
+      "responses_sha_matches": true,
+      "response_duplicates": 0,
+      "events": {
+        "reserved": 13723,
+        "finished": 13723
+      },
+      "event_duplicates": {
+        "reserved": 0,
+        "finished": 0
+      },
+      "event_response_mismatches": 0,
+      "reserved_finished_ids_equal": true,
+      "raw_diagnostics": {
+        "rows": 13723,
+        "status:ok": 13592,
+        "finish:stop": 13592,
+        "raw_present": 13723,
+        "text_present": 13723,
+        "starts_code_fence": 5073,
+        "raw_content_equals_text": 13723,
+        "nonempty_reasoning_field": 0,
+        "json_syntax_invalid": 6852,
+        "status:failed": 131,
+        "finish:length": 131,
+        "json_empty_spans": 430,
+        "json_outer_schema_invalid": 91
+      },
+      "failure_flags_per_request_overlapping": {
+        "schema": 159,
+        "quote_not_found": 4242,
+        "invalid_json_or_schema": 6812,
+        "outside_owned_core": 2520,
+        "label_or_quote": 1268,
+        "request_failed_or_truncated": 131,
+        "occurrence": 100
+      },
+      "source_files_mismatching_branch": [],
+      "missing_audit_artifacts": [
+        "counts.jsonl",
+        "cohort.json",
+        "ARTIFACTS.sha256"
+      ],
+      "exact_micro": {
+        "precision": 0.5209347614410905,
+        "recall": 0.0048933523579555846,
+        "f1": 0.00969562971755815,
+        "tp": 1070,
+        "fp": 984,
+        "fn": 217594
+      }
+    }
+  ]
+}

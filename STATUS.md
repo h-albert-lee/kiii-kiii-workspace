@@ -2,7 +2,7 @@
 
 ## Current outcome
 
-**Dataset complete and public; detector execution infrastructure prepared; CPU baseline runs complete on all 1,440 documents; three completed GPU conditions replay-verified (Kanana 3B full/local, Qwen 2B full); remaining GPU results and underlying native-count/cohort artifacts pending.** Experiment collaborators should begin with README.md → AGENTS.md → docs/guide/experiment-runbook.md.
+**Dataset complete and public; detector execution infrastructure prepared; CPU baseline runs complete on all 1,440 documents; four completed GPU conditions replay-verified (Kanana 3B full/local, Qwen 2B full, Qwen 4B local); remaining GPU results and underlying native-count/cohort artifacts pending.** Experiment collaborators should begin with README.md → AGENTS.md → docs/guide/experiment-runbook.md.
 
 | Item | Status |
 |---|---|
@@ -24,6 +24,12 @@ Ownership and delivery: [assignment roster](experiments/ASSIGNMENTS.md) (성현:
 Research work can start immediately: 사라 follows [the context-analysis brief](docs/research/sara-context-analysis.md) to freeze a pre-result analysis plan and implement fixture-tested analysis/figures, then interpret existing paired runs and write concise results/discussion. No duplicate inference by the analyst. ADR-0032; the separately authorized medium extension is documented in ADR-0035.
 
 Accepted roster (ADR-0034, 2026-09-24): Qwen3.5-2B, Qwen3.5-4B, Kanana-2-3B-Instruct + Presidio/ko-pii/OpenMed = **6 systems / 9 conditions**. Gemini is optional and deferred; Claude and previous large MoE runs are out of current scope. Config matrix and research handoff updated. GPU capacity and actual token limits remain unverified; no new inference/spending initiated.
+
+## Latest GPU upload review — ac25513
+
+Remote `feat/exp-eb@ac25513` adds completed Qwen3.5-4B local: 1,440 docs / 13,723 requests. All strict scores/breakdowns/failures and request hashes replay correctly; raw responses and reservation/finish journal agree. Strict F1 is 0.9696/100 with 89.9803% request failures; ADR-0036 itemwise F1 is 5.9165 and fence/itemwise F1 is 8.5869, retaining invalid-item FP and all gold. [Review and secondary breakdowns](experiments/results/analyses/0927-response-diagnostics-v1-update-ac25513/REPORT.md).
+
+Qwen 4B full / Qwen 2B local remain pilot uploads. OpenMed and medium-model completed artifacts are absent in this snapshot. Native counts/gate and completed operator reports remain pending; Qwen 4B local's frozen config run_id is `0925-05` despite directory `0925-06`, requiring explanation without hash edits. No inference or live evaluator modification. Previous review snapshots below remain historical.
 
 ## Medium extension — 2026-09-26
 

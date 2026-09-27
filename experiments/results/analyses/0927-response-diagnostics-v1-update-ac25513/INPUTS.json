@@ -1,0 +1,8 @@
+{
+  "source_commit": "ac25513b9bfc9b08daab86b378ec67305e456cea",
+  "source_directory": "https://github.com/h-albert-lee/kiii-kiii-workspace/tree/ac25513b9bfc9b08daab86b378ec67305e456cea/experiments/results/runs/0925-06-qwen-4b-local",
+  "gold_sha256": "d57b1cb0b8b67fe48a9b45ee985fb01e63b919147a8527f8231459a68b57456d",
+  "responses_sha256": "fc8e7978469e8959238831c217e79d04bb7fc44a2322f54503ef01031f23e6cd",
+  "strict_result_sha256": "9ad9e09a3d0ca7b320283c377145246cdd4797480c30c20d744f18b29d090511",
+  "taxonomy_sha256": "b9ec20e3491f9dcdabb626fc04b1b85cc73bb45ebbe9de69849a1c402c00ae7e"
+}

@@ -1,0 +1,9 @@
+{
+  "purpose": "secondary_tables_only",
+  "source_sha256": "b92882c4750ed2393bbfd76bc1894bcdc780d0600362fb6b4c9a7d98bfbfd56d",
+  "inputs": {
+    "0925-06-qwen-4b-local": "d3948f73d2516b15cac51f2dccece71a11e466af92c81c04f1bc22a510c5e697"
+  },
+  "breakdowns_sha256": "57814a26e0ad8f016090a57f99f11f9522119b5355de820149cd0452c32a060f",
+  "note": "No pooling across runs or eligibility validation. F1 is 0\u20131. See source reports for invalid-item and character-score limitations."
+}

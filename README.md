@@ -2,7 +2,7 @@
 
 **Korean Identifiers, Identifiability, and Ill-formed Inputs — A Regulation-Grounded Benchmark for Financial PII Detection.**
 
-한국 금융 문서의 개인정보 탐지를 평가하는 연구 저장소입니다. 법령 기반 36개 카테고리, 표면형 변형 T0–T3, 다중 정보주체·긴 문서를 다룹니다. **데이터 생성·공개는 완료했고, 현재는 본 실험 실행 준비 단계입니다. Presidio·ko-pii는 전체 1,440건 실행을 완료했고, Kanana 3B full/local·Qwen 2B full의 완료 응답과 strict 점수 재현을 확인했습니다. 나머지 GPU 결과와 native 계측·공통 평가 집합의 원본 자료는 확인 대기입니다.**
+한국 금융 문서의 개인정보 탐지를 평가하는 연구 저장소입니다. 법령 기반 36개 카테고리, 표면형 변형 T0–T3, 다중 정보주체·긴 문서를 다룹니다. **데이터 생성·공개는 완료했고, 현재는 본 실험 실행 준비 단계입니다. Presidio·ko-pii는 전체 1,440건 실행을 완료했고, Kanana 3B full/local·Qwen 2B full·Qwen 4B local의 완료 응답과 strict 점수 재현을 확인했습니다. 나머지 GPU 결과와 native 계측·공통 평가 집합의 원본 자료는 확인 대기입니다.**
 
 - 공개 데이터: [nmixx-fin/kiii-kiii](https://huggingface.co/datasets/nmixx-fin/kiii-kiii), **1,440문서 / 218,664스팬**, 단일 `test`.
 - 라이선스: **데이터 CC BY-NC 4.0**. Preview 버전이며 정식 버전은 추후 공개합니다. 코드·제3자 모델의 라이선스를 이 데이터 라이선스로 대체하지 않습니다.
@@ -62,3 +62,5 @@ python -m pytest tests -q
 데이터 본문·키·개인 접속 설정은 git에 넣지 않습니다. `experiments/runs/`는 로컬 재개용으로 보존하고, 최종 결과·재현 메타데이터는 `experiments/results/`에 복사해 푸시합니다. 큰 raw 응답·저널은 같은 GitHub 레포의 Release asset으로 공유하고 결과 보고서에 링크·해시를 남깁니다. Overleaf 코멘트를 보존해야 하므로 논문 파일을 통째로 교체하거나 무조건 동기화하지 않습니다.
 
 > **9/27 보조 분석 (ADR-0036):** [응답 분해·부분점수 가이드](docs/guide/response-diagnostics.md). 공식 strict 점수는 보존하며, 저장된 완료 응답만으로 항목별 유효 추출·코드펜스 처리·카테고리별 문자 겹침을 따로 평가합니다. 사후 탐색적 분석이며 추론 코드는 변경하지 않습니다. [완료 3조건 분석](experiments/results/analyses/0927-response-diagnostics-v1/REPORT.md)과 [세부 CSV](experiments/results/analyses/0927-response-diagnostics-v1/tables/breakdowns.csv)를 제공합니다.
+
+> **추가 업로드 검토 (`ac25513`):** [Qwen 4B local 1,440건 결과·부분점수](experiments/results/analyses/0927-response-diagnostics-v1-update-ac25513/REPORT.md)를 확인했습니다. Qwen 4B full과 Qwen 2B local의 현재 업로드는 여전히 pilot이며 native count/cohort 자료 보완이 필요합니다.
