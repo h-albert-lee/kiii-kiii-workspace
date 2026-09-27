@@ -2,7 +2,7 @@
 
 **Korean Identifiers, Identifiability, and Ill-formed Inputs — A Regulation-Grounded Benchmark for Financial PII Detection.**
 
-한국 금융 문서의 개인정보 탐지를 평가하는 연구 저장소입니다. 법령 기반 36개 카테고리, 표면형 변형 T0–T3, 다중 정보주체·긴 문서를 다룹니다. **데이터 생성·공개는 완료했고, 현재는 본 실험 실행 준비 단계입니다. Presidio·ko-pii는 전체 1,440건 실행을 완료했고, LLM 실험과 공통 평가 집합 확정은 남아 있습니다.**
+한국 금융 문서의 개인정보 탐지를 평가하는 연구 저장소입니다. 법령 기반 36개 카테고리, 표면형 변형 T0–T3, 다중 정보주체·긴 문서를 다룹니다. **데이터 생성·공개는 완료했고, 현재는 본 실험 실행 준비 단계입니다. Presidio·ko-pii는 전체 1,440건 실행을 완료했고, 은빈은 GPU 실험 진행 중이라고 보고했으며 완료 결과·공통 평가 집합은 확인 대기입니다.**
 
 - 공개 데이터: [nmixx-fin/kiii-kiii](https://huggingface.co/datasets/nmixx-fin/kiii-kiii), **1,440문서 / 218,664스팬**, 단일 `test`.
 - 라이선스: **데이터 CC BY-NC 4.0**. Preview 버전이며 정식 버전은 추후 공개합니다. 코드·제3자 모델의 라이선스를 이 데이터 라이선스로 대체하지 않습니다.
@@ -12,9 +12,11 @@
 
 > **9/24 확정 (ADR-0034):** 소형 로컬 LLM 3개와 기존 baseline 3개로 실행합니다. [선정 근거](docs/research/small-model-roster-2026-09-24.md). Claude·대형 MoE는 현 범위에서 제외하고 Gemini는 별도 승인 전까지 보류합니다.
 
+> **9/26 추가 배정 (ADR-0035):** 은빈에게 Qwen3.5-9B → Kanana 1.5 8B 양 조건을 추가 배정했습니다. 기존 핵심 9조건은 유지하고 확장 4조건은 별도 실행합니다(완료 시 총 8시스템·13조건). [추가 모델·응답 전문 보존·진행 중 브랜치 인계](docs/guide/eunbin-medium-extension.md).
+
 ## 모델별 담당자와 결과 공유
 
-**LLM 3개 × 두 조건 + baseline 3개 = 총 9개 실행 조건**입니다. [담당 배정표](experiments/ASSIGNMENTS.md)에 모델별 담당자·상태·결과 링크를 관리합니다. **은빈: Qwen 2B·4B / Kanana 3B / OpenMed, 한울: Presidio·ko-pii**로 배정했습니다. 성현의 API 실행은 보류입니다. 사라는 **문맥 효과의 가설·통계 분석·오류 해석·결과/논의 집필**을 맡습니다. [사라/에이전트 시작 문서](docs/research/sara-context-analysis.md)에 즉시 할 작업과 4페이지 범위를 정리했습니다. 운영 취합 담당자는 미정입니다. Qwen·Kanana는 FP16 + vLLM 계열 서빙 후 API 연결을 권장하며, OpenMed는 별도 Transformers GPU 경로를 사용합니다.
+**핵심 LLM 3개 × 두 조건 + baseline 3개 = 9개 실행 조건**입니다. [담당 배정표](experiments/ASSIGNMENTS.md)에 모델별 담당자·상태·결과 링크를 관리합니다. **은빈: Qwen 2B·4B / Kanana 3B / OpenMed, 한울: Presidio·ko-pii**로 배정했습니다. 성현의 API 실행은 보류입니다. 사라는 **문맥 효과의 가설·통계 분석·오류 해석·결과/논의 집필**을 맡습니다. [사라/에이전트 시작 문서](docs/research/sara-context-analysis.md)에 즉시 할 작업과 4페이지 범위를 정리했습니다. 운영 취합 담당자는 미정입니다. Qwen·Kanana는 FP16 + vLLM 계열 서빙 후 API 연결을 권장하며, OpenMed는 별도 Transformers GPU 경로를 사용합니다.
 
 **각 담당자는 모델·조건별 완료 결과를 이 GitHub 레포에 커밋·푸시합니다.** 위치와 제출 규칙은 [결과 공유 가이드](experiments/results/README.md)를 따릅니다. 중단 시에도 진행 기록과 장애를 푸시하며 부분 점수는 최종 결과로 공유하지 않습니다.
 
@@ -47,7 +49,7 @@ python -m pytest tests -q
 | 경로 | 역할 |
 |---|---|
 | `src/eval/` | 데이터 로드, 고정 요청, 공급자 어댑터, 토큰 계측, 예산·재개, 베이스라인, 채점·CSV |
-| `experiments/configs/evaluation/` | 키 없는 설정 템플릿, 3모델 × 2조건 capacity matrix |
+| `experiments/configs/evaluation/` | 키 없는 설정 템플릿, 핵심 3모델/확장 포함 5모델 × 2조건 capacity matrix |
 | `experiments/label_maps/` | 소스 라벨 → 36개 택소노미, 제외 라벨 명시 |
 | `taxonomy/taxonomy.yaml` | 카테고리·변형 정의의 원본 |
 | `src/generate/` | 완료된 합성 생성 파이프라인; 실험 담당자는 재생성하지 않음 |

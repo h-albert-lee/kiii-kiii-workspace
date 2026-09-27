@@ -1,0 +1,21 @@
+{
+  "model": "kakaocorp/kanana-1.5-8b-instruct-2505",
+  "model_revision": "REPLACE_IMMUTABLE_VERSION",
+  "tokenizer_revision": "REPLACE_PROVIDER_API_VERSION_OR_TOKENIZER_COMMIT",
+  "operator": "은빈",
+  "run_id": "REPLACE_MMDD_NN",
+  "price_date": "REPLACE_YYYY_MM_DD",
+  "provider": "openai_compatible",
+  "base_url": "http://127.0.0.1:8004/v1",
+  "api_key_env": "KANANA_API_KEY",
+  "input_limit": null,
+  "output_limit": null,
+  "total_limit": null,
+  "input_usd_per_million": null,
+  "output_usd_per_million": null,
+  "budget_usd": 0,
+  "settings_frozen": false,
+  "concurrency": 1,
+  "timeout_seconds": 180,
+  "generation": {}
+}

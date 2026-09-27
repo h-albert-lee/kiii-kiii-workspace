@@ -37,6 +37,10 @@ experiments/results/
 
 작은 JSON/CSV/Markdown은 git으로 추적합니다. raw 응답/저널/계측 묶음이 큰 경우 gzip으로 압축하고 **같은 GitHub 레포의 Release asset**으로 올린 뒤 REPORT에 다운로드 링크·SHA-256·포함 파일·원본 해시를 남깁니다. 팀 운영 기준으로 파일이 20 MiB를 넘으면 이 경로를 사용합니다. 데이터셋 본문과 반복 프롬프트는 HF pin + 요청 생성 설정/해시로 재현하므로 git에 중복 저장할 필요가 없습니다. 압축 파일에도 동일한 비밀정보 점검을 적용합니다.
 
+## 형식 오류 응답도 전문 보관 — 2026-09-26
+
+성공·실패 모두 수신한 completion 전문과 provider JSON을 정리/추출 전 상태로 request ID에 연결해 보존합니다. 제공되는 reasoning, finish_reason, usage도 포함합니다. malformed JSON·설명문·잘린 출력을 버리지 않습니다. timeout/정규화 예외에서 원문이 없는 경우 미수신 또는 로깅 누락을 명시하며 재호출로 복원하지 않습니다. 실제 실행 버전에서 원문 저장 여부를 확인하고 키·인증 헤더는 제외합니다. [상세 진단 및 진행 중 버전 보호 절차](../../docs/guide/eunbin-medium-extension.md)를 따릅니다. 주 평가의 빈 예측/FN 처리는 유지합니다.
+
 ## 제출 예시
 
 아래는 완료된 Qwen3.5-2B/full 실행의 예입니다. 실제 run ID로 경로를 바꿉니다. 먼저 finalize를 수행하고, REPORT는 [템플릿](../../docs/templates/experiment-report.md)을 채웁니다. 복사한 메타데이터에 키·민감한 endpoint가 없는지 확인합니다.

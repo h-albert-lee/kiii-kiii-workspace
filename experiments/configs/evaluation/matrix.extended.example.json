@@ -1,0 +1,54 @@
+{
+  "entries": [
+    {
+      "config": "experiments/configs/evaluation/qwen-2b.local.json",
+      "directory": "experiments/prepared/full_context_targeted",
+      "measurements": "experiments/runs/counts/qwen-2b-full_context_targeted.jsonl"
+    },
+    {
+      "config": "experiments/configs/evaluation/qwen-4b.local.json",
+      "directory": "experiments/prepared/full_context_targeted",
+      "measurements": "experiments/runs/counts/qwen-4b-full_context_targeted.jsonl"
+    },
+    {
+      "config": "experiments/configs/evaluation/kanana.local.json",
+      "directory": "experiments/prepared/full_context_targeted",
+      "measurements": "experiments/runs/counts/kanana-full_context_targeted.jsonl"
+    },
+    {
+      "config": "experiments/configs/evaluation/qwen-2b.local.json",
+      "directory": "experiments/prepared/local_window",
+      "measurements": "experiments/runs/counts/qwen-2b-local_window.jsonl"
+    },
+    {
+      "config": "experiments/configs/evaluation/qwen-4b.local.json",
+      "directory": "experiments/prepared/local_window",
+      "measurements": "experiments/runs/counts/qwen-4b-local_window.jsonl"
+    },
+    {
+      "config": "experiments/configs/evaluation/kanana.local.json",
+      "directory": "experiments/prepared/local_window",
+      "measurements": "experiments/runs/counts/kanana-local_window.jsonl"
+    },
+    {
+      "config": "experiments/configs/evaluation/qwen-9b.local.json",
+      "directory": "experiments/prepared/full_context_targeted",
+      "measurements": "experiments/runs/counts/qwen-9b-full_context_targeted.jsonl"
+    },
+    {
+      "config": "experiments/configs/evaluation/kanana-8b.local.json",
+      "directory": "experiments/prepared/full_context_targeted",
+      "measurements": "experiments/runs/counts/kanana-8b-full_context_targeted.jsonl"
+    },
+    {
+      "config": "experiments/configs/evaluation/qwen-9b.local.json",
+      "directory": "experiments/prepared/local_window",
+      "measurements": "experiments/runs/counts/qwen-9b-local_window.jsonl"
+    },
+    {
+      "config": "experiments/configs/evaluation/kanana-8b.local.json",
+      "directory": "experiments/prepared/local_window",
+      "measurements": "experiments/runs/counts/kanana-8b-local_window.jsonl"
+    }
+  ]
+}
