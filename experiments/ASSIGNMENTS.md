@@ -1,6 +1,6 @@
 # 실험 담당 배정표
 
-2026-09-27 (ADR-0034/0035/0036). **사용자 확정 배정: API 실행은 보류(기존 담당 성현), GPU 실험은 은빈, GPU 불필요 규칙 베이스라인은 한울, 문맥 효과 연구는 사라.** GitHub ID는 각 담당자가 기입합니다. 담당자는 착수 전에 상태와 run ID를 커밋·푸시합니다. 취합 담당자는 별도 지정 전까지 미정입니다.
+2026-09-28 (ADR-0034/0035/0036). **사용자 확정 배정: API 실행은 보류(기존 담당 성현), GPU 실험은 은빈, GPU 불필요 규칙 베이스라인은 한울, 문맥 효과 연구는 사라.** GitHub ID는 각 담당자가 기입합니다. 담당자는 착수 전에 상태와 run ID를 커밋·푸시합니다. 취합 담당자는 별도 지정 전까지 미정입니다.
 
 | 묶음 | 계획 모델 | 실행 조건 | 담당자 / GitHub ID | 상태 | run ID / 결과 링크 |
 |---|---|---|---|---|---|
@@ -10,8 +10,8 @@
 | C · CPU 베이스라인 | Presidio 한국형 규칙 + 계좌·카드 규칙 | 동일 평가 문서 전체, 1회 | 한울 | 1,440건 완료·공통 cohort 재집계 대기 | [0924-01-presidio-full1440](results/runs/0924-01-presidio-full1440/REPORT.md) |
 | C · CPU 베이스라인 | ko-pii 1.16.0 | 동일 평가 문서 전체, 1회 | 한울 | 1,440건 완료·공통 cohort 재집계 대기 | [0924-01-ko-pii-full1440](results/runs/0924-01-ko-pii-full1440/REPORT.md) |
 | B · GPU 베이스라인 | OpenMed/privacy-filter-multilingual | 동일 평가 문서, 겹침 토큰 창, 1회 | 은빈 | REPORT만 업로드; 완료 결과 미확인 | [0925-07-openmed-windows](https://github.com/h-albert-lee/kiii-kiii-workspace/blob/feat/exp-eb/experiments/results/runs/0925-07-openmed-windows/REPORT.md) |
-| B+ · GPU 확장 1순위 | Qwen3.5-9B | full_context_targeted + local_window | 은빈 | 추가 배정·미착수 | [실행 인계](../docs/guide/eunbin-medium-extension.md) |
-| B+ · GPU 확장 2순위 | Kanana-1.5-8B-Instruct-2505 | full_context_targeted + local_window | 은빈 | 추가 배정·미착수 | [실행 인계](../docs/guide/eunbin-medium-extension.md) |
+| B+ · GPU 확장 1순위 | Qwen3.5-9B | full_context_targeted + local_window | 은빈 | full/local 각 1,440건 재현 검증; native 계측/gate 대기 | 0926-01/02-qwen-9b-full/local · [검토](results/analyses/0928-response-diagnostics-v1-update-24a3595/REPORT.md) |
+| B+ · GPU 확장 2순위 | Kanana-1.5-8B-Instruct-2505 | full_context_targeted + local_window | 은빈 | full/local 각 1,438건 재현 검증; 2건 길이 제외·별도 gate | 0926-03/04-kanana-8b-full/local-1438 · [검토](results/analyses/0928-response-diagnostics-v1-update-24a3595/REPORT.md) |
 | D · 취합 | 공통 설정·평가 집합 확정 / 결과 통합 | 전체 모델 계측 취합, cohort gate, CSV·bootstrap | 미정 | 미착수 | — |
 | E · 연구 분석 | 전체 문맥 대 지역 문맥 효과 | 가설·통계·오류 분석·표/그림·결과/논의 집필 | 사라 | 배정 완료·착수 전 | [시작 문서](../docs/research/sara-context-analysis.md) |
 
@@ -44,3 +44,5 @@ ADR-0035 확장은 2개 LLM × 두 조건을 추가하여 완료 시 **총 8개 
 9/27: 위 업로드 상태는 `feat/exp-eb@b4f76f4` 기준입니다. [완료 3조건의 응답 분해·부분점수](results/analyses/0927-response-diagnostics-v1/REPORT.md)를 공유했습니다. strict 원본은 그대로이며, native 계측/cohort 원본·담당자 환경 기록과 나머지 본 실험 결과의 제출은 계속 필요합니다. 파일럿 업로드를 본 실험 완료로 집계하지 않습니다.
 
 추가 검토 `ac25513`: [Qwen 4B local 완료 및 보조 점수](results/analyses/0927-response-diagnostics-v1-update-ac25513/REPORT.md). 기존 9/27 `b4f76f4` snapshot 이후 이 조건이 추가됐습니다. 운영 상태표는 현재 업로드를 기준으로 하며 실제 실행 중인 미업로드 작업의 상태는 추정하지 않습니다.
+
+9/28 `24a3595`: 확장 4조건 완료 응답·공식 점수를 재현했습니다. 위 표는 최신 업로드 기준입니다. native count/최종 gate 원본 및 남은 핵심 3조건 완료 자료는 계속 확인 대기이며, Qwen 9B와 Kanana 8B의 평가 문서 수와 gate 차이를 보존합니다. 중복 JSON 키 처리 한계는 새 검토 보고서에 기록했습니다.

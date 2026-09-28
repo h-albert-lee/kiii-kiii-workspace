@@ -1,0 +1,69 @@
+{
+  "source_commit": "24a359542ffadc311e0e5ffe6803ff092e728f70",
+  "runs": [
+    {
+      "run": "0926-01-qwen-9b-full",
+      "source_directory": "https://github.com/h-albert-lee/kiii-kiii-workspace/tree/24a359542ffadc311e0e5ffe6803ff092e728f70/experiments/results/runs/0926-01-qwen-9b-full",
+      "gold_sha256": "d57b1cb0b8b67fe48a9b45ee985fb01e63b919147a8527f8231459a68b57456d",
+      "files_sha256": {
+        "REPORT.md": "44a0b082fc5d7a2a3ffe525f938a0b35a27c920bcf56311dd93024560269ebba",
+        "events.jsonl": "8cc2d01d198aaaeee5c0182008b6d428780ceaa13f1afa5d0abffd81a1d8faa5",
+        "manifest.json": "60823b68b860f6bc1ffd5d806c17ebeb860cb732c6f56a057e03795c2dc091e3",
+        "progress.json": "415b930733f0d99dc8a37bac990b474406bb27d4d3d333a87ca73e608b3eb33d",
+        "responses.jsonl": "bb1d562d40ee989fa7e2eef4ee495685e0ce0ec5b0a3290ca44f1b3259831bb7",
+        "result.json": "886883770a0e1080067389b8fc267d37d7df93e4b0323ce5d980665e106a8359",
+        "run.json": "faa80888b9f8e78fcae6a0026f777fb69332bd0c438fd1b5d7f22a0f79c2f6d3"
+      }
+    },
+    {
+      "run": "0926-02-qwen-9b-local",
+      "source_directory": "https://github.com/h-albert-lee/kiii-kiii-workspace/tree/24a359542ffadc311e0e5ffe6803ff092e728f70/experiments/results/runs/0926-02-qwen-9b-local",
+      "gold_sha256": "d57b1cb0b8b67fe48a9b45ee985fb01e63b919147a8527f8231459a68b57456d",
+      "files_sha256": {
+        "REPORT.md": "500897ed4df63ccc1a9a0a53a3a9bea9d574d8fba7c89b769724ae87ea3dbc04",
+        "events.jsonl": "e7357d05e8010326c18b4510376f86bcb69a0423aff47499fa6f1301f4fb97fc",
+        "manifest.json": "04430b66fb1d61e344dc141dfafc72f80e83ed65f7b6fdad5e1734e1a813bcf0",
+        "progress.json": "415b930733f0d99dc8a37bac990b474406bb27d4d3d333a87ca73e608b3eb33d",
+        "responses.jsonl": "0b3daef0e938f0dd16f49bc2e747d1f5f746c55b5d76dabb715d5d75509c1e25",
+        "result.json": "32b91f366181bf00cb6a88ea8dfbbd3e6f96a2973e577e9e1a416cac882c1c17",
+        "run.json": "cea64021c6799662527fe8b8b8ee121081f8a02bac07e889bcd1f69aa1698250"
+      }
+    },
+    {
+      "run": "0926-03-kanana-8b-full-1438",
+      "source_directory": "https://github.com/h-albert-lee/kiii-kiii-workspace/tree/24a359542ffadc311e0e5ffe6803ff092e728f70/experiments/results/runs/0926-03-kanana-8b-full-1438",
+      "gold_sha256": "f3062c1637dd2df7240cdd1b009482f8623d9fe5de320e459a4fcd2b58949139",
+      "files_sha256": {
+        "REPORT.md": "b9e3a3f335160641061a76817cd3a0139b50ff8055b87398e362087c5901bfc3",
+        "capacity-all5-full_context_targeted.json": "2c42d945d50368262353f7fffc4d8d6704232f73801db09f774537726764c461",
+        "capacity-all5-local_window.json": "22c0d95a027125aeecf074a28c45d3b5203c21d89d3dc0fb91b76765ae7a3cb0",
+        "eligible-1438.json": "4f6545bdf5e76f452a9372c268096f3bd52a4d9dc75629ba16f8a19203886765",
+        "events.jsonl": "59f7b748d304b6dd9401444c14f11fa2cd9ee769f938773b3ec30950763e2861",
+        "events.jsonl.gz": "ea14ce6730aab57ece5f27c0f87a68392fd7e2e9731e81e65fd5eb59705da6ac",
+        "manifest.json": "6f1f786016c23c4bd44f3d675680d9f853069c94cfa414e07c4b5a179b9001a2",
+        "progress.json": "fac104f3b3345c64341dcc590e9b31518ebffff0ab693e2051c1c25bd33bfba0",
+        "responses.jsonl": "1c21762737edea9fe8453ff6d65ff2bc17bc2e03aa8811c5bf39bafbb1bce901",
+        "responses.jsonl.gz": "2c7b16e1cb0103fd4b368ffc8601330a3695854a159df587107f9690004de271",
+        "result.json": "f53688ed6e986a72a21258c3352cadef5e3a8e6a940755528c323fb2b510e206",
+        "run.json": "5e7119a41cffea5e31768fde3978df12d3cf9aca3d2e78024211bbb5bac881c6"
+      }
+    },
+    {
+      "run": "0926-04-kanana-8b-local-1438",
+      "source_directory": "https://github.com/h-albert-lee/kiii-kiii-workspace/tree/24a359542ffadc311e0e5ffe6803ff092e728f70/experiments/results/runs/0926-04-kanana-8b-local-1438",
+      "gold_sha256": "f3062c1637dd2df7240cdd1b009482f8623d9fe5de320e459a4fcd2b58949139",
+      "files_sha256": {
+        "REPORT.md": "7a2a41c98cfbc5c2b35c24ea9f1cdc72c875f22cda97ba10ccd7758dd469b8b8",
+        "capacity-all5-full_context_targeted.json": "2c42d945d50368262353f7fffc4d8d6704232f73801db09f774537726764c461",
+        "capacity-all5-local_window.json": "22c0d95a027125aeecf074a28c45d3b5203c21d89d3dc0fb91b76765ae7a3cb0",
+        "eligible-1438.json": "4f6545bdf5e76f452a9372c268096f3bd52a4d9dc75629ba16f8a19203886765",
+        "events.jsonl": "bdaf7215d9dc4c0434a84f03c0f08c1a1d6940ec8ac75b5468486f63f530d3cd",
+        "manifest.json": "3ca190f0da91019618009aefcd9103852b320cf29e630f3eeecf9d538163f297",
+        "progress.json": "fac104f3b3345c64341dcc590e9b31518ebffff0ab693e2051c1c25bd33bfba0",
+        "responses.jsonl": "0d09f5973f051950fcab8c2f7c999f41afb0f293ef40fc0c759ab75bd510f15a",
+        "result.json": "3fcbfce896d6281cc977269279109efdebf1a81a144793d71a6d0d3063424aac",
+        "run.json": "ff9261c23e285fdf105a72a96df0260bbcf60ee5d2dc81635088bdf4e4491436"
+      }
+    }
+  ]
+}

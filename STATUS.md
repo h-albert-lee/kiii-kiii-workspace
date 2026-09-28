@@ -1,8 +1,8 @@
-# STATUS — 2026-09-27
+# STATUS — 2026-09-28
 
 ## Current outcome
 
-**Dataset complete and public; detector execution infrastructure prepared; CPU baseline runs complete on all 1,440 documents; four completed GPU conditions replay-verified (Kanana 3B full/local, Qwen 2B full, Qwen 4B local); remaining GPU results and underlying native-count/cohort artifacts pending.** Experiment collaborators should begin with README.md → AGENTS.md → docs/guide/experiment-runbook.md.
+**Dataset complete and public; detector execution infrastructure prepared; CPU baseline runs complete on all 1,440 documents; eight completed GPU LLM conditions replay-verified (core: Kanana 3B full/local, Qwen 2B full, Qwen 4B local; extension: Qwen 9B full/local on 1,440 docs, Kanana 1.5 8B full/local on 1,438 docs); remaining GPU results and underlying native-count/cohort artifacts pending.** Experiment collaborators should begin with README.md → AGENTS.md → docs/guide/experiment-runbook.md.
 
 | Item | Status |
 |---|---|
@@ -25,7 +25,15 @@ Research work can start immediately: 사라 follows [the context-analysis brief]
 
 Accepted roster (ADR-0034, 2026-09-24): Qwen3.5-2B, Qwen3.5-4B, Kanana-2-3B-Instruct + Presidio/ko-pii/OpenMed = **6 systems / 9 conditions**. Gemini is optional and deferred; Claude and previous large MoE runs are out of current scope. Config matrix and research handoff updated. GPU capacity and actual token limits remain unverified; no new inference/spending initiated.
 
-## Latest GPU upload review — ac25513
+## Latest GPU upload review — 24a3595 (2026-09-28)
+
+Four medium-extension conditions are complete and all archived strict metrics, failures, request hashes, raw responses and journals replay/agree. [Review, secondary scores and 1,720-row breakdowns](experiments/results/analyses/0928-response-diagnostics-v1-update-24a3595/REPORT.md). Strict F1 / 100: Qwen 9B full/local **3.2686 / 3.6618**; Kanana 1.5 8B full/local **0.3337 / 0.8429**. ADR-0036 fence/itemwise F1: **14.4432 / 18.0520** and **5.5536 / 8.3522**. Secondary diagnostics do not replace official scores.
+
+Kanana excludes two documents for reported native length limits, leaving 1,438 docs / 218,197 spans / 13,653 requests. Shared capacity summary/eligible IDs and reconstructed gold hash agree; native per-request counts and final cohort gate files are still absent. Core/Qwen-9B/Kanana-8B gate hashes differ. New REPORTs document deployment, BF16 and settings; pilot compatibility evidence does not establish representative calibration. Existing parser accepts duplicate JSON keys using the last value, observed in both model families; preserve scores and record this limitation pending a versioned research decision. No runtime/parser changes or new inference.
+
+Completed uploaded/replayed conditions now total **10 of 13** (8 LLM + 2 CPU). Qwen 2B local and Qwen 4B full still have only pilot uploads; OpenMed only a report. Missing uploads do not establish that runs were not performed. Historical reviews below remain unchanged.
+
+## Previous GPU upload review — ac25513
 
 Remote `feat/exp-eb@ac25513` adds completed Qwen3.5-4B local: 1,440 docs / 13,723 requests. All strict scores/breakdowns/failures and request hashes replay correctly; raw responses and reservation/finish journal agree. Strict F1 is 0.9696/100 with 89.9803% request failures; ADR-0036 itemwise F1 is 5.9165 and fence/itemwise F1 is 8.5869, retaining invalid-item FP and all gold. [Review and secondary breakdowns](experiments/results/analyses/0927-response-diagnostics-v1-update-ac25513/REPORT.md).
 
@@ -57,7 +65,7 @@ Strict → fence/itemwise exact F1 (0–100): Kanana full 1.0230 → 3.1682; Kan
 1. Verify operator deployment records for the three core and two extension LLMs: IDs/revisions, tokenizer/templates, limits, GPU availability and compute allocation. Preserve live runs.
 2. Separate pilot for live adapter compatibility and shared core/halo/output calibration; freeze settings. Do not tune on test results.
 3. Count all requests for all models and both conditions; fix common eligible documents; preserve exclusion reasons.
-4. Preserve/resume the three core LLMs × two conditions and three baselines; prepare the two medium LLMs separately under ADR-0035, then finalize and analyze with explicit cohort provenance.
+4. Obtain the remaining Qwen 2B local, Qwen 4B full and OpenMed completed artifacts or operator progress reports. Preserve the eight completed LLM conditions and both CPU baselines; analyze the medium extension separately with explicit cohort provenance.
 5. Populate figures and paper results only from finalized artifacts; preserve Overleaf comments during edits.
 
 Default core/halo 1,200 chars and output cap 4,096 tokens yield 13,723 requests per model per condition on all 1,440 docs. This is a provisional inventory, **not a token/cost estimate**. Exact live counts and detector costs are not available yet.

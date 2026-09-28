@@ -1,0 +1,475 @@
+{
+  "commit": "24a359542ffadc311e0e5ffe6803ff092e728f70",
+  "runs": [
+    {
+      "run": "0926-01-qwen-9b-full",
+      "documents": 1440,
+      "requests": 13723,
+      "accounting_complete": true,
+      "data_sha256": "d57b1cb0b8b67fe48a9b45ee985fb01e63b919147a8527f8231459a68b57456d",
+      "cohort_sha256": "c8233d6a240b5a69c24d5bd55d3ed844bb53c90fdaae2a9f34501bbbd75408b8",
+      "responses_sha_matches": true,
+      "events": {
+        "reserved": 13723,
+        "finished": 13723
+      },
+      "event_duplicates": {
+        "reserved": 0,
+        "finished": 0
+      },
+      "event_response_mismatches": 0,
+      "reserved_finished_ids_equal": true,
+      "raw_diagnostics": {
+        "duplicate_request_id": 0,
+        "rows": 13723,
+        "status:ok": 13484,
+        "finish:stop": 13484,
+        "raw_present": 13723,
+        "text_present": 13723,
+        "raw_content_equals_text": 13723,
+        "nonempty_reasoning_field": 0,
+        "status:failed": 239,
+        "finish:length": 239,
+        "duplicate_keys_requests:raw_json": 72,
+        "duplicate_keys_strict_accepted": 30,
+        "duplicate_keys_terminal_failed": 0,
+        "duplicate_keys_requests:whole_response_fence": 7
+      },
+      "duplicate_key_occurrences": {
+        "text": 149,
+        "spans": 65,
+        "occurrence": 23,
+        "category": 19
+      },
+      "duplicate_key_request_examples": [
+        {
+          "request_id": "kiii-main-v2-00048:0009",
+          "strict_accepted": false,
+          "mode": "raw_json",
+          "keys": [
+            "text"
+          ]
+        },
+        {
+          "request_id": "kiii-main-v2-00048:0011",
+          "strict_accepted": false,
+          "mode": "raw_json",
+          "keys": [
+            "text"
+          ]
+        },
+        {
+          "request_id": "kiii-main-v2-00063:0004",
+          "strict_accepted": true,
+          "mode": "raw_json",
+          "keys": [
+            "spans"
+          ]
+        },
+        {
+          "request_id": "kiii-main-v2-00106:0012",
+          "strict_accepted": false,
+          "mode": "raw_json",
+          "keys": [
+            "occurrence",
+            "spans"
+          ]
+        },
+        {
+          "request_id": "kiii-main-v2-00135:0001",
+          "strict_accepted": true,
+          "mode": "raw_json",
+          "keys": [
+            "spans"
+          ]
+        }
+      ],
+      "failure_flags_per_request_overlapping": {
+        "invalid_json_or_schema": 2372,
+        "quote_not_found": 6556,
+        "schema": 562,
+        "outside_owned_core": 3645,
+        "request_failed_or_truncated": 239,
+        "label_or_quote": 1387,
+        "occurrence": 84
+      },
+      "source_files_mismatching_branch": [],
+      "reported_artifact_hash_checks": {
+        "events.jsonl": true,
+        "manifest.json": true,
+        "progress.json": true,
+        "responses.jsonl": true,
+        "result.json": true,
+        "run.json": true
+      },
+      "exact_micro": {
+        "precision": 0.6416447944006999,
+        "recall": 0.016770021585629093,
+        "f1": 0.032685768275997305,
+        "tp": 3667,
+        "fp": 2048,
+        "fn": 214997
+      },
+      "failed_requests": 10394,
+      "failure_rate": 0.7574145594986519,
+      "manifest_matches_result": true,
+      "run_fields_match_execution": true,
+      "progress_complete": true,
+      "configured_run_id": "0926-01"
+    },
+    {
+      "run": "0926-02-qwen-9b-local",
+      "documents": 1440,
+      "requests": 13723,
+      "accounting_complete": true,
+      "data_sha256": "d57b1cb0b8b67fe48a9b45ee985fb01e63b919147a8527f8231459a68b57456d",
+      "cohort_sha256": "c8233d6a240b5a69c24d5bd55d3ed844bb53c90fdaae2a9f34501bbbd75408b8",
+      "responses_sha_matches": true,
+      "events": {
+        "reserved": 13723,
+        "finished": 13723
+      },
+      "event_duplicates": {
+        "reserved": 0,
+        "finished": 0
+      },
+      "event_response_mismatches": 0,
+      "reserved_finished_ids_equal": true,
+      "raw_diagnostics": {
+        "duplicate_request_id": 0,
+        "rows": 13723,
+        "status:ok": 13639,
+        "finish:stop": 13639,
+        "raw_present": 13723,
+        "text_present": 13723,
+        "raw_content_equals_text": 13723,
+        "nonempty_reasoning_field": 0,
+        "status:failed": 84,
+        "finish:length": 84,
+        "duplicate_keys_requests:raw_json": 56,
+        "duplicate_keys_strict_accepted": 20,
+        "duplicate_keys_terminal_failed": 0
+      },
+      "duplicate_key_occurrences": {
+        "spans": 46,
+        "text": 17,
+        "category": 3,
+        "occurrence": 7,
+        "entity": 5,
+        "start": 1,
+        "end": 1
+      },
+      "duplicate_key_request_examples": [
+        {
+          "request_id": "kiii-main-v2-00079:0002",
+          "strict_accepted": false,
+          "mode": "raw_json",
+          "keys": [
+            "spans"
+          ]
+        },
+        {
+          "request_id": "kiii-main-v2-00158:0011",
+          "strict_accepted": false,
+          "mode": "raw_json",
+          "keys": [
+            "spans"
+          ]
+        },
+        {
+          "request_id": "kiii-main-v2-00165:0003",
+          "strict_accepted": false,
+          "mode": "raw_json",
+          "keys": [
+            "text"
+          ]
+        },
+        {
+          "request_id": "kiii-main-v2-00169:0000",
+          "strict_accepted": false,
+          "mode": "raw_json",
+          "keys": [
+            "spans"
+          ]
+        },
+        {
+          "request_id": "kiii-main-v2-00206:0014",
+          "strict_accepted": false,
+          "mode": "raw_json",
+          "keys": [
+            "text"
+          ]
+        }
+      ],
+      "failure_flags_per_request_overlapping": {
+        "invalid_json_or_schema": 2272,
+        "label_or_quote": 1165,
+        "quote_not_found": 5919,
+        "outside_owned_core": 4700,
+        "schema": 753,
+        "request_failed_or_truncated": 84,
+        "occurrence": 82
+      },
+      "source_files_mismatching_branch": [],
+      "reported_artifact_hash_checks": {
+        "events.jsonl": true,
+        "manifest.json": true,
+        "progress.json": true,
+        "responses.jsonl": true,
+        "result.json": true,
+        "run.json": true
+      },
+      "exact_micro": {
+        "precision": 0.6265572774232756,
+        "recall": 0.01885998609739143,
+        "f1": 0.03661774237944292,
+        "tp": 4124,
+        "fp": 2458,
+        "fn": 214540
+      },
+      "failed_requests": 10273,
+      "failure_rate": 0.7485972455002551,
+      "manifest_matches_result": true,
+      "run_fields_match_execution": true,
+      "progress_complete": true,
+      "configured_run_id": "0926-01"
+    },
+    {
+      "run": "0926-03-kanana-8b-full-1438",
+      "documents": 1438,
+      "requests": 13653,
+      "accounting_complete": true,
+      "data_sha256": "f3062c1637dd2df7240cdd1b009482f8623d9fe5de320e459a4fcd2b58949139",
+      "cohort_sha256": "d7077277a19e345a0cfd6aa0dc9b42c1fe38cb7ffe8f72f3c5f49e32e1db5a0b",
+      "responses_sha_matches": true,
+      "events": {
+        "reserved": 13653,
+        "finished": 13653
+      },
+      "event_duplicates": {
+        "reserved": 0,
+        "finished": 0
+      },
+      "event_response_mismatches": 0,
+      "reserved_finished_ids_equal": true,
+      "raw_diagnostics": {
+        "duplicate_request_id": 0,
+        "rows": 13653,
+        "status:ok": 12780,
+        "finish:stop": 12780,
+        "raw_present": 13653,
+        "text_present": 13653,
+        "raw_content_equals_text": 13653,
+        "nonempty_reasoning_field": 0,
+        "status:failed": 873,
+        "finish:length": 873,
+        "duplicate_keys_requests:raw_json": 43,
+        "duplicate_keys_strict_accepted": 4,
+        "duplicate_keys_terminal_failed": 0
+      },
+      "duplicate_key_occurrences": {
+        "spans": 123,
+        "category": 1,
+        "text": 9,
+        "occurrence": 7
+      },
+      "duplicate_key_request_examples": [
+        {
+          "request_id": "kiii-main-v2-00068:0001",
+          "strict_accepted": true,
+          "mode": "raw_json",
+          "keys": [
+            "spans"
+          ]
+        },
+        {
+          "request_id": "kiii-main-v2-00090:0001",
+          "strict_accepted": false,
+          "mode": "raw_json",
+          "keys": [
+            "spans"
+          ]
+        },
+        {
+          "request_id": "kiii-main-v2-00103:0023",
+          "strict_accepted": false,
+          "mode": "raw_json",
+          "keys": [
+            "category",
+            "text"
+          ]
+        },
+        {
+          "request_id": "kiii-main-v2-00156:0006",
+          "strict_accepted": false,
+          "mode": "raw_json",
+          "keys": [
+            "text"
+          ]
+        },
+        {
+          "request_id": "kiii-main-v2-00213:0004",
+          "strict_accepted": true,
+          "mode": "raw_json",
+          "keys": [
+            "spans"
+          ]
+        }
+      ],
+      "failure_flags_per_request_overlapping": {
+        "invalid_json_or_schema": 5732,
+        "quote_not_found": 6471,
+        "outside_owned_core": 3472,
+        "request_failed_or_truncated": 873,
+        "label_or_quote": 1773,
+        "occurrence": 337,
+        "schema": 306
+      },
+      "source_files_mismatching_branch": [],
+      "reported_artifact_hash_checks": {
+        "capacity-all5-full_context_targeted.json": true,
+        "capacity-all5-local_window.json": true,
+        "eligible-1438.json": true,
+        "events.jsonl.gz": true,
+        "events.jsonl": true,
+        "manifest.json": true,
+        "progress.json": true,
+        "responses.jsonl.gz": true,
+        "responses.jsonl": true,
+        "result.json": true,
+        "run.json": true
+      },
+      "exact_micro": {
+        "precision": 0.6426056338028169,
+        "recall": 0.0016728002676480427,
+        "f1": 0.0033369140401801017,
+        "tp": 365,
+        "fp": 203,
+        "fn": 217832
+      },
+      "failed_requests": 13476,
+      "failure_rate": 0.987035816304109,
+      "manifest_matches_result": true,
+      "run_fields_match_execution": true,
+      "progress_complete": true,
+      "configured_run_id": "0926-03"
+    },
+    {
+      "run": "0926-04-kanana-8b-local-1438",
+      "documents": 1438,
+      "requests": 13653,
+      "accounting_complete": true,
+      "data_sha256": "f3062c1637dd2df7240cdd1b009482f8623d9fe5de320e459a4fcd2b58949139",
+      "cohort_sha256": "d7077277a19e345a0cfd6aa0dc9b42c1fe38cb7ffe8f72f3c5f49e32e1db5a0b",
+      "responses_sha_matches": true,
+      "events": {
+        "reserved": 13653,
+        "finished": 13653
+      },
+      "event_duplicates": {
+        "reserved": 0,
+        "finished": 0
+      },
+      "event_response_mismatches": 0,
+      "reserved_finished_ids_equal": true,
+      "raw_diagnostics": {
+        "duplicate_request_id": 0,
+        "rows": 13653,
+        "status:ok": 13477,
+        "finish:stop": 13477,
+        "raw_present": 13653,
+        "text_present": 13653,
+        "raw_content_equals_text": 13653,
+        "nonempty_reasoning_field": 0,
+        "status:failed": 176,
+        "finish:length": 176,
+        "duplicate_keys_requests:raw_json": 28,
+        "duplicate_keys_strict_accepted": 10,
+        "duplicate_keys_terminal_failed": 0
+      },
+      "duplicate_key_occurrences": {
+        "spans": 56,
+        "text": 1,
+        "category": 1,
+        "occurrence": 11
+      },
+      "duplicate_key_request_examples": [
+        {
+          "request_id": "kiii-main-v2-00024:0015",
+          "strict_accepted": true,
+          "mode": "raw_json",
+          "keys": [
+            "spans"
+          ]
+        },
+        {
+          "request_id": "kiii-main-v2-00035:0006",
+          "strict_accepted": true,
+          "mode": "raw_json",
+          "keys": [
+            "spans"
+          ]
+        },
+        {
+          "request_id": "kiii-main-v2-00127:0004",
+          "strict_accepted": false,
+          "mode": "raw_json",
+          "keys": [
+            "spans"
+          ]
+        },
+        {
+          "request_id": "kiii-main-v2-00132:0001",
+          "strict_accepted": true,
+          "mode": "raw_json",
+          "keys": [
+            "spans"
+          ]
+        },
+        {
+          "request_id": "kiii-main-v2-00223:0009",
+          "strict_accepted": false,
+          "mode": "raw_json",
+          "keys": [
+            "spans"
+          ]
+        }
+      ],
+      "failure_flags_per_request_overlapping": {
+        "invalid_json_or_schema": 7741,
+        "quote_not_found": 4795,
+        "outside_owned_core": 3453,
+        "schema": 118,
+        "label_or_quote": 1190,
+        "request_failed_or_truncated": 176,
+        "occurrence": 118
+      },
+      "source_files_mismatching_branch": [],
+      "reported_artifact_hash_checks": {
+        "capacity-all5-full_context_targeted.json": true,
+        "capacity-all5-local_window.json": true,
+        "eligible-1438.json": true,
+        "events.jsonl": true,
+        "manifest.json": true,
+        "progress.json": true,
+        "responses.jsonl": true,
+        "result.json": true,
+        "run.json": true
+      },
+      "exact_micro": {
+        "precision": 0.6052287581699346,
+        "recall": 0.004243871363950925,
+        "f1": 0.00842864099541704,
+        "tp": 926,
+        "fp": 604,
+        "fn": 217271
+      },
+      "failed_requests": 13316,
+      "failure_rate": 0.9753167801948289,
+      "manifest_matches_result": true,
+      "run_fields_match_execution": true,
+      "progress_complete": true,
+      "configured_run_id": "0926-03"
+    }
+  ]
+}

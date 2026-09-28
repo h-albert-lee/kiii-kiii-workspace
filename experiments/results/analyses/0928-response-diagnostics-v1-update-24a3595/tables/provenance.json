@@ -1,0 +1,12 @@
+{
+  "purpose": "secondary_tables_only",
+  "source_sha256": "b92882c4750ed2393bbfd76bc1894bcdc780d0600362fb6b4c9a7d98bfbfd56d",
+  "inputs": {
+    "0926-01-qwen-9b-full": "8292699b7945e15a45b1ad8f5189560ece3eb55b5eb70f6fdf88e84aa437cd66",
+    "0926-02-qwen-9b-local": "f527a9ba57f1aa39f675bad5c7653a04766008803999cc84e338f8ccb1810b1b",
+    "0926-03-kanana-8b-full-1438": "1eb5f660c1660a5ab3940a2a3669663d313af5f391a9784779dbdda0041a9c67",
+    "0926-04-kanana-8b-local-1438": "902667437f6a06d05fd4e7daa5cb221dc7435340c2ab8cca6a85a288002c20c5"
+  },
+  "breakdowns_sha256": "91b43c15fce6b97f7d0208702eca603510d91a42bc85daf00c845db5512ec12e",
+  "note": "No pooling across runs or eligibility validation. F1 is 0\u20131. See source reports for invalid-item and character-score limitations."
+}
