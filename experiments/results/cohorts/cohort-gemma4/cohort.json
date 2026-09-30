@@ -1,0 +1,106 @@
+{
+  "data_sha256": "d57b1cb0b8b67fe48a9b45ee985fb01e63b919147a8527f8231459a68b57456d",
+  "models": [
+    "google/gemma-4-12B-it",
+    "google/gemma-4-26B-A4B-it",
+    "google/gemma-4-31B-it",
+    "google/gemma-4-E2B-it",
+    "google/gemma-4-E4B-it"
+  ],
+  "limit_tokens": 65536,
+  "max_output_tokens": 4096,
+  "eligible_documents": 1440,
+  "excluded_documents": [],
+  "entries": [
+    {
+      "model": "google/gemma-4-E2B-it",
+      "run": "gemma4-e2b",
+      "mode": "full_context_targeted",
+      "requests_sha256": "3542d46ed09a04f3ef09f2d6b368b756cf0bfe5746444fe3927aea39022e454f",
+      "measurements_sha256": "6c78facb64e8c4d7b0a8bada3ec3a92cf821859d324b68756d47e8a32a154c32",
+      "max_input_tokens": 31765,
+      "over_limit": 0
+    },
+    {
+      "model": "google/gemma-4-E2B-it",
+      "run": "gemma4-e2b",
+      "mode": "local_window",
+      "requests_sha256": "b526cef377a0d4e42be1bdc7bfc881b05f8602d2f85847d8fa130bd5ecedfeed",
+      "measurements_sha256": "fa4c84c1c9f00484e46bf8e92f47e6bd6d2e8eccc7dc5587ae1bfc6b93de2693",
+      "max_input_tokens": 9062,
+      "over_limit": 0
+    },
+    {
+      "model": "google/gemma-4-E4B-it",
+      "run": "gemma4-e4b",
+      "mode": "full_context_targeted",
+      "requests_sha256": "3542d46ed09a04f3ef09f2d6b368b756cf0bfe5746444fe3927aea39022e454f",
+      "measurements_sha256": "1b91e193009f3d7e12b30f3da6d3d685c8fb67d9d33e8be41d70e4e051b8b27b",
+      "max_input_tokens": 31765,
+      "over_limit": 0
+    },
+    {
+      "model": "google/gemma-4-E4B-it",
+      "run": "gemma4-e4b",
+      "mode": "local_window",
+      "requests_sha256": "b526cef377a0d4e42be1bdc7bfc881b05f8602d2f85847d8fa130bd5ecedfeed",
+      "measurements_sha256": "ac26917dea9f403a9e82a14f249edad0bdaa6f08e5b0de3faecb10966d67fbc8",
+      "max_input_tokens": 9062,
+      "over_limit": 0
+    },
+    {
+      "model": "google/gemma-4-12B-it",
+      "run": "gemma4-12b",
+      "mode": "full_context_targeted",
+      "requests_sha256": "3542d46ed09a04f3ef09f2d6b368b756cf0bfe5746444fe3927aea39022e454f",
+      "measurements_sha256": "6aa805b2fc8e875b74600f93b944cc9d53f8a39099f257fd6a66c645620a6d65",
+      "max_input_tokens": 31769,
+      "over_limit": 0
+    },
+    {
+      "model": "google/gemma-4-12B-it",
+      "run": "gemma4-12b",
+      "mode": "local_window",
+      "requests_sha256": "b526cef377a0d4e42be1bdc7bfc881b05f8602d2f85847d8fa130bd5ecedfeed",
+      "measurements_sha256": "c998dd69713a09fee45ca1f4a458c4560a11ea0afc0962b7c91b9d47419341fa",
+      "max_input_tokens": 9066,
+      "over_limit": 0
+    },
+    {
+      "model": "google/gemma-4-26B-A4B-it",
+      "run": "gemma4-26b-a4b",
+      "mode": "full_context_targeted",
+      "requests_sha256": "3542d46ed09a04f3ef09f2d6b368b756cf0bfe5746444fe3927aea39022e454f",
+      "measurements_sha256": "f75620ad4640d62a7b9c7d2ad15e4d7f9f28aaf54e75f3bf2ad7a879181a4e64",
+      "max_input_tokens": 31769,
+      "over_limit": 0
+    },
+    {
+      "model": "google/gemma-4-26B-A4B-it",
+      "run": "gemma4-26b-a4b",
+      "mode": "local_window",
+      "requests_sha256": "b526cef377a0d4e42be1bdc7bfc881b05f8602d2f85847d8fa130bd5ecedfeed",
+      "measurements_sha256": "7810f82a7c2fb020391ea91fef92c6fd4ee0e84638655b059db792a82a244530",
+      "max_input_tokens": 9066,
+      "over_limit": 0
+    },
+    {
+      "model": "google/gemma-4-31B-it",
+      "run": "gemma4-31b-fp8",
+      "mode": "full_context_targeted",
+      "requests_sha256": "3542d46ed09a04f3ef09f2d6b368b756cf0bfe5746444fe3927aea39022e454f",
+      "measurements_sha256": "fa8c33042bf858700dfc45dd6c32655b363a16472b1caa390bcb41776f1b9f2b",
+      "max_input_tokens": 31769,
+      "over_limit": 0
+    },
+    {
+      "model": "google/gemma-4-31B-it",
+      "run": "gemma4-31b-fp8",
+      "mode": "local_window",
+      "requests_sha256": "b526cef377a0d4e42be1bdc7bfc881b05f8602d2f85847d8fa130bd5ecedfeed",
+      "measurements_sha256": "e4e00e9353cfb7c879d8c782a192cbfdd336ca6479a05657325c49037efceedb",
+      "max_input_tokens": 9066,
+      "over_limit": 0
+    }
+  ]
+}

@@ -12,6 +12,7 @@
 | B · GPU 베이스라인 | OpenMed/privacy-filter-multilingual | 동일 평가 문서, 겹침 토큰 창, 1회 | 은빈 | REPORT만 업로드; 완료 결과 미확인 | [0925-07-openmed-windows](https://github.com/h-albert-lee/kiii-kiii-workspace/blob/feat/exp-eb/experiments/results/runs/0925-07-openmed-windows/REPORT.md) |
 | B+ · GPU 확장 1순위 | Qwen3.5-9B | full_context_targeted + local_window | 은빈 | full/local 각 1,440건 재현 검증; native 계측/gate 대기 | 0926-01/02-qwen-9b-full/local · [검토](results/analyses/0928-response-diagnostics-v1-update-24a3595/REPORT.md) |
 | B+ · GPU 확장 2순위 | Kanana-1.5-8B-Instruct-2505 | full_context_targeted + local_window | 은빈 | full/local 각 1,438건 재현 검증; 2건 길이 제외·별도 gate | 0926-03/04-kanana-8b-full/local-1438 · [검토](results/analyses/0928-response-diagnostics-v1-update-24a3595/REPORT.md) |
+| B+ · GPU 확장 (Gemma) | Gemma 4 instruct 5종 (E2B / E4B / 12B / 26B-A4B / 31B-FP8) | full_context_targeted + local_window | 김성현 / MrBananaHuman | 5모델 × 2조건 각 1,440건 완료; 레포 scorer 재채점 일치; 별도 gate(`cohort-gemma4`) | 0928-01~04 · 0929-05-gemma4-*-full/local · [cohort](results/cohorts/cohort-gemma4/REPORT.md) · 브랜치 `feat/exp-gemma` |
 | D · 취합 | 공통 설정·평가 집합 확정 / 결과 통합 | 전체 모델 계측 취합, cohort gate, CSV·bootstrap | 미정 | 미착수 | — |
 | E · 연구 분석 | 전체 문맥 대 지역 문맥 효과 | 가설·통계·오류 분석·표/그림·결과/논의 집필 | 사라 | 배정 완료·착수 전 | [시작 문서](../docs/research/sara-context-analysis.md) |
 
