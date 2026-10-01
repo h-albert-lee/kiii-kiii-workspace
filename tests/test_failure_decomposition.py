@@ -80,3 +80,22 @@ def test_export_keeps_denominators_and_rejects_inconsistent_partition(tmp_path):
     assert export([tmp_path/'out/analysis.json'],tmp_path/'tables')==1
     r['request_counts']['total']=10
     with pytest.raises(ValueError,match='partition'):rows_for(r,'fixture')
+
+
+def test_external_replay_retains_foreign_source_and_rechecks_outputs(tmp_path):
+    from src.analysis.external_response_diagnostics import analyze as external_analyze
+    gold,responses,ref,result=fixture_run(tmp_path)
+    result['execution']['source_sha256']={'foreign.py':'recorded-foreign-source'}
+    result['execution']['runner']='fixture external runner'
+    ref.write_text(json.dumps(result))
+    with pytest.raises(ValueError,match='scoring source'):
+        diagnose(gold,responses,ref,tmp_path/'native')
+    external_analyze(gold,responses,ref,tmp_path/'external')
+    d=json.loads((tmp_path/'external/analysis.json').read_text())
+    assert d['provenance']['original_runner_source_sha256']=={'foreign.py':'recorded-foreign-source'}
+    assert d['provenance']['external_runner_replay'] is True
+    r=analyze(gold,responses,ref,tmp_path/'external/analysis.json',tmp_path/'out')
+    assert r['itemwise_exact']['tp']==1
+    result['metrics']['exact_micro']['tp']=99;ref.write_text(json.dumps(result))
+    with pytest.raises(ValueError,match='score replay'):
+        external_analyze(gold,responses,ref,tmp_path/'tampered')

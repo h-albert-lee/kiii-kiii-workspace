@@ -1,3 +1,5 @@
+> **2026-10-01 / ADR-0038:** 실행 수집 종료. [완료 15시스템·25조건 및 paired 통계](../../experiments/results/analyses/1001-completed-manuscript-v1/REPORT.md)를 사용해 집필/검토합니다. 아래 과거 실행·사전계획 요구를 새 추론 지시로 해석하지 않습니다. 현재 분석은 결과 관측 후이며 사전등록을 주장하지 않습니다.
+
 > 2026-09-24 입력 현황: Presidio/ko-pii의 전체 1,440건 완료 결과가 GitHub experiments/results/runs/에 있습니다. LLM paired 결과와 공통 cohort는 아직 대기입니다. 사전 분석 계획을 고정할 때 이 baseline 결과를 열람했는지 기록하고, 이를 LLM 문맥 효과 관측으로 취급하지 않습니다.
 
 # 사라 — 문맥 효과 연구 담당 / 에이전트 시작 문서

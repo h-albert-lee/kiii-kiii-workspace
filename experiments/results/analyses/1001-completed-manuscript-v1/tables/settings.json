@@ -1,0 +1,868 @@
+[
+  {
+    "run": "0925-01-kanana-3b-full",
+    "model": "kakaocorp/kanana-2-3b-instruct",
+    "documents": 1440,
+    "config": {
+      "model_revision": "6a5d7889964c4c590299d16e309eabab1f73f8a9",
+      "tokenizer_revision": "6a5d7889964c4c590299d16e309eabab1f73f8a9",
+      "generation": {},
+      "input_limit": 32768,
+      "output_limit": 4096,
+      "total_limit": 32768
+    },
+    "server": null,
+    "runner": null,
+    "source_sha256": {
+      "__init__.py": "93dc538d3ddafec97e1a0337b78ae6dcf472988783f5d043d2a1bcc1fdb4d020",
+      "baselines.py": "6e98d212442e56cd8a8a4f3e5ebe0ebfe17001717f78819e4e108c9bccd8e628",
+      "cohort.py": "da85e4f366023d0f4eaab66a22da2a54f2d7f0a56db7ac9859fc4cbe5e7107d0",
+      "dataset.py": "80cae825524e0c8741ca83894f95859a1ca96b245ba70e8d12b5b4802a030836",
+      "execute.py": "002dda31040c576aae4d33a803b1c9a42e47643c88e29ee6b68c093c8eb5a77a",
+      "export.py": "4c629bb28501f5a11d87cf5ea0e1d1c056c925014809a7f2dd27a88db421a6b9",
+      "metrics.py": "cefad2855667643f524db9eedc45ec04866333eff6cbccd76f8eb557be77a72e",
+      "protocol.py": "42a2eb13e5da34a8c67a8939fffb81c17ff9300a23ec3733bab7f55f2cfaf236",
+      "providers.py": "80c47d79012fb5844af49c58b0899077d01bce02d4520dd83055324fbe6e3430",
+      "run.py": "327b6b74d3733b2bb37d9eb5e6ade73946a3746d2e7d3dcb31be621c4507d30a"
+    },
+    "recorded_gate": "248501516ba8a0d5a3b07bc4ea8b4dc86fb3f6ad92ba51c0e765678381714810",
+    "native_capacity_independently_verified": false
+  },
+  {
+    "run": "0925-02-kanana-3b-local",
+    "model": "kakaocorp/kanana-2-3b-instruct",
+    "documents": 1440,
+    "config": {
+      "model_revision": "6a5d7889964c4c590299d16e309eabab1f73f8a9",
+      "tokenizer_revision": "6a5d7889964c4c590299d16e309eabab1f73f8a9",
+      "generation": {},
+      "input_limit": 32768,
+      "output_limit": 4096,
+      "total_limit": 32768
+    },
+    "server": null,
+    "runner": null,
+    "source_sha256": {
+      "__init__.py": "93dc538d3ddafec97e1a0337b78ae6dcf472988783f5d043d2a1bcc1fdb4d020",
+      "baselines.py": "6e98d212442e56cd8a8a4f3e5ebe0ebfe17001717f78819e4e108c9bccd8e628",
+      "cohort.py": "da85e4f366023d0f4eaab66a22da2a54f2d7f0a56db7ac9859fc4cbe5e7107d0",
+      "dataset.py": "80cae825524e0c8741ca83894f95859a1ca96b245ba70e8d12b5b4802a030836",
+      "execute.py": "002dda31040c576aae4d33a803b1c9a42e47643c88e29ee6b68c093c8eb5a77a",
+      "export.py": "4c629bb28501f5a11d87cf5ea0e1d1c056c925014809a7f2dd27a88db421a6b9",
+      "metrics.py": "cefad2855667643f524db9eedc45ec04866333eff6cbccd76f8eb557be77a72e",
+      "protocol.py": "42a2eb13e5da34a8c67a8939fffb81c17ff9300a23ec3733bab7f55f2cfaf236",
+      "providers.py": "80c47d79012fb5844af49c58b0899077d01bce02d4520dd83055324fbe6e3430",
+      "run.py": "327b6b74d3733b2bb37d9eb5e6ade73946a3746d2e7d3dcb31be621c4507d30a"
+    },
+    "recorded_gate": "248501516ba8a0d5a3b07bc4ea8b4dc86fb3f6ad92ba51c0e765678381714810",
+    "native_capacity_independently_verified": false
+  },
+  {
+    "run": "0925-03-qwen-2b-full",
+    "model": "Qwen/Qwen3.5-2B",
+    "documents": 1440,
+    "config": {
+      "model_revision": "15852e8c16360a2fea060d615a32b45270f8a8fc",
+      "tokenizer_revision": "15852e8c16360a2fea060d615a32b45270f8a8fc",
+      "generation": {
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      },
+      "tokenize_options": {
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      },
+      "input_limit": 262144,
+      "output_limit": 4096,
+      "total_limit": 262144
+    },
+    "server": null,
+    "runner": null,
+    "source_sha256": {
+      "__init__.py": "93dc538d3ddafec97e1a0337b78ae6dcf472988783f5d043d2a1bcc1fdb4d020",
+      "baselines.py": "6e98d212442e56cd8a8a4f3e5ebe0ebfe17001717f78819e4e108c9bccd8e628",
+      "cohort.py": "da85e4f366023d0f4eaab66a22da2a54f2d7f0a56db7ac9859fc4cbe5e7107d0",
+      "dataset.py": "80cae825524e0c8741ca83894f95859a1ca96b245ba70e8d12b5b4802a030836",
+      "execute.py": "002dda31040c576aae4d33a803b1c9a42e47643c88e29ee6b68c093c8eb5a77a",
+      "export.py": "4c629bb28501f5a11d87cf5ea0e1d1c056c925014809a7f2dd27a88db421a6b9",
+      "metrics.py": "cefad2855667643f524db9eedc45ec04866333eff6cbccd76f8eb557be77a72e",
+      "protocol.py": "42a2eb13e5da34a8c67a8939fffb81c17ff9300a23ec3733bab7f55f2cfaf236",
+      "providers.py": "80c47d79012fb5844af49c58b0899077d01bce02d4520dd83055324fbe6e3430",
+      "run.py": "327b6b74d3733b2bb37d9eb5e6ade73946a3746d2e7d3dcb31be621c4507d30a"
+    },
+    "recorded_gate": "248501516ba8a0d5a3b07bc4ea8b4dc86fb3f6ad92ba51c0e765678381714810",
+    "native_capacity_independently_verified": false
+  },
+  {
+    "run": "0925-06-qwen-4b-local",
+    "model": "Qwen/Qwen3.5-4B",
+    "documents": 1440,
+    "config": {
+      "model_revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+      "tokenizer_revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+      "generation": {
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      },
+      "tokenize_options": {
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      },
+      "input_limit": 262144,
+      "output_limit": 4096,
+      "total_limit": 262144
+    },
+    "server": null,
+    "runner": null,
+    "source_sha256": {
+      "__init__.py": "93dc538d3ddafec97e1a0337b78ae6dcf472988783f5d043d2a1bcc1fdb4d020",
+      "baselines.py": "6e98d212442e56cd8a8a4f3e5ebe0ebfe17001717f78819e4e108c9bccd8e628",
+      "cohort.py": "da85e4f366023d0f4eaab66a22da2a54f2d7f0a56db7ac9859fc4cbe5e7107d0",
+      "dataset.py": "80cae825524e0c8741ca83894f95859a1ca96b245ba70e8d12b5b4802a030836",
+      "execute.py": "002dda31040c576aae4d33a803b1c9a42e47643c88e29ee6b68c093c8eb5a77a",
+      "export.py": "4c629bb28501f5a11d87cf5ea0e1d1c056c925014809a7f2dd27a88db421a6b9",
+      "metrics.py": "cefad2855667643f524db9eedc45ec04866333eff6cbccd76f8eb557be77a72e",
+      "protocol.py": "42a2eb13e5da34a8c67a8939fffb81c17ff9300a23ec3733bab7f55f2cfaf236",
+      "providers.py": "80c47d79012fb5844af49c58b0899077d01bce02d4520dd83055324fbe6e3430",
+      "run.py": "327b6b74d3733b2bb37d9eb5e6ade73946a3746d2e7d3dcb31be621c4507d30a"
+    },
+    "recorded_gate": "248501516ba8a0d5a3b07bc4ea8b4dc86fb3f6ad92ba51c0e765678381714810",
+    "native_capacity_independently_verified": false
+  },
+  {
+    "run": "0926-01-qwen-9b-full",
+    "model": "Qwen/Qwen3.5-9B",
+    "documents": 1440,
+    "config": {
+      "model_revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+      "tokenizer_revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+      "generation": {
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      },
+      "tokenize_options": {
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      },
+      "input_limit": 262144,
+      "output_limit": 4096,
+      "total_limit": 262144
+    },
+    "server": null,
+    "runner": null,
+    "source_sha256": {
+      "__init__.py": "93dc538d3ddafec97e1a0337b78ae6dcf472988783f5d043d2a1bcc1fdb4d020",
+      "baselines.py": "6e98d212442e56cd8a8a4f3e5ebe0ebfe17001717f78819e4e108c9bccd8e628",
+      "cohort.py": "da85e4f366023d0f4eaab66a22da2a54f2d7f0a56db7ac9859fc4cbe5e7107d0",
+      "dataset.py": "80cae825524e0c8741ca83894f95859a1ca96b245ba70e8d12b5b4802a030836",
+      "execute.py": "002dda31040c576aae4d33a803b1c9a42e47643c88e29ee6b68c093c8eb5a77a",
+      "export.py": "4c629bb28501f5a11d87cf5ea0e1d1c056c925014809a7f2dd27a88db421a6b9",
+      "metrics.py": "cefad2855667643f524db9eedc45ec04866333eff6cbccd76f8eb557be77a72e",
+      "protocol.py": "42a2eb13e5da34a8c67a8939fffb81c17ff9300a23ec3733bab7f55f2cfaf236",
+      "providers.py": "80c47d79012fb5844af49c58b0899077d01bce02d4520dd83055324fbe6e3430",
+      "run.py": "327b6b74d3733b2bb37d9eb5e6ade73946a3746d2e7d3dcb31be621c4507d30a"
+    },
+    "recorded_gate": "c8233d6a240b5a69c24d5bd55d3ed844bb53c90fdaae2a9f34501bbbd75408b8",
+    "native_capacity_independently_verified": false
+  },
+  {
+    "run": "0926-02-qwen-9b-local",
+    "model": "Qwen/Qwen3.5-9B",
+    "documents": 1440,
+    "config": {
+      "model_revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+      "tokenizer_revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+      "generation": {
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      },
+      "tokenize_options": {
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      },
+      "input_limit": 262144,
+      "output_limit": 4096,
+      "total_limit": 262144
+    },
+    "server": null,
+    "runner": null,
+    "source_sha256": {
+      "__init__.py": "93dc538d3ddafec97e1a0337b78ae6dcf472988783f5d043d2a1bcc1fdb4d020",
+      "baselines.py": "6e98d212442e56cd8a8a4f3e5ebe0ebfe17001717f78819e4e108c9bccd8e628",
+      "cohort.py": "da85e4f366023d0f4eaab66a22da2a54f2d7f0a56db7ac9859fc4cbe5e7107d0",
+      "dataset.py": "80cae825524e0c8741ca83894f95859a1ca96b245ba70e8d12b5b4802a030836",
+      "execute.py": "002dda31040c576aae4d33a803b1c9a42e47643c88e29ee6b68c093c8eb5a77a",
+      "export.py": "4c629bb28501f5a11d87cf5ea0e1d1c056c925014809a7f2dd27a88db421a6b9",
+      "metrics.py": "cefad2855667643f524db9eedc45ec04866333eff6cbccd76f8eb557be77a72e",
+      "protocol.py": "42a2eb13e5da34a8c67a8939fffb81c17ff9300a23ec3733bab7f55f2cfaf236",
+      "providers.py": "80c47d79012fb5844af49c58b0899077d01bce02d4520dd83055324fbe6e3430",
+      "run.py": "327b6b74d3733b2bb37d9eb5e6ade73946a3746d2e7d3dcb31be621c4507d30a"
+    },
+    "recorded_gate": "c8233d6a240b5a69c24d5bd55d3ed844bb53c90fdaae2a9f34501bbbd75408b8",
+    "native_capacity_independently_verified": false
+  },
+  {
+    "run": "0926-03-kanana-8b-full-1438",
+    "model": "kakaocorp/kanana-1.5-8b-instruct-2505",
+    "documents": 1438,
+    "config": {
+      "model_revision": "c963a5f4f6496c749f94064a20b33028b0db9f19",
+      "tokenizer_revision": "c963a5f4f6496c749f94064a20b33028b0db9f19",
+      "generation": {},
+      "input_limit": 32768,
+      "output_limit": 4096,
+      "total_limit": 32768
+    },
+    "server": null,
+    "runner": null,
+    "source_sha256": {
+      "__init__.py": "93dc538d3ddafec97e1a0337b78ae6dcf472988783f5d043d2a1bcc1fdb4d020",
+      "baselines.py": "6e98d212442e56cd8a8a4f3e5ebe0ebfe17001717f78819e4e108c9bccd8e628",
+      "cohort.py": "da85e4f366023d0f4eaab66a22da2a54f2d7f0a56db7ac9859fc4cbe5e7107d0",
+      "dataset.py": "80cae825524e0c8741ca83894f95859a1ca96b245ba70e8d12b5b4802a030836",
+      "execute.py": "002dda31040c576aae4d33a803b1c9a42e47643c88e29ee6b68c093c8eb5a77a",
+      "export.py": "4c629bb28501f5a11d87cf5ea0e1d1c056c925014809a7f2dd27a88db421a6b9",
+      "metrics.py": "cefad2855667643f524db9eedc45ec04866333eff6cbccd76f8eb557be77a72e",
+      "protocol.py": "42a2eb13e5da34a8c67a8939fffb81c17ff9300a23ec3733bab7f55f2cfaf236",
+      "providers.py": "80c47d79012fb5844af49c58b0899077d01bce02d4520dd83055324fbe6e3430",
+      "run.py": "327b6b74d3733b2bb37d9eb5e6ade73946a3746d2e7d3dcb31be621c4507d30a"
+    },
+    "recorded_gate": "d7077277a19e345a0cfd6aa0dc9b42c1fe38cb7ffe8f72f3c5f49e32e1db5a0b",
+    "native_capacity_independently_verified": false
+  },
+  {
+    "run": "0926-04-kanana-8b-local-1438",
+    "model": "kakaocorp/kanana-1.5-8b-instruct-2505",
+    "documents": 1438,
+    "config": {
+      "model_revision": "c963a5f4f6496c749f94064a20b33028b0db9f19",
+      "tokenizer_revision": "c963a5f4f6496c749f94064a20b33028b0db9f19",
+      "generation": {},
+      "input_limit": 32768,
+      "output_limit": 4096,
+      "total_limit": 32768
+    },
+    "server": null,
+    "runner": null,
+    "source_sha256": {
+      "__init__.py": "93dc538d3ddafec97e1a0337b78ae6dcf472988783f5d043d2a1bcc1fdb4d020",
+      "baselines.py": "6e98d212442e56cd8a8a4f3e5ebe0ebfe17001717f78819e4e108c9bccd8e628",
+      "cohort.py": "da85e4f366023d0f4eaab66a22da2a54f2d7f0a56db7ac9859fc4cbe5e7107d0",
+      "dataset.py": "80cae825524e0c8741ca83894f95859a1ca96b245ba70e8d12b5b4802a030836",
+      "execute.py": "002dda31040c576aae4d33a803b1c9a42e47643c88e29ee6b68c093c8eb5a77a",
+      "export.py": "4c629bb28501f5a11d87cf5ea0e1d1c056c925014809a7f2dd27a88db421a6b9",
+      "metrics.py": "cefad2855667643f524db9eedc45ec04866333eff6cbccd76f8eb557be77a72e",
+      "protocol.py": "42a2eb13e5da34a8c67a8939fffb81c17ff9300a23ec3733bab7f55f2cfaf236",
+      "providers.py": "80c47d79012fb5844af49c58b0899077d01bce02d4520dd83055324fbe6e3430",
+      "run.py": "327b6b74d3733b2bb37d9eb5e6ade73946a3746d2e7d3dcb31be621c4507d30a"
+    },
+    "recorded_gate": "d7077277a19e345a0cfd6aa0dc9b42c1fe38cb7ffe8f72f3c5f49e32e1db5a0b",
+    "native_capacity_independently_verified": false
+  },
+  {
+    "run": "0928-01-exaone-33b-full",
+    "model": "LGAI-EXAONE/EXAONE-4.5-33B",
+    "documents": 1440,
+    "config": {
+      "model_revision": "570aa4b15a4f45ba1133072b45f50198f6e3b4fd",
+      "tokenizer_revision": "570aa4b15a4f45ba1133072b45f50198f6e3b4fd",
+      "generation": {
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      },
+      "tokenize_options": {
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      },
+      "input_limit": 65536,
+      "output_limit": 4096,
+      "total_limit": 65536
+    },
+    "server": null,
+    "runner": null,
+    "source_sha256": {
+      "__init__.py": "93dc538d3ddafec97e1a0337b78ae6dcf472988783f5d043d2a1bcc1fdb4d020",
+      "baselines.py": "6e98d212442e56cd8a8a4f3e5ebe0ebfe17001717f78819e4e108c9bccd8e628",
+      "cohort.py": "da85e4f366023d0f4eaab66a22da2a54f2d7f0a56db7ac9859fc4cbe5e7107d0",
+      "dataset.py": "80cae825524e0c8741ca83894f95859a1ca96b245ba70e8d12b5b4802a030836",
+      "execute.py": "002dda31040c576aae4d33a803b1c9a42e47643c88e29ee6b68c093c8eb5a77a",
+      "export.py": "4c629bb28501f5a11d87cf5ea0e1d1c056c925014809a7f2dd27a88db421a6b9",
+      "metrics.py": "cefad2855667643f524db9eedc45ec04866333eff6cbccd76f8eb557be77a72e",
+      "protocol.py": "42a2eb13e5da34a8c67a8939fffb81c17ff9300a23ec3733bab7f55f2cfaf236",
+      "providers.py": "80c47d79012fb5844af49c58b0899077d01bce02d4520dd83055324fbe6e3430",
+      "run.py": "327b6b74d3733b2bb37d9eb5e6ade73946a3746d2e7d3dcb31be621c4507d30a"
+    },
+    "recorded_gate": "33c670c00de2006bcce594aa52aa29625e9f56d956bca595f5b1b787f1daad7a",
+    "native_capacity_independently_verified": false
+  },
+  {
+    "run": "0928-02-exaone-33b-local",
+    "model": "LGAI-EXAONE/EXAONE-4.5-33B",
+    "documents": 1440,
+    "config": {
+      "model_revision": "570aa4b15a4f45ba1133072b45f50198f6e3b4fd",
+      "tokenizer_revision": "570aa4b15a4f45ba1133072b45f50198f6e3b4fd",
+      "generation": {
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      },
+      "tokenize_options": {
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      },
+      "input_limit": 65536,
+      "output_limit": 4096,
+      "total_limit": 65536
+    },
+    "server": null,
+    "runner": null,
+    "source_sha256": {
+      "__init__.py": "93dc538d3ddafec97e1a0337b78ae6dcf472988783f5d043d2a1bcc1fdb4d020",
+      "baselines.py": "6e98d212442e56cd8a8a4f3e5ebe0ebfe17001717f78819e4e108c9bccd8e628",
+      "cohort.py": "da85e4f366023d0f4eaab66a22da2a54f2d7f0a56db7ac9859fc4cbe5e7107d0",
+      "dataset.py": "80cae825524e0c8741ca83894f95859a1ca96b245ba70e8d12b5b4802a030836",
+      "execute.py": "002dda31040c576aae4d33a803b1c9a42e47643c88e29ee6b68c093c8eb5a77a",
+      "export.py": "4c629bb28501f5a11d87cf5ea0e1d1c056c925014809a7f2dd27a88db421a6b9",
+      "metrics.py": "cefad2855667643f524db9eedc45ec04866333eff6cbccd76f8eb557be77a72e",
+      "protocol.py": "42a2eb13e5da34a8c67a8939fffb81c17ff9300a23ec3733bab7f55f2cfaf236",
+      "providers.py": "80c47d79012fb5844af49c58b0899077d01bce02d4520dd83055324fbe6e3430",
+      "run.py": "327b6b74d3733b2bb37d9eb5e6ade73946a3746d2e7d3dcb31be621c4507d30a"
+    },
+    "recorded_gate": "33c670c00de2006bcce594aa52aa29625e9f56d956bca595f5b1b787f1daad7a",
+    "native_capacity_independently_verified": false
+  },
+  {
+    "run": "0928-03-qwen3-30b-full",
+    "model": "Qwen/Qwen3-30B-A3B",
+    "documents": 1440,
+    "config": {
+      "model_revision": "ad44e777bcd18fa416d9da3bd8f70d33ebb85d39",
+      "tokenizer_revision": "ad44e777bcd18fa416d9da3bd8f70d33ebb85d39",
+      "generation": {
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      },
+      "tokenize_options": {
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      },
+      "input_limit": 40960,
+      "output_limit": 4096,
+      "total_limit": 40960
+    },
+    "server": null,
+    "runner": null,
+    "source_sha256": {
+      "__init__.py": "93dc538d3ddafec97e1a0337b78ae6dcf472988783f5d043d2a1bcc1fdb4d020",
+      "baselines.py": "6e98d212442e56cd8a8a4f3e5ebe0ebfe17001717f78819e4e108c9bccd8e628",
+      "cohort.py": "da85e4f366023d0f4eaab66a22da2a54f2d7f0a56db7ac9859fc4cbe5e7107d0",
+      "dataset.py": "80cae825524e0c8741ca83894f95859a1ca96b245ba70e8d12b5b4802a030836",
+      "execute.py": "002dda31040c576aae4d33a803b1c9a42e47643c88e29ee6b68c093c8eb5a77a",
+      "export.py": "4c629bb28501f5a11d87cf5ea0e1d1c056c925014809a7f2dd27a88db421a6b9",
+      "metrics.py": "cefad2855667643f524db9eedc45ec04866333eff6cbccd76f8eb557be77a72e",
+      "protocol.py": "42a2eb13e5da34a8c67a8939fffb81c17ff9300a23ec3733bab7f55f2cfaf236",
+      "providers.py": "80c47d79012fb5844af49c58b0899077d01bce02d4520dd83055324fbe6e3430",
+      "run.py": "327b6b74d3733b2bb37d9eb5e6ade73946a3746d2e7d3dcb31be621c4507d30a"
+    },
+    "recorded_gate": "aa82fe0f98d8d2758fa9be39a5bb5a25df45cd349659a6cf0bbb2acb2abc0c8b",
+    "native_capacity_independently_verified": false
+  },
+  {
+    "run": "0928-04-qwen3-30b-local",
+    "model": "Qwen/Qwen3-30B-A3B",
+    "documents": 1440,
+    "config": {
+      "model_revision": "ad44e777bcd18fa416d9da3bd8f70d33ebb85d39",
+      "tokenizer_revision": "ad44e777bcd18fa416d9da3bd8f70d33ebb85d39",
+      "generation": {
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      },
+      "tokenize_options": {
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      },
+      "input_limit": 40960,
+      "output_limit": 4096,
+      "total_limit": 40960
+    },
+    "server": null,
+    "runner": null,
+    "source_sha256": {
+      "__init__.py": "93dc538d3ddafec97e1a0337b78ae6dcf472988783f5d043d2a1bcc1fdb4d020",
+      "baselines.py": "6e98d212442e56cd8a8a4f3e5ebe0ebfe17001717f78819e4e108c9bccd8e628",
+      "cohort.py": "da85e4f366023d0f4eaab66a22da2a54f2d7f0a56db7ac9859fc4cbe5e7107d0",
+      "dataset.py": "80cae825524e0c8741ca83894f95859a1ca96b245ba70e8d12b5b4802a030836",
+      "execute.py": "002dda31040c576aae4d33a803b1c9a42e47643c88e29ee6b68c093c8eb5a77a",
+      "export.py": "4c629bb28501f5a11d87cf5ea0e1d1c056c925014809a7f2dd27a88db421a6b9",
+      "metrics.py": "cefad2855667643f524db9eedc45ec04866333eff6cbccd76f8eb557be77a72e",
+      "protocol.py": "42a2eb13e5da34a8c67a8939fffb81c17ff9300a23ec3733bab7f55f2cfaf236",
+      "providers.py": "80c47d79012fb5844af49c58b0899077d01bce02d4520dd83055324fbe6e3430",
+      "run.py": "327b6b74d3733b2bb37d9eb5e6ade73946a3746d2e7d3dcb31be621c4507d30a"
+    },
+    "recorded_gate": "aa82fe0f98d8d2758fa9be39a5bb5a25df45cd349659a6cf0bbb2acb2abc0c8b",
+    "native_capacity_independently_verified": false
+  },
+  {
+    "run": "0928-01-gemma4-e2b-full",
+    "model": "google/gemma-4-E2B-it",
+    "documents": 1440,
+    "config": {
+      "model_revision": "3e22461f65e89153144f8adb70e3b8c2cc9845a7",
+      "tokenizer_revision": "3e22461f65e89153144f8adb70e3b8c2cc9845a7",
+      "generation": {
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      },
+      "tokenize_options": {
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      },
+      "input_limit": 65536,
+      "output_limit": 4096,
+      "total_limit": 65536
+    },
+    "server": {
+      "vllm": "0.19.0",
+      "dtype": "BF16",
+      "gpu": "NVIDIA H100 80GB HBM3 x1",
+      "max_model_len": 65536,
+      "gpu_memory_utilization": 0.9,
+      "extra_args": ""
+    },
+    "runner": "gemma_runner/runner.py (repo executor rules: no retries, no resend of reserved requests, raw kept)",
+    "source_sha256": {
+      "prepare.py": "293dfdf8556a9d35e75337b910024292b5ca29ae4a1751539de6bdb032b6515c",
+      "runner.py": "3cb506aad6ad31354d7b75fdecb646a753bfb164c54165ef16862094f6749555",
+      "repo_format.py": "9bf3385bd1d3fd6c3b616121cd03d9b06d1f46409fdb53afd1719453d051d396"
+    },
+    "recorded_gate": "3ca4201edaa6047399bd8d052fec95af0074df21e1919dc15b6f2caa14a277f4",
+    "native_capacity_independently_verified": false
+  },
+  {
+    "run": "0928-01-gemma4-e2b-local",
+    "model": "google/gemma-4-E2B-it",
+    "documents": 1440,
+    "config": {
+      "model_revision": "3e22461f65e89153144f8adb70e3b8c2cc9845a7",
+      "tokenizer_revision": "3e22461f65e89153144f8adb70e3b8c2cc9845a7",
+      "generation": {
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      },
+      "tokenize_options": {
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      },
+      "input_limit": 65536,
+      "output_limit": 4096,
+      "total_limit": 65536
+    },
+    "server": {
+      "vllm": "0.19.0",
+      "dtype": "BF16",
+      "gpu": "NVIDIA H100 80GB HBM3 x1",
+      "max_model_len": 65536,
+      "gpu_memory_utilization": 0.9,
+      "extra_args": ""
+    },
+    "runner": "gemma_runner/runner.py (repo executor rules: no retries, no resend of reserved requests, raw kept)",
+    "source_sha256": {
+      "prepare.py": "293dfdf8556a9d35e75337b910024292b5ca29ae4a1751539de6bdb032b6515c",
+      "runner.py": "3cb506aad6ad31354d7b75fdecb646a753bfb164c54165ef16862094f6749555",
+      "repo_format.py": "9bf3385bd1d3fd6c3b616121cd03d9b06d1f46409fdb53afd1719453d051d396"
+    },
+    "recorded_gate": "3ca4201edaa6047399bd8d052fec95af0074df21e1919dc15b6f2caa14a277f4",
+    "native_capacity_independently_verified": false
+  },
+  {
+    "run": "0928-02-gemma4-e4b-full",
+    "model": "google/gemma-4-E4B-it",
+    "documents": 1440,
+    "config": {
+      "model_revision": "ee0ef6023621cff504d758262d4e04895a5af4a2",
+      "tokenizer_revision": "ee0ef6023621cff504d758262d4e04895a5af4a2",
+      "generation": {
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      },
+      "tokenize_options": {
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      },
+      "input_limit": 65536,
+      "output_limit": 4096,
+      "total_limit": 65536
+    },
+    "server": {
+      "vllm": "0.19.0",
+      "dtype": "BF16",
+      "gpu": "NVIDIA H100 80GB HBM3 x1",
+      "max_model_len": 65536,
+      "gpu_memory_utilization": 0.9,
+      "extra_args": ""
+    },
+    "runner": "gemma_runner/runner.py (repo executor rules: no retries, no resend of reserved requests, raw kept)",
+    "source_sha256": {
+      "prepare.py": "293dfdf8556a9d35e75337b910024292b5ca29ae4a1751539de6bdb032b6515c",
+      "runner.py": "3cb506aad6ad31354d7b75fdecb646a753bfb164c54165ef16862094f6749555",
+      "repo_format.py": "9bf3385bd1d3fd6c3b616121cd03d9b06d1f46409fdb53afd1719453d051d396"
+    },
+    "recorded_gate": "3ca4201edaa6047399bd8d052fec95af0074df21e1919dc15b6f2caa14a277f4",
+    "native_capacity_independently_verified": false
+  },
+  {
+    "run": "0928-02-gemma4-e4b-local",
+    "model": "google/gemma-4-E4B-it",
+    "documents": 1440,
+    "config": {
+      "model_revision": "ee0ef6023621cff504d758262d4e04895a5af4a2",
+      "tokenizer_revision": "ee0ef6023621cff504d758262d4e04895a5af4a2",
+      "generation": {
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      },
+      "tokenize_options": {
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      },
+      "input_limit": 65536,
+      "output_limit": 4096,
+      "total_limit": 65536
+    },
+    "server": {
+      "vllm": "0.19.0",
+      "dtype": "BF16",
+      "gpu": "NVIDIA H100 80GB HBM3 x1",
+      "max_model_len": 65536,
+      "gpu_memory_utilization": 0.9,
+      "extra_args": ""
+    },
+    "runner": "gemma_runner/runner.py (repo executor rules: no retries, no resend of reserved requests, raw kept)",
+    "source_sha256": {
+      "prepare.py": "293dfdf8556a9d35e75337b910024292b5ca29ae4a1751539de6bdb032b6515c",
+      "runner.py": "3cb506aad6ad31354d7b75fdecb646a753bfb164c54165ef16862094f6749555",
+      "repo_format.py": "9bf3385bd1d3fd6c3b616121cd03d9b06d1f46409fdb53afd1719453d051d396"
+    },
+    "recorded_gate": "3ca4201edaa6047399bd8d052fec95af0074df21e1919dc15b6f2caa14a277f4",
+    "native_capacity_independently_verified": false
+  },
+  {
+    "run": "0928-03-gemma4-12b-full",
+    "model": "google/gemma-4-12B-it",
+    "documents": 1440,
+    "config": {
+      "model_revision": "707f0a3b8a3c7ad586ed01e27eafbad8a27dd0f7",
+      "tokenizer_revision": "707f0a3b8a3c7ad586ed01e27eafbad8a27dd0f7",
+      "generation": {
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      },
+      "tokenize_options": {
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      },
+      "input_limit": 65536,
+      "output_limit": 4096,
+      "total_limit": 65536
+    },
+    "server": {
+      "vllm": "0.30.0",
+      "dtype": "BF16",
+      "gpu": "NVIDIA H100 80GB HBM3 x1",
+      "max_model_len": 65536,
+      "gpu_memory_utilization": 0.9,
+      "extra_args": ""
+    },
+    "runner": "gemma_runner/runner.py (repo executor rules: no retries, no resend of reserved requests, raw kept)",
+    "source_sha256": {
+      "prepare.py": "293dfdf8556a9d35e75337b910024292b5ca29ae4a1751539de6bdb032b6515c",
+      "runner.py": "3cb506aad6ad31354d7b75fdecb646a753bfb164c54165ef16862094f6749555",
+      "repo_format.py": "9bf3385bd1d3fd6c3b616121cd03d9b06d1f46409fdb53afd1719453d051d396"
+    },
+    "recorded_gate": "3ca4201edaa6047399bd8d052fec95af0074df21e1919dc15b6f2caa14a277f4",
+    "native_capacity_independently_verified": false
+  },
+  {
+    "run": "0928-03-gemma4-12b-local",
+    "model": "google/gemma-4-12B-it",
+    "documents": 1440,
+    "config": {
+      "model_revision": "707f0a3b8a3c7ad586ed01e27eafbad8a27dd0f7",
+      "tokenizer_revision": "707f0a3b8a3c7ad586ed01e27eafbad8a27dd0f7",
+      "generation": {
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      },
+      "tokenize_options": {
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      },
+      "input_limit": 65536,
+      "output_limit": 4096,
+      "total_limit": 65536
+    },
+    "server": {
+      "vllm": "0.30.0",
+      "dtype": "BF16",
+      "gpu": "NVIDIA H100 80GB HBM3 x1",
+      "max_model_len": 65536,
+      "gpu_memory_utilization": 0.9,
+      "extra_args": ""
+    },
+    "runner": "gemma_runner/runner.py (repo executor rules: no retries, no resend of reserved requests, raw kept)",
+    "source_sha256": {
+      "prepare.py": "293dfdf8556a9d35e75337b910024292b5ca29ae4a1751539de6bdb032b6515c",
+      "runner.py": "3cb506aad6ad31354d7b75fdecb646a753bfb164c54165ef16862094f6749555",
+      "repo_format.py": "9bf3385bd1d3fd6c3b616121cd03d9b06d1f46409fdb53afd1719453d051d396"
+    },
+    "recorded_gate": "3ca4201edaa6047399bd8d052fec95af0074df21e1919dc15b6f2caa14a277f4",
+    "native_capacity_independently_verified": false
+  },
+  {
+    "run": "0928-04-gemma4-26b-a4b-full",
+    "model": "google/gemma-4-26B-A4B-it",
+    "documents": 1440,
+    "config": {
+      "model_revision": "4d7ae4984b7db7de8f8457170b3f1a419ee76d52",
+      "tokenizer_revision": "4d7ae4984b7db7de8f8457170b3f1a419ee76d52",
+      "generation": {
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      },
+      "tokenize_options": {
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      },
+      "input_limit": 65536,
+      "output_limit": 4096,
+      "total_limit": 65536
+    },
+    "server": {
+      "vllm": "0.19.0",
+      "dtype": "BF16",
+      "gpu": "NVIDIA H100 80GB HBM3 x1",
+      "max_model_len": 65536,
+      "gpu_memory_utilization": 0.9,
+      "extra_args": ""
+    },
+    "runner": "gemma_runner/runner.py (repo executor rules: no retries, no resend of reserved requests, raw kept)",
+    "source_sha256": {
+      "prepare.py": "293dfdf8556a9d35e75337b910024292b5ca29ae4a1751539de6bdb032b6515c",
+      "runner.py": "3cb506aad6ad31354d7b75fdecb646a753bfb164c54165ef16862094f6749555",
+      "repo_format.py": "9bf3385bd1d3fd6c3b616121cd03d9b06d1f46409fdb53afd1719453d051d396"
+    },
+    "recorded_gate": "3ca4201edaa6047399bd8d052fec95af0074df21e1919dc15b6f2caa14a277f4",
+    "native_capacity_independently_verified": false
+  },
+  {
+    "run": "0928-04-gemma4-26b-a4b-local",
+    "model": "google/gemma-4-26B-A4B-it",
+    "documents": 1440,
+    "config": {
+      "model_revision": "4d7ae4984b7db7de8f8457170b3f1a419ee76d52",
+      "tokenizer_revision": "4d7ae4984b7db7de8f8457170b3f1a419ee76d52",
+      "generation": {
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      },
+      "tokenize_options": {
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      },
+      "input_limit": 65536,
+      "output_limit": 4096,
+      "total_limit": 65536
+    },
+    "server": {
+      "vllm": "0.19.0",
+      "dtype": "BF16",
+      "gpu": "NVIDIA H100 80GB HBM3 x1",
+      "max_model_len": 65536,
+      "gpu_memory_utilization": 0.9,
+      "extra_args": ""
+    },
+    "runner": "gemma_runner/runner.py (repo executor rules: no retries, no resend of reserved requests, raw kept)",
+    "source_sha256": {
+      "prepare.py": "293dfdf8556a9d35e75337b910024292b5ca29ae4a1751539de6bdb032b6515c",
+      "runner.py": "3cb506aad6ad31354d7b75fdecb646a753bfb164c54165ef16862094f6749555",
+      "repo_format.py": "9bf3385bd1d3fd6c3b616121cd03d9b06d1f46409fdb53afd1719453d051d396"
+    },
+    "recorded_gate": "3ca4201edaa6047399bd8d052fec95af0074df21e1919dc15b6f2caa14a277f4",
+    "native_capacity_independently_verified": false
+  },
+  {
+    "run": "0929-05-gemma4-31b-fp8-full",
+    "model": "google/gemma-4-31B-it",
+    "documents": 1440,
+    "config": {
+      "model_revision": "842da3794eaa0b77d5f08bae87a17459d91ff475",
+      "tokenizer_revision": "842da3794eaa0b77d5f08bae87a17459d91ff475",
+      "generation": {
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      },
+      "tokenize_options": {
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      },
+      "input_limit": 65536,
+      "output_limit": 4096,
+      "total_limit": 65536
+    },
+    "server": {
+      "vllm": "0.19.0",
+      "dtype": "FP8",
+      "gpu": "NVIDIA H100 80GB HBM3 x1",
+      "max_model_len": 65536,
+      "gpu_memory_utilization": 0.95,
+      "extra_args": "--quantization fp8 --kv-cache-dtype fp8 --enable-chunked-prefill"
+    },
+    "runner": "gemma_runner/runner.py (repo executor rules: no retries, no resend of reserved requests, raw kept)",
+    "source_sha256": {
+      "prepare.py": "293dfdf8556a9d35e75337b910024292b5ca29ae4a1751539de6bdb032b6515c",
+      "runner.py": "3cb506aad6ad31354d7b75fdecb646a753bfb164c54165ef16862094f6749555",
+      "repo_format.py": "9bf3385bd1d3fd6c3b616121cd03d9b06d1f46409fdb53afd1719453d051d396"
+    },
+    "recorded_gate": "3ca4201edaa6047399bd8d052fec95af0074df21e1919dc15b6f2caa14a277f4",
+    "native_capacity_independently_verified": false
+  },
+  {
+    "run": "0929-05-gemma4-31b-fp8-local",
+    "model": "google/gemma-4-31B-it",
+    "documents": 1440,
+    "config": {
+      "model_revision": "842da3794eaa0b77d5f08bae87a17459d91ff475",
+      "tokenizer_revision": "842da3794eaa0b77d5f08bae87a17459d91ff475",
+      "generation": {
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      },
+      "tokenize_options": {
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      },
+      "input_limit": 65536,
+      "output_limit": 4096,
+      "total_limit": 65536
+    },
+    "server": {
+      "vllm": "0.19.0",
+      "dtype": "FP8",
+      "gpu": "NVIDIA H100 80GB HBM3 x1",
+      "max_model_len": 65536,
+      "gpu_memory_utilization": 0.95,
+      "extra_args": "--quantization fp8 --kv-cache-dtype fp8 --enable-chunked-prefill"
+    },
+    "runner": "gemma_runner/runner.py (repo executor rules: no retries, no resend of reserved requests, raw kept)",
+    "source_sha256": {
+      "prepare.py": "293dfdf8556a9d35e75337b910024292b5ca29ae4a1751539de6bdb032b6515c",
+      "runner.py": "3cb506aad6ad31354d7b75fdecb646a753bfb164c54165ef16862094f6749555",
+      "repo_format.py": "9bf3385bd1d3fd6c3b616121cd03d9b06d1f46409fdb53afd1719453d051d396"
+    },
+    "recorded_gate": "3ca4201edaa6047399bd8d052fec95af0074df21e1919dc15b6f2caa14a277f4",
+    "native_capacity_independently_verified": false
+  },
+  {
+    "run": "0924-01-presidio-full1440",
+    "model": "presidio",
+    "documents": 1440,
+    "config": {},
+    "server": null,
+    "runner": null,
+    "source_sha256": {
+      "__init__.py": "93dc538d3ddafec97e1a0337b78ae6dcf472988783f5d043d2a1bcc1fdb4d020",
+      "baselines.py": "6e98d212442e56cd8a8a4f3e5ebe0ebfe17001717f78819e4e108c9bccd8e628",
+      "cohort.py": "da85e4f366023d0f4eaab66a22da2a54f2d7f0a56db7ac9859fc4cbe5e7107d0",
+      "dataset.py": "80cae825524e0c8741ca83894f95859a1ca96b245ba70e8d12b5b4802a030836",
+      "execute.py": "002dda31040c576aae4d33a803b1c9a42e47643c88e29ee6b68c093c8eb5a77a",
+      "export.py": "4c629bb28501f5a11d87cf5ea0e1d1c056c925014809a7f2dd27a88db421a6b9",
+      "metrics.py": "cefad2855667643f524db9eedc45ec04866333eff6cbccd76f8eb557be77a72e",
+      "protocol.py": "42a2eb13e5da34a8c67a8939fffb81c17ff9300a23ec3733bab7f55f2cfaf236",
+      "providers.py": "ccc2d49495c1fbf77db1a4f3d927aa4c65a5a4a72436207a184b205c2b7e48f4",
+      "run.py": "327b6b74d3733b2bb37d9eb5e6ade73946a3746d2e7d3dcb31be621c4507d30a"
+    },
+    "recorded_gate": null,
+    "native_capacity_independently_verified": false
+  },
+  {
+    "run": "0924-01-ko-pii-full1440",
+    "model": "ko-pii",
+    "documents": 1440,
+    "config": {},
+    "server": null,
+    "runner": null,
+    "source_sha256": {
+      "__init__.py": "93dc538d3ddafec97e1a0337b78ae6dcf472988783f5d043d2a1bcc1fdb4d020",
+      "baselines.py": "6e98d212442e56cd8a8a4f3e5ebe0ebfe17001717f78819e4e108c9bccd8e628",
+      "cohort.py": "da85e4f366023d0f4eaab66a22da2a54f2d7f0a56db7ac9859fc4cbe5e7107d0",
+      "dataset.py": "80cae825524e0c8741ca83894f95859a1ca96b245ba70e8d12b5b4802a030836",
+      "execute.py": "002dda31040c576aae4d33a803b1c9a42e47643c88e29ee6b68c093c8eb5a77a",
+      "export.py": "4c629bb28501f5a11d87cf5ea0e1d1c056c925014809a7f2dd27a88db421a6b9",
+      "metrics.py": "cefad2855667643f524db9eedc45ec04866333eff6cbccd76f8eb557be77a72e",
+      "protocol.py": "42a2eb13e5da34a8c67a8939fffb81c17ff9300a23ec3733bab7f55f2cfaf236",
+      "providers.py": "ccc2d49495c1fbf77db1a4f3d927aa4c65a5a4a72436207a184b205c2b7e48f4",
+      "run.py": "327b6b74d3733b2bb37d9eb5e6ade73946a3746d2e7d3dcb31be621c4507d30a"
+    },
+    "recorded_gate": null,
+    "native_capacity_independently_verified": false
+  },
+  {
+    "run": "0925-07-openmed-windows",
+    "model": "openmed",
+    "documents": 1440,
+    "config": {},
+    "server": null,
+    "runner": null,
+    "source_sha256": {
+      "__init__.py": "93dc538d3ddafec97e1a0337b78ae6dcf472988783f5d043d2a1bcc1fdb4d020",
+      "baselines.py": "6e98d212442e56cd8a8a4f3e5ebe0ebfe17001717f78819e4e108c9bccd8e628",
+      "cohort.py": "da85e4f366023d0f4eaab66a22da2a54f2d7f0a56db7ac9859fc4cbe5e7107d0",
+      "dataset.py": "80cae825524e0c8741ca83894f95859a1ca96b245ba70e8d12b5b4802a030836",
+      "execute.py": "002dda31040c576aae4d33a803b1c9a42e47643c88e29ee6b68c093c8eb5a77a",
+      "export.py": "4c629bb28501f5a11d87cf5ea0e1d1c056c925014809a7f2dd27a88db421a6b9",
+      "metrics.py": "cefad2855667643f524db9eedc45ec04866333eff6cbccd76f8eb557be77a72e",
+      "protocol.py": "42a2eb13e5da34a8c67a8939fffb81c17ff9300a23ec3733bab7f55f2cfaf236",
+      "providers.py": "80c47d79012fb5844af49c58b0899077d01bce02d4520dd83055324fbe6e3430",
+      "run.py": "327b6b74d3733b2bb37d9eb5e6ade73946a3746d2e7d3dcb31be621c4507d30a"
+    },
+    "recorded_gate": null,
+    "native_capacity_independently_verified": false
+  }
+]

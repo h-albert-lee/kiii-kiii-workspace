@@ -1,0 +1,182 @@
+[
+  {
+    "run": "0928-01-gemma4-e2b-full",
+    "artifact_hashes": "match",
+    "raw_unique_requests": 13723,
+    "raw_result_hash": "match",
+    "cohort_summary_hash": "match",
+    "raw_fields": [
+      "finish_reason",
+      "model",
+      "raw",
+      "request_id",
+      "request_sha256",
+      "status",
+      "text",
+      "usage"
+    ],
+    "strict_f1": 2.7438857080139754e-05
+  },
+  {
+    "run": "0928-01-gemma4-e2b-local",
+    "artifact_hashes": "match",
+    "raw_unique_requests": 13723,
+    "raw_result_hash": "match",
+    "cohort_summary_hash": "match",
+    "raw_fields": [
+      "finish_reason",
+      "model",
+      "raw",
+      "request_id",
+      "request_sha256",
+      "status",
+      "text",
+      "usage"
+    ],
+    "strict_f1": 5.48747027620267e-05
+  },
+  {
+    "run": "0928-02-gemma4-e4b-full",
+    "artifact_hashes": "match",
+    "raw_unique_requests": 13723,
+    "raw_result_hash": "match",
+    "cohort_summary_hash": "match",
+    "raw_fields": [
+      "finish_reason",
+      "model",
+      "raw",
+      "request_id",
+      "request_sha256",
+      "status",
+      "text",
+      "usage"
+    ],
+    "strict_f1": 0.053373965659225725
+  },
+  {
+    "run": "0928-02-gemma4-e4b-local",
+    "artifact_hashes": "match",
+    "raw_unique_requests": 13723,
+    "raw_result_hash": "match",
+    "cohort_summary_hash": "match",
+    "raw_fields": [
+      "finish_reason",
+      "model",
+      "raw",
+      "request_id",
+      "request_sha256",
+      "status",
+      "text",
+      "usage"
+    ],
+    "strict_f1": 0.0722541850067584
+  },
+  {
+    "run": "0928-03-gemma4-12b-full",
+    "artifact_hashes": "match",
+    "raw_unique_requests": 13723,
+    "raw_result_hash": "match",
+    "cohort_summary_hash": "match",
+    "raw_fields": [
+      "finish_reason",
+      "model",
+      "raw",
+      "request_id",
+      "request_sha256",
+      "status",
+      "text",
+      "usage"
+    ],
+    "strict_f1": 0.0004297417891887938
+  },
+  {
+    "run": "0928-03-gemma4-12b-local",
+    "artifact_hashes": "match",
+    "raw_unique_requests": 13723,
+    "raw_result_hash": "match",
+    "cohort_summary_hash": "match",
+    "raw_fields": [
+      "finish_reason",
+      "model",
+      "raw",
+      "request_id",
+      "request_sha256",
+      "status",
+      "text",
+      "usage"
+    ],
+    "strict_f1": 0.00045710524391135815
+  },
+  {
+    "run": "0928-04-gemma4-26b-a4b-full",
+    "artifact_hashes": "match",
+    "raw_unique_requests": 13723,
+    "raw_result_hash": "match",
+    "cohort_summary_hash": "match",
+    "raw_fields": [
+      "finish_reason",
+      "model",
+      "raw",
+      "request_id",
+      "request_sha256",
+      "status",
+      "text",
+      "usage"
+    ],
+    "strict_f1": 0.0797107664859672
+  },
+  {
+    "run": "0928-04-gemma4-26b-a4b-local",
+    "artifact_hashes": "match",
+    "raw_unique_requests": 13723,
+    "raw_result_hash": "match",
+    "cohort_summary_hash": "match",
+    "raw_fields": [
+      "finish_reason",
+      "model",
+      "raw",
+      "request_id",
+      "request_sha256",
+      "status",
+      "text",
+      "usage"
+    ],
+    "strict_f1": 0.0739816375277131
+  },
+  {
+    "run": "0929-05-gemma4-31b-fp8-full",
+    "artifact_hashes": "match",
+    "raw_unique_requests": 13723,
+    "raw_result_hash": "match",
+    "cohort_summary_hash": "match",
+    "raw_fields": [
+      "finish_reason",
+      "model",
+      "raw",
+      "request_id",
+      "request_sha256",
+      "status",
+      "text",
+      "usage"
+    ],
+    "strict_f1": 3.657677923170475e-05
+  },
+  {
+    "run": "0929-05-gemma4-31b-fp8-local",
+    "artifact_hashes": "match",
+    "raw_unique_requests": 13723,
+    "raw_result_hash": "match",
+    "cohort_summary_hash": "match",
+    "raw_fields": [
+      "finish_reason",
+      "model",
+      "raw",
+      "request_id",
+      "request_sha256",
+      "status",
+      "text",
+      "usage"
+    ],
+    "strict_f1": 0.0001737095211102781
+  }
+]

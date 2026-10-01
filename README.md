@@ -1,8 +1,10 @@
 # Kiii-Kiii · Kiii²
 
+> **2026-10-01 최종 범위 (ADR-0038): 추가 추론을 중단하고 완료 결과로 집필합니다.** LLM 12종·22조건 + baseline 3종 = **15시스템·25조건**. 성현의 Gemma 5종 양 조건과 은빈의 Qwen3-30B/EXAONE을 포함합니다. Qwen 2B local·4B full은 pilot-only라 제외합니다. [완료 결과/설정/통계](experiments/results/analyses/1001-completed-manuscript-v1/REPORT.md). 아래 과거 실행 계획은 새 실험 지시가 아닙니다.
+
 **Korean Identifiers, Identifiability, and Ill-formed Inputs — A Regulation-Grounded Benchmark for Financial PII Detection.**
 
-한국 금융 문서의 개인정보 탐지를 평가하는 연구 저장소입니다. 법령 기반 36개 카테고리, 표면형 변형 T0–T3, 다중 정보주체·긴 문서를 다룹니다. **데이터 생성·공개는 완료했고, 현재는 본 실험 결과 수집·검증 단계입니다. Presidio·ko-pii는 전체 1,440건 실행을 완료했고, Kanana 3B full/local·Qwen 2B full·Qwen 4B local의 완료 응답과 strict 점수 재현을 확인했습니다. Qwen 9B full/local(1,440건)·Kanana 1.5 8B full/local(1,438건)도 추가 재현 검증했습니다. OpenMed 1,440건도 재현 검증했습니다. 남은 2조건 결과와 native 계측·공통 평가 집합 원본은 확인 대기입니다.**
+한국 금융 문서의 개인정보 탐지를 평가하는 연구 저장소입니다. 법령 기반 36개 카테고리, 표면형 변형 T0–T3, 다중 정보주체·긴 문서를 다룹니다. **데이터와 완료 실험의 검증을 마쳤고, 현재는 결과 기반 논문 집필 단계입니다. Native 계측 원본 부재 등 검증 한계는 공개하며 추가 실행은 하지 않습니다.**
 
 - 공개 데이터: [nmixx-fin/kiii-kiii](https://huggingface.co/datasets/nmixx-fin/kiii-kiii), **1,440문서 / 218,664스팬**, 단일 `test`.
 - 라이선스: **데이터 CC BY-NC 4.0**. Preview 버전이며 정식 버전은 추후 공개합니다. 코드·제3자 모델의 라이선스를 이 데이터 라이선스로 대체하지 않습니다.

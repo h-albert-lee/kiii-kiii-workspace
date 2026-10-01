@@ -1,0 +1,9 @@
+{
+  "source_sha256": "1dc2493848ea9fd318586f2792b73e110af8f2bea682346eb98ddad2b3d4523c",
+  "inputs_sha256": "9e6c69627ab3b6055c94d0b2130e0b5a15e4a41317b7c0b11c48b5a289a427a3",
+  "bootstrap_source_sha256": "cefad2855667643f524db9eedc45ec04866333eff6cbccd76f8eb557be77a72e",
+  "pairs": 10,
+  "rows": 25,
+  "headline_export": false,
+  "native_capacity_independently_verified": false
+}

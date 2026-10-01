@@ -1,0 +1,137 @@
+{
+  "source_commit": "46cac911183d1d38f5e4f04050135772bce6f0db",
+  "gold_path": "experiments/prepared/0924-cpu-full1440/gold.jsonl",
+  "gold_sha256": "d57b1cb0b8b67fe48a9b45ee985fb01e63b919147a8527f8231459a68b57456d",
+  "runs": [
+    {
+      "run": "0928-01-gemma4-e2b-full",
+      "source_directory": "https://github.com/h-albert-lee/kiii-kiii-workspace/tree/46cac911183d1d38f5e4f04050135772bce6f0db/experiments/results/runs/0928-01-gemma4-e2b-full",
+      "files_sha256": {
+        "result.json": "c2ae82b61eb0e385a0df7541c7f1465ddb22b70c06658fee6506cf9ba397f038",
+        "responses.jsonl": "c26e7dc9d62a39fc236e6e26d5d8b824cb62979174c6d8a2f794e30f7fd4afc6",
+        "responses.jsonl.gz": "9e6a80dd33788ba57d58d547a88b9093f2cef13f28a07b7c9975f79d407b2ba9",
+        "events.jsonl.gz": "aafbfbb1dad1cf98dbdc89c9f993123de54cef4c2f04577e2e444635d12e0ebc",
+        "run.json": "9c553ab8a15ca4bec5ccac60bf6b996e7ad079a8cd3f239d9971b2cc4d958de7",
+        "manifest.json": "1c1c9591b427a7beef58d3541a9e50020866ad1f4b5126f17df5543696b17bc9",
+        "ARTIFACTS.sha256": "e6a88218ec73c590dcd70b84626bcef89cf13090ff7b41304d405f471c0b3db6"
+      }
+    },
+    {
+      "run": "0928-01-gemma4-e2b-local",
+      "source_directory": "https://github.com/h-albert-lee/kiii-kiii-workspace/tree/46cac911183d1d38f5e4f04050135772bce6f0db/experiments/results/runs/0928-01-gemma4-e2b-local",
+      "files_sha256": {
+        "result.json": "1b2beeeb3c5752d828acbbae017c7adbf7e317522473c873c1347a5ae86ff958",
+        "responses.jsonl": "bf5f079025c115632681f81e6fafb202e69a084b0cfd231e81475dd7d8cf9612",
+        "responses.jsonl.gz": "783db273dc170892059b61ed7c4f8aac7d5eff433ad74a965e4118556a81ecba",
+        "events.jsonl.gz": "9ab151aa93970dfde2173e903bd67761e05ccbd9ffe507f3ca41fe960baa6df4",
+        "run.json": "bcb8c3bfb8d00d7ce8bad78f709cbb6dbf0b6d8a954895e75f23f35eb58e87d7",
+        "manifest.json": "42b20686c650240ac3ba8bd6427b1cb6525c4b16da4d28d1540a8b9486b6a709",
+        "ARTIFACTS.sha256": "43df58ecce69366e5488ae8311a0052b253cdfa597fbf9ab018cc98dc081ad0a"
+      }
+    },
+    {
+      "run": "0928-02-gemma4-e4b-full",
+      "source_directory": "https://github.com/h-albert-lee/kiii-kiii-workspace/tree/46cac911183d1d38f5e4f04050135772bce6f0db/experiments/results/runs/0928-02-gemma4-e4b-full",
+      "files_sha256": {
+        "result.json": "f6159db045ede74967e717e76eb26c5cc0d77d4a226a31a74c908b736ff78180",
+        "responses.jsonl": "0bb89e36280e2ab6ee15da3e4415182a95f00eb1b2e17ef16ee3f07dd7f95ce0",
+        "responses.jsonl.gz": "226eea0436732200e46ca7d24322cdefc6151dd64bb0049768c1a8b866f5293d",
+        "events.jsonl.gz": "f4d7bbe0fc976b38bbc6f138ce02f1b24f5d30fad3c49d460c9036e97fec609d",
+        "run.json": "2ced94ce719595224da397dca1d9b5e13222e7b8ce8ec6a3a3ba576feaedb9e2",
+        "manifest.json": "1c1c9591b427a7beef58d3541a9e50020866ad1f4b5126f17df5543696b17bc9",
+        "ARTIFACTS.sha256": "6429dafa51cff193551bba6544fd7bd5ab448fa126c3d8e18332dcefb751a588"
+      }
+    },
+    {
+      "run": "0928-02-gemma4-e4b-local",
+      "source_directory": "https://github.com/h-albert-lee/kiii-kiii-workspace/tree/46cac911183d1d38f5e4f04050135772bce6f0db/experiments/results/runs/0928-02-gemma4-e4b-local",
+      "files_sha256": {
+        "result.json": "2c6ad9c97cbe5d3c21ae2d67770e1c85963dd5c50dae8952e50011cc967c10c7",
+        "responses.jsonl": "a2e5975d701449632f1d126c525fc98e3ea25a55e82104e7fffb0c2735d3ba07",
+        "responses.jsonl.gz": "98895754466a75b18f38d2286a562f17ff87371dc0268e9b6d05794ba1e3c7c5",
+        "events.jsonl.gz": "21054fb14dc11475d879236d0a508d9019ffd3aecaa0e8fd3bb1476549d25747",
+        "run.json": "dc5e5007f9c3edcd3951862a9e52d36439e6604595bfba70dcb65062d02cd4eb",
+        "manifest.json": "42b20686c650240ac3ba8bd6427b1cb6525c4b16da4d28d1540a8b9486b6a709",
+        "ARTIFACTS.sha256": "8e7f2cd3b10e7c831883360c5b32148fb8b281009b46dea1bd674fb1c17fb50e"
+      }
+    },
+    {
+      "run": "0928-03-gemma4-12b-full",
+      "source_directory": "https://github.com/h-albert-lee/kiii-kiii-workspace/tree/46cac911183d1d38f5e4f04050135772bce6f0db/experiments/results/runs/0928-03-gemma4-12b-full",
+      "files_sha256": {
+        "result.json": "a0dfe5800c2ee67066f09bbbf5c7674e92229b8eee6ad33e8cd7bee6fb124c36",
+        "responses.jsonl": "48ce787dfccec0f6b6092842231bdaefabfa961619212c2f262f306de73f8f38",
+        "responses.jsonl.gz": "3c446b1b568d90e177887abff35c3f3a91b39c4ccdb0d9d1999ad3e5e15fdbcb",
+        "events.jsonl.gz": "909f4ad4ab5d096bf8dfae18edbf8dceadd7096f8fc86d7176b1ad49315887a7",
+        "run.json": "647dc788e6caf5a8881cd3d8e9e0aa4ebb42e8652fa2fc179e8aa765e147faad",
+        "manifest.json": "1c1c9591b427a7beef58d3541a9e50020866ad1f4b5126f17df5543696b17bc9",
+        "ARTIFACTS.sha256": "3866c5925c11b559c2362c0b30346751854ec2980e40a8a738819d403bec42e0"
+      }
+    },
+    {
+      "run": "0928-03-gemma4-12b-local",
+      "source_directory": "https://github.com/h-albert-lee/kiii-kiii-workspace/tree/46cac911183d1d38f5e4f04050135772bce6f0db/experiments/results/runs/0928-03-gemma4-12b-local",
+      "files_sha256": {
+        "result.json": "56aa855de3f269c26e87abc6a984abb345ea2c2c36a6bc225d5b37a2d11916c0",
+        "responses.jsonl": "0f73025ab1351794ef45281af22d5354366c103fa12e0c7b4cc2506653a99984",
+        "responses.jsonl.gz": "c8df4c978aa2b62cc60c5c242513df6cf66d2916e72f4358c4f6e80bb0cd811f",
+        "events.jsonl.gz": "6038e1ac50dba778b4dce92566f2bc5fbfd9a69acec6dcada4660a9dd97ba6b2",
+        "run.json": "ec92eccfe76c63a0c883cd34a90ca4c4dc9e446e45a8640cb49a211cb832ab58",
+        "manifest.json": "42b20686c650240ac3ba8bd6427b1cb6525c4b16da4d28d1540a8b9486b6a709",
+        "ARTIFACTS.sha256": "5d3bc983e638ef237f2be3a1e8472d8171b35c087a292593d1c752b0500088b2"
+      }
+    },
+    {
+      "run": "0928-04-gemma4-26b-a4b-full",
+      "source_directory": "https://github.com/h-albert-lee/kiii-kiii-workspace/tree/46cac911183d1d38f5e4f04050135772bce6f0db/experiments/results/runs/0928-04-gemma4-26b-a4b-full",
+      "files_sha256": {
+        "result.json": "b917168d7348c35edac4dccc4caec0c9a82f9b593b20a746913a60bae6a546ac",
+        "responses.jsonl": "0ac1a70a29229a23ff784c05a3bfd78edc4aa6b49778346f46f146975da4d890",
+        "responses.jsonl.gz": "23ad16a3b67a6fb9372add337f29798af2189be9cf03dd7795a7599f2df6f47e",
+        "events.jsonl.gz": "562473dcfab077487f2414cd1b9b88815c0300a1e992933050c7aad62677b9a4",
+        "run.json": "944ef8bf6fe682db94392b20d87e8f5b004326b7e815456a80cfb1c84c70df91",
+        "manifest.json": "1c1c9591b427a7beef58d3541a9e50020866ad1f4b5126f17df5543696b17bc9",
+        "ARTIFACTS.sha256": "62b9a0232ce73d83d6bd09950f724e7853d61da4e5621c4decec644cc722d213"
+      }
+    },
+    {
+      "run": "0928-04-gemma4-26b-a4b-local",
+      "source_directory": "https://github.com/h-albert-lee/kiii-kiii-workspace/tree/46cac911183d1d38f5e4f04050135772bce6f0db/experiments/results/runs/0928-04-gemma4-26b-a4b-local",
+      "files_sha256": {
+        "result.json": "07cfc6f26d1f887eca74dcb536553b74db0c2aa561fe51694ff5fe92490eb49c",
+        "responses.jsonl": "7e40e68a26ee15c74f8b90e2afd825f6a5a35a96c4267dca63becde82c66ac11",
+        "responses.jsonl.gz": "2832d2feb913850352426af78cd91f777c47656710f67e5425fc94f508926cd4",
+        "events.jsonl.gz": "c82b3f12c49cb3a8c0dd9e57bedc3306b8574b2df0e85eff6ef053d26a747504",
+        "run.json": "e40ea6a3522ee647cf341d7ed25eec8d17dc16f3a19fff9d834e6e396ffa10ac",
+        "manifest.json": "42b20686c650240ac3ba8bd6427b1cb6525c4b16da4d28d1540a8b9486b6a709",
+        "ARTIFACTS.sha256": "9415e98adeda43b27feb8512989882a618a53372cb2b16d162ba406783fcfca8"
+      }
+    },
+    {
+      "run": "0929-05-gemma4-31b-fp8-full",
+      "source_directory": "https://github.com/h-albert-lee/kiii-kiii-workspace/tree/46cac911183d1d38f5e4f04050135772bce6f0db/experiments/results/runs/0929-05-gemma4-31b-fp8-full",
+      "files_sha256": {
+        "result.json": "fce4604b6993908cfb28042993728d5cdce0fd48cb9af607d215d2fe7211fa20",
+        "responses.jsonl": "81980d2450b7d79c7a4e98157b4036b786bcdf2040a91c063266de9dddd28160",
+        "responses.jsonl.gz": "5f67b9688e8ae6a677149e9f76fa10fee19b3d56251008d3b24d1d907daae9c7",
+        "events.jsonl.gz": "b9e7cebae29d6e967636c43a7444e2057a3843df1512e194f43beac37254bb87",
+        "run.json": "62408f675efb4f179a39d6868af37f4e9d7967f05804b5fa691d5c8528dbdbac",
+        "manifest.json": "1c1c9591b427a7beef58d3541a9e50020866ad1f4b5126f17df5543696b17bc9",
+        "ARTIFACTS.sha256": "21fd1e7f54413c5e9a05c2e738e80778914a78c8536e9af4cf7b0ee187eb0099"
+      }
+    },
+    {
+      "run": "0929-05-gemma4-31b-fp8-local",
+      "source_directory": "https://github.com/h-albert-lee/kiii-kiii-workspace/tree/46cac911183d1d38f5e4f04050135772bce6f0db/experiments/results/runs/0929-05-gemma4-31b-fp8-local",
+      "files_sha256": {
+        "result.json": "6ec4d7651cdc98d5835f96226b65e22912e2a98c1cac898be82400e0973c8adc",
+        "responses.jsonl": "f2717aea8c60926645d02b308bab0b9b9d65e452e6e164c83c257a33414441c8",
+        "responses.jsonl.gz": "2e02915ca14a3a210cfca37aae35909dfd36211e7baf286b8684dc288f795335",
+        "events.jsonl.gz": "9f0f82ab679dd30e2f1a0f1f9ba59ae13db185944054c102588dd971d26d1a91",
+        "run.json": "f80462143eb8d7e1b0489f2a83df4905da50c6bf4894c0d4f5f738fcd287f05f",
+        "manifest.json": "42b20686c650240ac3ba8bd6427b1cb6525c4b16da4d28d1540a8b9486b6a709",
+        "ARTIFACTS.sha256": "04ec5865c45f44693811eefddac12db86eaf8294a18bbacf0022ba9258ad1ff1"
+      }
+    }
+  ]
+}

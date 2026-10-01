@@ -1,5 +1,9 @@
 # Agent entrypoint — Kiii² (2026-09-23)
 
+## Current cutoff — ADR-0038 (2026-10-01)
+
+The operator has closed collection and authorized writing from completed runs, including Sunghyun's five Gemma variants and the additional Qwen3-30B/EXAONE. Final scope: 12 LLMs / 22 conditions + 3 baselines = 15 systems / 25 conditions. Qwen2B local and Qwen4B full are pilot-only, omitted without imputation. No new inference. This supersedes older roster/remaining-execution instructions below, not scoring or provenance rules. Use experiments/results/analyses/1001-completed-manuscript-v1. Preserve original cohorts (Kanana8B 1438, others 1440); no fake shared gate. Gemma external-runner replay uses src.analysis.external_response_diagnostics, preserving foreign source hashes. D-F1 is an observable detection proxy, not format-independent latent ability. Native counts, representative pilot calibration and foreign source/deployment equivalence remain unverified. Paper updates use native Overleaf edits and outbound GitHub sync, preserving comments.
+
 Read README.md → STATUS.md → docs/guide/experiment-runbook.md before acting. This repository is now at detector-experiment preparation, not dataset generation. Do not restart generation or follow obsolete September 13 task lists.
 
 ## Research contract

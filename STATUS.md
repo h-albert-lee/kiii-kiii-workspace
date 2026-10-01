@@ -2,7 +2,9 @@
 
 ## Current outcome
 
-**Dataset complete and public; detector execution infrastructure prepared; CPU baseline runs complete on all 1,440 documents; OpenMed and twelve completed GPU LLM conditions replay-verified (8 accepted conditions plus 4 additional Qwen3-30B/EXAONE conditions outside the accepted roster); remaining GPU results and underlying native-count/cohort artifacts pending.** Experiment collaborators should begin with README.md → AGENTS.md → docs/guide/experiment-runbook.md.
+**Collection closed by operator (ADR-0038): 25 completed conditions from 15 systems, including Sunghyun’s ten Gemma conditions, verified for manuscript use. Unfinished/pilot-only conditions are excluded. No new inference. Native count/source deployment limitations remain explicit.**
+
+[Final tables, paired contrasts, settings and input hashes](experiments/results/analyses/1001-completed-manuscript-v1/REPORT.md). Historical execution plans below are superseded for collection scope.
 
 | Item | Status |
 |---|---|
@@ -14,7 +16,7 @@
 | Model adapters | Claude/Gemini/vLLM implemented and fixture-tested; native paid calls and GPU servers still require operator pilot |
 | Baselines | Presidio/ko-pii completed all 1,440 docs on 9/24; raw predictions + results pushed under experiments/results/runs. Common LLM cohort rescore pending. OpenMed GPU completed by operator; archived predictions/mapping and all scores replay-verified on 1,440 docs (strict F1 2.0866/100), local GPU loading not exercised |
 | Operator docs | README, AGENTS, runbook, config templates, label-map limitations prepared |
-| Paper/related work | 9/27 result-table scaffold synced from Overleaf (`d876752`): main comparison, taxonomy-group P/R/F1, paired CI and 4-condition provisional response diagnostics. Main text remains 4 pages; total 6 with refs/appendix. [Table handoff](docs/guide/paper-results-handoff.md). Final cohort/comparative findings pending; TWICE/NMIXX retained. |
+| Paper/related work | Completed results/discussion/conclusion synced via Overleaf → GitHub `8d73e63`: 15 systems / 25 conditions, strict vs observable detection proxy, taxonomy groups and paired CIs. Main text 4 pages, total 6 with references/appendix. [Review/QA](docs/reviews/2026-10-01-completed-manuscript.md). TWICE/NMIXX retained; 5 native comments preserved. |
 | Leaderboard | Two full-release baseline results available; consolidated headline table deferred until common cohort is frozen |
 
 Validation: **134 tests passed** (offline provider fixtures, budget/resume/capacity/export guards, generation/release regressions). Verified release → two-document smoke → actual Presidio/ko-pii extraction/scoring completed. Smoke scores are not benchmark findings. Native paid providers and GPU model loading were not exercised locally; archived GPU responses from the operator were replayed offline.

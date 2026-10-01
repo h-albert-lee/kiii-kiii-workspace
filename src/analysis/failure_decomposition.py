@@ -117,11 +117,19 @@ def analyze(gold_path, responses_path, reference_path, diagnostics_path, output)
                            strict_result_sha256=file_sha(reference_path), taxonomy_sha256=file_sha(DEFAULT_PATH))
     if prov['inputs'] != expected_inputs or prov['recorded_cohort_sha256'] != ex['cohort_sha256']:
         raise ValueError('diagnostic provenance mismatch')
+    external = prov.get('external_runner_replay') is True
     for mod in (protocol, metrics):
-        if file_sha(mod.__file__) != ex['source_sha256'][Path(mod.__file__).name]:
+        name = Path(mod.__file__).name
+        expected = (prov['frozen_scoring_source_sha256'] if external else ex['source_sha256']).get(name)
+        if file_sha(mod.__file__) != expected:
             raise ValueError('frozen scorer mismatch')
-    if prov['analysis_source_sha256'] != file_sha(Path(__file__).with_name('response_diagnostics.py')):
+    diagnostic_module = 'external_response_diagnostics.py' if external else 'response_diagnostics.py'
+    if prov['analysis_source_sha256'] != file_sha(Path(__file__).with_name(diagnostic_module)):
         raise ValueError('diagnostic source mismatch')
+    if external and (prov.get('original_runner_source_sha256') != ex['source_sha256']
+                     or prov.get('original_runner') != ex.get('runner')
+                     or prov.get('diagnostic_algorithm_source_sha256') != file_sha(Path(__file__).with_name('response_diagnostics.py'))):
+        raise ValueError('external runner provenance mismatch')
     docs = list(read_rows(gold_path)); responses = list(read_rows(responses_path))
     reply = {r['request_id']:r for r in responses}
     if len(reply) != len(responses) or len(reply) != m['requests']:
@@ -197,6 +205,7 @@ def analyze(gold_path, responses_path, reference_path, diagnostics_path, output)
                 invalid_item_fp=sum(v for k,v in items_counts.items() if k!='valid'),per_document=doc_rows,
                 provenance=dict(inputs=expected_inputs,diagnostics_sha256=file_sha(diagnostics_path),
                                 source_sha256=file_sha(__file__),recorded_cohort_sha256=ex['cohort_sha256'],
+                                external_runner_replay=external,original_runner_source_sha256=ex['source_sha256'],
                                 strict_and_itemwise_replayed=True,capacity_independently_verified=False),
                 limitations=['Post-hoc descriptive partitions, not causal or latent detection ability.',
                              'All gold retained. No success-only performance or gold-guided repair.',
