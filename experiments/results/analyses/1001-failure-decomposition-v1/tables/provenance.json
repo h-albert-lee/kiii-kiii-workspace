@@ -1,0 +1,17 @@
+{
+  "source_sha256": "b9fc96d91d3ea36f7a68103395c4e27f3e8a0fc79492e0f896bfd62e9c7ffe5a",
+  "inputs": {
+    "experiments/results/analyses/1001-failure-decomposition-v1/0925-01-kanana-3b-full/analysis.json": "1fc335fbe7812d172136d64980f38bca4e16784e695b2c19758ab546cb76146e",
+    "experiments/results/analyses/1001-failure-decomposition-v1/0925-02-kanana-3b-local/analysis.json": "1788fae217452ccc063e24a46df462a67c11b7eb8cd65eeaf9edd095862956ef",
+    "experiments/results/analyses/1001-failure-decomposition-v1/0925-03-qwen-2b-full/analysis.json": "ceb407fa431ddad6e965ea33babfe9f3a8f1993e87db21c029276e5a69290aa8",
+    "experiments/results/analyses/1001-failure-decomposition-v1/0925-06-qwen-4b-local/analysis.json": "a5d5bb90bddfea18c4c7bee9ee1450d0f008805eb7babede8d3553b72ea44a85",
+    "experiments/results/analyses/1001-failure-decomposition-v1/0926-01-qwen-9b-full/analysis.json": "77fde33c3227a303ba964dbd9aef4e918427a80f52d8e907ee1c305616616f66",
+    "experiments/results/analyses/1001-failure-decomposition-v1/0926-02-qwen-9b-local/analysis.json": "ec5960ad0da562b26437bdc65a0f2b9d515170b718e50ff2f4b1caf5d90450d4",
+    "experiments/results/analyses/1001-failure-decomposition-v1/0926-03-kanana-8b-full-1438/analysis.json": "e18227c49bb4af5e602ebbe09664f87cd276e1f86c5660da52376ad94e743da8",
+    "experiments/results/analyses/1001-failure-decomposition-v1/0926-04-kanana-8b-local-1438/analysis.json": "a5f4d2527a22203cd2714720209c5d5f2b817661d3e92f7982dd55954015d164",
+    "experiments/results/analyses/1001-failure-decomposition-v1/0928-01-exaone-33b-full/analysis.json": "312fece33aa871601d3b3124a69792bd3db871185a591740bb7c7c69c1bc8148",
+    "experiments/results/analyses/1001-failure-decomposition-v1/0928-02-exaone-33b-local/analysis.json": "bb3fa2ce406468bb77f0ca1225bb2e5ce734115379c428e82756181f18c00184",
+    "experiments/results/analyses/1001-failure-decomposition-v1/0928-03-qwen3-30b-full/analysis.json": "c7ed2298957e2de62499a6f552b5c04827f209b48edff1fe617d26848df78a5a",
+    "experiments/results/analyses/1001-failure-decomposition-v1/0928-04-qwen3-30b-local/analysis.json": "6de6959792c5d2410cd1822b5d9b4dd5084a9b1348929f454634629c535ea821"
+  }
+}

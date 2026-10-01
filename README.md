@@ -2,7 +2,7 @@
 
 **Korean Identifiers, Identifiability, and Ill-formed Inputs — A Regulation-Grounded Benchmark for Financial PII Detection.**
 
-한국 금융 문서의 개인정보 탐지를 평가하는 연구 저장소입니다. 법령 기반 36개 카테고리, 표면형 변형 T0–T3, 다중 정보주체·긴 문서를 다룹니다. **데이터 생성·공개는 완료했고, 현재는 본 실험 결과 수집·검증 단계입니다. Presidio·ko-pii는 전체 1,440건 실행을 완료했고, Kanana 3B full/local·Qwen 2B full·Qwen 4B local의 완료 응답과 strict 점수 재현을 확인했습니다. Qwen 9B full/local(1,440건)·Kanana 1.5 8B full/local(1,438건)도 추가 재현 검증했습니다. 남은 3조건 결과와 native 계측·공통 평가 집합 원본은 확인 대기입니다.**
+한국 금융 문서의 개인정보 탐지를 평가하는 연구 저장소입니다. 법령 기반 36개 카테고리, 표면형 변형 T0–T3, 다중 정보주체·긴 문서를 다룹니다. **데이터 생성·공개는 완료했고, 현재는 본 실험 결과 수집·검증 단계입니다. Presidio·ko-pii는 전체 1,440건 실행을 완료했고, Kanana 3B full/local·Qwen 2B full·Qwen 4B local의 완료 응답과 strict 점수 재현을 확인했습니다. Qwen 9B full/local(1,440건)·Kanana 1.5 8B full/local(1,438건)도 추가 재현 검증했습니다. OpenMed 1,440건도 재현 검증했습니다. 남은 2조건 결과와 native 계측·공통 평가 집합 원본은 확인 대기입니다.**
 
 - 공개 데이터: [nmixx-fin/kiii-kiii](https://huggingface.co/datasets/nmixx-fin/kiii-kiii), **1,440문서 / 218,664스팬**, 단일 `test`.
 - 라이선스: **데이터 CC BY-NC 4.0**. Preview 버전이며 정식 버전은 추후 공개합니다. 코드·제3자 모델의 라이선스를 이 데이터 라이선스로 대체하지 않습니다.
@@ -68,3 +68,5 @@ python -m pytest tests -q
 > **논문 결과표 준비:** [표별 입력·검증·편집 안내](docs/guide/paper-results-handoff.md). 본문 비교표와 부록 L/I 분해·paired CI·보조 점수표를 Overleaf에 준비했습니다. 최종 비교는 공통 cohort 검증 후 채웁니다.
 
 > **9/28 확장 4조건 검토 (`24a3595`):** [공식 점수 재현·부분점수·중복 JSON 키 진단](experiments/results/analyses/0928-response-diagnostics-v1-update-24a3595/REPORT.md). Qwen 9B는 1,440건, Kanana 8B는 길이 한도로 2건을 제외한 1,438건입니다. 서로 다른 gate 결과를 통합 순위로 합치지 않습니다.
+
+> **10/1 실패 분해 (ADR-0037):** [12개 완료 LLM 조건의 형식 준수·빈 답·탐지 P/R/F1](experiments/results/analyses/1001-failure-decomposition-v1/tables/REPORT.md)과 [전체 정답 기준 누락 유형 그림](experiments/results/analyses/1001-failure-decomposition-v1/figures/gold-outcomes.png). 공식 strict와 기존 항목별 점수는 유지합니다. 추가 Qwen3-30B/EXAONE 결과도 별도 관측 자료로 포함하며 기존 배정 범위는 바꾸지 않습니다.

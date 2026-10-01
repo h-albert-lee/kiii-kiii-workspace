@@ -25,3 +25,7 @@ S/I/W는 각 stage의 `metrics.exact_micro.f1`, C는 fence_itemwise의 `metrics.
 편집은 Overleaf 원본에서 코멘트 앵커를 보존하는 작은 변경으로 합니다. Overleaf → GitHub Sync 후 로컬 paper를 fast-forward하고 연구 레포의 submodule 포인터를 갱신합니다. 결과가 새로 도착해도 paper로 무조건 git push하거나 파일 전체를 교체하지 않습니다. 익명 본문/표에는 사람·조직명·식별 가능한 저장소 링크를 넣지 않습니다.
 
 남은 제출 전 작업: native capacity 증빙/공통 집합 확정, 누락 조건 결과 수령, Table 2–4 채우기, paired 해석과 결론 업데이트, 기존 부록 A–C의 TODO 정리, provisional/placeholder 표시 제거 여부 검토. 추가 표와 본문을 계속 누적하지 말고 본문 4페이지 안에서 교체·요약합니다.
+
+## 10/1 형식과 탐지 성능 분리
+
+[ADR-0037](../decisions/0037-format-grounding-detection-decomposition.md)에 따른 [12조건 표](../../experiments/results/analyses/1001-failure-decomposition-v1/tables/REPORT.md)와 [누락 유형 그림](../../experiments/results/analyses/1001-failure-decomposition-v1/figures/gold-outcomes.png)을 준비했습니다. 논문 본문에는 strict F1 / JSON·필드 구조 준수율 / 빈 답 비율 / 전체 gold 기준 항목별 P·R·F1을 병기하고, 세부 누락 분해는 보조 자료로 둘 수 있습니다. 새로운 점수로 strict를 교체하거나 순수한 잠재 탐지능력으로 부르지 않습니다. 성공한 응답만 골라 채점하지 않았고, 사후 분석이며 공통 cohort 검증 전임을 명시합니다. 이 작업에서 paper 저장소와 Overleaf는 수정하지 않았습니다. 추가 대형 모델 포함 여부는 기존 범위와 별도 결정이 필요합니다.

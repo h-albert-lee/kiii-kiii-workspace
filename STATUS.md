@@ -1,8 +1,8 @@
-# STATUS — 2026-09-28
+# STATUS — 2026-10-01
 
 ## Current outcome
 
-**Dataset complete and public; detector execution infrastructure prepared; CPU baseline runs complete on all 1,440 documents; eight completed GPU LLM conditions replay-verified (core: Kanana 3B full/local, Qwen 2B full, Qwen 4B local; extension: Qwen 9B full/local on 1,440 docs, Kanana 1.5 8B full/local on 1,438 docs); remaining GPU results and underlying native-count/cohort artifacts pending.** Experiment collaborators should begin with README.md → AGENTS.md → docs/guide/experiment-runbook.md.
+**Dataset complete and public; detector execution infrastructure prepared; CPU baseline runs complete on all 1,440 documents; OpenMed and twelve completed GPU LLM conditions replay-verified (8 accepted conditions plus 4 additional Qwen3-30B/EXAONE conditions outside the accepted roster); remaining GPU results and underlying native-count/cohort artifacts pending.** Experiment collaborators should begin with README.md → AGENTS.md → docs/guide/experiment-runbook.md.
 
 | Item | Status |
 |---|---|
@@ -12,12 +12,12 @@
 | Practitioner review | Five financial-sector-experienced reviewers, each a different 10% sample, broad appropriateness only; not span validation/IAA |
 | Evaluation | Frozen full/local requests, exact/native token counters, common-capacity gate, budget/resume journal, strict metrics, breakdowns, bootstrap, CSV export |
 | Model adapters | Claude/Gemini/vLLM implemented and fixture-tested; native paid calls and GPU servers still require operator pilot |
-| Baselines | Presidio/ko-pii completed all 1,440 docs on 9/24; raw predictions + results pushed under experiments/results/runs. Common LLM cohort rescore pending. OpenMed GPU untested |
+| Baselines | Presidio/ko-pii completed all 1,440 docs on 9/24; raw predictions + results pushed under experiments/results/runs. Common LLM cohort rescore pending. OpenMed GPU completed by operator; archived predictions/mapping and all scores replay-verified on 1,440 docs (strict F1 2.0866/100), local GPU loading not exercised |
 | Operator docs | README, AGENTS, runbook, config templates, label-map limitations prepared |
 | Paper/related work | 9/27 result-table scaffold synced from Overleaf (`d876752`): main comparison, taxonomy-group P/R/F1, paired CI and 4-condition provisional response diagnostics. Main text remains 4 pages; total 6 with refs/appendix. [Table handoff](docs/guide/paper-results-handoff.md). Final cohort/comparative findings pending; TWICE/NMIXX retained. |
 | Leaderboard | Two full-release baseline results available; consolidated headline table deferred until common cohort is frozen |
 
-Validation: **128 tests passed** (offline provider fixtures, budget/resume/capacity/export guards, generation/release regressions). Verified release → two-document smoke → actual Presidio/ko-pii extraction/scoring completed. Smoke scores are not benchmark findings. Native paid providers and GPU model loading were not exercised locally; archived GPU responses from the operator were replayed offline.
+Validation: **134 tests passed** (offline provider fixtures, budget/resume/capacity/export guards, generation/release regressions). Verified release → two-document smoke → actual Presidio/ko-pii extraction/scoring completed. Smoke scores are not benchmark findings. Native paid providers and GPU model loading were not exercised locally; archived GPU responses from the operator were replayed offline.
 
 Ownership and delivery: [assignment roster](experiments/ASSIGNMENTS.md) (성현: API deferred; 은빈: Qwen3.5-2B/4B + Kanana-2-3B + OpenMed; 한울: CPU rules; 사라: context-effect research; operational aggregation owner pending). Each operator must push completed results and interruption reports to GitHub under the [result-sharing procedure](experiments/results/README.md); large raw artifacts use repository Release assets. ADR-0030.
 
@@ -25,7 +25,13 @@ Research work can start immediately: 사라 follows [the context-analysis brief]
 
 Accepted roster (ADR-0034, 2026-09-24): Qwen3.5-2B, Qwen3.5-4B, Kanana-2-3B-Instruct + Presidio/ko-pii/OpenMed = **6 systems / 9 conditions**. Gemini is optional and deferred; Claude and previous large MoE runs are out of current scope. Config matrix and research handoff updated. GPU capacity and actual token limits remain unverified; no new inference/spending initiated.
 
-## Latest GPU upload review — 24a3595 (2026-09-28)
+## Format grounding and detection decomposition — 2026-10-01
+
+[ADR-0037](docs/decisions/0037-format-grounding-detection-decomposition.md) separates all-request structural compliance/empty outputs, parsed-item grounding failures, and all-gold itemwise detection P/R/F1. Twelve completed LLM conditions were replay-checked against unchanged strict and ADR-0036 per-document counts. [Tables](experiments/results/analyses/1001-failure-decomposition-v1/tables/REPORT.md) and [gold-outcome figure](experiments/results/analyses/1001-failure-decomposition-v1/figures/gold-outcomes.png). This is post-hoc and descriptive, not latent ability or causal attribution. All gold and invalid-item FP remain; no inference or live scorer changes. **134 tests pass.**
+
+Latest operator snapshot `9e0570a` adds OpenMed (1,440 docs), EXAONE 4.5 33B full/local and Qwen3-30B-A3B full/local (each 1,440 docs). Raw/prediction hashes, journals and scores agree. EXAONE full's documented U+2028 JSONL-reader workaround was independently reproduced using the existing offline line reader; no frozen evaluator file was changed. Accepted roster completion is **11/13**; Qwen 2B local and Qwen 4B full remain pilot uploads. The additional four large-model conditions do not automatically expand the accepted roster. Native count/gate originals remain pending; do not pool different gates or silently adopt new models.
+
+## Previous GPU upload review — 24a3595 (2026-09-28)
 
 Four medium-extension conditions are complete and all archived strict metrics, failures, request hashes, raw responses and journals replay/agree. [Review, secondary scores and 1,720-row breakdowns](experiments/results/analyses/0928-response-diagnostics-v1-update-24a3595/REPORT.md). Strict F1 / 100: Qwen 9B full/local **3.2686 / 3.6618**; Kanana 1.5 8B full/local **0.3337 / 0.8429**. ADR-0036 fence/itemwise F1: **14.4432 / 18.0520** and **5.5536 / 8.3522**. Secondary diagnostics do not replace official scores.
 

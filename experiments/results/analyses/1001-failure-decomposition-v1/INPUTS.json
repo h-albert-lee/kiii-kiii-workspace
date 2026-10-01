@@ -1,0 +1,153 @@
+{
+  "runs": [
+    {
+      "run": "0925-01-kanana-3b-full",
+      "source_commit": "b4f76f4b3cd1542f50980144baa9e6874c9a7d6a",
+      "source_directory": "https://github.com/h-albert-lee/kiii-kiii-workspace/tree/b4f76f4b3cd1542f50980144baa9e6874c9a7d6a/experiments/results/runs/0925-01-kanana-3b-full",
+      "files_sha256": {
+        "result.json": "646c8ab95d67f796a9c0ad858fcf5e2d454a4e5c088c65b74b6492e58b2a32f5",
+        "responses.jsonl": "1b278c3e3da16654b1f7e92781f897068448c1a8e808975e92daca095fee0b0f"
+      },
+      "adr0036_diagnostics_sha256": "5307d96e2ed86266c1a65e663da7f483950eb6dc153398d16eb90f7e05ca7cba",
+      "adr0036_generation_git_commit": "66e4b468747cfed02636d0dfdeb8b8ed23ba88dd",
+      "adr0036_source_sha256": "cbb23ddc175c8e6212299a1336687b2cf7edca4fbcd998bc4384c525155c1df7"
+    },
+    {
+      "run": "0925-02-kanana-3b-local",
+      "source_commit": "b4f76f4b3cd1542f50980144baa9e6874c9a7d6a",
+      "source_directory": "https://github.com/h-albert-lee/kiii-kiii-workspace/tree/b4f76f4b3cd1542f50980144baa9e6874c9a7d6a/experiments/results/runs/0925-02-kanana-3b-local",
+      "files_sha256": {
+        "result.json": "37226040b870dbd569714daf5de5a5760f7c1327c4203012f629098a5278b173",
+        "responses.jsonl": "295d7f8af4dc0c70ff5e5afdf73bbeb7dec158130b15c5b065f7c161632219d9"
+      },
+      "adr0036_diagnostics_sha256": "7220109b3f0031d1fbc7217f100c940725905e958bcc8c61c0ef1495e0cb7b6b",
+      "adr0036_generation_git_commit": "66e4b468747cfed02636d0dfdeb8b8ed23ba88dd",
+      "adr0036_source_sha256": "cbb23ddc175c8e6212299a1336687b2cf7edca4fbcd998bc4384c525155c1df7"
+    },
+    {
+      "run": "0925-03-qwen-2b-full",
+      "source_commit": "b4f76f4b3cd1542f50980144baa9e6874c9a7d6a",
+      "source_directory": "https://github.com/h-albert-lee/kiii-kiii-workspace/tree/b4f76f4b3cd1542f50980144baa9e6874c9a7d6a/experiments/results/runs/0925-03-qwen-2b-full",
+      "files_sha256": {
+        "result.json": "b7828d40ca73b5675068600f5039bc00a953f14d06a41d5290984d85dd4f49fe",
+        "responses.jsonl": "881e668223246c7be8c6d6b143a6652f6305c01f9afa30477f3b6cbf08997573"
+      },
+      "adr0036_diagnostics_sha256": "b3b4e70cb4ee92e4474b84c924f243b1cfbdf2c22f19b7ac350abe6908e37008",
+      "adr0036_generation_git_commit": "66e4b468747cfed02636d0dfdeb8b8ed23ba88dd",
+      "adr0036_source_sha256": "cbb23ddc175c8e6212299a1336687b2cf7edca4fbcd998bc4384c525155c1df7"
+    },
+    {
+      "run": "0925-06-qwen-4b-local",
+      "source_commit": "ac25513b9bfc9b08daab86b378ec67305e456cea",
+      "source_directory": "https://github.com/h-albert-lee/kiii-kiii-workspace/tree/ac25513b9bfc9b08daab86b378ec67305e456cea/experiments/results/runs/0925-06-qwen-4b-local",
+      "files_sha256": {
+        "result.json": "9ad9e09a3d0ca7b320283c377145246cdd4797480c30c20d744f18b29d090511",
+        "responses.jsonl": "fc8e7978469e8959238831c217e79d04bb7fc44a2322f54503ef01031f23e6cd"
+      },
+      "adr0036_diagnostics_sha256": "d3948f73d2516b15cac51f2dccece71a11e466af92c81c04f1bc22a510c5e697",
+      "adr0036_generation_git_commit": "423b828835d075ca0ac5676e21c091213531527d",
+      "adr0036_source_sha256": "cbb23ddc175c8e6212299a1336687b2cf7edca4fbcd998bc4384c525155c1df7"
+    },
+    {
+      "run": "0926-01-qwen-9b-full",
+      "source_commit": "24a359542ffadc311e0e5ffe6803ff092e728f70",
+      "source_directory": "https://github.com/h-albert-lee/kiii-kiii-workspace/tree/24a359542ffadc311e0e5ffe6803ff092e728f70/experiments/results/runs/0926-01-qwen-9b-full",
+      "files_sha256": {
+        "result.json": "886883770a0e1080067389b8fc267d37d7df93e4b0323ce5d980665e106a8359",
+        "responses.jsonl": "bb1d562d40ee989fa7e2eef4ee495685e0ce0ec5b0a3290ca44f1b3259831bb7"
+      },
+      "adr0036_diagnostics_sha256": "8292699b7945e15a45b1ad8f5189560ece3eb55b5eb70f6fdf88e84aa437cd66",
+      "adr0036_generation_git_commit": "2206dc45e95edf7ed54bc49ef5612339f2750398",
+      "adr0036_source_sha256": "cbb23ddc175c8e6212299a1336687b2cf7edca4fbcd998bc4384c525155c1df7"
+    },
+    {
+      "run": "0926-02-qwen-9b-local",
+      "source_commit": "24a359542ffadc311e0e5ffe6803ff092e728f70",
+      "source_directory": "https://github.com/h-albert-lee/kiii-kiii-workspace/tree/24a359542ffadc311e0e5ffe6803ff092e728f70/experiments/results/runs/0926-02-qwen-9b-local",
+      "files_sha256": {
+        "result.json": "32b91f366181bf00cb6a88ea8dfbbd3e6f96a2973e577e9e1a416cac882c1c17",
+        "responses.jsonl": "0b3daef0e938f0dd16f49bc2e747d1f5f746c55b5d76dabb715d5d75509c1e25"
+      },
+      "adr0036_diagnostics_sha256": "f527a9ba57f1aa39f675bad5c7653a04766008803999cc84e338f8ccb1810b1b",
+      "adr0036_generation_git_commit": "2206dc45e95edf7ed54bc49ef5612339f2750398",
+      "adr0036_source_sha256": "cbb23ddc175c8e6212299a1336687b2cf7edca4fbcd998bc4384c525155c1df7"
+    },
+    {
+      "run": "0926-03-kanana-8b-full-1438",
+      "source_commit": "24a359542ffadc311e0e5ffe6803ff092e728f70",
+      "source_directory": "https://github.com/h-albert-lee/kiii-kiii-workspace/tree/24a359542ffadc311e0e5ffe6803ff092e728f70/experiments/results/runs/0926-03-kanana-8b-full-1438",
+      "files_sha256": {
+        "result.json": "f53688ed6e986a72a21258c3352cadef5e3a8e6a940755528c323fb2b510e206",
+        "responses.jsonl": "1c21762737edea9fe8453ff6d65ff2bc17bc2e03aa8811c5bf39bafbb1bce901"
+      },
+      "adr0036_diagnostics_sha256": "1eb5f660c1660a5ab3940a2a3669663d313af5f391a9784779dbdda0041a9c67",
+      "adr0036_generation_git_commit": "2206dc45e95edf7ed54bc49ef5612339f2750398",
+      "adr0036_source_sha256": "cbb23ddc175c8e6212299a1336687b2cf7edca4fbcd998bc4384c525155c1df7"
+    },
+    {
+      "run": "0926-04-kanana-8b-local-1438",
+      "source_commit": "24a359542ffadc311e0e5ffe6803ff092e728f70",
+      "source_directory": "https://github.com/h-albert-lee/kiii-kiii-workspace/tree/24a359542ffadc311e0e5ffe6803ff092e728f70/experiments/results/runs/0926-04-kanana-8b-local-1438",
+      "files_sha256": {
+        "result.json": "3fcbfce896d6281cc977269279109efdebf1a81a144793d71a6d0d3063424aac",
+        "responses.jsonl": "0d09f5973f051950fcab8c2f7c999f41afb0f293ef40fc0c759ab75bd510f15a"
+      },
+      "adr0036_diagnostics_sha256": "902667437f6a06d05fd4e7daa5cb221dc7435340c2ab8cca6a85a288002c20c5",
+      "adr0036_generation_git_commit": "2206dc45e95edf7ed54bc49ef5612339f2750398",
+      "adr0036_source_sha256": "cbb23ddc175c8e6212299a1336687b2cf7edca4fbcd998bc4384c525155c1df7"
+    },
+    {
+      "run": "0928-01-exaone-33b-full",
+      "source_commit": "9e0570a069a50426b91d372fd6882b4bb551c2ba",
+      "source_directory": "https://github.com/h-albert-lee/kiii-kiii-workspace/tree/9e0570a069a50426b91d372fd6882b4bb551c2ba/experiments/results/runs/0928-01-exaone-33b-full",
+      "files_sha256": {
+        "result.json": "4e7859958bb8eb6ca498a626fc18226d7a3bc7b6507b33ee99b356590c796bfb",
+        "responses.jsonl": "580a47536eb5c016c29d669c56decfe9505ec72247b58defa4a7a5e7783c6e93"
+      },
+      "adr0036_diagnostics_sha256": "349e2f9e7b462f0103cb787fd838b8844e4f4bcb91a9744dde48a9dc5516fcb8",
+      "adr0036_generation_git_commit": "f5ffc9fc5b3c7a150c3a1d01701423ea885527a0",
+      "adr0036_source_sha256": "cbb23ddc175c8e6212299a1336687b2cf7edca4fbcd998bc4384c525155c1df7"
+    },
+    {
+      "run": "0928-02-exaone-33b-local",
+      "source_commit": "9e0570a069a50426b91d372fd6882b4bb551c2ba",
+      "source_directory": "https://github.com/h-albert-lee/kiii-kiii-workspace/tree/9e0570a069a50426b91d372fd6882b4bb551c2ba/experiments/results/runs/0928-02-exaone-33b-local",
+      "files_sha256": {
+        "result.json": "77bbe8a8f15e301c30034682ac0f4d0b08179a47e88ce0ee8a03bc2736aa6082",
+        "responses.jsonl": "742d1905bbec2866a61770a1f83f9d022b527a8b30d279a345ec95ef66774728"
+      },
+      "adr0036_diagnostics_sha256": "9265462b647680ab4430933a872599c592b8a9695f97df7de87400f8c3fa8ed0",
+      "adr0036_generation_git_commit": "f5ffc9fc5b3c7a150c3a1d01701423ea885527a0",
+      "adr0036_source_sha256": "cbb23ddc175c8e6212299a1336687b2cf7edca4fbcd998bc4384c525155c1df7"
+    },
+    {
+      "run": "0928-03-qwen3-30b-full",
+      "source_commit": "9e0570a069a50426b91d372fd6882b4bb551c2ba",
+      "source_directory": "https://github.com/h-albert-lee/kiii-kiii-workspace/tree/9e0570a069a50426b91d372fd6882b4bb551c2ba/experiments/results/runs/0928-03-qwen3-30b-full",
+      "files_sha256": {
+        "result.json": "81bd7b428cf7b919b474419afcedf5fd3bf9946e598c70d20346c15d7c533ab0",
+        "responses.jsonl": "9091165c53f99cd0febb876da356830420b901844aff6506050ea6bbaeeccc5b"
+      },
+      "adr0036_diagnostics_sha256": "bb48c0db4e887fe07b7e8c6d2d8623ba297c78bfeb1cda3ddf98a12c2a6ad182",
+      "adr0036_generation_git_commit": "f5ffc9fc5b3c7a150c3a1d01701423ea885527a0",
+      "adr0036_source_sha256": "cbb23ddc175c8e6212299a1336687b2cf7edca4fbcd998bc4384c525155c1df7"
+    },
+    {
+      "run": "0928-04-qwen3-30b-local",
+      "source_commit": "9e0570a069a50426b91d372fd6882b4bb551c2ba",
+      "source_directory": "https://github.com/h-albert-lee/kiii-kiii-workspace/tree/9e0570a069a50426b91d372fd6882b4bb551c2ba/experiments/results/runs/0928-04-qwen3-30b-local",
+      "files_sha256": {
+        "result.json": "92090f9ce39ceb0a07dcb79907aac0d0d9bfb9994c1ee3f3b044d5a9abb6f840",
+        "responses.jsonl": "e1baa396ba5bf42fddc2264f11749ef567c04db2a1cce7f0a30512897414fdbb"
+      },
+      "adr0036_diagnostics_sha256": "056751efb19197f08555b9416d85a2b13de0529fed5b1fef5a1c1db59e7f32cc",
+      "adr0036_generation_git_commit": "f5ffc9fc5b3c7a150c3a1d01701423ea885527a0",
+      "adr0036_source_sha256": "cbb23ddc175c8e6212299a1336687b2cf7edca4fbcd998bc4384c525155c1df7"
+    }
+  ],
+  "notes": [
+    "Gold must be byte-identical to reference manifest; use frozen release preparation. Kanana 8B retains eligible-1438 IDs.",
+    "Four 0928 ADR-0036 diagnostics were produced locally from linked immutable raw/result inputs and can be regenerated with unchanged src.analysis.response_diagnostics.",
+    "No native capacity validation or roster change. Source code hashes are stored in every analysis."
+  ]
+}

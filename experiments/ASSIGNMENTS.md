@@ -1,6 +1,6 @@
 # 실험 담당 배정표
 
-2026-09-28 (ADR-0034/0035/0036). **사용자 확정 배정: API 실행은 보류(기존 담당 성현), GPU 실험은 은빈, GPU 불필요 규칙 베이스라인은 한울, 문맥 효과 연구는 사라.** GitHub ID는 각 담당자가 기입합니다. 담당자는 착수 전에 상태와 run ID를 커밋·푸시합니다. 취합 담당자는 별도 지정 전까지 미정입니다.
+2026-10-01 (ADR-0034/0035/0036/0037). **사용자 확정 배정: API 실행은 보류(기존 담당 성현), GPU 실험은 은빈, GPU 불필요 규칙 베이스라인은 한울, 문맥 효과 연구는 사라.** GitHub ID는 각 담당자가 기입합니다. 담당자는 착수 전에 상태와 run ID를 커밋·푸시합니다. 취합 담당자는 별도 지정 전까지 미정입니다.
 
 | 묶음 | 계획 모델 | 실행 조건 | 담당자 / GitHub ID | 상태 | run ID / 결과 링크 |
 |---|---|---|---|---|---|
@@ -9,7 +9,7 @@
 | B · GPU LLM | Kanana-2-3B-Instruct | full_context_targeted + local_window | 은빈 | full/local 각 1,440건 재현 검증; native 계측/gate 원본 확인 대기 | [feat/exp-eb 기록](https://github.com/h-albert-lee/kiii-kiii-workspace/tree/feat/exp-eb/experiments/results/runs) · 0925-01/02-kanana-3b-full/local |
 | C · CPU 베이스라인 | Presidio 한국형 규칙 + 계좌·카드 규칙 | 동일 평가 문서 전체, 1회 | 한울 | 1,440건 완료·공통 cohort 재집계 대기 | [0924-01-presidio-full1440](results/runs/0924-01-presidio-full1440/REPORT.md) |
 | C · CPU 베이스라인 | ko-pii 1.16.0 | 동일 평가 문서 전체, 1회 | 한울 | 1,440건 완료·공통 cohort 재집계 대기 | [0924-01-ko-pii-full1440](results/runs/0924-01-ko-pii-full1440/REPORT.md) |
-| B · GPU 베이스라인 | OpenMed/privacy-filter-multilingual | 동일 평가 문서, 겹침 토큰 창, 1회 | 은빈 | REPORT만 업로드; 완료 결과 미확인 | [0925-07-openmed-windows](https://github.com/h-albert-lee/kiii-kiii-workspace/blob/feat/exp-eb/experiments/results/runs/0925-07-openmed-windows/REPORT.md) |
+| B · GPU 베이스라인 | OpenMed/privacy-filter-multilingual | 동일 평가 문서, 겹침 토큰 창, 1회 | 은빈 | 1,440건 완료·예측/점수 재현 검증; 공통 cohort 재집계 대기 | [0925-07-openmed-windows](https://github.com/h-albert-lee/kiii-kiii-workspace/blob/feat/exp-eb/experiments/results/runs/0925-07-openmed-windows/REPORT.md) |
 | B+ · GPU 확장 1순위 | Qwen3.5-9B | full_context_targeted + local_window | 은빈 | full/local 각 1,440건 재현 검증; native 계측/gate 대기 | 0926-01/02-qwen-9b-full/local · [검토](results/analyses/0928-response-diagnostics-v1-update-24a3595/REPORT.md) |
 | B+ · GPU 확장 2순위 | Kanana-1.5-8B-Instruct-2505 | full_context_targeted + local_window | 은빈 | full/local 각 1,438건 재현 검증; 2건 길이 제외·별도 gate | 0926-03/04-kanana-8b-full/local-1438 · [검토](results/analyses/0928-response-diagnostics-v1-update-24a3595/REPORT.md) |
 | D · 취합 | 공통 설정·평가 집합 확정 / 결과 통합 | 전체 모델 계측 취합, cohort gate, CSV·bootstrap | 미정 | 미착수 | — |
@@ -46,3 +46,5 @@ ADR-0035 확장은 2개 LLM × 두 조건을 추가하여 완료 시 **총 8개 
 추가 검토 `ac25513`: [Qwen 4B local 완료 및 보조 점수](results/analyses/0927-response-diagnostics-v1-update-ac25513/REPORT.md). 기존 9/27 `b4f76f4` snapshot 이후 이 조건이 추가됐습니다. 운영 상태표는 현재 업로드를 기준으로 하며 실제 실행 중인 미업로드 작업의 상태는 추정하지 않습니다.
 
 9/28 `24a3595`: 확장 4조건 완료 응답·공식 점수를 재현했습니다. 위 표는 최신 업로드 기준입니다. native count/최종 gate 원본 및 남은 핵심 3조건 완료 자료는 계속 확인 대기이며, Qwen 9B와 Kanana 8B의 평가 문서 수와 gate 차이를 보존합니다. 중복 JSON 키 처리 한계는 새 검토 보고서에 기록했습니다.
+
+10/1 `9e0570a`: OpenMed 전체 완료를 검증해 기존 계획은 11/13조건의 완료 업로드를 확인했습니다. Qwen3-30B-A3B와 EXAONE 4.5 33B full/local도 추가 업로드됐으나 기존 배정표 밖의 운영자 추가 실험으로 보존합니다. 논문 포함 범위를 자동 확대하지 않습니다. [형식·위치 지정·탐지 성능 분해](results/analyses/1001-failure-decomposition-v1/tables/REPORT.md)는 완료 LLM 12조건 전체의 사후 진단이며 사라의 연구 분석에 사용할 수 있습니다.
