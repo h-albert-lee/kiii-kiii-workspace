@@ -1,5 +1,9 @@
 # Agent entrypoint — Kiii² (2026-09-23)
 
+## Author/submission handoff — 2026-10-02
+
+Use `docs/authors.yaml` and `papers/sac2027/notes/author-handoff.md` for the six-author order, current affiliations, operator-selected OpenReview IDs and equal-first/corresponding roles. Workshop #11 (`klGll15Rn5`) is submitted; latest PDF/source receipt is `docs/submissions/icaif2026.json`. SAC is still unsubmitted. Do not infer emails from masked profile domains, copy stale profile affiliations, or expose author metadata in anonymous source bundles. Paper license CC BY 4.0 and dataset license CC BY-NC 4.0 are separate.
+
 ## SAC preparation — ADR-0039 (2026-10-02)
 
 Use `papers/sac2027/README.md` for the independent SAC AIFT manuscript and

@@ -23,14 +23,23 @@ Status: preparation only, 2026-10-02. No Kiii² EasyChair record created.
 - [x] Original cohorts, primary scores and provenance limitations retained.
 - [x] Operator-reported parallel-submission confirmation recorded in ADR-0039.
 - [x] Title/abstract/keywords available in anonymous manuscript source.
+- [x] Operator specified six-author order, affiliations, equal first authors
+  and corresponding author on 2026-10-02: [shared author record](../../../docs/authors.yaml).
+  MinKyeong Shin's operator-selected profile spelling is recorded; keep this metadata
+  out of anonymous source bundles and PDFs.
+
+## Author and workshop handoff
+
+See [detailed author/submission handoff](author-handoff.md) and the shared author record. Workshop #11 is submitted; SAC remains unsubmitted. Never reuse NMIXX #185 or treat the workshop record as a SAC receipt.
 
 ## Before submission
 
 - [ ] Selectively integrate relevant final workshop corrections after Sara's
   native Overleaf → GitHub export; record that exact commit.
 - [ ] Coauthors review the SAC version and approve the final author list,
-  order, affiliations and corresponding author. Do not infer the roster from
-  the old two-author template or from NMIXX.
+  order, affiliations and corresponding author against the operator's record;
+  use the verified profile mapping and collect the required emails/identifiers.
+  Do not infer the roster from the old two-author template or from NMIXX.
 - [ ] Review category boundaries and substantive claims; current practitioner
   review is document-appropriateness only, not span annotation validation.
 - [ ] Confirm factual deployment limits with existing records where available;
@@ -69,3 +78,5 @@ It expands the extraction/diagnostic methods, full result presentation and
 interpretation. The operator reports Prof. Yongjae Lee confirmed both
 submissions are acceptable. The workshop's actual submission/acceptance status
 must be checked at submission time; this note does not establish either.
+
+- Existing EasyChair account: operator confirmed the account used for NMIXX is available (2026-10-02). Reuse it; Kiii² requires a separate new SAC submission. See [author handoff](author-handoff.md).

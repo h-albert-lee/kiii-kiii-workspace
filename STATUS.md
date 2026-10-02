@@ -1,5 +1,9 @@
 # STATUS — 2026-10-01
 
+## ICAIF workshop submission — 2026-10-02
+
+**Submitted: #11**, [OpenReview](https://openreview.net/forum?noteId=klGll15Rn5). Six authors in the operator-approved order; paper CC BY 4.0. English-gloss revision (`2d7f6cf`) submitted and downloaded SHA-256 verified; initial `8d73e63` receipt preserved in history. Four main-text pages, six total; five native Overleaf comments preserved. Full abstract unchanged. [Receipt](docs/submissions/icaif2026.json). This is the workshop submission only; SAC remains unsubmitted.
+
 ## SAC 2027 preparation — 2026-10-02
 
 [ADR-0039](docs/decisions/0039-sac2027-submission-preparation.md) authorizes a

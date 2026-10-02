@@ -1,0 +1,59 @@
+{
+  "submitted": true,
+  "noteId": "klGll15Rn5",
+  "url": "https://openreview.net/forum?noteId=klGll15Rn5",
+  "license": "CC BY 4.0",
+  "pdf_sha256": "288eab423ca758389f534ba195d230a2facef6d96a1b19794fc964bf1c8c9e6a",
+  "downloadVerified": true,
+  "paper_commit": "2d7f6cff46c5891586ff7546ceeb88935a9451d9",
+  "submission_number": 11,
+  "date": "2026-10-02",
+  "abstract_visible_matches": true,
+  "venue": "ACM ICAIF 2026 Workshop FinAISecuritySafetyPrivacy",
+  "status": "submitted",
+  "authors": [
+    {
+      "name": "Eunbin Shin",
+      "id": "~Eunbin_Shin2"
+    },
+    {
+      "name": "Sara Yu",
+      "id": "~Sara_Yu1"
+    },
+    {
+      "name": "Seonghyun Kim",
+      "id": "~Seonghyun_Kim2"
+    },
+    {
+      "name": "MinKyeong Shin",
+      "id": "~MinKyeong_Shin1"
+    },
+    {
+      "name": "Yewon hwang",
+      "id": "~Yewon_hwang3"
+    },
+    {
+      "name": "Hanwool Lee",
+      "id": "~Hanwool_Lee1"
+    }
+  ],
+  "paper_scope": "Workshop only; SAC not submitted",
+  "pdf_pages": 6,
+  "main_text_pages": 4,
+  "consents": {
+    "author_email_sharing_with_program_chairs": true,
+    "accepted_submission_and_author_names_public_release": true
+  },
+  "affiliation_note": "Submitted user-selected profile/institution metadata; three profiles have no active institution displayed. Preferred manuscript affiliations and equal-first/corresponding roles remain in docs/authors.yaml; no dedicated role fields were present in the submission form.",
+  "history": [
+    {
+      "date": "2026-10-02",
+      "pdf_sha256": "97d9aa7049f120f726965ad01ed3d0465743c339d3093252a30dd4f9a544f3c1",
+      "paper_commit": "8d73e637e2c9cb909cc8052e3604199849e549b6",
+      "downloadVerified": true,
+      "change": "Initial submission"
+    }
+  ],
+  "revision": "English glosses for Korean examples and Figure 1 labels",
+  "overleaf_comments_preserved": 5
+}

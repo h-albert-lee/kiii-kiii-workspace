@@ -1,0 +1,102 @@
+# Operator-approved author metadata; exclude from anonymous manuscript bundles.
+updated: '2026-10-02'
+source: operator_message
+status: operator_specified
+authors:
+- order: 1
+  name: Eunbin Shin
+  affiliations:
+  - LG AI Research
+  equal_contribution_group: first_authors
+  openreview_id: ~Eunbin_Shin2
+  openreview_url: https://openreview.net/profile?id=~Eunbin_Shin2
+  openreview_display_name: Eunbin Shin
+  email: null
+  orcid: null
+- order: 2
+  name: Sara Yu
+  affiliations:
+  - KT
+  equal_contribution_group: first_authors
+  openreview_id: ~Sara_Yu1
+  openreview_url: https://openreview.net/profile?id=~Sara_Yu1
+  openreview_display_name: Sara Yu
+  email: null
+  orcid: null
+- order: 3
+  name: Seonghyun Kim
+  affiliations:
+  - Toss Securities
+  openreview_id: ~Seonghyun_Kim2
+  openreview_url: https://openreview.net/profile?id=~Seonghyun_Kim2
+  openreview_display_name: Seonghyun Kim
+  email: null
+  orcid: null
+- order: 4
+  name: MinKyeong Shin
+  name_status: operator_selected_OpenReview_profile_spelling
+  affiliations:
+  - Shinhan Securities
+  openreview_id: ~MinKyeong_Shin1
+  openreview_url: https://openreview.net/profile?id=~MinKyeong_Shin1
+  openreview_display_name: MinKyeong Shin
+  email: null
+  orcid: null
+  previous_provisional_name: Minkyung Shin
+- order: 5
+  name: Yewon Hwang
+  affiliations:
+  - kakao mobility
+  openreview_id: ~Yewon_hwang3
+  openreview_url: https://openreview.net/profile?id=~Yewon_hwang3
+  openreview_display_name: Yewon hwang
+  email: null
+  orcid: null
+- order: 6
+  name: Hanwool Lee
+  affiliations:
+  - Seoul National University
+  - AIM Intelligence
+  corresponding_author: true
+  openreview_id: ~Hanwool_Lee1
+  openreview_url: https://openreview.net/profile?id=~Hanwool_Lee1
+  openreview_display_name: Hanwool Lee
+  email: null
+  orcid: null
+equal_contribution_note: Eunbin Shin and Sara Yu contributed equally to this work.
+pending:
+- Obtain the submission email for each author; masked OpenReview emails were not guessed
+  or copied.
+- Obtain ORCIDs, postal details and other identifiers only if the SAC form requires
+  them.
+- Confirm any preferred name capitalization with the author before camera-ready; preserve
+  user-specified Yewon Hwang instead of automatically copying lowercase profile display.
+notes:
+- Use the supplied order; do not alphabetize the two equal first authors.
+- Use Seonghyun Kim and Hanwool Lee for this roster, superseding older manuscript-template
+  spellings.
+- Keep Sara's live workshop edits untouched; apply author blocks only through the
+  appropriate non-anonymous workflow.
+- Operator personally selected and ordered all six OpenReview profiles on 2026-10-02.
+- 'Workshop submitted as #11; this does not establish a SAC submission or approval
+  from every coauthor.'
+- SAC author order, affiliations and roles use this record; do not copy stale profile
+  institutions or the historical two-author template.
+- Equal-first and corresponding-author roles have no dedicated fields in the observed
+  workshop form; their absence from the anonymous PDF is intentional.
+workshop_submission:
+  number: 11
+  url: https://openreview.net/forum?noteId=klGll15Rn5
+  license: CC BY 4.0
+  dataset_license_separate: CC BY-NC 4.0
+observed_workshop_institutions:
+  Eunbin Shin:
+  - LG Corporation (lg.com)
+  Sara Yu: []
+  Seonghyun Kim: []
+  MinKyeong Shin:
+  - Shinhan Financial Group (shinhan.com)
+  Yewon Hwang: []
+  Hanwool Lee:
+  - Seoul National University (snu.ac.kr)
+  - AIM Intelligence (aim-intelligence.com)

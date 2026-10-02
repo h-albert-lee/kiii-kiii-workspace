@@ -9,6 +9,8 @@ commit `8d73e63`, not an uninspected copy of Sara's later live edits.
 
 ## Start here
 
+Author metadata and workshop submission status: read [author handoff](notes/author-handoff.md) and [shared author record](../../docs/authors.yaml). These identify all six operator-confirmed profiles, the exact order, equal-first/corresponding roles, and metadata still needed for SAC. Keep them outside anonymous source bundles.
+
 1. Read root `AGENTS.md`, ADR-0038 and [ADR-0039](../../docs/decisions/0039-sac2027-submission-preparation.md).
 2. Read [the frozen completed-run report](../../experiments/results/analyses/1001-completed-manuscript-v1/REPORT.md).
 3. Edit this standalone `main.tex` and `sections/`. Do not redirect the workshop
