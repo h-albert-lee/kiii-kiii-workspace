@@ -38,6 +38,20 @@ ADR-0035 확장은 2개 LLM × 두 조건을 추가하여 완료 시 **총 8개 
 
 **보류:** 성현 담당 Gemini는 선택 기준점으로 남기되 별도 범위·예산 승인 전에는 실행하지 않습니다. Claude 및 기존 대형 Qwen/Kanana는 이번 범위에서 제외합니다. 성현에게 다른 업무를 임의 배정하지 않습니다. 과거 실행이 있다면 삭제하지 않고 이전 조건으로 보존합니다.
 
+## 확정한 checkpoint (2026-09-25, 은빈)
+
+| 계획명 | served ID | revision | dtype | context | 비고 |
+|---|---|---|---|---|---|
+| Kanana-2-3B-Instruct | `kakaocorp/kanana-2-3b-instruct` | `6a5d7889964c4c590299d16e309eabab1f73f8a9` | BF16 | 32,768 | dense 3.51B, `Qwen3ForCausalLM` |
+| Qwen3.5-2B | `Qwen/Qwen3.5-2B` | `15852e8c16360a2fea060d615a32b45270f8a8fc` | BF16 | 262,144 | 2.27B, **멀티모달 VL checkpoint** |
+| Qwen3.5-4B | `Qwen/Qwen3.5-4B` | `851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a` | BF16 | 262,144 | 4.66B, **멀티모달 VL checkpoint** |
+
+세 모델 모두 공식 가중치가 **BF16**이므로 런북의 FP16 기본 권장 대신 배포 정밀도를 따릅니다. 양자화나 자동 dtype 변경이 아니며 사유를 각 REPORT에 기록했습니다.
+
+**Kanana의 32,768이 세 모델 중 최소**이므로 공통 cohort의 제약이 됩니다. `full_context_targeted`는 core 1,200자마다 문서 전문을 context로 싣는 구조라(요청당 평균 약 19,200자) 긴 문서에서 한도 초과가 발생할 수 있습니다. 실제 제외 여부는 Kanana full 조건 `count` 결과로 확정하며, 그래서 Kanana를 선행 실행합니다.
+
+배포 한도(`--max-model-len`), 단가, 예산, `settings_frozen`은 미확정입니다. 위 revision 외의 값은 추정하지 않았습니다.
+
 ## GPU 실행 권장 방식
 
 - **은빈 — Qwen/Kanana:** FP16을 기본 권장 정밀도로 삼고, vLLM 등으로 모델을 서빙한 뒤 평가 실행기를 OpenAI-compatible API에 연결합니다. 현재 어댑터는 `/v1/chat/completions`와 실제 chat template을 적용하는 `/tokenize`를 사용합니다. 다른 서버도 이 계약을 충족하는지 먼저 확인합니다.

@@ -1,0 +1,2314 @@
+{
+  "metrics": {
+    "f1_micro": 0.05189028910303929,
+    "exact_micro": {
+      "precision": 0.8333333333333334,
+      "recall": 0.026778882938026015,
+      "f1": 0.05189028910303929,
+      "tp": 35,
+      "fp": 7,
+      "fn": 1272
+    },
+    "category_character_micro": {
+      "precision": 0.8168724279835391,
+      "recall": 0.023219089952041173,
+      "f1": 0.04515468607825296,
+      "tp": 397,
+      "fp": 89,
+      "fn": 16701
+    },
+    "entity_all_mentions_exact_recall": 0.0029585798816568047,
+    "hard_negative_false_positive_rate": null,
+    "non_pii_character_mask_rate": 0.0
+  },
+  "by_axis": {
+    "doc_type": {
+      "pilot": {
+        "precision": 0.8333333333333334,
+        "recall": 0.026778882938026015,
+        "f1": 0.05189028910303929,
+        "tp": 35,
+        "fp": 7,
+        "fn": 1272
+      }
+    },
+    "variation_level": {
+      "pilot": {
+        "precision": 0.8333333333333334,
+        "recall": 0.026778882938026015,
+        "f1": 0.05189028910303929,
+        "tp": 35,
+        "fp": 7,
+        "fn": 1272
+      }
+    },
+    "context_len_bucket": {
+      "pilot": {
+        "precision": 0.8333333333333334,
+        "recall": 0.026778882938026015,
+        "f1": 0.05189028910303929,
+        "tp": 35,
+        "fp": 7,
+        "fn": 1272
+      }
+    },
+    "num_subjects": {
+      "1": {
+        "precision": 0.8333333333333334,
+        "recall": 0.027301092043681748,
+        "f1": 0.052870090634441085,
+        "tp": 35,
+        "fp": 7,
+        "fn": 1247
+      },
+      "5": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 25
+      }
+    },
+    "generator_model": {
+      "unknown": {
+        "precision": 0.8333333333333334,
+        "recall": 0.026778882938026015,
+        "f1": 0.05189028910303929,
+        "tp": 35,
+        "fp": 7,
+        "fn": 1272
+      }
+    }
+  },
+  "by_category": {
+    "access_credential": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 1,
+      "fn": 34
+    },
+    "address": {
+      "precision": 0.75,
+      "recall": 0.07317073170731707,
+      "f1": 0.13333333333333333,
+      "tp": 3,
+      "fp": 1,
+      "fn": 38
+    },
+    "bank_account_no": {
+      "precision": 1.0,
+      "recall": 0.23529411764705882,
+      "f1": 0.38095238095238093,
+      "tp": 12,
+      "fp": 0,
+      "fn": 39
+    },
+    "business_reg_no": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 36
+    },
+    "card_no": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 34
+    },
+    "consultation_content": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 33
+    },
+    "contract_no": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 1,
+      "fn": 34
+    },
+    "corp_reg_no": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 36
+    },
+    "credit_score": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 34
+    },
+    "credit_transaction": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 1,
+      "fn": 34
+    },
+    "customer_id": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 1,
+      "fn": 38
+    },
+    "delinquency_info": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 34
+    },
+    "device_network": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 33
+    },
+    "dob_age": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 33
+    },
+    "driver_license_no": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 38
+    },
+    "education": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 33
+    },
+    "email": {
+      "precision": 1.0,
+      "recall": 0.07894736842105263,
+      "f1": 0.14634146341463414,
+      "tp": 3,
+      "fp": 0,
+      "fn": 35
+    },
+    "employer_affiliation": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 33
+    },
+    "family_relation": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 33
+    },
+    "financial_capacity": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 39
+    },
+    "foreigner_reg_no": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 38
+    },
+    "gender": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 33
+    },
+    "investment_profile": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 33
+    },
+    "life_event": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 33
+    },
+    "location_mention": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 33
+    },
+    "nationality": {
+      "precision": 1.0,
+      "recall": 0.030303030303030304,
+      "f1": 0.058823529411764705,
+      "tp": 1,
+      "fp": 0,
+      "fn": 32
+    },
+    "online_handle": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 38
+    },
+    "passport_no": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 38
+    },
+    "person_name": {
+      "precision": 0.9285714285714286,
+      "recall": 0.23636363636363636,
+      "f1": 0.37681159420289856,
+      "tp": 13,
+      "fp": 1,
+      "fn": 42
+    },
+    "phone_no": {
+      "precision": 1.0,
+      "recall": 0.023255813953488372,
+      "f1": 0.045454545454545456,
+      "tp": 1,
+      "fp": 0,
+      "fn": 42
+    },
+    "public_record": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 34
+    },
+    "rrn": {
+      "precision": 0.6666666666666666,
+      "recall": 0.046511627906976744,
+      "f1": 0.08695652173913043,
+      "tp": 2,
+      "fp": 1,
+      "fn": 41
+    },
+    "securities_account_no": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 34
+    },
+    "sensitive_info": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 33
+    },
+    "service_usage": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 33
+    },
+    "transaction_record": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 34
+    }
+  },
+  "tier_kind_tlevel": {
+    "I/attribute/pilot": {
+      "precision": 1.0,
+      "recall": 0.0025252525252525255,
+      "f1": 0.005037783375314861,
+      "tp": 1,
+      "fp": 0,
+      "fn": 395
+    },
+    "L/attribute/pilot": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 1,
+      "fn": 242
+    },
+    "L/identifier/pilot": {
+      "precision": 0.85,
+      "recall": 0.05082212257100149,
+      "f1": 0.09590973201692525,
+      "tp": 34,
+      "fp": 6,
+      "fn": 635
+    }
+  },
+  "op_exact_recall": {},
+  "subject_role_exact_recall": {
+    "customer": {
+      "total": 1307,
+      "hit": 35,
+      "recall": 0.026778882938026015
+    }
+  },
+  "per_document": [
+    {
+      "doc_id": "pilot-cats-01",
+      "exact": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 36
+      },
+      "character": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 467
+      },
+      "entity_all_mentions_exact": {
+        "hit": 0,
+        "total": 36
+      },
+      "hard_negative": {
+        "hit": 0,
+        "total": 0
+      },
+      "non_pii_masked_chars": 0,
+      "non_pii_chars": 1039,
+      "doc_type": "pilot",
+      "variation_level": "pilot",
+      "context_len_bucket": "pilot",
+      "num_subjects": 1,
+      "generator_model": "unknown"
+    },
+    {
+      "doc_id": "pilot-cats-02",
+      "exact": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 36
+      },
+      "character": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 476
+      },
+      "entity_all_mentions_exact": {
+        "hit": 0,
+        "total": 36
+      },
+      "hard_negative": {
+        "hit": 0,
+        "total": 0
+      },
+      "non_pii_masked_chars": 0,
+      "non_pii_chars": 1061,
+      "doc_type": "pilot",
+      "variation_level": "pilot",
+      "context_len_bucket": "pilot",
+      "num_subjects": 1,
+      "generator_model": "unknown"
+    },
+    {
+      "doc_id": "pilot-dense-01",
+      "exact": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 370
+      },
+      "character": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 4877
+      },
+      "entity_all_mentions_exact": {
+        "hit": 0,
+        "total": 62
+      },
+      "hard_negative": {
+        "hit": 0,
+        "total": 0
+      },
+      "non_pii_masked_chars": 0,
+      "non_pii_chars": 1136,
+      "doc_type": "pilot",
+      "variation_level": "pilot",
+      "context_len_bucket": "pilot",
+      "num_subjects": 1,
+      "generator_model": "unknown"
+    },
+    {
+      "doc_id": "pilot-emoji-01",
+      "exact": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 12
+      },
+      "character": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 161
+      },
+      "entity_all_mentions_exact": {
+        "hit": 0,
+        "total": 12
+      },
+      "hard_negative": {
+        "hit": 0,
+        "total": 0
+      },
+      "non_pii_masked_chars": 0,
+      "non_pii_chars": 193,
+      "doc_type": "pilot",
+      "variation_level": "pilot",
+      "context_len_bucket": "pilot",
+      "num_subjects": 1,
+      "generator_model": "unknown"
+    },
+    {
+      "doc_id": "pilot-repeat-01",
+      "exact": {
+        "precision": 1.0,
+        "recall": 0.9583333333333334,
+        "f1": 0.9787234042553191,
+        "tp": 23,
+        "fp": 0,
+        "fn": 1
+      },
+      "character": {
+        "precision": 1.0,
+        "recall": 0.9852941176470589,
+        "f1": 0.9925925925925926,
+        "tp": 201,
+        "fp": 0,
+        "fn": 3
+      },
+      "entity_all_mentions_exact": {
+        "hit": 1,
+        "total": 2
+      },
+      "hard_negative": {
+        "hit": 0,
+        "total": 0
+      },
+      "non_pii_masked_chars": 0,
+      "non_pii_chars": 571,
+      "doc_type": "pilot",
+      "variation_level": "pilot",
+      "context_len_bucket": "pilot",
+      "num_subjects": 1,
+      "generator_model": "unknown"
+    },
+    {
+      "doc_id": "pilot-boundary-01",
+      "exact": {
+        "precision": 0.5,
+        "recall": 0.3333333333333333,
+        "f1": 0.4,
+        "tp": 1,
+        "fp": 1,
+        "fn": 2
+      },
+      "character": {
+        "precision": 1.0,
+        "recall": 0.4393939393939394,
+        "f1": 0.6105263157894737,
+        "tp": 29,
+        "fp": 0,
+        "fn": 37
+      },
+      "entity_all_mentions_exact": {
+        "hit": 0,
+        "total": 1
+      },
+      "hard_negative": {
+        "hit": 0,
+        "total": 0
+      },
+      "non_pii_masked_chars": 0,
+      "non_pii_chars": 4743,
+      "doc_type": "pilot",
+      "variation_level": "pilot",
+      "context_len_bucket": "pilot",
+      "num_subjects": 1,
+      "generator_model": "unknown"
+    },
+    {
+      "doc_id": "pilot-multi-01",
+      "exact": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 25
+      },
+      "character": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 284
+      },
+      "entity_all_mentions_exact": {
+        "hit": 0,
+        "total": 25
+      },
+      "hard_negative": {
+        "hit": 0,
+        "total": 0
+      },
+      "non_pii_masked_chars": 0,
+      "non_pii_chars": 618,
+      "doc_type": "pilot",
+      "variation_level": "pilot",
+      "context_len_bucket": "pilot",
+      "num_subjects": 5,
+      "generator_model": "unknown"
+    },
+    {
+      "doc_id": "pilot-len-4k",
+      "exact": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 46
+      },
+      "character": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 607
+      },
+      "entity_all_mentions_exact": {
+        "hit": 0,
+        "total": 39
+      },
+      "hard_negative": {
+        "hit": 0,
+        "total": 0
+      },
+      "non_pii_masked_chars": 0,
+      "non_pii_chars": 3407,
+      "doc_type": "pilot",
+      "variation_level": "pilot",
+      "context_len_bucket": "pilot",
+      "num_subjects": 1,
+      "generator_model": "unknown"
+    },
+    {
+      "doc_id": "pilot-len-19k",
+      "exact": {
+        "precision": 0.6470588235294118,
+        "recall": 0.04824561403508772,
+        "f1": 0.08979591836734693,
+        "tp": 11,
+        "fp": 6,
+        "fn": 217
+      },
+      "character": {
+        "precision": 0.65234375,
+        "recall": 0.05615332885003362,
+        "f1": 0.10340557275541795,
+        "tp": 167,
+        "fp": 89,
+        "fn": 2807
+      },
+      "entity_all_mentions_exact": {
+        "hit": 0,
+        "total": 61
+      },
+      "hard_negative": {
+        "hit": 0,
+        "total": 0
+      },
+      "non_pii_masked_chars": 0,
+      "non_pii_chars": 16248,
+      "doc_type": "pilot",
+      "variation_level": "pilot",
+      "context_len_bucket": "pilot",
+      "num_subjects": 1,
+      "generator_model": "unknown"
+    },
+    {
+      "doc_id": "pilot-len-45k",
+      "exact": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 527
+      },
+      "character": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 6982
+      },
+      "entity_all_mentions_exact": {
+        "hit": 0,
+        "total": 64
+      },
+      "hard_negative": {
+        "hit": 0,
+        "total": 0
+      },
+      "non_pii_masked_chars": 0,
+      "non_pii_chars": 38094,
+      "doc_type": "pilot",
+      "variation_level": "pilot",
+      "context_len_bucket": "pilot",
+      "num_subjects": 1,
+      "generator_model": "unknown"
+    }
+  ],
+  "model": "Qwen/Qwen3.5-4B",
+  "task": "span_extraction",
+  "manifest": {
+    "task": "span_extraction",
+    "protocol": {
+      "mode": "full_context_targeted",
+      "core_chars": 1200,
+      "halo_chars": 1200,
+      "max_output_tokens": 4096,
+      "version": "span_p1"
+    },
+    "git_commit": "c1c7c48bf5d233149d47660f2257131fb49c5ad7",
+    "created_at": "2026-09-25T15:41:39.731524+00:00",
+    "taxonomy_sha256": "b9ec20e3491f9dcdabb626fc04b1b85cc73bb45ebbe9de69849a1c402c00ae7e",
+    "data_sha256": "1bf54566826b4ed785678b625ff938411e84ee02566f671ffd5166c5aef9bdf0",
+    "requests_sha256": "2ab97f46d9149472f453bff806e9d160f4f83f41d404cb5ca0d5a69512e93d77",
+    "documents": 10,
+    "requests": 77,
+    "source_sha256": {
+      "protocol.py": "42a2eb13e5da34a8c67a8939fffb81c17ff9300a23ec3733bab7f55f2cfaf236",
+      "run.py": "327b6b74d3733b2bb37d9eb5e6ade73946a3746d2e7d3dcb31be621c4507d30a",
+      "providers.py": "80c47d79012fb5844af49c58b0899077d01bce02d4520dd83055324fbe6e3430",
+      "cohort.py": "da85e4f366023d0f4eaab66a22da2a54f2d7f0a56db7ac9859fc4cbe5e7107d0",
+      "__init__.py": "93dc538d3ddafec97e1a0337b78ae6dcf472988783f5d043d2a1bcc1fdb4d020",
+      "baselines.py": "6e98d212442e56cd8a8a4f3e5ebe0ebfe17001717f78819e4e108c9bccd8e628",
+      "dataset.py": "80cae825524e0c8741ca83894f95859a1ca96b245ba70e8d12b5b4802a030836",
+      "execute.py": "002dda31040c576aae4d33a803b1c9a42e47643c88e29ee6b68c093c8eb5a77a",
+      "metrics.py": "cefad2855667643f524db9eedc45ec04866333eff6cbccd76f8eb557be77a72e",
+      "export.py": "4c629bb28501f5a11d87cf5ea0e1d1c056c925014809a7f2dd27a88db421a6b9"
+    }
+  },
+  "response_sha256": "50f7d0019c03beb50a9ebfa5471aeda3f4bb066e9e35369b3f70c0ca27ae3a33",
+  "reliability": {
+    "requests": 77,
+    "failed_requests": 68,
+    "failure_rate": 0.8831168831168831,
+    "failures": [
+      {
+        "request_id": "pilot-cats-01:0000",
+        "errors": [
+          "item_10:quote_not_found",
+          "item_15:quote_not_found",
+          "item_20:outside_owned_core",
+          "item_21:quote_not_found",
+          "item_22:quote_not_found",
+          "item_23:quote_not_found",
+          "item_24:outside_owned_core"
+        ]
+      },
+      {
+        "request_id": "pilot-cats-01:0001",
+        "errors": [
+          "item_0:label_or_quote",
+          "item_1:quote_not_found"
+        ]
+      },
+      {
+        "request_id": "pilot-cats-02:0000",
+        "errors": [
+          "item_2:quote_not_found",
+          "item_3:quote_not_found",
+          "item_12:quote_not_found",
+          "item_14:quote_not_found",
+          "item_16:quote_not_found",
+          "item_17:quote_not_found",
+          "item_18:quote_not_found",
+          "item_19:outside_owned_core",
+          "item_20:quote_not_found",
+          "item_21:quote_not_found"
+        ]
+      },
+      {
+        "request_id": "pilot-cats-02:0001",
+        "errors": [
+          "item_0:label_or_quote",
+          "item_2:quote_not_found"
+        ]
+      },
+      {
+        "request_id": "pilot-dense-01:0000",
+        "errors": [
+          "invalid_json_or_schema"
+        ]
+      },
+      {
+        "request_id": "pilot-dense-01:0001",
+        "errors": [
+          "invalid_json_or_schema"
+        ]
+      },
+      {
+        "request_id": "pilot-dense-01:0002",
+        "errors": [
+          "invalid_json_or_schema"
+        ]
+      },
+      {
+        "request_id": "pilot-dense-01:0003",
+        "errors": [
+          "invalid_json_or_schema"
+        ]
+      },
+      {
+        "request_id": "pilot-dense-01:0004",
+        "errors": [
+          "invalid_json_or_schema"
+        ]
+      },
+      {
+        "request_id": "pilot-emoji-01:0000",
+        "errors": [
+          "invalid_json_or_schema"
+        ]
+      },
+      {
+        "request_id": "pilot-boundary-01:0001",
+        "errors": [
+          "invalid_json_or_schema"
+        ]
+      },
+      {
+        "request_id": "pilot-boundary-01:0002",
+        "errors": [
+          "invalid_json_or_schema"
+        ]
+      },
+      {
+        "request_id": "pilot-boundary-01:0003",
+        "errors": [
+          "item_0:quote_not_found"
+        ]
+      },
+      {
+        "request_id": "pilot-multi-01:0000",
+        "errors": [
+          "invalid_json_or_schema"
+        ]
+      },
+      {
+        "request_id": "pilot-len-4k:0000",
+        "errors": [
+          "invalid_json_or_schema"
+        ]
+      },
+      {
+        "request_id": "pilot-len-4k:0001",
+        "errors": [
+          "item_6:quote_not_found",
+          "item_8:label_or_quote",
+          "item_9:quote_not_found",
+          "item_12:quote_not_found",
+          "item_13:outside_owned_core",
+          "item_14:outside_owned_core"
+        ]
+      },
+      {
+        "request_id": "pilot-len-4k:0002",
+        "errors": [
+          "item_1:label_or_quote",
+          "item_2:quote_not_found",
+          "item_3:outside_owned_core",
+          "item_4:label_or_quote",
+          "item_7:schema",
+          "item_8:quote_not_found"
+        ]
+      },
+      {
+        "request_id": "pilot-len-4k:0003",
+        "errors": [
+          "invalid_json_or_schema"
+        ]
+      },
+      {
+        "request_id": "pilot-len-19k:0001",
+        "errors": [
+          "item_0:outside_owned_core",
+          "item_1:quote_not_found"
+        ]
+      },
+      {
+        "request_id": "pilot-len-19k:0004",
+        "errors": [
+          "item_1:quote_not_found",
+          "item_3:quote_not_found",
+          "item_5:label_or_quote",
+          "item_6:label_or_quote",
+          "item_7:label_or_quote",
+          "item_8:label_or_quote",
+          "item_9:quote_not_found",
+          "item_10:label_or_quote",
+          "item_11:quote_not_found",
+          "item_12:label_or_quote",
+          "item_13:quote_not_found",
+          "item_15:quote_not_found",
+          "item_17:quote_not_found",
+          "item_18:quote_not_found",
+          "item_19:quote_not_found",
+          "item_20:quote_not_found",
+          "item_21:quote_not_found",
+          "item_22:outside_owned_core",
+          "item_23:quote_not_found",
+          "item_24:quote_not_found",
+          "item_25:quote_not_found",
+          "item_26:outside_owned_core",
+          "item_27:quote_not_found",
+          "item_28:outside_owned_core",
+          "item_29:quote_not_found",
+          "item_30:outside_owned_core",
+          "item_31:quote_not_found",
+          "item_32:outside_owned_core",
+          "item_33:quote_not_found",
+          "item_34:label_or_quote",
+          "item_35:quote_not_found",
+          "item_36:label_or_quote",
+          "item_37:label_or_quote",
+          "item_38:outside_owned_core",
+          "item_39:label_or_quote",
+          "item_40:label_or_quote",
+          "item_41:label_or_quote",
+          "item_42:quote_not_found",
+          "item_43:quote_not_found",
+          "item_44:outside_owned_core",
+          "item_45:quote_not_found",
+          "item_46:label_or_quote",
+          "item_47:quote_not_found",
+          "item_48:outside_owned_core",
+          "item_49:quote_not_found"
+        ]
+      },
+      {
+        "request_id": "pilot-len-19k:0005",
+        "errors": [
+          "item_0:quote_not_found",
+          "item_1:quote_not_found",
+          "item_3:quote_not_found",
+          "item_4:quote_not_found",
+          "item_6:quote_not_found",
+          "item_7:quote_not_found",
+          "item_8:quote_not_found",
+          "item_9:quote_not_found",
+          "item_10:outside_owned_core",
+          "item_11:quote_not_found",
+          "item_12:quote_not_found",
+          "item_13:quote_not_found",
+          "item_14:quote_not_found",
+          "item_15:quote_not_found",
+          "item_16:quote_not_found",
+          "item_17:quote_not_found",
+          "item_18:quote_not_found",
+          "item_19:quote_not_found",
+          "item_20:quote_not_found",
+          "item_21:quote_not_found",
+          "item_22:quote_not_found",
+          "item_23:quote_not_found",
+          "item_24:quote_not_found",
+          "item_25:quote_not_found",
+          "item_26:quote_not_found",
+          "item_27:quote_not_found",
+          "item_28:quote_not_found",
+          "item_29:quote_not_found",
+          "item_30:quote_not_found",
+          "item_31:quote_not_found",
+          "item_32:quote_not_found",
+          "item_33:quote_not_found",
+          "item_35:quote_not_found",
+          "item_37:quote_not_found",
+          "item_38:quote_not_found",
+          "item_39:quote_not_found",
+          "item_40:label_or_quote"
+        ]
+      },
+      {
+        "request_id": "pilot-len-19k:0007",
+        "errors": [
+          "item_0:outside_owned_core",
+          "item_1:quote_not_found",
+          "item_2:outside_owned_core"
+        ]
+      },
+      {
+        "request_id": "pilot-len-19k:0008",
+        "errors": [
+          "item_0:label_or_quote"
+        ]
+      },
+      {
+        "request_id": "pilot-len-19k:0009",
+        "errors": [
+          "request_failed_or_truncated"
+        ]
+      },
+      {
+        "request_id": "pilot-len-19k:0010",
+        "errors": [
+          "invalid_json_or_schema"
+        ]
+      },
+      {
+        "request_id": "pilot-len-19k:0011",
+        "errors": [
+          "invalid_json_or_schema"
+        ]
+      },
+      {
+        "request_id": "pilot-len-19k:0012",
+        "errors": [
+          "invalid_json_or_schema"
+        ]
+      },
+      {
+        "request_id": "pilot-len-19k:0013",
+        "errors": [
+          "invalid_json_or_schema"
+        ]
+      },
+      {
+        "request_id": "pilot-len-19k:0014",
+        "errors": [
+          "invalid_json_or_schema"
+        ]
+      },
+      {
+        "request_id": "pilot-len-19k:0016",
+        "errors": [
+          "item_0:quote_not_found",
+          "item_1:quote_not_found",
+          "item_2:quote_not_found",
+          "item_3:quote_not_found",
+          "item_4:quote_not_found"
+        ]
+      },
+      {
+        "request_id": "pilot-len-45k:0000",
+        "errors": [
+          "item_4:quote_not_found",
+          "item_13:outside_owned_core",
+          "item_14:quote_not_found",
+          "item_15:quote_not_found",
+          "item_16:quote_not_found",
+          "item_17:quote_not_found",
+          "item_18:quote_not_found",
+          "item_19:quote_not_found",
+          "item_20:quote_not_found",
+          "item_21:quote_not_found",
+          "item_22:outside_owned_core",
+          "item_23:outside_owned_core",
+          "item_24:outside_owned_core",
+          "item_25:quote_not_found",
+          "item_26:quote_not_found",
+          "item_27:quote_not_found",
+          "item_28:quote_not_found",
+          "item_29:quote_not_found",
+          "item_30:quote_not_found",
+          "item_31:quote_not_found",
+          "item_32:quote_not_found",
+          "item_33:quote_not_found",
+          "item_35:quote_not_found",
+          "item_36:quote_not_found",
+          "item_37:quote_not_found",
+          "item_38:quote_not_found",
+          "item_39:quote_not_found",
+          "item_40:quote_not_found",
+          "item_41:quote_not_found",
+          "item_42:quote_not_found",
+          "item_43:quote_not_found",
+          "item_44:quote_not_found",
+          "item_45:quote_not_found",
+          "item_46:quote_not_found",
+          "item_47:quote_not_found",
+          "item_48:quote_not_found",
+          "item_49:quote_not_found",
+          "item_50:quote_not_found",
+          "item_51:quote_not_found",
+          "item_52:quote_not_found",
+          "item_53:quote_not_found",
+          "item_54:quote_not_found",
+          "item_55:quote_not_found",
+          "item_56:quote_not_found",
+          "item_57:quote_not_found",
+          "item_58:quote_not_found",
+          "item_59:quote_not_found",
+          "item_60:quote_not_found",
+          "item_61:quote_not_found",
+          "item_62:quote_not_found",
+          "item_63:quote_not_found",
+          "item_64:quote_not_found",
+          "item_65:quote_not_found",
+          "item_66:quote_not_found",
+          "item_67:quote_not_found",
+          "item_68:quote_not_found",
+          "item_69:quote_not_found",
+          "item_70:quote_not_found",
+          "item_71:quote_not_found",
+          "item_72:quote_not_found",
+          "item_73:quote_not_found",
+          "item_74:quote_not_found",
+          "item_75:label_or_quote",
+          "item_76:quote_not_found",
+          "item_77:quote_not_found",
+          "item_78:quote_not_found",
+          "item_79:quote_not_found",
+          "item_80:quote_not_found",
+          "item_81:quote_not_found",
+          "item_82:quote_not_found",
+          "item_83:quote_not_found",
+          "item_84:quote_not_found",
+          "item_85:quote_not_found",
+          "item_86:quote_not_found",
+          "item_87:quote_not_found",
+          "item_88:quote_not_found",
+          "item_89:quote_not_found",
+          "item_90:quote_not_found",
+          "item_91:quote_not_found",
+          "item_92:quote_not_found",
+          "item_93:quote_not_found",
+          "item_94:quote_not_found",
+          "item_95:quote_not_found",
+          "item_96:quote_not_found",
+          "item_97:quote_not_found",
+          "item_98:quote_not_found",
+          "item_99:quote_not_found",
+          "item_100:quote_not_found",
+          "item_101:quote_not_found",
+          "item_102:quote_not_found",
+          "item_103:label_or_quote",
+          "item_104:quote_not_found",
+          "item_105:label_or_quote",
+          "item_106:quote_not_found",
+          "item_107:quote_not_found",
+          "item_108:quote_not_found",
+          "item_109:quote_not_found",
+          "item_110:label_or_quote",
+          "item_111:label_or_quote",
+          "item_112:label_or_quote",
+          "item_114:quote_not_found",
+          "item_115:quote_not_found",
+          "item_116:quote_not_found",
+          "item_117:quote_not_found",
+          "item_118:quote_not_found",
+          "item_119:quote_not_found"
+        ]
+      },
+      {
+        "request_id": "pilot-len-45k:0001",
+        "errors": [
+          "request_failed_or_truncated"
+        ]
+      },
+      {
+        "request_id": "pilot-len-45k:0002",
+        "errors": [
+          "item_1:label_or_quote",
+          "item_2:label_or_quote",
+          "item_3:label_or_quote",
+          "item_4:label_or_quote",
+          "item_5:label_or_quote",
+          "item_8:label_or_quote",
+          "item_9:outside_owned_core",
+          "item_10:label_or_quote",
+          "item_11:label_or_quote",
+          "item_12:label_or_quote",
+          "item_13:label_or_quote",
+          "item_14:outside_owned_core",
+          "item_15:outside_owned_core",
+          "item_16:quote_not_found",
+          "item_17:quote_not_found",
+          "item_18:quote_not_found",
+          "item_19:quote_not_found"
+        ]
+      },
+      {
+        "request_id": "pilot-len-45k:0003",
+        "errors": [
+          "invalid_json_or_schema"
+        ]
+      },
+      {
+        "request_id": "pilot-len-45k:0004",
+        "errors": [
+          "item_5:quote_not_found",
+          "item_6:quote_not_found",
+          "item_7:quote_not_found",
+          "item_9:outside_owned_core",
+          "item_10:outside_owned_core",
+          "item_11:outside_owned_core",
+          "item_12:outside_owned_core",
+          "item_13:outside_owned_core",
+          "item_14:outside_owned_core",
+          "item_15:outside_owned_core",
+          "item_16:outside_owned_core",
+          "item_17:outside_owned_core",
+          "item_18:outside_owned_core",
+          "item_19:outside_owned_core",
+          "item_20:outside_owned_core",
+          "item_21:outside_owned_core"
+        ]
+      },
+      {
+        "request_id": "pilot-len-45k:0005",
+        "errors": [
+          "request_failed_or_truncated"
+        ]
+      },
+      {
+        "request_id": "pilot-len-45k:0006",
+        "errors": [
+          "item_1:label_or_quote",
+          "item_6:label_or_quote",
+          "item_7:quote_not_found"
+        ]
+      },
+      {
+        "request_id": "pilot-len-45k:0007",
+        "errors": [
+          "request_failed_or_truncated"
+        ]
+      },
+      {
+        "request_id": "pilot-len-45k:0008",
+        "errors": [
+          "request_failed_or_truncated"
+        ]
+      },
+      {
+        "request_id": "pilot-len-45k:0009",
+        "errors": [
+          "item_2:quote_not_found",
+          "item_8:quote_not_found",
+          "item_9:quote_not_found",
+          "item_10:outside_owned_core",
+          "item_11:quote_not_found",
+          "item_12:outside_owned_core",
+          "item_13:quote_not_found",
+          "item_14:quote_not_found",
+          "item_15:quote_not_found",
+          "item_16:quote_not_found",
+          "item_17:quote_not_found",
+          "item_18:outside_owned_core",
+          "item_19:outside_owned_core",
+          "item_20:outside_owned_core",
+          "item_21:outside_owned_core",
+          "item_22:quote_not_found",
+          "item_23:quote_not_found",
+          "item_24:quote_not_found",
+          "item_25:quote_not_found",
+          "item_26:quote_not_found",
+          "item_27:quote_not_found",
+          "item_28:quote_not_found",
+          "item_29:quote_not_found",
+          "item_30:quote_not_found",
+          "item_31:quote_not_found",
+          "item_32:quote_not_found",
+          "item_33:quote_not_found",
+          "item_34:quote_not_found",
+          "item_35:quote_not_found",
+          "item_36:quote_not_found",
+          "item_37:quote_not_found",
+          "item_38:quote_not_found",
+          "item_39:quote_not_found",
+          "item_40:quote_not_found",
+          "item_41:quote_not_found",
+          "item_42:quote_not_found",
+          "item_43:quote_not_found",
+          "item_44:quote_not_found",
+          "item_45:quote_not_found",
+          "item_46:quote_not_found"
+        ]
+      },
+      {
+        "request_id": "pilot-len-45k:0010",
+        "errors": [
+          "request_failed_or_truncated"
+        ]
+      },
+      {
+        "request_id": "pilot-len-45k:0011",
+        "errors": [
+          "item_9:quote_not_found",
+          "item_13:quote_not_found",
+          "item_14:outside_owned_core",
+          "item_15:outside_owned_core",
+          "item_16:outside_owned_core",
+          "item_17:outside_owned_core",
+          "item_18:outside_owned_core",
+          "item_19:quote_not_found",
+          "item_20:quote_not_found",
+          "item_21:outside_owned_core",
+          "item_22:quote_not_found",
+          "item_23:outside_owned_core",
+          "item_24:quote_not_found",
+          "item_25:quote_not_found",
+          "item_26:quote_not_found",
+          "item_27:quote_not_found",
+          "item_28:outside_owned_core"
+        ]
+      },
+      {
+        "request_id": "pilot-len-45k:0012",
+        "errors": [
+          "item_0:quote_not_found"
+        ]
+      },
+      {
+        "request_id": "pilot-len-45k:0013",
+        "errors": [
+          "request_failed_or_truncated"
+        ]
+      },
+      {
+        "request_id": "pilot-len-45k:0014",
+        "errors": [
+          "item_0:quote_not_found",
+          "item_1:quote_not_found",
+          "item_2:quote_not_found",
+          "item_3:quote_not_found",
+          "item_4:quote_not_found",
+          "item_5:quote_not_found",
+          "item_6:quote_not_found",
+          "item_7:quote_not_found",
+          "item_8:quote_not_found",
+          "item_9:quote_not_found",
+          "item_10:quote_not_found",
+          "item_11:quote_not_found",
+          "item_12:quote_not_found",
+          "item_13:quote_not_found",
+          "item_14:outside_owned_core",
+          "item_15:quote_not_found",
+          "item_16:quote_not_found",
+          "item_17:quote_not_found",
+          "item_18:quote_not_found",
+          "item_19:quote_not_found",
+          "item_20:quote_not_found",
+          "item_21:quote_not_found",
+          "item_22:quote_not_found",
+          "item_23:quote_not_found",
+          "item_24:quote_not_found",
+          "item_25:quote_not_found",
+          "item_26:quote_not_found",
+          "item_27:quote_not_found",
+          "item_28:quote_not_found",
+          "item_29:quote_not_found",
+          "item_30:quote_not_found",
+          "item_31:quote_not_found",
+          "item_32:quote_not_found",
+          "item_33:quote_not_found",
+          "item_34:quote_not_found",
+          "item_35:quote_not_found",
+          "item_36:quote_not_found",
+          "item_37:quote_not_found",
+          "item_38:quote_not_found",
+          "item_39:quote_not_found",
+          "item_40:quote_not_found",
+          "item_41:quote_not_found",
+          "item_42:quote_not_found",
+          "item_43:quote_not_found",
+          "item_44:quote_not_found",
+          "item_45:quote_not_found",
+          "item_46:quote_not_found",
+          "item_47:quote_not_found",
+          "item_48:quote_not_found",
+          "item_49:quote_not_found",
+          "item_50:quote_not_found",
+          "item_51:quote_not_found",
+          "item_52:quote_not_found",
+          "item_53:quote_not_found",
+          "item_54:quote_not_found",
+          "item_55:quote_not_found",
+          "item_56:quote_not_found",
+          "item_57:quote_not_found",
+          "item_58:quote_not_found",
+          "item_59:quote_not_found",
+          "item_60:quote_not_found",
+          "item_61:quote_not_found",
+          "item_62:quote_not_found",
+          "item_63:quote_not_found",
+          "item_64:quote_not_found",
+          "item_65:quote_not_found",
+          "item_66:quote_not_found",
+          "item_67:quote_not_found",
+          "item_68:quote_not_found",
+          "item_69:quote_not_found",
+          "item_70:quote_not_found",
+          "item_71:quote_not_found",
+          "item_72:quote_not_found",
+          "item_73:quote_not_found",
+          "item_74:quote_not_found",
+          "item_75:quote_not_found",
+          "item_76:quote_not_found",
+          "item_77:quote_not_found",
+          "item_78:quote_not_found",
+          "item_79:quote_not_found",
+          "item_80:quote_not_found",
+          "item_81:quote_not_found",
+          "item_82:quote_not_found",
+          "item_83:quote_not_found",
+          "item_84:quote_not_found",
+          "item_85:quote_not_found",
+          "item_86:quote_not_found",
+          "item_87:quote_not_found",
+          "item_88:quote_not_found",
+          "item_89:quote_not_found",
+          "item_90:quote_not_found",
+          "item_91:quote_not_found",
+          "item_92:quote_not_found",
+          "item_93:quote_not_found",
+          "item_94:quote_not_found",
+          "item_95:quote_not_found",
+          "item_96:quote_not_found",
+          "item_97:quote_not_found",
+          "item_98:quote_not_found",
+          "item_99:quote_not_found",
+          "item_100:quote_not_found",
+          "item_101:quote_not_found",
+          "item_102:quote_not_found",
+          "item_103:quote_not_found",
+          "item_104:quote_not_found",
+          "item_105:quote_not_found",
+          "item_106:quote_not_found",
+          "item_107:quote_not_found",
+          "item_108:quote_not_found",
+          "item_109:quote_not_found",
+          "item_110:quote_not_found"
+        ]
+      },
+      {
+        "request_id": "pilot-len-45k:0015",
+        "errors": [
+          "item_2:quote_not_found",
+          "item_3:outside_owned_core",
+          "item_4:outside_owned_core",
+          "item_5:quote_not_found"
+        ]
+      },
+      {
+        "request_id": "pilot-len-45k:0016",
+        "errors": [
+          "item_1:label_or_quote",
+          "item_3:label_or_quote",
+          "item_4:label_or_quote",
+          "item_5:label_or_quote",
+          "item_11:outside_owned_core",
+          "item_12:outside_owned_core",
+          "item_13:outside_owned_core",
+          "item_14:outside_owned_core",
+          "item_15:outside_owned_core",
+          "item_16:schema",
+          "item_17:schema",
+          "item_18:schema",
+          "item_19:schema",
+          "item_20:schema",
+          "item_21:schema",
+          "item_22:schema",
+          "item_23:schema",
+          "item_24:schema",
+          "item_25:schema"
+        ]
+      },
+      {
+        "request_id": "pilot-len-45k:0017",
+        "errors": [
+          "invalid_json_or_schema"
+        ]
+      },
+      {
+        "request_id": "pilot-len-45k:0018",
+        "errors": [
+          "item_1:label_or_quote",
+          "item_2:quote_not_found"
+        ]
+      },
+      {
+        "request_id": "pilot-len-45k:0019",
+        "errors": [
+          "item_0:outside_owned_core"
+        ]
+      },
+      {
+        "request_id": "pilot-len-45k:0020",
+        "errors": [
+          "request_failed_or_truncated"
+        ]
+      },
+      {
+        "request_id": "pilot-len-45k:0021",
+        "errors": [
+          "request_failed_or_truncated"
+        ]
+      },
+      {
+        "request_id": "pilot-len-45k:0022",
+        "errors": [
+          "request_failed_or_truncated"
+        ]
+      },
+      {
+        "request_id": "pilot-len-45k:0023",
+        "errors": [
+          "item_0:quote_not_found",
+          "item_1:quote_not_found",
+          "item_2:quote_not_found",
+          "item_3:quote_not_found",
+          "item_4:quote_not_found",
+          "item_5:quote_not_found",
+          "item_6:quote_not_found",
+          "item_7:quote_not_found",
+          "item_8:quote_not_found",
+          "item_9:quote_not_found",
+          "item_10:quote_not_found",
+          "item_11:label_or_quote",
+          "item_12:quote_not_found",
+          "item_13:quote_not_found",
+          "item_14:quote_not_found",
+          "item_15:quote_not_found",
+          "item_16:quote_not_found",
+          "item_17:quote_not_found",
+          "item_18:quote_not_found",
+          "item_19:quote_not_found",
+          "item_20:quote_not_found",
+          "item_21:quote_not_found",
+          "item_22:quote_not_found",
+          "item_23:quote_not_found",
+          "item_24:quote_not_found",
+          "item_25:quote_not_found",
+          "item_26:quote_not_found",
+          "item_27:quote_not_found",
+          "item_28:quote_not_found",
+          "item_29:quote_not_found",
+          "item_30:quote_not_found",
+          "item_31:quote_not_found",
+          "item_32:quote_not_found",
+          "item_33:quote_not_found",
+          "item_34:quote_not_found",
+          "item_35:quote_not_found",
+          "item_36:quote_not_found",
+          "item_37:quote_not_found",
+          "item_38:quote_not_found",
+          "item_39:quote_not_found",
+          "item_40:quote_not_found",
+          "item_41:quote_not_found",
+          "item_42:quote_not_found",
+          "item_43:quote_not_found",
+          "item_44:quote_not_found",
+          "item_45:quote_not_found",
+          "item_46:quote_not_found",
+          "item_47:quote_not_found",
+          "item_48:quote_not_found",
+          "item_49:quote_not_found",
+          "item_50:quote_not_found",
+          "item_51:quote_not_found",
+          "item_52:quote_not_found",
+          "item_53:quote_not_found",
+          "item_54:quote_not_found",
+          "item_55:quote_not_found",
+          "item_56:quote_not_found",
+          "item_57:quote_not_found",
+          "item_58:quote_not_found",
+          "item_59:quote_not_found",
+          "item_60:quote_not_found",
+          "item_61:quote_not_found",
+          "item_62:quote_not_found",
+          "item_63:quote_not_found",
+          "item_64:quote_not_found",
+          "item_65:quote_not_found",
+          "item_66:quote_not_found",
+          "item_67:quote_not_found",
+          "item_68:quote_not_found",
+          "item_69:quote_not_found",
+          "item_70:quote_not_found",
+          "item_71:quote_not_found",
+          "item_72:quote_not_found",
+          "item_73:quote_not_found",
+          "item_74:quote_not_found",
+          "item_75:quote_not_found",
+          "item_76:quote_not_found",
+          "item_77:quote_not_found",
+          "item_78:quote_not_found",
+          "item_79:quote_not_found",
+          "item_80:quote_not_found",
+          "item_81:quote_not_found",
+          "item_82:quote_not_found",
+          "item_83:quote_not_found",
+          "item_84:quote_not_found",
+          "item_85:quote_not_found",
+          "item_86:quote_not_found",
+          "item_87:quote_not_found",
+          "item_88:quote_not_found",
+          "item_89:quote_not_found",
+          "item_90:quote_not_found",
+          "item_91:quote_not_found",
+          "item_92:quote_not_found",
+          "item_93:quote_not_found",
+          "item_94:quote_not_found",
+          "item_95:quote_not_found",
+          "item_96:quote_not_found",
+          "item_97:quote_not_found",
+          "item_98:quote_not_found",
+          "item_99:quote_not_found",
+          "item_100:quote_not_found",
+          "item_101:quote_not_found",
+          "item_102:quote_not_found",
+          "item_103:quote_not_found",
+          "item_104:quote_not_found",
+          "item_105:quote_not_found",
+          "item_106:quote_not_found",
+          "item_107:quote_not_found",
+          "item_108:quote_not_found",
+          "item_109:quote_not_found",
+          "item_110:quote_not_found"
+        ]
+      },
+      {
+        "request_id": "pilot-len-45k:0024",
+        "errors": [
+          "request_failed_or_truncated"
+        ]
+      },
+      {
+        "request_id": "pilot-len-45k:0025",
+        "errors": [
+          "item_1:quote_not_found",
+          "item_9:quote_not_found",
+          "item_12:quote_not_found",
+          "item_13:quote_not_found",
+          "item_14:quote_not_found",
+          "item_15:quote_not_found",
+          "item_16:outside_owned_core",
+          "item_17:quote_not_found",
+          "item_18:outside_owned_core",
+          "item_19:quote_not_found",
+          "item_20:quote_not_found",
+          "item_21:quote_not_found",
+          "item_22:quote_not_found",
+          "item_23:quote_not_found",
+          "item_24:quote_not_found",
+          "item_25:quote_not_found",
+          "item_26:quote_not_found",
+          "item_27:quote_not_found",
+          "item_28:quote_not_found",
+          "item_29:quote_not_found",
+          "item_30:quote_not_found",
+          "item_31:quote_not_found",
+          "item_32:quote_not_found",
+          "item_33:label_or_quote"
+        ]
+      },
+      {
+        "request_id": "pilot-len-45k:0026",
+        "errors": [
+          "item_0:quote_not_found",
+          "item_8:outside_owned_core",
+          "item_9:quote_not_found",
+          "item_10:quote_not_found",
+          "item_11:quote_not_found",
+          "item_12:quote_not_found",
+          "item_13:quote_not_found",
+          "item_14:quote_not_found",
+          "item_15:quote_not_found",
+          "item_16:quote_not_found",
+          "item_17:outside_owned_core",
+          "item_18:outside_owned_core",
+          "item_19:outside_owned_core",
+          "item_20:outside_owned_core",
+          "item_21:outside_owned_core",
+          "item_22:quote_not_found",
+          "item_23:quote_not_found",
+          "item_24:quote_not_found",
+          "item_25:quote_not_found",
+          "item_26:quote_not_found",
+          "item_27:quote_not_found",
+          "item_28:quote_not_found",
+          "item_29:quote_not_found",
+          "item_30:quote_not_found",
+          "item_34:quote_not_found",
+          "item_35:label_or_quote",
+          "item_36:outside_owned_core",
+          "item_37:quote_not_found",
+          "item_38:quote_not_found",
+          "item_39:quote_not_found",
+          "item_40:quote_not_found",
+          "item_41:quote_not_found",
+          "item_42:quote_not_found",
+          "item_44:quote_not_found",
+          "item_45:quote_not_found",
+          "item_46:quote_not_found",
+          "item_47:quote_not_found",
+          "item_48:quote_not_found",
+          "item_49:quote_not_found",
+          "item_50:quote_not_found",
+          "item_51:quote_not_found",
+          "item_52:quote_not_found",
+          "item_53:quote_not_found",
+          "item_54:quote_not_found",
+          "item_55:quote_not_found"
+        ]
+      },
+      {
+        "request_id": "pilot-len-45k:0027",
+        "errors": [
+          "invalid_json_or_schema"
+        ]
+      },
+      {
+        "request_id": "pilot-len-45k:0028",
+        "errors": [
+          "request_failed_or_truncated"
+        ]
+      },
+      {
+        "request_id": "pilot-len-45k:0029",
+        "errors": [
+          "item_0:outside_owned_core",
+          "item_1:quote_not_found",
+          "item_2:quote_not_found",
+          "item_3:label_or_quote",
+          "item_4:label_or_quote",
+          "item_5:label_or_quote",
+          "item_6:label_or_quote",
+          "item_7:label_or_quote",
+          "item_8:label_or_quote",
+          "item_9:label_or_quote",
+          "item_10:label_or_quote",
+          "item_11:label_or_quote",
+          "item_12:label_or_quote",
+          "item_13:label_or_quote",
+          "item_14:label_or_quote",
+          "item_15:label_or_quote",
+          "item_16:label_or_quote",
+          "item_17:label_or_quote",
+          "item_18:label_or_quote",
+          "item_19:label_or_quote",
+          "item_20:label_or_quote",
+          "item_21:label_or_quote",
+          "item_22:label_or_quote",
+          "item_23:label_or_quote",
+          "item_24:label_or_quote",
+          "item_25:label_or_quote",
+          "item_26:label_or_quote",
+          "item_27:label_or_quote",
+          "item_28:label_or_quote",
+          "item_29:label_or_quote",
+          "item_30:label_or_quote",
+          "item_31:label_or_quote",
+          "item_32:label_or_quote",
+          "item_33:label_or_quote",
+          "item_34:label_or_quote",
+          "item_35:label_or_quote",
+          "item_36:label_or_quote",
+          "item_37:label_or_quote",
+          "item_38:label_or_quote",
+          "item_39:label_or_quote",
+          "item_40:label_or_quote",
+          "item_41:label_or_quote",
+          "item_42:label_or_quote",
+          "item_43:label_or_quote",
+          "item_44:label_or_quote",
+          "item_45:label_or_quote",
+          "item_46:label_or_quote",
+          "item_47:label_or_quote",
+          "item_48:label_or_quote",
+          "item_49:label_or_quote",
+          "item_50:label_or_quote",
+          "item_51:label_or_quote",
+          "item_52:label_or_quote",
+          "item_53:label_or_quote",
+          "item_54:label_or_quote",
+          "item_55:label_or_quote",
+          "item_56:label_or_quote",
+          "item_57:label_or_quote",
+          "item_58:label_or_quote",
+          "item_59:label_or_quote",
+          "item_60:label_or_quote",
+          "item_61:label_or_quote",
+          "item_62:label_or_quote",
+          "item_63:label_or_quote",
+          "item_64:label_or_quote",
+          "item_65:label_or_quote",
+          "item_66:label_or_quote",
+          "item_67:label_or_quote",
+          "item_68:label_or_quote",
+          "item_69:label_or_quote",
+          "item_70:label_or_quote",
+          "item_71:label_or_quote",
+          "item_72:label_or_quote",
+          "item_73:label_or_quote",
+          "item_74:label_or_quote",
+          "item_75:label_or_quote",
+          "item_76:label_or_quote",
+          "item_77:label_or_quote",
+          "item_78:label_or_quote",
+          "item_79:label_or_quote",
+          "item_80:label_or_quote",
+          "item_81:label_or_quote",
+          "item_82:label_or_quote",
+          "item_83:label_or_quote",
+          "item_84:label_or_quote",
+          "item_85:label_or_quote",
+          "item_86:label_or_quote",
+          "item_87:label_or_quote",
+          "item_88:label_or_quote",
+          "item_89:label_or_quote",
+          "item_90:label_or_quote",
+          "item_91:label_or_quote",
+          "item_92:label_or_quote",
+          "item_93:label_or_quote",
+          "item_94:label_or_quote",
+          "item_95:label_or_quote",
+          "item_96:label_or_quote",
+          "item_97:label_or_quote",
+          "item_98:label_or_quote",
+          "item_99:label_or_quote",
+          "item_100:label_or_quote",
+          "item_101:label_or_quote",
+          "item_102:label_or_quote",
+          "item_103:label_or_quote",
+          "item_104:label_or_quote",
+          "item_105:label_or_quote",
+          "item_106:label_or_quote",
+          "item_107:label_or_quote",
+          "item_108:label_or_quote",
+          "item_109:label_or_quote",
+          "item_110:label_or_quote",
+          "item_111:label_or_quote",
+          "item_112:label_or_quote",
+          "item_113:label_or_quote",
+          "item_114:label_or_quote",
+          "item_115:label_or_quote",
+          "item_116:label_or_quote",
+          "item_117:label_or_quote",
+          "item_118:label_or_quote",
+          "item_119:label_or_quote",
+          "item_120:label_or_quote",
+          "item_121:label_or_quote",
+          "item_122:label_or_quote",
+          "item_123:label_or_quote",
+          "item_124:label_or_quote",
+          "item_125:label_or_quote",
+          "item_126:label_or_quote"
+        ]
+      },
+      {
+        "request_id": "pilot-len-45k:0030",
+        "errors": [
+          "item_0:quote_not_found"
+        ]
+      },
+      {
+        "request_id": "pilot-len-45k:0031",
+        "errors": [
+          "invalid_json_or_schema"
+        ]
+      },
+      {
+        "request_id": "pilot-len-45k:0032",
+        "errors": [
+          "invalid_json_or_schema"
+        ]
+      },
+      {
+        "request_id": "pilot-len-45k:0033",
+        "errors": [
+          "item_0:label_or_quote",
+          "item_1:label_or_quote",
+          "item_6:quote_not_found",
+          "item_8:outside_owned_core",
+          "item_10:outside_owned_core",
+          "item_11:outside_owned_core",
+          "item_12:outside_owned_core",
+          "item_13:outside_owned_core",
+          "item_14:outside_owned_core",
+          "item_15:outside_owned_core",
+          "item_16:quote_not_found",
+          "item_17:quote_not_found",
+          "item_18:quote_not_found",
+          "item_19:quote_not_found",
+          "item_20:quote_not_found",
+          "item_21:quote_not_found",
+          "item_22:quote_not_found",
+          "item_23:quote_not_found",
+          "item_24:quote_not_found",
+          "item_25:quote_not_found",
+          "item_26:quote_not_found",
+          "item_27:quote_not_found",
+          "item_29:quote_not_found",
+          "item_30:quote_not_found",
+          "item_32:quote_not_found",
+          "item_33:quote_not_found",
+          "item_34:quote_not_found",
+          "item_35:quote_not_found",
+          "item_36:quote_not_found",
+          "item_37:quote_not_found",
+          "item_38:quote_not_found",
+          "item_39:quote_not_found",
+          "item_40:quote_not_found",
+          "item_41:quote_not_found",
+          "item_42:quote_not_found",
+          "item_43:outside_owned_core",
+          "item_44:quote_not_found",
+          "item_45:quote_not_found",
+          "item_46:label_or_quote",
+          "item_47:quote_not_found",
+          "item_48:quote_not_found",
+          "item_49:quote_not_found",
+          "item_50:quote_not_found",
+          "item_51:quote_not_found",
+          "item_52:quote_not_found",
+          "item_53:quote_not_found",
+          "item_54:quote_not_found",
+          "item_55:quote_not_found",
+          "item_56:quote_not_found",
+          "item_57:quote_not_found",
+          "item_58:quote_not_found",
+          "item_59:quote_not_found",
+          "item_60:quote_not_found",
+          "item_61:quote_not_found",
+          "item_62:quote_not_found",
+          "item_63:quote_not_found",
+          "item_64:quote_not_found",
+          "item_65:quote_not_found",
+          "item_66:quote_not_found",
+          "item_67:quote_not_found",
+          "item_68:quote_not_found",
+          "item_69:label_or_quote",
+          "item_70:quote_not_found",
+          "item_71:quote_not_found",
+          "item_72:quote_not_found",
+          "item_73:quote_not_found",
+          "item_74:quote_not_found",
+          "item_75:quote_not_found",
+          "item_76:quote_not_found",
+          "item_77:quote_not_found",
+          "item_78:quote_not_found",
+          "item_79:quote_not_found",
+          "item_80:quote_not_found",
+          "item_81:label_or_quote",
+          "item_82:label_or_quote",
+          "item_83:quote_not_found",
+          "item_84:quote_not_found",
+          "item_85:quote_not_found",
+          "item_86:quote_not_found",
+          "item_87:quote_not_found",
+          "item_88:quote_not_found",
+          "item_89:quote_not_found",
+          "item_90:quote_not_found",
+          "item_91:quote_not_found",
+          "item_92:quote_not_found",
+          "item_93:quote_not_found",
+          "item_94:quote_not_found",
+          "item_95:quote_not_found",
+          "item_96:quote_not_found",
+          "item_97:quote_not_found",
+          "item_98:quote_not_found",
+          "item_99:quote_not_found",
+          "item_100:quote_not_found",
+          "item_101:quote_not_found",
+          "item_102:quote_not_found",
+          "item_103:quote_not_found",
+          "item_104:quote_not_found",
+          "item_105:label_or_quote"
+        ]
+      },
+      {
+        "request_id": "pilot-len-45k:0034",
+        "errors": [
+          "request_failed_or_truncated"
+        ]
+      },
+      {
+        "request_id": "pilot-len-45k:0035",
+        "errors": [
+          "invalid_json_or_schema"
+        ]
+      },
+      {
+        "request_id": "pilot-len-45k:0036",
+        "errors": [
+          "item_8:outside_owned_core",
+          "item_9:quote_not_found",
+          "item_10:quote_not_found",
+          "item_11:quote_not_found",
+          "item_12:quote_not_found",
+          "item_13:quote_not_found",
+          "item_14:quote_not_found",
+          "item_15:quote_not_found",
+          "item_16:quote_not_found",
+          "item_17:quote_not_found",
+          "item_18:quote_not_found",
+          "item_19:quote_not_found",
+          "item_20:quote_not_found",
+          "item_21:quote_not_found",
+          "item_22:quote_not_found",
+          "item_23:quote_not_found",
+          "item_24:quote_not_found",
+          "item_25:quote_not_found",
+          "item_26:quote_not_found",
+          "item_27:label_or_quote",
+          "item_28:label_or_quote",
+          "item_29:quote_not_found",
+          "item_30:quote_not_found",
+          "item_31:quote_not_found",
+          "item_32:quote_not_found",
+          "item_33:quote_not_found",
+          "item_34:quote_not_found",
+          "item_35:quote_not_found",
+          "item_36:quote_not_found",
+          "item_37:quote_not_found",
+          "item_38:quote_not_found",
+          "item_39:quote_not_found",
+          "item_40:quote_not_found",
+          "item_41:quote_not_found",
+          "item_42:quote_not_found",
+          "item_43:quote_not_found",
+          "item_44:quote_not_found",
+          "item_45:quote_not_found",
+          "item_46:quote_not_found",
+          "item_47:quote_not_found",
+          "item_48:quote_not_found",
+          "item_49:quote_not_found",
+          "item_50:quote_not_found",
+          "item_51:quote_not_found",
+          "item_52:quote_not_found",
+          "item_53:quote_not_found",
+          "item_54:quote_not_found",
+          "item_55:quote_not_found",
+          "item_56:label_or_quote",
+          "item_57:label_or_quote",
+          "item_58:quote_not_found",
+          "item_59:quote_not_found",
+          "item_60:quote_not_found",
+          "item_61:quote_not_found",
+          "item_62:quote_not_found",
+          "item_63:quote_not_found",
+          "item_64:quote_not_found",
+          "item_65:quote_not_found",
+          "item_66:quote_not_found",
+          "item_67:quote_not_found",
+          "item_68:quote_not_found",
+          "item_69:quote_not_found",
+          "item_70:quote_not_found",
+          "item_71:quote_not_found",
+          "item_72:quote_not_found",
+          "item_73:quote_not_found",
+          "item_74:quote_not_found",
+          "item_75:quote_not_found",
+          "item_76:quote_not_found",
+          "item_77:quote_not_found",
+          "item_78:quote_not_found",
+          "item_79:quote_not_found",
+          "item_80:quote_not_found",
+          "item_81:quote_not_found",
+          "item_82:quote_not_found",
+          "item_83:quote_not_found",
+          "item_84:quote_not_found",
+          "item_85:label_or_quote",
+          "item_86:label_or_quote",
+          "item_87:quote_not_found",
+          "item_88:quote_not_found",
+          "item_89:quote_not_found",
+          "item_90:quote_not_found",
+          "item_91:quote_not_found",
+          "item_92:quote_not_found",
+          "item_93:quote_not_found",
+          "item_94:quote_not_found",
+          "item_95:quote_not_found",
+          "item_96:quote_not_found",
+          "item_97:quote_not_found",
+          "item_98:quote_not_found",
+          "item_99:quote_not_found",
+          "item_100:quote_not_found",
+          "item_101:quote_not_found",
+          "item_102:quote_not_found",
+          "item_103:quote_not_found",
+          "item_104:quote_not_found",
+          "item_105:quote_not_found",
+          "item_106:quote_not_found",
+          "item_107:quote_not_found",
+          "item_108:quote_not_found",
+          "item_109:quote_not_found",
+          "item_110:quote_not_found",
+          "item_111:quote_not_found",
+          "item_112:quote_not_found",
+          "item_113:quote_not_found"
+        ]
+      },
+      {
+        "request_id": "pilot-len-45k:0037",
+        "errors": [
+          "item_1:quote_not_found",
+          "item_2:quote_not_found",
+          "item_3:quote_not_found",
+          "item_4:quote_not_found",
+          "item_5:quote_not_found",
+          "item_6:quote_not_found",
+          "item_7:quote_not_found",
+          "item_8:quote_not_found",
+          "item_9:quote_not_found",
+          "item_10:quote_not_found",
+          "item_11:quote_not_found",
+          "item_12:quote_not_found",
+          "item_13:quote_not_found",
+          "item_14:quote_not_found",
+          "item_15:quote_not_found",
+          "item_16:quote_not_found",
+          "item_17:quote_not_found",
+          "item_18:quote_not_found",
+          "item_19:quote_not_found"
+        ]
+      }
+    ]
+  },
+  "usage": {
+    "input_tokens": 1436856,
+    "output_tokens": 107724,
+    "reasoning_tokens": 0,
+    "latency_seconds": 979.0961182881147
+  },
+  "requests_missing_usage": 0,
+  "execution": {
+    "cohort_sha256": null,
+    "config_sha256": "b20629da31e8be8145e0039bc929c495b2cbc96a2f36d240b43b6f4745a3af9b",
+    "requests_sha256": "2ab97f46d9149472f453bff806e9d160f4f83f41d404cb5ca0d5a69512e93d77",
+    "data_sha256": "1bf54566826b4ed785678b625ff938411e84ee02566f671ffd5166c5aef9bdf0",
+    "source_sha256": {
+      "__init__.py": "93dc538d3ddafec97e1a0337b78ae6dcf472988783f5d043d2a1bcc1fdb4d020",
+      "baselines.py": "6e98d212442e56cd8a8a4f3e5ebe0ebfe17001717f78819e4e108c9bccd8e628",
+      "cohort.py": "da85e4f366023d0f4eaab66a22da2a54f2d7f0a56db7ac9859fc4cbe5e7107d0",
+      "dataset.py": "80cae825524e0c8741ca83894f95859a1ca96b245ba70e8d12b5b4802a030836",
+      "execute.py": "002dda31040c576aae4d33a803b1c9a42e47643c88e29ee6b68c093c8eb5a77a",
+      "export.py": "4c629bb28501f5a11d87cf5ea0e1d1c056c925014809a7f2dd27a88db421a6b9",
+      "metrics.py": "cefad2855667643f524db9eedc45ec04866333eff6cbccd76f8eb557be77a72e",
+      "protocol.py": "42a2eb13e5da34a8c67a8939fffb81c17ff9300a23ec3733bab7f55f2cfaf236",
+      "providers.py": "80c47d79012fb5844af49c58b0899077d01bce02d4520dd83055324fbe6e3430",
+      "run.py": "327b6b74d3733b2bb37d9eb5e6ade73946a3746d2e7d3dcb31be621c4507d30a"
+    },
+    "config": {
+      "model": "Qwen/Qwen3.5-4B",
+      "model_revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+      "tokenizer_revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+      "operator": "은빈",
+      "run_id": "0925-05",
+      "price_date": "2026-09-25",
+      "provider": "openai_compatible",
+      "base_url": "http://127.0.0.1:8001/v1",
+      "input_limit": 262144,
+      "output_limit": 4096,
+      "total_limit": 262144,
+      "input_usd_per_million": 0,
+      "output_usd_per_million": 0,
+      "budget_usd": 0,
+      "settings_frozen": true,
+      "concurrency": 1,
+      "timeout_seconds": 180,
+      "generation": {
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      },
+      "tokenize_options": {
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      }
+    },
+    "git_commit": "c1c7c48bf5d233149d47660f2257131fb49c5ad7",
+    "created_at": "2026-09-25T15:54:32.743746+00:00",
+    "dependencies": {
+      "pandas": "3.0.6",
+      "spacy-legacy": "3.0.12",
+      "xxhash": "4.0.1",
+      "idna": "3.20",
+      "smart_open": "8.0.1",
+      "pydantic_core": "2.46.5",
+      "thinc": "8.3.13",
+      "blis": "1.3.3",
+      "setuptools": "84.0.0",
+      "multiprocess": "0.70.19",
+      "aiohappyeyeballs": "2.7.1",
+      "h11": "0.16.0",
+      "jiter": "0.17.0",
+      "spacy-loggers": "1.0.5",
+      "tqdm": "4.70.1",
+      "annotated-types": "0.8.0",
+      "requests": "2.34.2",
+      "anyio": "4.15.1",
+      "preshed": "3.0.13",
+      "six": "1.17.0",
+      "truststore": "0.10.4",
+      "phonenumbers": "9.0.39",
+      "frozenlist": "1.8.0",
+      "attrs": "26.1.0",
+      "pip": "24.0",
+      "rich": "15.0.0",
+      "pyarrow": "25.0.1",
+      "fsspec": "2026.2.0",
+      "weasel": "1.0.0",
+      "wrapt": "2.4.1",
+      "typing_extensions": "4.16.0",
+      "httpcore": "1.0.9",
+      "click": "8.5.0",
+      "hf-xet": "1.6.0",
+      "datasets": "4.8.4",
+      "multidict": "6.9.1",
+      "wasabi": "1.1.3",
+      "typer": "0.27.2",
+      "PyYAML": "6.0.3",
+      "propcache": "0.5.4",
+      "dill": "0.4.1",
+      "contourpy": "1.4.0",
+      "yarl": "1.25.1",
+      "mdurl": "0.1.2",
+      "numpy": "2.4.6",
+      "matplotlib": "3.11.2",
+      "httpx2": "2.13.1",
+      "fonttools": "4.65.0",
+      "regex": "2026.9.10",
+      "cymem": "2.0.13",
+      "requests-file": "3.0.1",
+      "pydantic": "2.13.5",
+      "httpx": "0.28.1",
+      "presidio_analyzer": "2.2.364",
+      "kiwisolver": "1.5.1",
+      "sniffio": "1.3.1",
+      "catalogue": "2.0.10",
+      "charset-normalizer": "3.5.1",
+      "Jinja2": "3.1.6",
+      "urllib3": "2.8.0",
+      "typing-inspection": "0.4.4",
+      "filelock": "4.0.1",
+      "srsly": "2.5.3",
+      "cycler": "0.12.1",
+      "tldextract": "5.3.2",
+      "murmurhash": "1.0.15",
+      "packaging": "26.3",
+      "certifi": "2026.7.22",
+      "pyparsing": "3.3.3",
+      "shellingham": "1.5.4",
+      "huggingface_hub": "1.32.0",
+      "aiosignal": "1.4.0",
+      "Pygments": "2.21.0",
+      "pluggy": "1.6.0",
+      "openai": "3.19.0",
+      "annotated-doc": "0.0.5",
+      "pillow": "12.3.0",
+      "iniconfig": "2.3.0",
+      "MarkupSafe": "3.0.3",
+      "cloudpathlib": "0.25.0",
+      "aiohttp": "3.14.3",
+      "ko-pii": "1.16.0",
+      "httpcore2": "2.13.1",
+      "markdown-it-py": "4.2.0",
+      "spacy": "3.8.16",
+      "confection": "1.3.3",
+      "pytest": "9.1.1",
+      "python-dateutil": "2.9.0.post0"
+    },
+    "accounting": {
+      "model": "Qwen/Qwen3.5-4B",
+      "complete": true,
+      "finished_requests": 77,
+      "planned_requests": 77,
+      "spent_or_reserved_usd": 0.0,
+      "budget_usd": 0,
+      "stop_reason": "complete"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "operator": "은빈",
+  "model": "openmed",
+  "model_id": "OpenMed/privacy-filter-multilingual",
+  "model_revision": "f914f18d909d541d288dfda44a4d0b6bdb638d57",
+  "started_at": "2026-09-30T07:11:47.115013+00:00",
+  "git_commit": "b4f76f4b3cd1542f50980144baa9e6874c9a7d6a",
+  "platform": "Linux-6.17.0-1012-gcp-x86_64-with-glibc2.39",
+  "python": "3.12.3",
+  "device": "cuda (NVIDIA A100-SXM4-40GB × 1, GPU 8)",
+  "scope": "all_1440_baseline_complete_pending_common_llm_cohort",
+  "paid_api_calls": 0,
+  "status": "complete",
+  "elapsed_seconds": 728.4,
+  "finished_at": "2026-09-30T07:23:31.061353+00:00",
+  "documents": 1440
+}
