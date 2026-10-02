@@ -1,0 +1,34 @@
+{
+  "date": "2026-10-02",
+  "status": "internal draft, not submitted",
+  "pdf_pages": 8,
+  "compiler": "Tectonic 0.17.0 / XeTeX",
+  "pdf": {
+    "path": "output/pdf/kiii-sac2027-draft.pdf",
+    "sha256": "cada6c8cc8b542b9395bd3ec7a5277be9b36e047ef1bd22f66f57c409e4d9e28"
+  },
+  "anonymous_source_bundle": {
+    "path": "output/pdf/kiii-sac2027-anonymous-source.zip",
+    "sha256": "f6e2ca6b795dc27c749d17ab73da457fbe59c39647f09cb501a30af1d936c448"
+  },
+  "source_sha256": {
+    "main.tex": "8e74da99e8cdd585619442dbaced8837505db3ef501e27e89dcde8d50fd6f8d1",
+    "references.bib": "d72a858a38ec2b2d1381114a83cd0aa80bd2c2452bebac897c425f091ea2d54e",
+    "acmart.cls": "2f949e6e3f2a79f2cdc218b9dcdbaa7dd451adb4ee0be1af6dc7ebe00b318ea7",
+    "ACM-Reference-Format.bst": "8ec002c927068bfc5b3cfe71b66aa4767b9e485530ac3c67ba5c064df4c2e6ac",
+    "sections/00_abstract.tex": "76c3a6a76dadc251dbe4640514949cc3fd952a9ea630cb08976d367ac11c071d",
+    "sections/01_introduction.tex": "27fee6f35f3744070e138fb3d053efc883fb7fa72ee1f55144169ea61e5ba955",
+    "sections/02_related_work.tex": "24ed6a3246375ae57e7f43ba62c8f0834229f13efcfadbf79c6ad187332d18f7",
+    "sections/03_taxonomy.tex": "7889763732ae0727175e3bdb0f77ea1df9433590a269149f333ee72ccc4523ff",
+    "sections/04_benchmark.tex": "97ab3c736ff33805f2ef5f69ca0734cf96d254e1d256da0a29f925f69c649f76",
+    "sections/05_experiments.tex": "0d6fd6f0934a4f70ff2e70cfc62e913befc0d9b874823777186f1736fbe3c8a7",
+    "sections/05_protocol.tex": "09aefa92e13e816beac79becde91a753fcd26b1548b9c231a8f39f530b644b7a",
+    "sections/06_results.tex": "64ff19f9cf90506a84cff3ba4d1c2d36cc6b8dc1464792e6705097d224f1286c",
+    "sections/07_conclusion.tex": "085203d7fecccfd745da06c652b0909585daadb590317db725e860f6af096aef",
+    "sections/08_diagnostics.tex": "4242ab951c559bfb2ff45bd71c109332f657ea962071ba283f5f19dd796ffb16",
+    "sections/09_discussion.tex": "aa480b83790afeb930c0274a96ff64c6a64d909cc9d94c3f955cab559a720a25",
+    "sections/fig1_overview.tex": "60410414007154700ad3a0a6381e75f119de858a4bd2d906affa3173ef2da508",
+    "figures/context-contrasts.pdf": "9ecc3746936c98cc489397d68c7c2f376502c3fc42c230017c0d83dede73c1c5",
+    "figures/fig1_overview.pdf": "5f1ff66c09c0ad34d3721536a215f2015acba671e86374880b0ec92af0150846"
+  }
+}

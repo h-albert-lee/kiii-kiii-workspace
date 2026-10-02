@@ -1,0 +1,115 @@
+\section{Output Diagnostics and Reproducibility}
+\label{app:diagnostics}
+
+All scores use the frozen preview and preserve the original strict results. There are 22 completed LLM conditions and three frozen baselines; no pilot or partial scores enter the tables. Each 1,440-document LLM run comprises 13,723 requests and 218,664 gold mentions. Kanana-1.5-8B uses 1,438 documents, 13,653 requests and 218,197 mentions after two recorded length exclusions. No missing pair is imputed. The comparison is an archival completed-run study, not evidence that every originally planned experiment completed.
+
+\paragraph{Serving and sampling.}
+Operator records report vLLM 0.30.0 for Qwen/Kanana/EXAONE (BF16, temperature 1, top-$p$ 1), and vLLM 0.19.0 for Gemma on one H100 80GB. Gemma inherits its native generation settings (temperature 1, top-$p$ 0.95, top-$k$ 64); thinking is disabled. Gemma-31B uses FP8 weights and FP8 KV cache, while the other Gemma models use BF16. Gemma's runner dependency inventory differs from its server inventory; these must not be conflated. Archived revisions, request hashes, raw-response hashes, original runner/source hashes and replay-scoring hashes accompany the reproducibility records. Output replay verifies scoring and request coverage, not deployment equivalence. Recorded gate summaries do not independently validate missing native counts. No source stamp was substituted to make external-runner outputs pass a native exporter.
+
+\paragraph{Reading the diagnostic table.}
+Table~\ref{tab:response-diagnostics} reports the three diagnostic views
+specified in \S\ref{sec:protocol}. Compliance and empty-list rates use all
+requests, whereas D scores use all gold and invalid-item penalties. These
+columns cannot be multiplied into a single error rate. In particular, an
+empty list may be structurally compliant but contribute no true positives.
+
+\begin{table*}[t]
+\caption{Post-hoc output diagnostics (0--100). Fmt: structural compliance; Empty: empty-list rate; D: detection proxy. Invalid items incur exact-FP penalties. F/L: full/local; $\dagger$: 1,438 documents.}
+\label{tab:response-diagnostics}
+\small
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}llrrrrrr@{}}
+\toprule
+System & Context & Fmt & Empty & D-Prc & D-Rec & D-F1 & Invalid items \\
+\midrule
+Qwen3.5-2B & F & 28.48 & 1.38 & 3.39 & 1.08 & 1.64 & 64,498 \\
+Qwen3.5-4B & L & 47.37 & 4.99 & 12.59 & 6.52 & 8.59 & 83,370 \\
+Kanana-2-3B & F & 72.22 & 2.18 & 5.64 & 2.20 & 3.17 & 75,465 \\
+Kanana-2-3B & L & 63.62 & 8.69 & 12.02 & 2.47 & 4.09 & 31,764 \\
+Qwen3.5-9B & F & 75.79 & 16.83 & 18.58 & 11.81 & 14.44 & 96,349 \\
+Qwen3.5-9B & L & 76.35 & 13.82 & 22.62 & 15.02 & 18.05 & 87,614 \\
+Kanana-1.5-8B$^\dagger$ & F & 46.09 & 0.74 & 5.11 & 6.09 & 5.55 & 235,147 \\
+Kanana-1.5-8B$^\dagger$ & L & 40.01 & 0.23 & 12.01 & 6.40 & 8.35 & 83,701 \\
+EXAONE-4.5-33B & F & 62.88 & 26.36 & 8.67 & 9.07 & 8.87 & 186,354 \\
+EXAONE-4.5-33B & L & 80.13 & 29.86 & 14.68 & 14.33 & 14.50 & 145,380 \\
+Qwen3-30B-A3B & F & 90.42 & 53.06 & 9.38 & 6.31 & 7.55 & 123,733 \\
+Qwen3-30B-A3B & L & 93.78 & 17.61 & 15.04 & 11.84 & 13.25 & 123,434 \\
+Gemma-4-E2B & F & 0.04 & 46.69 & 16.55 & 6.89 & 9.73 & 62,457 \\
+Gemma-4-E2B & L & 1.28 & 54.11 & 28.10 & 7.70 & 12.09 & 28,868 \\
+Gemma-4-E4B & F & 84.00 & 5.62 & 16.35 & 12.64 & 14.25 & 129,082 \\
+Gemma-4-E4B & L & 87.34 & 8.88 & 30.42 & 16.98 & 21.79 & 65,661 \\
+Gemma-4-12B & F & 5.55 & 12.19 & 31.94 & 26.15 & 28.76 & 85,401 \\
+Gemma-4-12B & L & 5.55 & 7.79 & 30.84 & 28.85 & 29.81 & 92,237 \\
+Gemma-4-26B-A4B & F & 95.77 & 12.29 & 34.78 & 24.60 & 28.82 & 69,113 \\
+Gemma-4-26B-A4B & L & 96.10 & 7.19 & 31.14 & 27.20 & 29.04 & 84,943 \\
+Gemma-4-31B (FP8) & F & 4.98 & 5.74 & 29.00 & 31.59 & 30.24 & 102,275 \\
+Gemma-4-31B (FP8) & L & 4.56 & 4.17 & 28.86 & 34.86 & 31.58 & 104,568 \\
+\bottomrule
+\end{tabular*}
+\end{table*}
+
+\subsection{Taxonomy groups and context contrasts}
+\label{app:result-layout}
+
+Table~\ref{tab:taxonomy-results} aggregates strict TP/FP/FN within each taxonomy group before computing precision/recall/F1. It does not average category F1. The groups encode our detection policy, not relative legal severity. Stratification by T level, operation, subject role, document type and generator remains available in the archived results. T levels are different documents rather than paired rewrites. Character-overlap diagnostics use valid anchored predictions and all gold, but cannot charge character FP for unanchorable items; interpret them with invalid-item counts and exact penalized precision.
+
+\begin{table*}[t]
+\caption{Strict taxonomy-group Prc/Rec/F1 (0--100). F/L: full/local; D: document-level baseline. $\dagger$: 1,438 documents; others 1,440.}
+\label{tab:taxonomy-results}
+\small
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}llrrrrrrrrr@{}}
+\toprule
+& & \multicolumn{3}{c}{L / identifier} & \multicolumn{3}{c}{L / attribute} & \multicolumn{3}{c}{I / attribute} \\
+System & Context & Prc & Rec & F1 & Prc & Rec & F1 & Prc & Rec & F1 \\
+\midrule
+Qwen3.5-2B & F & 45.23 & 0.13 & 0.25 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 \\
+Qwen3.5-4B & L & 59.04 & 1.04 & 2.05 & 0.00 & 0.00 & 0.00 & 14.02 & 0.02 & 0.05 \\
+Kanana-2-3B & F & 60.59 & 1.07 & 2.11 & 12.20 & 0.01 & 0.02 & 17.47 & 0.06 & 0.12 \\
+Kanana-2-3B & L & 44.18 & 1.71 & 3.29 & 9.41 & 0.01 & 0.03 & 22.41 & 0.10 & 0.20 \\
+Qwen3.5-9B & F & 72.98 & 3.44 & 6.57 & 19.61 & 0.17 & 0.33 & 20.49 & 0.16 & 0.31 \\
+Qwen3.5-9B & L & 70.41 & 3.92 & 7.43 & 15.45 & 0.14 & 0.28 & 18.75 & 0.14 & 0.27 \\
+Kanana-1.5-8B$^\dagger$ & F & 71.08 & 0.31 & 0.63 & 42.00 & 0.04 & 0.08 & 37.50 & 0.04 & 0.08 \\
+Kanana-1.5-8B$^\dagger$ & L & 66.51 & 0.84 & 1.66 & 26.67 & 0.03 & 0.06 & 32.32 & 0.10 & 0.20 \\
+EXAONE-4.5-33B & F & 64.57 & 0.70 & 1.39 & 20.31 & 0.22 & 0.43 & 27.09 & 0.11 & 0.21 \\
+EXAONE-4.5-33B & L & 69.59 & 1.67 & 3.27 & 44.22 & 0.52 & 1.03 & 30.88 & 0.14 & 0.27 \\
+Qwen3-30B-A3B & F & 75.10 & 0.55 & 1.09 & 1.72 & $<0.01$ & $<0.01$ & 20.00 & 0.02 & 0.03 \\
+Qwen3-30B-A3B & L & 68.71 & 1.82 & 3.55 & 18.32 & 0.07 & 0.14 & 13.93 & 0.05 & 0.11 \\
+Gemma-4-E2B & F & 75.00 & $<0.01$ & 0.01 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 \\
+Gemma-4-E2B & L & 71.43 & $<0.01$ & 0.01 & 0.00 & 0.00 & 0.00 & 14.29 & $<0.01$ & $<0.01$ \\
+Gemma-4-E4B & F & 80.99 & 5.45 & 10.21 & 34.74 & 0.60 & 1.18 & 33.82 & 0.36 & 0.72 \\
+Gemma-4-E4B & L & 77.97 & 7.37 & 13.47 & 39.09 & 1.02 & 2.00 & 28.50 & 0.54 & 1.05 \\
+Gemma-4-12B & F & 70.15 & 0.05 & 0.09 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 \\
+Gemma-4-12B & L & 62.82 & 0.05 & 0.10 & 11.11 & $<0.01$ & $<0.01$ & 0.00 & 0.00 & 0.00 \\
+Gemma-4-26B-A4B & F & 71.80 & 9.00 & 15.99 & 12.89 & 0.25 & 0.49 & 9.05 & 0.12 & 0.23 \\
+Gemma-4-26B-A4B & L & 71.23 & 8.31 & 14.89 & 8.40 & 0.25 & 0.49 & 8.46 & 0.15 & 0.30 \\
+Gemma-4-31B (FP8) & F & 40.00 & $<0.01$ & $<0.01$ & 3.03 & $<0.01$ & $<0.01$ & 6.25 & $<0.01$ & $<0.01$ \\
+Gemma-4-31B (FP8) & L & 58.06 & 0.02 & 0.04 & 3.12 & $<0.01$ & $<0.01$ & 0.00 & 0.00 & 0.00 \\
+Presidio & D & 64.42 & 11.92 & 20.12 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 \\
+ko-pii & D & 8.67 & 24.95 & 12.87 & 0.00 & 0.00 & 0.00 & 0.01 & $<0.01$ & $<0.01$ \\
+OpenMed & D & 9.68 & 2.62 & 4.13 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 \\
+\bottomrule
+\end{tabular*}
+\end{table*}
+
+\begin{table}[t]
+\caption{Within-model strict full-minus-local F1, in points, with pointwise 95\% document-paired bootstrap intervals (2,000 draws, seed 0). Exploratory intervals are not multiplicity-adjusted.}
+\label{tab:paired-context}
+\small
+\begin{tabularx}{\columnwidth}{@{}>{\RaggedRight\arraybackslash}Xrrr@{}}
+\toprule
+System & $N$ & $\Delta$ & 95\% CI \\
+\midrule
+Kanana-2-3B & 1440 & -0.593 & [-0.774, -0.413] \\
+Qwen3.5-9B & 1440 & -0.393 & [-0.752, -0.015] \\
+Kanana-1.5-8B$^\dagger$ & 1438 & -0.509 & [-0.701, -0.313] \\
+EXAONE-4.5-33B & 1440 & -1.043 & [-1.322, -0.776] \\
+Qwen3-30B-A3B & 1440 & -1.209 & [-1.464, -0.973] \\
+Gemma-4-E2B & 1440 & -0.003 & [-0.010, +0.006] \\
+Gemma-4-E4B & 1440 & -1.888 & [-2.304, -1.463] \\
+Gemma-4-12B & 1440 & -0.003 & [-0.027, +0.023] \\
+Gemma-4-26B-A4B & 1440 & +0.573 & [+0.249, +0.899] \\
+Gemma-4-31B (FP8) & 1440 & -0.014 & [-0.025, -0.004] \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+These intervals describe the observed synthetic-document collection and one execution per condition. They do not quantify stochastic rerun variability or population-level production uncertainty. Shared generation plans may induce dependence, and semantic near-duplicate clustering has not been established. The two incomplete Qwen pairs are excluded only from paired analysis, with their completed conditions retained in Table~\ref{tab:main-results}. The medium/large extensions followed qualitative formatting-failure reports; neither model selection nor the diagnostic is preregistered.

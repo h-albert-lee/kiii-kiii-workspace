@@ -1,0 +1,34 @@
+\section{Taxonomy}
+\label{sec:taxonomy}
+
+%% ~0.6 page. Table 1 = compact category table. Full statute quotes → appendix / repo.
+Our taxonomy has two tiers and two kinds. \textbf{Tier L (Legal)} contains only categories \emph{enumerated} by Korean statute: the Personal Information Protection Act (PIPA) \S23--24 and Enforcement Decree \S18--19 (sensitive and unique identifying information); the Credit Information Act (CIA) \S2 and its Enforcement Decree \S2, which lists 성명·주소·전화번호, e-mail and SNS addresses, the four national identification numbers, \emph{CI/DI and any identifier a credit-information company assigns to a customer} (\S2\,③), and business/corporate registration numbers (\S2\,④); the Real Name Financial Transactions Act \S4 (transaction information); and the Electronic Financial Transactions Act \S2(10) (access media) and Decree \S7\,④ (account and policy numbers, transaction records). \textbf{Tier I (Identifiability)} contains additional categories that act as quasi-identifiers~\cite{pilan2022tab} or, when aggregated, enable profiling and personalised social engineering; membership in Tier I is a benchmark design choice, not a claim that these categories lack legal protection.
+
+Each category is an \textbf{identifier} (a span that alone points at a person or account) or an \textbf{attribute}. CIA \S2(1)(a) defines identifying information as credit information \emph{only when combined with} transaction, creditworthiness or capacity information; we encode this as a span policy: L-identifiers and sensitive information are \nolinkurl{must_mask}, L-attributes are \nolinkurl{mask_if_linked}, and Tier I is \nolinkurl{detect_only}. Table~\ref{tab:taxonomy} lists the 36 categories (17 L-identifier, 7 L-attribute, 12 I-attribute). Staff names are annotated as PII with a \nolinkurl{subject_role} of \emph{staff}; institution and product names, biometric templates and unattributed amounts are excluded.
+
+\paragraph{A shared operational policy.}
+L and I describe the basis for inclusion, not a universal ranking of sensitivity. All systems are scored against the same 36-category Korean benchmark definition and both tiers; prompted models receive that definition, while baseline labels use a fixed mapping. Masking policies are separate metadata. Thus device/IP remains a Tier I target regardless of a model's default privacy judgments. We compare L-identifier, L-attribute and I-attribute performance separately. A missed span alone does not establish a model's legal or cultural beliefs.
+
+\begin{table}[t]
+\caption{Taxonomy overview: all 36 categories, with abbreviated labels. L denotes Legal and I denotes Identifiability.}
+\label{tab:taxonomy}
+\small
+\begin{tabularx}{\columnwidth}{@{}>{\RaggedRight\arraybackslash}p{0.23\columnwidth}>{\RaggedRight\arraybackslash}X@{}}
+\toprule
+\textbf{Tier / kind} & \textbf{Categories} \\
+\midrule
+L / identifier\newline (17) & name; RRN; foreigner reg.\ no.; passport; driver's licence; phone; address; e-mail; online handle; customer ID; business reg.\ no.; corporate reg.\ no.; bank account; securities account; card; contract no.; access credential. \\
+\addlinespace
+L / attribute\newline (7) & credit transaction; transaction record; delinquency; financial capacity; credit score; public record; sensitive information. \\
+\addlinespace
+I / attribute\newline (12) & DOB/age; gender; nationality; family relation; employer/position; education; life event; investment profile; consultation content; service usage; device/IP; location mention. \\
+\bottomrule
+\end{tabularx}
+\par\smallskip
+\begin{minipage}{\columnwidth}
+\RaggedRight\small
+\textit{Policies.} L identifiers and sensitive information: must mask.
+Other L attributes: mask if linked. I attributes: detect only.
+Full subtypes, statutory citations and format rules are in the taxonomy specification.
+\end{minipage}
+\end{table}

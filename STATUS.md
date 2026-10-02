@@ -1,5 +1,17 @@
 # STATUS — 2026-10-01
 
+## SAC 2027 preparation — 2026-10-02
+
+[ADR-0039](docs/decisions/0039-sac2027-submission-preparation.md) authorizes a
+separate SAC AIFT manuscript based on the completed ADR-0038 snapshot.
+[SAC workspace and checklist](papers/sac2027/README.md). Sara continues workshop
+polishing in the existing Overleaf project; `paper/` stays at `8d73e63` for this
+snapshot. The operator reports Prof. Yongjae Lee confirmed both submissions
+are acceptable. No new inference or EasyChair submission; no live workshop
+source/comments changed. Official extended deadline Oct 16 (EST as printed),
+internal target Oct 14 KST; anonymous 8-total-page target. Final source/PDF
+checks and outstanding submission items are recorded in the SAC folder.
+
 ## Current outcome
 
 **Collection closed by operator (ADR-0038): 25 completed conditions from 15 systems, including Sunghyun’s ten Gemma conditions, verified for manuscript use. Unfinished/pilot-only conditions are excluded. No new inference. Native count/source deployment limitations remain explicit.**

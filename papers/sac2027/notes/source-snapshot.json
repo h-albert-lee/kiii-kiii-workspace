@@ -1,0 +1,22 @@
+{
+  "paper_commit": "8d73e637e2c9cb909cc8052e3604199849e549b6",
+  "workspace_commit": "5d4c8fc5658e140ea4026ce5a660049d09799cf5",
+  "files": {
+    "main.tex": "cdaebd14bdfb4d29687292712158726cfb8601900dad5bc489ae0f3a6e8cb0ba",
+    "references.bib": "d72a858a38ec2b2d1381114a83cd0aa80bd2c2452bebac897c425f091ea2d54e",
+    "acmart.cls": "2f949e6e3f2a79f2cdc218b9dcdbaa7dd451adb4ee0be1af6dc7ebe00b318ea7",
+    "ACM-Reference-Format.bst": "8ec002c927068bfc5b3cfe71b66aa4767b9e485530ac3c67ba5c064df4c2e6ac",
+    "sections/00_abstract.tex": "8d7bae89ee609b7da8f060ecf5aa7ef40fdce3e7855c84200155fc9ef4d57b38",
+    "sections/01_introduction.tex": "27fee6f35f3744070e138fb3d053efc883fb7fa72ee1f55144169ea61e5ba955",
+    "sections/02_related_work.tex": "24ed6a3246375ae57e7f43ba62c8f0834229f13efcfadbf79c6ad187332d18f7",
+    "sections/03_taxonomy.tex": "7889763732ae0727175e3bdb0f77ea1df9433590a269149f333ee72ccc4523ff",
+    "sections/04_benchmark.tex": "97ab3c736ff33805f2ef5f69ca0734cf96d254e1d256da0a29f925f69c649f76",
+    "sections/05_experiments.tex": "ca4d91bdb8978ae04643eb57d2eccead41bfa27854203c9260fddf263cff7254",
+    "sections/06_results.tex": "2fa0ad51ac258e691ea58d42ee059b25a4b2382b8173175570f1c2d48b865f45",
+    "sections/07_conclusion.tex": "56d097bd69ff96b7be16e845718cf19ab49199d8b59f5365d5c56ea8b1cfb4a1",
+    "sections/A_appendix.tex": "b9913b94267165607c9c5ed4a0887118aa0d41419546b41396beeba94651a2b2",
+    "sections/fig1_overview.tex": "60410414007154700ad3a0a6381e75f119de858a4bd2d906affa3173ef2da508",
+    "figures/fig1_overview.pdf": "5f1ff66c09c0ad34d3721536a215f2015acba671e86374880b0ec92af0150846"
+  },
+  "note": "Read-only snapshot of published workshop source; native Overleaf comments remain in original project and are not copied by Git. No workshop source or comment was edited."
+}

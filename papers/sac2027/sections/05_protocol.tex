@@ -1,0 +1,88 @@
+\section{Separating Extraction Reliability from Detection}
+\label{sec:protocol}
+
+We distinguish three observable questions: can the response be processed under
+the requested contract, can its proposed items be located in the source, and
+do the located spans match the benchmark policy? These questions share an
+evaluation collection but have different denominators. A response may satisfy
+the JSON contract while returning no PII, or contain several correct quotations
+alongside one invalid item. Neither structural compliance nor strict extraction
+F1 alone explains both cases.
+
+\subsection{A fixed output task under different context}
+Let a document contain $n$ Unicode code points. For request $j$, define a
+non-overlapping core $C_j=[s_j,e_j)$ of at most $c=1{,}200$ characters and a
+target $T_j=[s_j,\min(n,e_j+h))$, with following halo $h=1{,}200$.
+The full condition supplies the entire document as context. The local
+condition supplies $[\max(0,s_j-h),\min(n,e_j+h))$. Both also supply the
+same target string and core length, with the same category definitions and
+output cap. Partitioning uses text length only; it does not inspect gold
+categories, subject identities or span locations.
+
+An output item specifies a category, an exact target quotation and a
+one-based occurrence index, counting overlapping occurrences. Its span is
+owned by the request containing its start in $C_j$; its end may extend into
+the following halo but not beyond $T_j$. This ownership rule avoids counting
+the same mention from overlapping requests. Identical category--boundary
+predictions are deduplicated deterministically. The scheme avoids asking the
+model to compute document-wide numeric offsets, but exact quotation and
+occurrence selection remain part of the task. A wrong occurrence can yield
+an incorrect location even when the text exists elsewhere in the target.
+
+The output task is held fixed, not the input length or inference cost.
+Mentions extending beyond their owner's target remain gold false negatives
+if they cannot be represented. We do not shorten the gold collection to make
+either context condition easier. The experiment therefore measures the
+effect of additional input context within this particular extraction
+interface, rather than comparing unconstrained whole-document summarization
+with chunk-by-chunk annotation.
+
+\subsection{Primary strict extraction}
+Strict evaluation requires normal completion, the specified JSON root and
+item structure, known labels, exact quotation anchoring and valid ownership
+for every item in a response. If any item fails, that request contributes
+no predictions. Truncated, terminal-failure and unparseable responses are
+also empty. Gold spans remain in every case. Micro-precision and recall use
+corpus-aggregated exact typed-span counts, with
+\begin{equation}
+ F_1=\frac{2\mathrm{TP}}{2\mathrm{TP}+\mathrm{FP}+\mathrm{FN}}.
+\end{equation}
+This primary score measures end-to-end extraction under the frozen contract.
+Atomic rejection can suppress both valid and invalid items in the same
+response, so it should not be read as a direct count of all recognizable PII.
+
+\subsection{Post-hoc diagnostic views}
+We replay archived responses without another model call. The diagnostic
+parser permits removal of a single whole-response JSON fence and validates
+parsed items independently. It retains exactly anchored valid items and
+charges one exact false positive for each invalid parsed item. Let $I$ be
+this invalid-item count and $\mathrm{FP}_a$ the unmatched anchored predictions.
+The detection proxy uses $\mathrm{FP}_D=\mathrm{FP}_a+I$ in precision and
+F1; recall includes all gold, including gold belonging to failed requests.
+Thus keeping valid siblings does not make malformed items disappear without
+a penalty. We call these measures D-P, D-R and D-F1.
+
+Structural compliance is measured separately over \emph{all requests}.
+It requires normally completed raw JSON with the prescribed field types
+and no duplicate keys; JSON fences fail this test. It does not require
+that a category belongs to the taxonomy or that a quotation exists in the
+target. The empty-list rate also uses all requests and is computed after
+the diagnostic whole-response fence parsing. A well-formed empty list can
+therefore increase compliance without recovering any sensitive text.
+
+Grounding diagnostics classify parsed-item failures by schema, category,
+quotation, occurrence and core ownership. Gold-oriented summaries further
+distinguish exact hits, wrong labels at exact boundaries, partial overlaps
+and unresolved misses. These priority categories describe observations;
+they do not identify the cause of a model's error. An unanchorable item
+cannot be treated as evidence that any particular gold mention was detected.
+
+No view repairs spelling, boundaries or labels, searches fuzzily, consults
+gold to reinterpret an output, or drops failed requests. Terminal and
+unparseable responses contain no usable parsed-item count and remain empty;
+we do not invent an item penalty for them. The diagnostic also preserves
+the original JSON parser's last-value behavior for duplicate keys while
+flagging them as noncompliant. It cannot recover overwritten values.
+Consequently D-F1 is an observable detection proxy, not format-independent
+latent ability, and neither D-F1 nor character overlap replaces the primary
+strict score.

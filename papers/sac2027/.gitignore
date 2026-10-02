@@ -1,0 +1,7 @@
+output/
+*.pdf
+!figures/*.pdf
+figures/*.png
+*.xdv
+*.toc
+*.zip

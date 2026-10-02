@@ -1,5 +1,18 @@
 # Agent entrypoint — Kiii² (2026-09-23)
 
+## SAC preparation — ADR-0039 (2026-10-02)
+
+Use `papers/sac2027/README.md` for the independent SAC AIFT manuscript and
+submission checklist. The operator reports Prof. Yongjae Lee confirmed that
+workshop/SAC parallel submission is acceptable. Sara is polishing the workshop
+in the existing Overleaf project; do not overwrite it or sync SAC files into
+it. SAC starts from pinned workshop commit `8d73e63`; later wording updates
+must be selectively ported after inspecting an outbound Overleaf export.
+Collection remains closed under ADR-0038. No Kiii² SAC submission has yet
+been performed. Official extended deadline Oct 16 (EST as printed), internal
+target Oct 14 KST; prepare <=8 total pages including references. A new SAC
+Overleaf project, if used, must be separate and preserve its own comments.
+
 ## Current cutoff — ADR-0038 (2026-10-01)
 
 The operator has closed collection and authorized writing from completed runs, including Sunghyun's five Gemma variants and the additional Qwen3-30B/EXAONE. Final scope: 12 LLMs / 22 conditions + 3 baselines = 15 systems / 25 conditions. Qwen2B local and Qwen4B full are pilot-only, omitted without imputation. No new inference. This supersedes older roster/remaining-execution instructions below, not scoring or provenance rules. Use experiments/results/analyses/1001-completed-manuscript-v1. Preserve original cohorts (Kanana8B 1438, others 1440); no fake shared gate. Gemma external-runner replay uses src.analysis.external_response_diagnostics, preserving foreign source hashes. D-F1 is an observable detection proxy, not format-independent latent ability. Native counts, representative pilot calibration and foreign source/deployment equivalence remain unverified. Paper updates use native Overleaf edits and outbound GitHub sync, preserving comments.

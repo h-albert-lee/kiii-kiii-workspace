@@ -1,0 +1,84 @@
+%% Kiii-Kiii — SAC 2027 AIFT independent submission draft
+%% Submission: anonymous sigconf; target <=8 total pages including references.
+%% Camera-ready: \documentclass[sigconf]{acmart} and remove \anonv
+\documentclass[sigconf,anonymous]{acmart}
+
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{ragged2e}
+\usepackage{xurl}           % Allow long schema labels and URLs to wrap.
+\usepackage{xcolor}
+\usepackage{kotex}          % Korean examples in text; comment out if Overleaf compiler lacks kotex (use xelatex/lualatex)
+% Keep Hangul upright within Latin emphasis: these fonts have no italic face.
+\setmainhangulfont{UnBatang.ttf}[
+  BoldFont=UnBatangBold.ttf,
+  ItalicFont=UnBatang.ttf,
+  BoldItalicFont=UnBatangBold.ttf,
+  Script=Hangul,Language=Korean]
+\usepackage{enumitem}
+\setlist{nosep,leftmargin=*}
+% A last-pass line-breaking allowance for narrow columns; no changes to
+% ACM margins, type sizes, line spacing, or paragraph spacing.
+\setlength{\emergencystretch}{2em}
+
+%% --- anonymisation helpers: \anonv{visible}{hidden} shows the first arg in review mode
+\newif\ifanonymous\anonymoustrue
+\newcommand{\anonv}[2]{\ifanonymous#1\else#2\fi}   % acmart already defines \anon; ours is \anonv{visible-in-review}{camera-ready}
+\newcommand{\todo}[1]{\textcolor{red}{[TODO: #1]}}
+
+%% Anonymous review metadata; final ACM rights metadata supplied after acceptance.
+\setcopyright{none}
+\copyrightyear{2027}
+\acmYear{2027}
+\acmDOI{}
+\acmISBN{}
+\acmConference[SAC '27]{The 42nd ACM/SIGAPP Symposium on Applied Computing}{April 5--9, 2027}{Gwangju, South Korea}
+\settopmatter{printacmref=false}
+\renewcommand\footnotetextcopyrightpermission[1]{}
+
+\begin{document}
+
+
+
+%% Name: \kiii = Kiii^2 (= "Kiii Kiii"). Backronym K-I-I-I = Korean / Identifiers (Tier L) / Identifiability (Tier I) / Ill-formed inputs (variation axis)
+\newcommand{\kiii}{Kiii\textsuperscript{2}}
+%% Title spells the name "Kiii-Kiii" (after the girl group); body text uses \kiii (= Kiii^2) for the dataset.
+\title[Kiii-Kiii: Korean Financial PII Detection]{Kiii-Kiii: Korean Identifiers, Identifiability, and Ill-formed Inputs}
+\subtitle{A Regulation-Grounded Benchmark for Financial PII Detection}
+%% alternatives kept for the record:
+%%  Kiii^2: Benchmarking Korean Financial PII across Identifiers, Identifiability, and Irregular Surface Forms
+%%  Korean Financial PII under Imperfect Inputs: an Identifiability-Aware Benchmark for AI DLP (Kiii^2)
+
+\begin{abstract}
+\input{sections/00_abstract}
+\end{abstract}
+
+\begin{CCSXML}
+<ccs2012>
+<concept><concept_id>10002978.10003029</concept_id><concept_desc>Security and privacy~Human and societal aspects of security and privacy</concept_desc><concept_significance>500</concept_significance></concept>
+<concept><concept_id>10010147.10010178.10010179</concept_id><concept_desc>Computing methodologies~Natural language processing</concept_desc><concept_significance>300</concept_significance></concept>
+</ccs2012>
+\end{CCSXML}
+\ccsdesc[500]{Security and privacy~Human and societal aspects of security and privacy}
+\ccsdesc[300]{Computing methodologies~Natural language processing}
+\keywords{PII detection, de-identification, data loss prevention, Korean, financial regulation, benchmark, large language models}
+
+\maketitle
+
+\input{sections/01_introduction}
+\input{sections/02_related_work}
+\input{sections/03_taxonomy}
+\input{sections/04_benchmark}
+\input{sections/05_protocol}
+\input{sections/05_experiments}
+\input{sections/06_results}
+\input{sections/08_diagnostics}
+\input{sections/09_discussion}
+\input{sections/07_conclusion}
+
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{references}
+
+
+
+\end{document}

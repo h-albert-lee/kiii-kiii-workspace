@@ -1,0 +1,12 @@
+{
+  "snapshot": "ADR-0038 / 1001-completed-manuscript-v1",
+  "sha256": {
+    "experiments/results/analyses/1001-completed-manuscript-v1/REPORT.md": "443f216fc76657767144699ccedecaec1c107cd05073a1c4f1e6d5882d5a162a",
+    "experiments/results/analyses/1001-completed-manuscript-v1/INPUTS.json": "9e6c69627ab3b6055c94d0b2130e0b5a15e4a41317b7c0b11c48b5a289a427a3",
+    "experiments/results/analyses/1001-completed-manuscript-v1/tables/paired.csv": "af754f188312efc438ca3550989ca4bfce7ff2178520607cd8d86da1ab3a0370",
+    "experiments/results/analyses/1001-completed-manuscript-v1/tables/summary.csv": "3a51f541cbe1aac7d91fe8b8b3ded8f38d319385be3e493396acddac74547f0b",
+    "experiments/results/analyses/1001-completed-manuscript-v1/tables/taxonomy_groups.csv": "6d4ddefc1e02d42481b1e218574ac8c62a097d3b0469710dada49e5239f82d5b",
+    "experiments/results/analyses/1001-completed-manuscript-v1/tables/settings.json": "0b9b32dbd59bc2120891c4c03ca6c7af2256ef0e0b32e04f5ef01483d3caadd4",
+    "experiments/results/analyses/1001-completed-manuscript-v1/tables/provenance.json": "eea6a75aa0fdebb1e4425b86a09cec97c1685ea257c20804d4691a1c8328ad83"
+  }
+}
