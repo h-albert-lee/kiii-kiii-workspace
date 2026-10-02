@@ -1,15 +1,18 @@
 {
   "date": "2026-10-02",
-  "status": "internal draft, not submitted",
+  "status": "internal error-analysis draft, not submitted",
   "pdf_pages": 8,
+  "figures": 4,
+  "companion_figures": 1,
+  "tables": 2,
   "compiler": "Tectonic 0.17.0 / XeTeX",
   "pdf": {
     "path": "output/pdf/kiii-sac2027-draft.pdf",
-    "sha256": "cada6c8cc8b542b9395bd3ec7a5277be9b36e047ef1bd22f66f57c409e4d9e28"
+    "sha256": "9af569cf140d011900d9f0f062c884bcddda1adce0298e582aff5b450ef7cece"
   },
   "anonymous_source_bundle": {
     "path": "output/pdf/kiii-sac2027-anonymous-source.zip",
-    "sha256": "f6e2ca6b795dc27c749d17ab73da457fbe59c39647f09cb501a30af1d936c448"
+    "sha256": "519c8b8807d7b10cc365cf0244fcbf016c89807f02d5b4f2b35073e435f629e7"
   },
   "source_sha256": {
     "main.tex": "8e74da99e8cdd585619442dbaced8837505db3ef501e27e89dcde8d50fd6f8d1",
@@ -21,14 +24,17 @@
     "sections/02_related_work.tex": "24ed6a3246375ae57e7f43ba62c8f0834229f13efcfadbf79c6ad187332d18f7",
     "sections/03_taxonomy.tex": "7889763732ae0727175e3bdb0f77ea1df9433590a269149f333ee72ccc4523ff",
     "sections/04_benchmark.tex": "97ab3c736ff33805f2ef5f69ca0734cf96d254e1d256da0a29f925f69c649f76",
-    "sections/05_experiments.tex": "0d6fd6f0934a4f70ff2e70cfc62e913befc0d9b874823777186f1736fbe3c8a7",
+    "sections/05_experiments.tex": "82a1ab602e2905b486584c3f4a1495f4a9bcdb061608fcb55543a3331e54bb7d",
     "sections/05_protocol.tex": "09aefa92e13e816beac79becde91a753fcd26b1548b9c231a8f39f530b644b7a",
-    "sections/06_results.tex": "64ff19f9cf90506a84cff3ba4d1c2d36cc6b8dc1464792e6705097d224f1286c",
+    "sections/06_results.tex": "80646aaef4e86b5228ba8aa5ca527a133f8961811760cfc7f560e11c1df31b0e",
     "sections/07_conclusion.tex": "085203d7fecccfd745da06c652b0909585daadb590317db725e860f6af096aef",
-    "sections/08_diagnostics.tex": "4242ab951c559bfb2ff45bd71c109332f657ea962071ba283f5f19dd796ffb16",
-    "sections/09_discussion.tex": "aa480b83790afeb930c0274a96ff64c6a64d909cc9d94c3f955cab559a720a25",
-    "sections/fig1_overview.tex": "60410414007154700ad3a0a6381e75f119de858a4bd2d906affa3173ef2da508",
-    "figures/context-contrasts.pdf": "9ecc3746936c98cc489397d68c7c2f376502c3fc42c230017c0d83dede73c1c5",
-    "figures/fig1_overview.pdf": "5f1ff66c09c0ad34d3721536a215f2015acba671e86374880b0ec92af0150846"
+    "sections/08_diagnostics.tex": "cc1d07531865b8455fdbc8a81d841639ed9694cfa0c6dbc396616e0f8190e136",
+    "sections/09_discussion.tex": "9b84431a510abe5809d26149b24dbc49516da03b75a160050358f7b75ad054b9",
+    "sections/fig1_overview.tex": "83a35fd2a566684d012c10dccbe2966c09f96fdd854917b4c9b3eef073c8ee2b",
+    "sections/response-table.tex": "b400377c2d5ab441ae122335b6d744b141a13a154f76b6051fccb265917425f4",
+    "figures/benchmark-overview.pdf": "56bf93e8a30c2e1ee47763823f84c81df2acae4bfb85dea59cbfc3ecb6ee0840",
+    "figures/context-contrasts.pdf": "278264b935ab0e8118960600aa50d143ebb7e473c717b6a9f7fceb2f7a0c6760",
+    "figures/error-atlas.pdf": "ed78c7b57222e51be0b9a41dce3df3939307aec269b856f26ca4f8cd7df53c7a",
+    "figures/score-portrait.pdf": "443e4b15a965920271eb715b4440f47c1804659f01729e8c5fd899ed6287c5b1"
   }
 }

@@ -1,0 +1,26 @@
+{
+  "source": "Pinned ADR-0038 tables and ADR-0040 conserved error partitions",
+  "new_inference": false,
+  "new_confidence_intervals": false,
+  "sha256": {
+    "scripts/build_publication_figures.py": "7caa38d0d04c1b86e22ce28cfb4d5b9df2076c6f88c8a6d6ae5d3b846220ca02",
+    "scripts/build_context_figure.py": "a9cfdf54f526ef5e54121ee49e5dd8df3f6f383f5299981b04ce247b614de3e6",
+    "notes/analysis-inputs.json": "defa1b718f6f4fbe0f199559d95fa2f040f28180e474a83bfc6796d78c1d5b03",
+    "notes/error-analysis-inputs.json": "70ad10242fb2e5a037906478cc3fd2f0bb784b458248f250c91f596288acd7a7",
+    "figures/benchmark-overview.pdf": "56bf93e8a30c2e1ee47763823f84c81df2acae4bfb85dea59cbfc3ecb6ee0840",
+    "figures/benchmark-overview.svg": "bf78e71fa8ab4f6fd85bb6af52e94f6dd983d7efbed7ca54c20eef57c74fb1f4",
+    "figures/benchmark-overview.png": "8b442ace66614abffbedf697d5bb1ac792ddb3077a46aa20b4814c4a831f3744",
+    "figures/score-portrait.pdf": "443e4b15a965920271eb715b4440f47c1804659f01729e8c5fd899ed6287c5b1",
+    "figures/score-portrait.svg": "3acec8932b4a1c817163e64d919413ddafb1739ec2ca42cfd88d57605b5d6f1b",
+    "figures/score-portrait.png": "a9a810e2ff110e50ed01e41fbc843bdb8f2d24d1fae67f1de343a50f43c1eeb8",
+    "figures/context-contrasts.pdf": "278264b935ab0e8118960600aa50d143ebb7e473c717b6a9f7fceb2f7a0c6760",
+    "figures/context-contrasts.svg": "e24a4bf822e20e84fbe82d8b7c24bae8f556268a29b124adf10044c16063fe7a",
+    "figures/context-contrasts.png": "76df043fab00a73c5d5097191fc45a615e904cc1c55cc15b47b8d8cd4bc1676d",
+    "figures/taxonomy-coverage.pdf": "cf797cbfb2fe34278d6c595c4b1695d3874fe46ee598a2b1c5730ec5209763ab",
+    "figures/taxonomy-coverage.svg": "56c2c60f7eb6365e2f0b0c909d59f7446e0a01d5115d4922e841c463ca680e6d",
+    "figures/taxonomy-coverage.png": "380f620cd46e8aee6f7b84e8ef51fe108dbb3fe13b7ae8a02be81fb71461d6d4",
+    "figures/error-atlas.pdf": "ed78c7b57222e51be0b9a41dce3df3939307aec269b856f26ca4f8cd7df53c7a",
+    "figures/error-atlas.svg": "309e6e19eecc73be20800ad5cb699defb083425a7394f4f34cf0e42bd31ed007",
+    "figures/error-atlas.png": "333ffb75829e872e9accf192fc2da29c317d20f985c2f37c748ca4179c16f666"
+  }
+}

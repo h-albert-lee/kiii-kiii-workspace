@@ -1,49 +1,26 @@
 \section{Discussion}
 \label{sec:discussion}
 
-\paragraph{The extraction contract is part of the measured system.}
-The gap between strict and D-F1 exposes a practical distinction: a detector
-can emit useful PII spans while failing the interface through which an
-application consumes them. Strict rejection measures this deployment-facing
-failure, whereas itemwise diagnostics expose the valid evidence remaining
-in the same received response. The gap is not an additive estimate of
-``performance lost to formatting'': the diagnostic changes both retained
-predictions and false-positive accounting, and F1 is nonlinear. Reporting
-both scores with compliance, empty-output rates and invalid-item counts
-is more informative than selecting whichever score favors a system.
+\paragraph{Evaluate the policy and interface together.}
+The failure atlas separates valid but empty answers, quotations outside
+output ownership, and anchored label/boundary disagreements. Strict F1
+measures the complete extraction contract; D exposes valid evidence
+remaining in the same outputs. Their gap is not an additive estimate of
+performance lost to formatting. Identifier-heavy recovery also leaves
+attribute coverage unresolved, rather than making those attributes less
+important. Character overlap cannot charge character false positives for
+unanchorable items and must accompany invalid-item counts and exact
+penalized precision. None of these measures certifies legal compliance.
 
-\paragraph{More context is an empirical choice.}
-The ten complete pairs consistently favor local context on D-F1, but this
-does not establish that financial attributes never require distant evidence.
-Full and local conditions share the same explicit target, which may already
-contain much of the information needed for the output task. Additional
-context can be relevant without improving exact enumeration under a fixed
-response budget. Attention dilution, instruction following and output
-allocation are possible explanations, not mechanisms identified by these
-experiments. Pointwise paired intervals quantify resampling variation over
-the observed documents; they do not measure stochastic generation variance
-or remove uncertainty about the serving environment.
-
-\paragraph{Coverage matters alongside boundary accuracy.}
-Strong identifier performance relative to attribute performance is consistent
-with a limited operational coverage of the benchmark policy. It does not
-show that contextual attributes are legally less important. Conversely,
-an exact-boundary error on a long consultation clause can hide partial
-recognition that would be visible under character overlap. The two views
-answer different questions: whether the requested typed span was recovered,
-and how much labeled text was covered. Character scores cannot charge a
-character-level penalty to an unanchorable item and should therefore be
-read with invalid-item counts and penalized exact precision. We do not
-interpret overlap as a validated measure of remaining disclosure risk.
-
-\paragraph{Implications for financial evaluation.}
-These results support evaluating a detector as a policy, an input protocol
-and an output contract together. A high format-compliance rate alone does
-not show that sensitive information is protected; a low strict score alone
-does not locate the failure. The benchmark makes these distinctions
-inspectable using the same archived responses. For future deployments,
-constrained generation or a different extraction interface would constitute
-a new system configuration requiring its own prospective evaluation.
-We do not retrofit such changes after observing this test set. The present
-study supplies a reproducible characterization of the completed runs,
-not a certification that any evaluated system is safe for customer records.
+\paragraph{Context benefits depend on the output task.}
+All ten completed pairs favor local context on D-F1, but both conditions
+already expose the same explicit target. The result does not show that
+distant evidence is unnecessary. Attention dilution, instruction following
+and output allocation are possible explanations, not established mechanisms.
+Paired intervals describe document-resampling variation over this synthetic
+collection and one execution per condition, not stochastic rerun or
+production uncertainty. Shared generation plans may induce dependence;
+semantic near-duplicate clusters remain unaudited. T levels use different
+documents, not paired rewrites. Constrained generation, revised ownership
+or punctuation-tolerant matching would define a new prospective experiment;
+we do not retrofit them to improve scores on this test set.

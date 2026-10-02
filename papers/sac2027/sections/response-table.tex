@@ -1,0 +1,38 @@
+%% Generated from pinned ADR-0038 summary.csv; do not edit numbers.
+\begin{table*}[t]
+\caption{Completed-run strict scores and post-hoc diagnostics. Scores and rates use 0--100; invalid items are counts. Fmt: structural compliance; Empty: empty-list rate; D: observable detection proxy with invalid-item exact-FP penalties. F/L: full/local; Doc: document-level baseline. *Kanana-1.5-8B uses 1,438 documents; others use 1,440. Baseline diagnostics are not applicable.}
+\label{tab:response-diagnostics}
+\small
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}llrrrrrrr@{}}
+\toprule
+System & Context & Strict F1 & Fmt & Empty & D-Prc & D-Rec & D-F1 & Invalid items \\
+\midrule
+Qwen3.5-2B & F & 0.12 & 28.48 & 1.38 & 3.39 & 1.08 & 1.64 & 64,498 \\
+Qwen3.5-4B & L & 0.97 & 47.37 & 4.99 & 12.59 & 6.52 & 8.59 & 83,370 \\
+Kanana-2-3B & F & 1.02 & 72.22 & 2.18 & 5.64 & 2.20 & 3.17 & 75,465 \\
+Kanana-2-3B & L & 1.62 & 63.62 & 8.69 & 12.02 & 2.47 & 4.09 & 31,764 \\
+Qwen3.5-9B & F & 3.27 & 75.79 & 16.83 & 18.58 & 11.81 & 14.44 & 96,349 \\
+Qwen3.5-9B & L & 3.66 & 76.35 & 13.82 & 22.62 & 15.02 & 18.05 & 87,614 \\
+Kanana-1.5-8B* & F & 0.33 & 46.09 & 0.74 & 5.11 & 6.09 & 5.55 & 235,147 \\
+Kanana-1.5-8B* & L & 0.84 & 40.01 & 0.23 & 12.01 & 6.40 & 8.35 & 83,701 \\
+EXAONE-4.5-33B & F & 0.81 & 62.88 & 26.36 & 8.67 & 9.07 & 8.87 & 186,354 \\
+EXAONE-4.5-33B & L & 1.85 & 80.13 & 29.86 & 14.68 & 14.33 & 14.50 & 145,380 \\
+Qwen3-30B-A3B & F & 0.52 & 90.42 & 53.06 & 9.38 & 6.31 & 7.55 & 123,733 \\
+Qwen3-30B-A3B & L & 1.73 & 93.78 & 17.61 & 15.04 & 11.84 & 13.25 & 123,434 \\
+Gemma-4-E2B & F & $<0.01$ & 0.04 & 46.69 & 16.55 & 6.89 & 9.73 & 62,457 \\
+Gemma-4-E2B & L & $<0.01$ & 1.28 & 54.11 & 28.10 & 7.70 & 12.09 & 28,868 \\
+Gemma-4-E4B & F & 5.34 & 84.00 & 5.62 & 16.35 & 12.64 & 14.25 & 129,082 \\
+Gemma-4-E4B & L & 7.23 & 87.34 & 8.88 & 30.42 & 16.98 & 21.79 & 65,661 \\
+Gemma-4-12B & F & 0.04 & 5.55 & 12.19 & 31.94 & 26.15 & 28.76 & 85,401 \\
+Gemma-4-12B & L & 0.05 & 5.55 & 7.79 & 30.84 & 28.85 & 29.81 & 92,237 \\
+Gemma-4-26B-A4B & F & 7.97 & 95.77 & 12.29 & 34.78 & 24.60 & 28.82 & 69,113 \\
+Gemma-4-26B-A4B & L & 7.40 & 96.10 & 7.19 & 31.14 & 27.20 & 29.04 & 84,943 \\
+Gemma-4-31B (FP8) & F & $<0.01$ & 4.98 & 5.74 & 29.00 & 31.59 & 30.24 & 102,275 \\
+Gemma-4-31B (FP8) & L & 0.02 & 4.56 & 4.17 & 28.86 & 34.86 & 31.58 & 104,568 \\
+\midrule
+Presidio & Doc & 10.15 & -- & -- & -- & -- & -- & -- \\
+ko-pii & Doc & 9.43 & -- & -- & -- & -- & -- & -- \\
+OpenMed & Doc & 2.09 & -- & -- & -- & -- & -- & -- \\
+\bottomrule
+\end{tabular*}
+\end{table*}

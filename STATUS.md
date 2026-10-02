@@ -12,6 +12,18 @@ source/comments changed. Official extended deadline Oct 16 (EST as printed),
 internal target Oct 14 KST; anonymous 8-total-page target. Final source/PDF
 checks and outstanding submission items are recorded in the SAC folder.
 
+## SAC error analysis — 2026-10-02
+
+[ADR-0040](docs/decisions/0040-sac-error-analysis.md) and the
+[offline report](experiments/results/analyses/1002-sac-error-analysis-v1/REPORT.md)
+add conserved all-gold partitions for all 22 completed LLM conditions and five
+hash-verified, purposively selected response illustrations. Strict/D scores,
+cohorts and live evaluator source are unchanged. SAC draft: **8 total pages,
+4 main vector figures / 2 tables**, plus a companion taxonomy heatmap. Original
+workshop source/comments remain untouched. **142 offline tests pass**; no new
+inference or claim of verified native capacity. SAC GitHub export remains
+pending the specific approval requested after automatic review rejected it.
+
 ## Current outcome
 
 **Collection closed by operator (ADR-0038): 25 completed conditions from 15 systems, including Sunghyun’s ten Gemma conditions, verified for manuscript use. Unfinished/pilot-only conditions are excluded. No new inference. Native count/source deployment limitations remain explicit.**

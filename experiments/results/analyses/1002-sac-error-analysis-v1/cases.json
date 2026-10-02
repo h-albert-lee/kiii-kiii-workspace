@@ -1,0 +1,235 @@
+{
+  "purpose": "Purposive illustrations, not representative human annotation or a new score.",
+  "source_sha256": "03cb88f7046eb364ccd979b607d6e07b64dd0f86463ce5c621827bbc3df075db",
+  "parent_inputs_sha256": "9e6c69627ab3b6055c94d0b2130e0b5a15e4a41317b7c0b11c48b5a289a427a3",
+  "cases": [
+    {
+      "kind": "fence_only",
+      "run": "0929-05-gemma4-31b-fp8-local",
+      "model": "google/gemma-4-31B-it",
+      "condition": "local_window",
+      "request_id": "kiii-main-v2-00245:0010",
+      "request_sha256": "7c50130a8beef3cdce44a73903d7d08deeec0e51cfdb7aad55aae45549f4f64f",
+      "eligible_requests": 1821,
+      "selection": "Minimum SHA256(request_id) in prespecified run/stratum; then lexicographic span/item order.",
+      "source_inputs": {
+        "gold_sha256": "d57b1cb0b8b67fe48a9b45ee985fb01e63b919147a8527f8231459a68b57456d",
+        "responses_sha256": "f2717aea8c60926645d02b308bab0b9b9d65e452e6e164c83c257a33414441c8",
+        "strict_result_sha256": "6ec4d7651cdc98d5835f96226b65e22912e2a98c1cac898be82400e0973c8adc",
+        "taxonomy_sha256": "b9ec20e3491f9dcdabb626fc04b1b85cc73bb45ebbe9de69849a1c402c00ae7e"
+      },
+      "ledger_sha256": "e8e12318df9c54a7383ac42343c93d5f055720fe4e29721e99d967f055082bc7",
+      "window": {
+        "core_start": 12000,
+        "core_end": 13200,
+        "target_start": 12000,
+        "target_end": 14400,
+        "context_start": 10800,
+        "context_end": 14400
+      },
+      "route": "fence",
+      "request_outcome": "nonempty_list",
+      "gold_outcomes": {
+        "no_overlapping_prediction": 6,
+        "exact_hit": 3,
+        "overlapping_boundary_wrong_category": 2
+      },
+      "item_outcomes": {
+        "valid": 3
+      },
+      "gold": {
+        "start": 12269,
+        "end": 12283,
+        "category": "bank_account_no",
+        "text": "110-148-124444"
+      },
+      "prediction": {
+        "start": 12269,
+        "end": 12283,
+        "category": "bank_account_no",
+        "text": "110-148-124444"
+      },
+      "context_excerpt": "과로 기록하였다. | 700,000 | — | 6,500,000\n2026-01-04 07:55 | 하나은행 110-148-124444로 본인 자금 이동, 예비자금 이체가 정상 처리되었다. 달력이 바뀌었더라도 같은 명의의 같은 수취 대상을 사"
+    },
+    {
+      "kind": "outside_owned_core",
+      "run": "0928-04-gemma4-26b-a4b-local",
+      "model": "google/gemma-4-26B-A4B-it",
+      "condition": "local_window",
+      "request_id": "kiii-main-v2-00930:0005",
+      "request_sha256": "5d7941747d1f7f602d95c864f76756a77be7dca28b1c79df0e8a5265dd19ac93",
+      "eligible_requests": 9823,
+      "selection": "Minimum SHA256(request_id) in prespecified run/stratum; then lexicographic span/item order.",
+      "source_inputs": {
+        "gold_sha256": "d57b1cb0b8b67fe48a9b45ee985fb01e63b919147a8527f8231459a68b57456d",
+        "responses_sha256": "7e40e68a26ee15c74f8b90e2afd825f6a5a35a96c4267dca63becde82c66ac11",
+        "strict_result_sha256": "07cfc6f26d1f887eca74dcb536553b74db0c2aa561fe51694ff5fe92490eb49c",
+        "taxonomy_sha256": "b9ec20e3491f9dcdabb626fc04b1b85cc73bb45ebbe9de69849a1c402c00ae7e"
+      },
+      "ledger_sha256": "dd50c8de95e0b0e898bd72ceb7184ba5b6a82a1fa102e8ea2672b1a8e8dcd380",
+      "window": {
+        "core_start": 6000,
+        "core_end": 7200,
+        "target_start": 6000,
+        "target_end": 8008,
+        "context_start": 4800,
+        "context_end": 8008
+      },
+      "route": "raw",
+      "request_outcome": "nonempty_list",
+      "gold_outcomes": {
+        "unresolved_with_rejected_items": 11,
+        "exact_hit": 4,
+        "overlapping_boundary_same_category": 6
+      },
+      "item_outcomes": {
+        "valid": 10,
+        "outside_owned_core": 3
+      },
+      "predicted_item": {
+        "category": "address",
+        "text": "대구 수성구 송도과학로 325, 205호",
+        "occurrence": 1
+      },
+      "predicted_start": 7436,
+      "starts_after_core_by": 236
+    },
+    {
+      "kind": "exact_boundary_wrong_category",
+      "run": "0926-02-qwen-9b-local",
+      "model": "Qwen/Qwen3.5-9B",
+      "condition": "local_window",
+      "request_id": "kiii-main-v2-00663:0001",
+      "request_sha256": "ed868e5b7196f83f4f50f75bea31f339838643ff10176f9a63e7bced1fb79193",
+      "eligible_requests": 1615,
+      "selection": "Minimum SHA256(request_id) in prespecified run/stratum; then lexicographic span/item order.",
+      "source_inputs": {
+        "gold_sha256": "d57b1cb0b8b67fe48a9b45ee985fb01e63b919147a8527f8231459a68b57456d",
+        "responses_sha256": "0b3daef0e938f0dd16f49bc2e747d1f5f746c55b5d76dabb715d5d75509c1e25",
+        "strict_result_sha256": "32b91f366181bf00cb6a88ea8dfbbd3e6f96a2973e577e9e1a416cac882c1c17",
+        "taxonomy_sha256": "b9ec20e3491f9dcdabb626fc04b1b85cc73bb45ebbe9de69849a1c402c00ae7e"
+      },
+      "ledger_sha256": "d579ca95a1e613b35a4b0541aa944e65062f3ca3c51e80d64403438f2639d8f5",
+      "window": {
+        "core_start": 1200,
+        "core_end": 1639,
+        "target_start": 1200,
+        "target_end": 1639,
+        "context_start": 0,
+        "context_end": 1639
+      },
+      "route": "raw",
+      "request_outcome": "nonempty_list",
+      "gold_outcomes": {
+        "unresolved_with_rejected_items": 3,
+        "exact_hit": 2,
+        "exact_boundary_wrong_category": 1
+      },
+      "item_outcomes": {
+        "valid": 3,
+        "occurrence_out_of_range": 1
+      },
+      "gold": {
+        "start": 1328,
+        "end": 1339,
+        "category": "contract_no",
+        "text": "2026-277485"
+      },
+      "prediction": {
+        "start": 1328,
+        "end": 1339,
+        "category": "customer_id",
+        "text": "2026-277485"
+      },
+      "context_excerpt": "금융센터\n\n5. 답변 및 종결 관리\n회신 대상: 최진서\n회신 연락처: 010-6587-0574\n조회 연계: 2026-277485\n\n고객에게 표시 오류의 원인과 정정 결과를 설명하고, 과거 3일 연체 이력은 실제 수납 경과에 부합하여 내"
+    },
+    {
+      "kind": "overlapping_boundary_same_category",
+      "run": "0929-05-gemma4-31b-fp8-local",
+      "model": "google/gemma-4-31B-it",
+      "condition": "local_window",
+      "request_id": "kiii-main-v2-00355:0008",
+      "request_sha256": "21cfcc6c7d970c2fe70ed57376abc2e43b0c6958b3a7f7ed897b0199b65a96b4",
+      "eligible_requests": 9046,
+      "selection": "Minimum SHA256(request_id) in prespecified run/stratum; then lexicographic span/item order.",
+      "source_inputs": {
+        "gold_sha256": "d57b1cb0b8b67fe48a9b45ee985fb01e63b919147a8527f8231459a68b57456d",
+        "responses_sha256": "f2717aea8c60926645d02b308bab0b9b9d65e452e6e164c83c257a33414441c8",
+        "strict_result_sha256": "6ec4d7651cdc98d5835f96226b65e22912e2a98c1cac898be82400e0973c8adc",
+        "taxonomy_sha256": "b9ec20e3491f9dcdabb626fc04b1b85cc73bb45ebbe9de69849a1c402c00ae7e"
+      },
+      "ledger_sha256": "e8e12318df9c54a7383ac42343c93d5f055720fe4e29721e99d967f055082bc7",
+      "window": {
+        "core_start": 9600,
+        "core_end": 10800,
+        "target_start": 9600,
+        "target_end": 12000,
+        "context_start": 8400,
+        "context_end": 12000
+      },
+      "route": "fence",
+      "request_outcome": "nonempty_list",
+      "gold_outcomes": {
+        "overlapping_boundary_same_category": 6,
+        "unresolved_with_rejected_items": 5,
+        "exact_hit": 4,
+        "overlapping_boundary_wrong_category": 2
+      },
+      "item_outcomes": {
+        "valid": 12,
+        "outside_owned_core": 7
+      },
+      "gold": {
+        "start": 9625,
+        "end": 9669,
+        "category": "consultation_content",
+        "text": "앱의 월간 승인 합계에 포함된 추가 주문이 명세서에는 왜 빠져 있는지 문의하였다"
+      },
+      "prediction": {
+        "start": 9625,
+        "end": 9670,
+        "category": "consultation_content",
+        "text": "앱의 월간 승인 합계에 포함된 추가 주문이 명세서에는 왜 빠져 있는지 문의하였다."
+      },
+      "context_excerpt": "부는 실제 매입 접수 후 확정하도록 남겼다. 앱의 월간 승인 합계에 포함된 추가 주문이 명세서에는 왜 빠져 있는지 문의하였다. 승인 합계에는 미매입 금액이 포함될 수 있다는 점을 해당 거래 상태에 맞추어 안내했고, 고객이 같은 금액"
+    },
+    {
+      "kind": "empty_list",
+      "run": "0928-03-qwen3-30b-full",
+      "model": "Qwen/Qwen3-30B-A3B",
+      "condition": "full_context_targeted",
+      "request_id": "kiii-main-v2-00355:0008",
+      "request_sha256": "5b322cd5a7168c29a01be2116e5078f688512ab464317dc4a12432cafc59fd51",
+      "eligible_requests": 6819,
+      "selection": "Minimum SHA256(request_id) in prespecified run/stratum; then lexicographic span/item order.",
+      "source_inputs": {
+        "gold_sha256": "d57b1cb0b8b67fe48a9b45ee985fb01e63b919147a8527f8231459a68b57456d",
+        "responses_sha256": "9091165c53f99cd0febb876da356830420b901844aff6506050ea6bbaeeccc5b",
+        "strict_result_sha256": "81bd7b428cf7b919b474419afcedf5fd3bf9946e598c70d20346c15d7c533ab0",
+        "taxonomy_sha256": "b9ec20e3491f9dcdabb626fc04b1b85cc73bb45ebbe9de69849a1c402c00ae7e"
+      },
+      "ledger_sha256": "a6e3cc86923e66437ecb36b3dc29876189cb5c8a2d81bddd1bd00295264e385a",
+      "window": {
+        "core_start": 9600,
+        "core_end": 10800,
+        "target_start": 9600,
+        "target_end": 12000,
+        "context_start": 0,
+        "context_end": 35527
+      },
+      "route": "raw",
+      "request_outcome": "empty_list",
+      "gold_outcomes": {
+        "empty_list": 17
+      },
+      "item_outcomes": {},
+      "gold": {
+        "start": 9625,
+        "end": 9669,
+        "category": "consultation_content",
+        "text": "앱의 월간 승인 합계에 포함된 추가 주문이 명세서에는 왜 빠져 있는지 문의하였다"
+      },
+      "context_excerpt": "부는 실제 매입 접수 후 확정하도록 남겼다. 앱의 월간 승인 합계에 포함된 추가 주문이 명세서에는 왜 빠져 있는지 문의하였다. 승인 합계에는 미매입 금액이 포함될 수 있다는 점을 해당 거래 상태에 맞추어 안내했고, 고객이 같은 금액"
+    }
+  ]
+}

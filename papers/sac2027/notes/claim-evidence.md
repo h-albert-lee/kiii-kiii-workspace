@@ -15,6 +15,18 @@ All analysis inputs are pinned in `analysis-inputs.json`; no inference is run.
 | Five reviewers each inspected a different 10% sample | ADR-0028 and source manuscript | Broad document appropriateness only; overlap/IDs/sampling unknown; no 50% unique coverage or IAA |
 | T0–T3 controlled variation | taxonomy and frozen release design | Different documents per stratum; not paired transformations or causal effects |
 
+## New error evidence (ADR-0040)
+
+`experiments/results/analyses/1002-sac-error-analysis-v1/REPORT.md` records
+exact counts, denominators, case selection and reproduction. `summary.csv`
+conserves every gold span across six buckets in each of 22 LLM conditions;
+`fine_outcomes.csv` retains original categories. `cases.json` checks five
+selected illustrations against raw/gold hashes and reconstructed requests.
+Ownership failures, empty-output gold, label disagreements and period-only
+boundary differences describe these received outputs; none identifies latent
+ability or validates the gold annotations. Input pins are separate in
+`error-analysis-inputs.json`.
+
 ## Claims explicitly excluded
 
 - D-F1 measures format-independent latent ability or permits ignoring failures.

@@ -1,16 +1,17 @@
 \begin{figure*}[t]
-  \centering
-  \includegraphics[width=\textwidth]{figures/fig1_overview.pdf}
-  \caption{\textbf{One identifier, four input forms in \kiii{}.}
-  A synthetic phone number appears in canonical (T0), formatting (T1), lexical
-  (T2), and structural (T3) forms. Shading marks identifier spans; the bracket
-  links speaker A's fragments across B's interruption (``mine too'').
-  Examples are illustrative, not paired corpus records. The footer summarizes
-  the Legal (L) and Identifiability (I) tiers.}
-  \Description{Four aligned panels show the synthetic phone number
-  010-3344-5566 with hyphens, with spaces, as Korean digit words, and split into
-  010-3344 and 5566 across two turns by speaker A, interrupted by speaker B.
-  A bracket links the two fragments. The footer summarizes 17 Legal identifiers,
-  7 Legal attributes, and 12 Identifiability attributes.}
-  \label{fig:overview}
+\centering
+\includegraphics[width=\textwidth]{figures/benchmark-overview.pdf}
+\caption{\textbf{From detection policy to an auditable extraction task.}
+(A) The 36-category policy and illustrative T0--T3 forms of one synthetic
+identifier. (B) Full and local context share core ownership, a following
+halo and the output budget; the schematic is not to scale. (C) An illustrative
+normally completed response with one valid and one invalid parsed item:
+strict scoring rejects the request, while D retains the valid item and
+charges an invalid-item false positive. Both retain all gold. This example
+explains the scoring contract, not a causal partition of model ability.}
+\Description{Three panels connect the 24 statutory and 12 identifiability
+categories, a matched full/local context window, and strict versus itemwise
+validation of the same received response. Korean digit words and split turns
+illustrate noncanonical synthetic identifier forms.}
+\label{fig:overview}
 \end{figure*}

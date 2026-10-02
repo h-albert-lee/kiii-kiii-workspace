@@ -1,36 +1,27 @@
 \section{Results and Analysis}
 \label{sec:results}
 
-The descriptive comparison (Table~\ref{tab:main-results}) reports completed extraction systems, with strict scores kept separate from a detection diagnostic. Full breakdowns and paired intervals appear in \S\ref{app:result-layout}. Figure~\ref{fig:context-contrasts} visualizes the ten completed within-model comparisons.
+The descriptive comparison (Figure~\ref{fig:score-portrait}) reports completed extraction systems, with strict scores kept separate from a detection diagnostic. Full breakdowns and paired intervals appear in \S\ref{app:result-layout}. Figure~\ref{fig:context-contrasts} visualizes the ten completed within-model comparisons.
 
-\begin{table}[t]
-\caption{Completed-run scores (0--100). Strict is end-to-end exact F1; D is the post-hoc detection proxy with invalid-item penalties. F/L: full/local. Baselines occupy Strict-F as document-level references, not a context pair. --: no completed condition or not applicable. $\dagger$: 1,438 documents; others 1,440. Execution blocks differ (\S\ref{sec:setup}).}
-\label{tab:main-results}
-\small
-\begin{tabularx}{\columnwidth}{@{}>{\RaggedRight\arraybackslash}Xrrrr@{}}
-\toprule
-& \multicolumn{2}{c}{Strict F1} & \multicolumn{2}{c}{D-F1} \\
-System & F & L & F & L \\
-\midrule
-Qwen3.5-2B & 0.12 & -- & 1.64 & -- \\
-Qwen3.5-4B & -- & 0.97 & -- & 8.59 \\
-Kanana-2-3B & 1.02 & 1.62 & 3.17 & 4.09 \\
-Qwen3.5-9B & 3.27 & 3.66 & 14.44 & 18.05 \\
-Kanana-1.5-8B$^\dagger$ & 0.33 & 0.84 & 5.55 & 8.35 \\
-EXAONE-4.5-33B & 0.81 & 1.85 & 8.87 & 14.50 \\
-Qwen3-30B-A3B & 0.52 & 1.73 & 7.55 & 13.25 \\
-Gemma-4-E2B & $<0.01$ & 0.01 & 9.73 & 12.09 \\
-Gemma-4-E4B & 5.34 & 7.23 & 14.25 & 21.79 \\
-Gemma-4-12B & 0.04 & 0.05 & 28.76 & 29.81 \\
-Gemma-4-26B-A4B & 7.97 & 7.40 & 28.82 & 29.04 \\
-Gemma-4-31B (FP8) & $<0.01$ & 0.02 & 30.24 & 31.58 \\
-\midrule
-Presidio & 10.15 & -- & -- & -- \\
-ko-pii & 9.43 & -- & -- & -- \\
-OpenMed & 2.09 & -- & -- & -- \\
-\bottomrule
-\end{tabularx}
-\end{table}
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/score-portrait.pdf}
+\caption{\textbf{Extraction reliability and observable detection are distinct.}
+Strict exact F1 (filled circles) and D-F1 (open diamonds) from the same archived
+outputs, by full (A) and local (B) context. Connecting segments identify two
+scoring views, not causal effects or confidence intervals. (C) Structural
+compliance over all requests, which is not strict response acceptance.
+Baseline squares are document-level strict references; D and format are N/A.
+Missing conditions are explicitly marked. *Kanana-1.5-8B: 1,438 documents;
+others: 1,440. All gold and invalid-item penalties remain in D. Execution
+blocks differ; the display is descriptive, not a verified common-capacity ranking.}
+\Description{Aligned full and local dot plots show all 22 completed LLM
+conditions, with three document-level baseline references. Many Gemma runs
+have near-zero strict F1 but higher diagnostic F1. Adjacent cells display
+format compliance, including high compliance for Qwen3-30B and low compliance
+for Gemma-12B and Gemma-31B. Missing Qwen pairs are not plotted as zeros.}
+\label{fig:score-portrait}
+\end{figure*}
 
 \paragraph{Reliability is not detection.}
 Presidio reaches 10.15 strict F1; the highest LLM strict score is 7.97 (Gemma-26B-A4B, full). Yet rejecting an entire response discards correct items alongside malformed siblings. Our fixed post-hoc parser retains exactly grounded valid items, charges one exact false positive per invalid parsed item, and removes only an entire-response JSON fence. Truncated/unparseable responses remain empty and all gold remain in the denominator. This \emph{observable detection proxy} (D) is more direct than strict F1 for inspecting retrieved PII, but does not recover latent ability from uninterpretable outputs. Quotes, labels and boundaries are never repaired.

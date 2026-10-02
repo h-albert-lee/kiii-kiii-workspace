@@ -5,25 +5,33 @@ Status: internal anonymous draft, not submitted. Final hashes are recorded in
 
 - Tectonic 0.17.0 (XeTeX) completed TeX/BibTeX/reruns; **8 total pages**,
   including references; US Letter, ACM sigconf. No text font/margin compression.
-- All eight pages rendered with Poppler and visually inspected. Five result/
-  taxonomy tables and two figures are readable with no clipping or overlap.
-  The context figure's height was adjusted to remove a float-page overflow;
-  the final affected page was rendered and inspected again.
+- All eight pages of the updated error-analysis draft rendered with Poppler and
+  visually inspected. Four vector figures and two tables are readable with
+  no clipping or overlap. Figure-label/footer collisions found during preview
+  were corrected before final compilation.
 - No overfull boxes, undefined references/citations, missing-character reports
   or TeX errors in the final console log. Font-request/underfull and bibliography
   warnings remain; this is not a claim of a warning-free build.
 - PDF metadata has no named author. Body scan excludes author names,
   affiliations, identifying dataset/repository links and TODO placeholders.
   Ordinary third-person TWICE/NMIXX citations and bibliographic names remain.
-- Figure inputs match pinned hashes. The new figure contains ten original-cohort
-  pairs; strict CIs are copied from the frozen paired table. D-F1 differences
-  are point estimates, with no invented CIs.
+- Figure inputs match pinned hashes. Builder checks 25 unique conditions,
+  75 group scores against archived counts and ten original-cohort strict
+  contrasts. Strict CIs are copied from the frozen paired table. D-F1
+  differences are point estimates, with no invented CIs. Missing versus zero
+  and baseline N/A are preserved; heatmap scales are shared.
+- Error-atlas inputs conserve all gold and invalid-item penalties across 22
+  completed LLM conditions. Five purposively stratified illustrations verify
+  original raw/gold hashes, reconstructed request hashes, parsed-item outcomes
+  and gold priority buckets. No new inference or score adjustment.
+- All PDF fonts are embedded; no Type 3 fonts. Anonymous source bundle includes
+  the four referenced figures, excluding the companion taxonomy heatmap.
 - Original workshop source remains at `8d73e63` with a clean submodule;
   no Overleaf project/comment mutation was performed in this task.
-- Anonymous source archive contains 18 files: referenced TeX/BibTeX, ACM
+- Anonymous source archive contains only referenced TeX/BibTeX, ACM
   class/style and PDF figures. Internal notes, local paths, operator records,
   data and credentials are excluded. ZIP integrity check passed.
-- `python -m pytest tests -q`: **136 passed**. These are offline tests, not
+- `python -m pytest tests -q`: **142 passed**. These are offline tests, not
   evidence of native API/GPU compatibility or new inference.
 
 The source is an expanded manuscript starting point, not final coauthor signoff.

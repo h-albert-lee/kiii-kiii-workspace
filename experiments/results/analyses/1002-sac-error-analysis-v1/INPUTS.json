@@ -1,0 +1,250 @@
+{
+  "adr": "0040",
+  "parent_inputs": "experiments/results/analyses/1001-completed-manuscript-v1/INPUTS.json",
+  "parent_sha256": "9e6c69627ab3b6055c94d0b2130e0b5a15e4a41317b7c0b11c48b5a289a427a3",
+  "analysis_source_sha256": "22faecc4bf82ef89bdd320c5c0aa4ad4dcff3e1dc2b5163fce98dd464380a2e2",
+  "runs": [
+    {
+      "run": "0925-01-kanana-3b-full",
+      "result": "data/result-review/2026-09-27/inputs/0925-01-kanana-3b-full/result.json",
+      "result_sha256": "646c8ab95d67f796a9c0ad858fcf5e2d454a4e5c088c65b74b6492e58b2a32f5",
+      "diagnostics": "experiments/results/analyses/1001-failure-decomposition-v1/0925-01-kanana-3b-full/analysis.json",
+      "diagnostics_sha256": "1fc335fbe7812d172136d64980f38bca4e16784e695b2c19758ab546cb76146e",
+      "source_directory": "https://github.com/h-albert-lee/kiii-kiii-workspace/tree/b4f76f4b3cd1542f50980144baa9e6874c9a7d6a/experiments/results/runs/0925-01-kanana-3b-full",
+      "external_runner": false,
+      "recorded_gate": "248501516ba8a0d5a3b07bc4ea8b4dc86fb3f6ad92ba51c0e765678381714810",
+      "native_capacity_independently_verified": false
+    },
+    {
+      "run": "0925-02-kanana-3b-local",
+      "result": "data/result-review/2026-09-27/inputs/0925-02-kanana-3b-local/result.json",
+      "result_sha256": "37226040b870dbd569714daf5de5a5760f7c1327c4203012f629098a5278b173",
+      "diagnostics": "experiments/results/analyses/1001-failure-decomposition-v1/0925-02-kanana-3b-local/analysis.json",
+      "diagnostics_sha256": "1788fae217452ccc063e24a46df462a67c11b7eb8cd65eeaf9edd095862956ef",
+      "source_directory": "https://github.com/h-albert-lee/kiii-kiii-workspace/tree/b4f76f4b3cd1542f50980144baa9e6874c9a7d6a/experiments/results/runs/0925-02-kanana-3b-local",
+      "external_runner": false,
+      "recorded_gate": "248501516ba8a0d5a3b07bc4ea8b4dc86fb3f6ad92ba51c0e765678381714810",
+      "native_capacity_independently_verified": false
+    },
+    {
+      "run": "0925-03-qwen-2b-full",
+      "result": "data/result-review/2026-09-27/inputs/0925-03-qwen-2b-full/result.json",
+      "result_sha256": "b7828d40ca73b5675068600f5039bc00a953f14d06a41d5290984d85dd4f49fe",
+      "diagnostics": "experiments/results/analyses/1001-failure-decomposition-v1/0925-03-qwen-2b-full/analysis.json",
+      "diagnostics_sha256": "ceb407fa431ddad6e965ea33babfe9f3a8f1993e87db21c029276e5a69290aa8",
+      "source_directory": "https://github.com/h-albert-lee/kiii-kiii-workspace/tree/b4f76f4b3cd1542f50980144baa9e6874c9a7d6a/experiments/results/runs/0925-03-qwen-2b-full",
+      "external_runner": false,
+      "recorded_gate": "248501516ba8a0d5a3b07bc4ea8b4dc86fb3f6ad92ba51c0e765678381714810",
+      "native_capacity_independently_verified": false
+    },
+    {
+      "run": "0925-06-qwen-4b-local",
+      "result": "data/result-review/update-ac25513/inputs/0925-06-qwen-4b-local/result.json",
+      "result_sha256": "9ad9e09a3d0ca7b320283c377145246cdd4797480c30c20d744f18b29d090511",
+      "diagnostics": "experiments/results/analyses/1001-failure-decomposition-v1/0925-06-qwen-4b-local/analysis.json",
+      "diagnostics_sha256": "a5d5bb90bddfea18c4c7bee9ee1450d0f008805eb7babede8d3553b72ea44a85",
+      "source_directory": "https://github.com/h-albert-lee/kiii-kiii-workspace/tree/ac25513b9bfc9b08daab86b378ec67305e456cea/experiments/results/runs/0925-06-qwen-4b-local",
+      "external_runner": false,
+      "recorded_gate": "248501516ba8a0d5a3b07bc4ea8b4dc86fb3f6ad92ba51c0e765678381714810",
+      "native_capacity_independently_verified": false
+    },
+    {
+      "run": "0926-01-qwen-9b-full",
+      "result": "data/result-review/update-24a3595/inputs/0926-01-qwen-9b-full/result.json",
+      "result_sha256": "886883770a0e1080067389b8fc267d37d7df93e4b0323ce5d980665e106a8359",
+      "diagnostics": "experiments/results/analyses/1001-failure-decomposition-v1/0926-01-qwen-9b-full/analysis.json",
+      "diagnostics_sha256": "77fde33c3227a303ba964dbd9aef4e918427a80f52d8e907ee1c305616616f66",
+      "source_directory": "https://github.com/h-albert-lee/kiii-kiii-workspace/tree/24a359542ffadc311e0e5ffe6803ff092e728f70/experiments/results/runs/0926-01-qwen-9b-full",
+      "external_runner": false,
+      "recorded_gate": "c8233d6a240b5a69c24d5bd55d3ed844bb53c90fdaae2a9f34501bbbd75408b8",
+      "native_capacity_independently_verified": false
+    },
+    {
+      "run": "0926-02-qwen-9b-local",
+      "result": "data/result-review/update-24a3595/inputs/0926-02-qwen-9b-local/result.json",
+      "result_sha256": "32b91f366181bf00cb6a88ea8dfbbd3e6f96a2973e577e9e1a416cac882c1c17",
+      "diagnostics": "experiments/results/analyses/1001-failure-decomposition-v1/0926-02-qwen-9b-local/analysis.json",
+      "diagnostics_sha256": "ec5960ad0da562b26437bdc65a0f2b9d515170b718e50ff2f4b1caf5d90450d4",
+      "source_directory": "https://github.com/h-albert-lee/kiii-kiii-workspace/tree/24a359542ffadc311e0e5ffe6803ff092e728f70/experiments/results/runs/0926-02-qwen-9b-local",
+      "external_runner": false,
+      "recorded_gate": "c8233d6a240b5a69c24d5bd55d3ed844bb53c90fdaae2a9f34501bbbd75408b8",
+      "native_capacity_independently_verified": false
+    },
+    {
+      "run": "0926-03-kanana-8b-full-1438",
+      "result": "data/result-review/update-24a3595/inputs/0926-03-kanana-8b-full-1438/result.json",
+      "result_sha256": "f53688ed6e986a72a21258c3352cadef5e3a8e6a940755528c323fb2b510e206",
+      "diagnostics": "experiments/results/analyses/1001-failure-decomposition-v1/0926-03-kanana-8b-full-1438/analysis.json",
+      "diagnostics_sha256": "e18227c49bb4af5e602ebbe09664f87cd276e1f86c5660da52376ad94e743da8",
+      "source_directory": "https://github.com/h-albert-lee/kiii-kiii-workspace/tree/24a359542ffadc311e0e5ffe6803ff092e728f70/experiments/results/runs/0926-03-kanana-8b-full-1438",
+      "external_runner": false,
+      "recorded_gate": "d7077277a19e345a0cfd6aa0dc9b42c1fe38cb7ffe8f72f3c5f49e32e1db5a0b",
+      "native_capacity_independently_verified": false
+    },
+    {
+      "run": "0926-04-kanana-8b-local-1438",
+      "result": "data/result-review/update-24a3595/inputs/0926-04-kanana-8b-local-1438/result.json",
+      "result_sha256": "3fcbfce896d6281cc977269279109efdebf1a81a144793d71a6d0d3063424aac",
+      "diagnostics": "experiments/results/analyses/1001-failure-decomposition-v1/0926-04-kanana-8b-local-1438/analysis.json",
+      "diagnostics_sha256": "a5f4d2527a22203cd2714720209c5d5f2b817661d3e92f7982dd55954015d164",
+      "source_directory": "https://github.com/h-albert-lee/kiii-kiii-workspace/tree/24a359542ffadc311e0e5ffe6803ff092e728f70/experiments/results/runs/0926-04-kanana-8b-local-1438",
+      "external_runner": false,
+      "recorded_gate": "d7077277a19e345a0cfd6aa0dc9b42c1fe38cb7ffe8f72f3c5f49e32e1db5a0b",
+      "native_capacity_independently_verified": false
+    },
+    {
+      "run": "0928-01-exaone-33b-full",
+      "result": "data/result-review/update-9e0570a/inputs/0928-01-exaone-33b-full/result.json",
+      "result_sha256": "4e7859958bb8eb6ca498a626fc18226d7a3bc7b6507b33ee99b356590c796bfb",
+      "diagnostics": "experiments/results/analyses/1001-failure-decomposition-v1/0928-01-exaone-33b-full/analysis.json",
+      "diagnostics_sha256": "312fece33aa871601d3b3124a69792bd3db871185a591740bb7c7c69c1bc8148",
+      "source_directory": "https://github.com/h-albert-lee/kiii-kiii-workspace/tree/9e0570a069a50426b91d372fd6882b4bb551c2ba/experiments/results/runs/0928-01-exaone-33b-full",
+      "external_runner": false,
+      "recorded_gate": "33c670c00de2006bcce594aa52aa29625e9f56d956bca595f5b1b787f1daad7a",
+      "native_capacity_independently_verified": false
+    },
+    {
+      "run": "0928-02-exaone-33b-local",
+      "result": "data/result-review/update-9e0570a/inputs/0928-02-exaone-33b-local/result.json",
+      "result_sha256": "77bbe8a8f15e301c30034682ac0f4d0b08179a47e88ce0ee8a03bc2736aa6082",
+      "diagnostics": "experiments/results/analyses/1001-failure-decomposition-v1/0928-02-exaone-33b-local/analysis.json",
+      "diagnostics_sha256": "bb3fa2ce406468bb77f0ca1225bb2e5ce734115379c428e82756181f18c00184",
+      "source_directory": "https://github.com/h-albert-lee/kiii-kiii-workspace/tree/9e0570a069a50426b91d372fd6882b4bb551c2ba/experiments/results/runs/0928-02-exaone-33b-local",
+      "external_runner": false,
+      "recorded_gate": "33c670c00de2006bcce594aa52aa29625e9f56d956bca595f5b1b787f1daad7a",
+      "native_capacity_independently_verified": false
+    },
+    {
+      "run": "0928-03-qwen3-30b-full",
+      "result": "data/result-review/update-9e0570a/inputs/0928-03-qwen3-30b-full/result.json",
+      "result_sha256": "81bd7b428cf7b919b474419afcedf5fd3bf9946e598c70d20346c15d7c533ab0",
+      "diagnostics": "experiments/results/analyses/1001-failure-decomposition-v1/0928-03-qwen3-30b-full/analysis.json",
+      "diagnostics_sha256": "c7ed2298957e2de62499a6f552b5c04827f209b48edff1fe617d26848df78a5a",
+      "source_directory": "https://github.com/h-albert-lee/kiii-kiii-workspace/tree/9e0570a069a50426b91d372fd6882b4bb551c2ba/experiments/results/runs/0928-03-qwen3-30b-full",
+      "external_runner": false,
+      "recorded_gate": "aa82fe0f98d8d2758fa9be39a5bb5a25df45cd349659a6cf0bbb2acb2abc0c8b",
+      "native_capacity_independently_verified": false
+    },
+    {
+      "run": "0928-04-qwen3-30b-local",
+      "result": "data/result-review/update-9e0570a/inputs/0928-04-qwen3-30b-local/result.json",
+      "result_sha256": "92090f9ce39ceb0a07dcb79907aac0d0d9bfb9994c1ee3f3b044d5a9abb6f840",
+      "diagnostics": "experiments/results/analyses/1001-failure-decomposition-v1/0928-04-qwen3-30b-local/analysis.json",
+      "diagnostics_sha256": "6de6959792c5d2410cd1822b5d9b4dd5084a9b1348929f454634629c535ea821",
+      "source_directory": "https://github.com/h-albert-lee/kiii-kiii-workspace/tree/9e0570a069a50426b91d372fd6882b4bb551c2ba/experiments/results/runs/0928-04-qwen3-30b-local",
+      "external_runner": false,
+      "recorded_gate": "aa82fe0f98d8d2758fa9be39a5bb5a25df45cd349659a6cf0bbb2acb2abc0c8b",
+      "native_capacity_independently_verified": false
+    },
+    {
+      "run": "0928-01-gemma4-e2b-full",
+      "result": "data/result-review/update-46cac91/runs/0928-01-gemma4-e2b-full/result.json",
+      "result_sha256": "c2ae82b61eb0e385a0df7541c7f1465ddb22b70c06658fee6506cf9ba397f038",
+      "diagnostics": "experiments/results/analyses/1001-gemma-failure-decomposition-v1/0928-01-gemma4-e2b-full/analysis.json",
+      "diagnostics_sha256": "ba0c53415d69c107a4b3fc9b22deb2381bbb6b7f41f0131be223e204eacdbdcb",
+      "source_directory": "https://github.com/h-albert-lee/kiii-kiii-workspace/tree/46cac911183d1d38f5e4f04050135772bce6f0db/experiments/results/runs/0928-01-gemma4-e2b-full",
+      "external_runner": true,
+      "recorded_gate": "3ca4201edaa6047399bd8d052fec95af0074df21e1919dc15b6f2caa14a277f4",
+      "native_capacity_independently_verified": false
+    },
+    {
+      "run": "0928-01-gemma4-e2b-local",
+      "result": "data/result-review/update-46cac91/runs/0928-01-gemma4-e2b-local/result.json",
+      "result_sha256": "1b2beeeb3c5752d828acbbae017c7adbf7e317522473c873c1347a5ae86ff958",
+      "diagnostics": "experiments/results/analyses/1001-gemma-failure-decomposition-v1/0928-01-gemma4-e2b-local/analysis.json",
+      "diagnostics_sha256": "1199764ac6a44c9fbdf734a43dc0eb37b96c5ff6dec7bcb401e413c00caec4e8",
+      "source_directory": "https://github.com/h-albert-lee/kiii-kiii-workspace/tree/46cac911183d1d38f5e4f04050135772bce6f0db/experiments/results/runs/0928-01-gemma4-e2b-local",
+      "external_runner": true,
+      "recorded_gate": "3ca4201edaa6047399bd8d052fec95af0074df21e1919dc15b6f2caa14a277f4",
+      "native_capacity_independently_verified": false
+    },
+    {
+      "run": "0928-02-gemma4-e4b-full",
+      "result": "data/result-review/update-46cac91/runs/0928-02-gemma4-e4b-full/result.json",
+      "result_sha256": "f6159db045ede74967e717e76eb26c5cc0d77d4a226a31a74c908b736ff78180",
+      "diagnostics": "experiments/results/analyses/1001-gemma-failure-decomposition-v1/0928-02-gemma4-e4b-full/analysis.json",
+      "diagnostics_sha256": "daa163fd1e620a6ea8db0ee093af448afb642a54d0888972b54f7a1fb149c110",
+      "source_directory": "https://github.com/h-albert-lee/kiii-kiii-workspace/tree/46cac911183d1d38f5e4f04050135772bce6f0db/experiments/results/runs/0928-02-gemma4-e4b-full",
+      "external_runner": true,
+      "recorded_gate": "3ca4201edaa6047399bd8d052fec95af0074df21e1919dc15b6f2caa14a277f4",
+      "native_capacity_independently_verified": false
+    },
+    {
+      "run": "0928-02-gemma4-e4b-local",
+      "result": "data/result-review/update-46cac91/runs/0928-02-gemma4-e4b-local/result.json",
+      "result_sha256": "2c6ad9c97cbe5d3c21ae2d67770e1c85963dd5c50dae8952e50011cc967c10c7",
+      "diagnostics": "experiments/results/analyses/1001-gemma-failure-decomposition-v1/0928-02-gemma4-e4b-local/analysis.json",
+      "diagnostics_sha256": "7bb1540ca3eadb663745405a605777ef6e4e43d93ecc7e389552749aa295e01a",
+      "source_directory": "https://github.com/h-albert-lee/kiii-kiii-workspace/tree/46cac911183d1d38f5e4f04050135772bce6f0db/experiments/results/runs/0928-02-gemma4-e4b-local",
+      "external_runner": true,
+      "recorded_gate": "3ca4201edaa6047399bd8d052fec95af0074df21e1919dc15b6f2caa14a277f4",
+      "native_capacity_independently_verified": false
+    },
+    {
+      "run": "0928-03-gemma4-12b-full",
+      "result": "data/result-review/update-46cac91/runs/0928-03-gemma4-12b-full/result.json",
+      "result_sha256": "a0dfe5800c2ee67066f09bbbf5c7674e92229b8eee6ad33e8cd7bee6fb124c36",
+      "diagnostics": "experiments/results/analyses/1001-gemma-failure-decomposition-v1/0928-03-gemma4-12b-full/analysis.json",
+      "diagnostics_sha256": "588f9ba67a5f137cb6e2832fb15d203714af0ab4e6ca1afb78c46ab7821552ae",
+      "source_directory": "https://github.com/h-albert-lee/kiii-kiii-workspace/tree/46cac911183d1d38f5e4f04050135772bce6f0db/experiments/results/runs/0928-03-gemma4-12b-full",
+      "external_runner": true,
+      "recorded_gate": "3ca4201edaa6047399bd8d052fec95af0074df21e1919dc15b6f2caa14a277f4",
+      "native_capacity_independently_verified": false
+    },
+    {
+      "run": "0928-03-gemma4-12b-local",
+      "result": "data/result-review/update-46cac91/runs/0928-03-gemma4-12b-local/result.json",
+      "result_sha256": "56aa855de3f269c26e87abc6a984abb345ea2c2c36a6bc225d5b37a2d11916c0",
+      "diagnostics": "experiments/results/analyses/1001-gemma-failure-decomposition-v1/0928-03-gemma4-12b-local/analysis.json",
+      "diagnostics_sha256": "dcae497fd4687b6470a4565692cb9bec3735a5469e39feb111568c70b6575637",
+      "source_directory": "https://github.com/h-albert-lee/kiii-kiii-workspace/tree/46cac911183d1d38f5e4f04050135772bce6f0db/experiments/results/runs/0928-03-gemma4-12b-local",
+      "external_runner": true,
+      "recorded_gate": "3ca4201edaa6047399bd8d052fec95af0074df21e1919dc15b6f2caa14a277f4",
+      "native_capacity_independently_verified": false
+    },
+    {
+      "run": "0928-04-gemma4-26b-a4b-full",
+      "result": "data/result-review/update-46cac91/runs/0928-04-gemma4-26b-a4b-full/result.json",
+      "result_sha256": "b917168d7348c35edac4dccc4caec0c9a82f9b593b20a746913a60bae6a546ac",
+      "diagnostics": "experiments/results/analyses/1001-gemma-failure-decomposition-v1/0928-04-gemma4-26b-a4b-full/analysis.json",
+      "diagnostics_sha256": "1d5aa5a4cecf75c9f852fb09d681ff6f1d058b77cdae5e5a2463438ea5cd47ea",
+      "source_directory": "https://github.com/h-albert-lee/kiii-kiii-workspace/tree/46cac911183d1d38f5e4f04050135772bce6f0db/experiments/results/runs/0928-04-gemma4-26b-a4b-full",
+      "external_runner": true,
+      "recorded_gate": "3ca4201edaa6047399bd8d052fec95af0074df21e1919dc15b6f2caa14a277f4",
+      "native_capacity_independently_verified": false
+    },
+    {
+      "run": "0928-04-gemma4-26b-a4b-local",
+      "result": "data/result-review/update-46cac91/runs/0928-04-gemma4-26b-a4b-local/result.json",
+      "result_sha256": "07cfc6f26d1f887eca74dcb536553b74db0c2aa561fe51694ff5fe92490eb49c",
+      "diagnostics": "experiments/results/analyses/1001-gemma-failure-decomposition-v1/0928-04-gemma4-26b-a4b-local/analysis.json",
+      "diagnostics_sha256": "75ad23e435b85737d6f747bdd4e7326948442dc0ca2df1692a5a8c18179bdb3e",
+      "source_directory": "https://github.com/h-albert-lee/kiii-kiii-workspace/tree/46cac911183d1d38f5e4f04050135772bce6f0db/experiments/results/runs/0928-04-gemma4-26b-a4b-local",
+      "external_runner": true,
+      "recorded_gate": "3ca4201edaa6047399bd8d052fec95af0074df21e1919dc15b6f2caa14a277f4",
+      "native_capacity_independently_verified": false
+    },
+    {
+      "run": "0929-05-gemma4-31b-fp8-full",
+      "result": "data/result-review/update-46cac91/runs/0929-05-gemma4-31b-fp8-full/result.json",
+      "result_sha256": "fce4604b6993908cfb28042993728d5cdce0fd48cb9af607d215d2fe7211fa20",
+      "diagnostics": "experiments/results/analyses/1001-gemma-failure-decomposition-v1/0929-05-gemma4-31b-fp8-full/analysis.json",
+      "diagnostics_sha256": "22b274b81728aa550c168930a6e283a6c3a4f5e2d4c2a621c75106e438b11db0",
+      "source_directory": "https://github.com/h-albert-lee/kiii-kiii-workspace/tree/46cac911183d1d38f5e4f04050135772bce6f0db/experiments/results/runs/0929-05-gemma4-31b-fp8-full",
+      "external_runner": true,
+      "recorded_gate": "3ca4201edaa6047399bd8d052fec95af0074df21e1919dc15b6f2caa14a277f4",
+      "native_capacity_independently_verified": false
+    },
+    {
+      "run": "0929-05-gemma4-31b-fp8-local",
+      "result": "data/result-review/update-46cac91/runs/0929-05-gemma4-31b-fp8-local/result.json",
+      "result_sha256": "6ec4d7651cdc98d5835f96226b65e22912e2a98c1cac898be82400e0973c8adc",
+      "diagnostics": "experiments/results/analyses/1001-gemma-failure-decomposition-v1/0929-05-gemma4-31b-fp8-local/analysis.json",
+      "diagnostics_sha256": "2aa395ee3239449a3e85c83946b2ca757699f21ee257c611661d1110f8aa75c6",
+      "source_directory": "https://github.com/h-albert-lee/kiii-kiii-workspace/tree/46cac911183d1d38f5e4f04050135772bce6f0db/experiments/results/runs/0929-05-gemma4-31b-fp8-local",
+      "external_runner": true,
+      "recorded_gate": "3ca4201edaa6047399bd8d052fec95af0074df21e1919dc15b6f2caa14a277f4",
+      "native_capacity_independently_verified": false
+    }
+  ]
+}
