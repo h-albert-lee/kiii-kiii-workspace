@@ -1,6 +1,9 @@
 # Kiii² — SAC 2027 AIFT submission workspace
 
-**Independent anonymous draft; not submitted.** Workshop polishing remains in
+**Independent anonymous draft; not submitted.**
+
+[Live SAC Overleaf project](https://www.overleaf.com/project/6abf20099c6d0b7f48e49e71)
+(XeLaTeX / TeX Live 2026). [Submission-format verification](notes/format-verification.md). Workshop polishing remains in
 the existing `paper/` / Overleaf project. This folder starts from workshop
 commit `8d73e63`, not an uninspected copy of Sara's later live edits.
 
@@ -78,7 +81,7 @@ Sara owns workshop polishing. When she finishes, export through native
 Overleaf → GitHub, record the new commit, inspect the diff against `8d73e63`
 and port relevant corrections selectively. Native comments live in Overleaf;
 Git source copies do not preserve comment threads in the new draft. The
-existing five threads remain untouched in the workshop project. A SAC
-Overleaf project has not yet been created. Create a distinct project when
-moving this draft into collaborative editing; use native edits and outbound
-sync there as well.
+existing five threads remain untouched in the workshop project. The separate SAC
+project linked above was created on 2026-10-02 and verified against the uploaded
+source. Use native edits and outbound source export/sync there as well; no
+automatic GitHub integration is configured.

@@ -71,6 +71,6 @@ analysis retains unmerged counts. Missing conditions are blank, not zero; no
 cohorts are pooled and no gold is dropped. The five illustrative cases are
 purposively stratified and hash-selected, not a representative manual audit.
 
-GitHub publication remains subject to the unresolved approval request from
-the previous turn; figure preparation does not authorize a retry of the
-rejected manuscript push.
+The operator approved GitHub publication on 2026-10-02; the original manuscript
+and figure/error-analysis commits were pushed through `a6a6ae0`. The separate
+Overleaf project and subsequent format verification are recorded in the README.

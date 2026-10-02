@@ -37,3 +37,11 @@ Status: internal anonymous draft, not submitted. Final hashes are recorded in
 The source is an expanded manuscript starting point, not final coauthor signoff.
 Sara's later workshop corrections, the final SAC author roster and the actual
 EasyChair form/upload verification remain in `submission-checklist.md`.
+
+## Official format / remote compile follow-up
+
+See `format-verification.md`: official class and bibliography style match byte
+for byte; bold captions are the class default. Abstract shortened to 172 words,
+keywords to five. Recompiled and inspected all eight local and all eight
+Overleaf pages; all 21 uploaded source files match the downloaded ZIP.
+Overleaf XeLaTeX / TeX Live 2026: zero errors, 24 documented warnings.

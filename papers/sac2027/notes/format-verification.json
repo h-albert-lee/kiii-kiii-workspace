@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-02",
+  "official_downloads": {
+    "template_zip_sha256": "cabdde54130673583a758a56a015c8c08bc93f1f0e1561a12ab88343911e7af4",
+    "author_kit_pdf_sha256": "c55eab6ac6eb35446ebfa8c6fe3d40abc5eb707fb0acc4d20dd33ce1a89897a8",
+    "acmart_cls_sha256": "2f949e6e3f2a79f2cdc218b9dcdbaa7dd451adb4ee0be1af6dc7ebe00b318ea7",
+    "bibstyle_sha256": "8ec002c927068bfc5b3cfe71b66aa4767b9e485530ac3c67ba5c064df4c2e6ac"
+  },
+  "abstract_whitespace_words": 172,
+  "keywords": 5,
+  "remote_source_files_matched": 21,
+  "remote_pages": 8,
+  "remote_errors": 0,
+  "remote_warnings": 24,
+  "remote_bib_warnings": 22,
+  "remote_log_headings_sha256": "b1df45b01c3f8c97e06f4ab8a9bf740d508b715f884c1c05319e57671e1c380d"
+}
