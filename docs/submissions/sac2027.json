@@ -1,11 +1,25 @@
 {
   "venue": "SAC 2027 AIFT",
   "status": "submitted",
-  "confirmation_source": "operator_message",
+  "confirmation_source": "operator_message and EasyChair saved-submission page",
   "confirmed_on": "2026-10-02",
-  "submission_number": null,
+  "submission_number": 362,
   "receipt_url": null,
-  "pdf_sha256": null,
-  "independently_verified": false,
-  "note": "Operator confirmed SAC submission completion. Do not create a duplicate; final submission metadata not supplied."
+  "pdf_sha256": "e88a0c1bb668662efc53a87cf0be3174c0b687365a155c379a7195e2f1685178",
+  "independently_verified": true,
+  "note": "EasyChair confirms submission 362 in AIFT, six authors, Hanwool as corresponding/submitting author using operator-selected Gmail. Downloaded PDF has identical extracted text and all eight rendered pages at 900-pixel maximum dimension to the prepared draft, despite different file bytes. No duplicate created.",
+  "easychair_submission_id": 7834227,
+  "pdf_pages": 8,
+  "download_verified": true,
+  "prepared_pdf_sha256": "9a0f46d02662b3c213ee3224f4dbd657472149f3ba10456770c7019a5bda7702",
+  "authors_as_displayed": [
+    "Eunbin Shin",
+    "Sara Yu",
+    "Seonghyun Kim",
+    "Minkyeong Shin",
+    "Yewon Hwang",
+    "Hanwool Lee"
+  ],
+  "declarations": "All three declarations explicitly approved by operator and shown as yes in receipt.",
+  "follow_up": "Honor AI writing-assistance disclosure in Acknowledgment; current anonymous PDF has no Acknowledgment section."
 }

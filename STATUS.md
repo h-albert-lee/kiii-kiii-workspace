@@ -1,3 +1,4 @@
+<!-- SAC receipt verified: EasyChair #362, AIFT, 8 pages; docs/submissions/sac2027.json. -->
 # STATUS — 2026-10-02
 
 ## ICAIF workshop submission — 2026-10-02
