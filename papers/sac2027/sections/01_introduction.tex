@@ -3,7 +3,7 @@
 
 \input{sections/fig1_overview}
 
-Recognizing a well-formed identifier is only one part of detecting personal information in financial text. A customer may dictate an account number as \textup{일일공 에 일이삼 에 사오육칠팔구}, split it across turns, or provide a partially masked value. A repayment difficulty or an upcoming life event can also convey personal information without resembling an identifier. A benchmark for data loss prevention (DLP) must therefore make both the detection policy and the conditions of recognition explicit.
+Recognizing a well-formed identifier is only one part of detecting personal information in financial text. A customer may dictate an account number as \textup{일일공 에 일이삼 에 사오육칠팔구} (spoken digits for 110-123-456789, with \textup{에} marking separators), split it across turns, or provide a partially masked value. A repayment difficulty or an upcoming life event can also convey personal information without resembling an identifier. A benchmark for data loss prevention (DLP) must therefore make both the detection policy and the conditions of recognition explicit.
 
 Korean finance brings these requirements together. Statutory categories include customer identifiers and financial attributes beyond conventional name--address--phone labels (\S\ref{sec:taxonomy}). Some additional attributes are useful to study because they can support profiling~\cite{staab2024beyond}, even when they are not separately enumerated in our statutory mapping. Treating all such targets as an undifferentiated PII label obscures what a detector covers; treating all detected spans as legally requiring redaction conflates evaluation policy with legal obligation.
 
@@ -15,3 +15,4 @@ Existing work studies query-aware PII protection~\cite{shen2025piibench}, multil
   \item \textbf{A controlled financial testbed:} 1,440 synthetic documents and 218,664 spans covering ten document types, multiple subjects and T0--T3 variation, with code-generated identifiers and span-level provenance (\S\ref{sec:benchmark}).
   \item \textbf{A matched context evaluation:} full-document and local-window inputs applied to identical target regions and output budgets, across 12 language models and three frozen baselines, with explicit failure accounting (\S\ref{sec:setup}). Archived-response diagnostics separate output compliance, grounding errors and observable detection, revealing why strict extraction scores alone can conceal useful span recovery.
 \end{enumerate}
+

@@ -45,3 +45,20 @@ for byte; bold captions are the class default. Abstract shortened to 172 words,
 keywords to five. Recompiled and inspected all eight local and all eight
 Overleaf pages; all 21 uploaded source files match the downloaded ZIP.
 Overleaf XeLaTeX / TeX Live 2026: zero errors, 24 documented warnings.
+
+## English-gloss follow-up — 2026-10-02
+
+Added concise English glosses to the Korean dictated-digit example, statutory
+name/address/telephone terms, mixed Korean numeral example and separator tokens;
+Figure 1's caption spells out the Korean digit sequence in English. No data,
+results or protocol changed. Native Overleaf review panel showed no comments
+or suggestions before edits. All 21 exported sources were compared with the
+intended files; native trailing blank lines were retained locally. The final
+native XeLaTeX PDF has 8 pages, 0 errors and the same 24 warnings; all eight
+pages were rendered and inspected. The stable delivered PDF/source ZIP now
+use the native Overleaf exports, with updated artifact hashes.
+
+Read the other session's shared `docs/authors.yaml` and author handoff. Preserve
+its six-author order, equal-first roles and corresponding-author role in
+submission metadata; author identities remain excluded from this anonymous
+PDF/source bundle. That session's author/receipt files were not changed here.
