@@ -5,7 +5,14 @@
 We report 22 completed conditions from 12 language models and three frozen baselines (Figure~\ref{fig:score-portrait}). The initial Qwen3.5-2B/4B and Kanana-2-3B runs were extended after formatting failures were observed; the extension is exploratory. Only Qwen-2B full and Qwen-4B local have complete artifacts, so their opposite conditions are omitted. No model is trained on the benchmark; GLM/Astra are generators only. All runs use 1,440 documents except Kanana-1.5-8B, whose recorded length exclusions leave 1,438. Original cohorts and failed requests are retained.
 
 \paragraph{Matched extraction target.}
-All completed conditions use the protocol in \S\ref{sec:protocol}: 1,200-character cores and halos, with 4,096 output tokens. Baselines process documents using their frozen rules or token-classification windows; they are document-level references, not full/local pairs. No comparison treats the baseline interface as identical to the LLM extraction contract.
+All completed LLM conditions use the protocol in \S\ref{sec:protocol}: 1,200-character cores and halos, with 4,096 output tokens. Baselines process documents using their frozen rules or token-classification windows; they are document-level references, not full/local pairs. No comparison treats the baseline interface as identical to the LLM extraction contract.
+
+\paragraph{Baseline coverage.}
+Our Presidio configuration uses direct Korean rule recognizers and custom account/card patterns; ko-pii uses fixed regex matches. OpenMed uses token-level argmax BIOES decoding and fixed fragment mappings. The frozen maps can emit 9, 17 and 13 of the 36 target categories, respectively. All 36 categories remain in the gold denominator: these baselines measure deployed configuration coverage, not equal-label recognition ability.
 
 \paragraph{Execution and audit.}
 Qwen/Kanana/EXAONE used BF16 vLLM serving; Gemma used BF16 except 31B (FP8 weights and KV cache). Recorded decoding and server settings differ across execution blocks (\S\ref{app:diagnostics}); cross-family results are descriptive, not a controlled scaling study. Gemma used an external runner. We reconstruct requests and replay every strict score and failure from archived responses, preserving the original execution metadata. Native count files were not supplied for independent capacity verification, and representative separate-pilot calibration is not established by the artifacts. We therefore do not claim a verified all-model capacity gate. Paired contrasts check matching data, protocol, model revisions, settings and recorded gates within each model. Pointwise 95\% intervals use 2,000 document-paired bootstrap samples (seed 0); analysis is post-hoc.
+
+\paragraph{Implementation assistance.}
+Claude and OpenAI Codex assisted implementation of generation, evaluation and analysis code and preparation of plotting code. Reported scores are computed from archived predictions by deterministic scoring and replay; generative models do not assign these scores. Dataset composition models and their use are specified in \S\ref{sec:benchmark}.
+

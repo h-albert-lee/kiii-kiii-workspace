@@ -62,3 +62,7 @@ Read the other session's shared `docs/authors.yaml` and author handoff. Preserve
 its six-author order, equal-first roles and corresponding-author role in
 submission metadata; author identities remain excluded from this anonymous
 PDF/source bundle. That session's author/receipt files were not changed here.
+
+## Final submitted revision (ADR-0041)
+
+See `docs/reviews/2026-10-02-sac-final-revision.md` and `docs/submissions/sac2027.json` at repository root. 8-page native Overleaf PDF, all 21 sources verified, 0 errors / 16 warnings, all eight pages visually checked; submitted PDF and updated abstract verified in #362. AI implementation and manuscript assistance disclosed. Historical pending-submission statements above are superseded.

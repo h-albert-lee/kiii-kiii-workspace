@@ -6,7 +6,7 @@ The descriptive comparison (Figure~\ref{fig:score-portrait}) reports completed e
 \begin{figure*}[t]
 \centering
 \includegraphics[width=\textwidth]{figures/score-portrait.pdf}
-\caption{\textbf{Extraction reliability and observable detection are distinct.}
+\caption{\textbf{Output validity and span recovery differ.}
 Strict exact F1 (filled circles) and D-F1 (open diamonds) from the same archived
 outputs, by full (A) and local (B) context. Connecting segments identify two
 scoring views, not causal effects or confidence intervals. (C) Structural
@@ -23,8 +23,8 @@ for Gemma-12B and Gemma-31B. Missing Qwen pairs are not plotted as zeros.}
 \label{fig:score-portrait}
 \end{figure*}
 
-\paragraph{Reliability is not detection.}
-Presidio reaches 10.15 strict F1; the highest LLM strict score is 7.97 (Gemma-26B-A4B, full). Yet rejecting an entire response discards correct items alongside malformed siblings. Our fixed post-hoc parser retains exactly grounded valid items, charges one exact false positive per invalid parsed item, and removes only an entire-response JSON fence. Truncated/unparseable responses remain empty and all gold remain in the denominator. This \emph{observable detection proxy} (D) is more direct than strict F1 for inspecting retrieved PII, but does not recover latent ability from uninterpretable outputs. Quotes, labels and boundaries are never repaired.
+\paragraph{Strict rejection can hide valid items.}
+Presidio reaches 10.15 strict F1; the highest LLM strict score is 7.97 (Gemma-26B-A4B, full). For LLMs, strict scoring enforces the frozen response contract: one invalid item can suppress valid siblings. The itemwise replay in \S\ref{sec:protocol} retains valid anchored items while preserving invalid-item penalties and all gold. Its contrast with strict F1 describes usable evidence in the received output, not performance under an improved decoder.
 
 Gemma-12B local moves from 0.05 strict F1 to 29.81 D-F1; Gemma-31B FP8 local reaches 31.58 D-F1 (28.86 precision, 34.86 recall). Format compliance alone is also insufficient: Qwen3-30B full has 90.42\% structurally compliant responses but only 7.55 D-F1, and 53.06\% of all requests return an empty list. Thus output acceptance, grounding and missed PII need separate denominators, not a success-only score.
 

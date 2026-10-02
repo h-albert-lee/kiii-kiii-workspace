@@ -1,35 +1,35 @@
 {
   "date": "2026-10-02",
-  "status": "anonymous draft with English glosses; native Overleaf source verified; not submitted",
+  "status": "Final revision submitted to SAC AIFT #362; native Overleaf sources verified",
   "pdf_pages": 8,
   "figures": 4,
   "companion_figures": 1,
   "tables": 2,
   "compiler": "Overleaf XeLaTeX / TeX Live 2026 (native PDF export)",
   "pdf": {
-    "path": "output/pdf/kiii-sac2027-draft.pdf",
-    "sha256": "9a0f46d02662b3c213ee3224f4dbd657472149f3ba10456770c7019a5bda7702"
+    "path": "output/pdf/sac2027-final-revision.pdf",
+    "sha256": "6501bb59c575f859554926c712a7c91eb4918979b3540373127b5ab8d762dfde"
   },
   "anonymous_source_bundle": {
-    "path": "output/pdf/kiii-sac2027-anonymous-source.zip",
-    "sha256": "a1dedec8a6f036197bf5eb1a8a1873f29119195377340a17823650620e540750"
+    "path": "output/pdf/sac2027-final-revision.zip",
+    "sha256": "ef3bf9611563d6257cf282633162fe68e1e4f33f315a4c5d997d9a5abb933734"
   },
   "source_sha256": {
     "main.tex": "e334645955c8c5fa362d26814ddc884f0fd649dd9210226068bbbc61bdc1a1f0",
-    "references.bib": "d72a858a38ec2b2d1381114a83cd0aa80bd2c2452bebac897c425f091ea2d54e",
+    "references.bib": "2310a0a110c62b014ce259af8fadd51687ed98f0871d11bac510ba6a3f3be5b0",
     "acmart.cls": "2f949e6e3f2a79f2cdc218b9dcdbaa7dd451adb4ee0be1af6dc7ebe00b318ea7",
     "ACM-Reference-Format.bst": "8ec002c927068bfc5b3cfe71b66aa4767b9e485530ac3c67ba5c064df4c2e6ac",
-    "sections/00_abstract.tex": "7196b466c42260adc2e570db46654e3df0c6ae278d7f1a97033066f932d66ad8",
-    "sections/01_introduction.tex": "2e49e0ccff94f664547d28c23f77c207ae0f522afea08cccac15c4e10724723f",
-    "sections/02_related_work.tex": "24ed6a3246375ae57e7f43ba62c8f0834229f13efcfadbf79c6ad187332d18f7",
-    "sections/03_taxonomy.tex": "bcde0423604a619fd58a838afd9c69d5a7f1d5e4340992d9fa3c899d4d374e21",
-    "sections/04_benchmark.tex": "c1cfad9328fab3233629d5bb17b15069531451455cea3c84e6e37a5ffcd4b039",
-    "sections/05_experiments.tex": "82a1ab602e2905b486584c3f4a1495f4a9bcdb061608fcb55543a3331e54bb7d",
-    "sections/05_protocol.tex": "09aefa92e13e816beac79becde91a753fcd26b1548b9c231a8f39f530b644b7a",
-    "sections/06_results.tex": "80646aaef4e86b5228ba8aa5ca527a133f8961811760cfc7f560e11c1df31b0e",
-    "sections/07_conclusion.tex": "085203d7fecccfd745da06c652b0909585daadb590317db725e860f6af096aef",
-    "sections/08_diagnostics.tex": "cc1d07531865b8455fdbc8a81d841639ed9694cfa0c6dbc396616e0f8190e136",
-    "sections/09_discussion.tex": "9b84431a510abe5809d26149b24dbc49516da03b75a160050358f7b75ad054b9",
+    "sections/00_abstract.tex": "6ffec5df866d69e78671ea41a1f0d77db74a9fe18ef996323032c3e45ba2ac78",
+    "sections/01_introduction.tex": "369c9715a6b2f6a06b8af90eac0ac0111c58223cfea3e999c0ed6f557a32bbc3",
+    "sections/02_related_work.tex": "b7aad7b0f6c7c17ae419e644da63232240e382e22977c8cdd1121d298145a4bd",
+    "sections/03_taxonomy.tex": "f5137accd8d914249fb814aeef44051d0be7d86139855f12a4e9842b27b51b1f",
+    "sections/04_benchmark.tex": "70196bffff9643c6c0b2ad66e6771a95038b6960c2b2767ebba9ee0c1088d7da",
+    "sections/05_experiments.tex": "320f9f34e96ca39b9848f08342cee52fc77da86edd3a522397a386e01168ab15",
+    "sections/05_protocol.tex": "7780679e014af164b635dc06e205759afa87f4931a06a84f9fb9fd076a253c8a",
+    "sections/06_results.tex": "de55a24c2bb3359d70bf2869dc9cfb187e7e1af65091b6792b9c776ec16157d8",
+    "sections/07_conclusion.tex": "b47d8e5c1c4b25a3fd90f8792a7f317514fb0dff58b698182d9faf6b32fb8ade",
+    "sections/08_diagnostics.tex": "dfbd06def0c825c2d5a9f9740bf55d37c1eda9e376b7dcd1b32fea36e2f83866",
+    "sections/09_discussion.tex": "1e0005b32928cda5b8276cf9a1a6b9b069d92e1a3b3d3c60f5043106ac09b0ab",
     "sections/fig1_overview.tex": "a206bfbcd25e19d725b6d3e2ae06c67aac6fc0a49dfb39c0cc788a7b445ccc42",
     "sections/response-table.tex": "b400377c2d5ab441ae122335b6d744b141a13a154f76b6051fccb265917425f4",
     "figures/benchmark-overview.pdf": "56bf93e8a30c2e1ee47763823f84c81df2acae4bfb85dea59cbfc3ecb6ee0840",
@@ -39,14 +39,14 @@
   },
   "overleaf": {
     "project_url": "https://www.overleaf.com/project/6abf20099c6d0b7f48e49e71",
-    "name": "Kiii-Kiii \u2014 SAC 2027 AIFT",
+    "name": "Kiii-Kiii — SAC 2027 AIFT",
     "compiler": "XeLaTeX",
     "tex_live": "2026",
     "source_files_byte_identical": 21,
     "pdf_pages": 8,
-    "pdf_sha256": "9a0f46d02662b3c213ee3224f4dbd657472149f3ba10456770c7019a5bda7702",
-    "source_zip_sha256": "a1dedec8a6f036197bf5eb1a8a1873f29119195377340a17823650620e540750",
+    "pdf_sha256": "6501bb59c575f859554926c712a7c91eb4918979b3540373127b5ab8d762dfde",
+    "source_zip_sha256": "ef3bf9611563d6257cf282633162fe68e1e4f33f315a4c5d997d9a5abb933734",
     "errors": 0,
-    "warnings": 24
+    "warnings": 16
   }
 }

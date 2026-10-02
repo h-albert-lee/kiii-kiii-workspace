@@ -5,13 +5,13 @@
   "confirmed_on": "2026-10-02",
   "submission_number": 362,
   "receipt_url": null,
-  "pdf_sha256": "e88a0c1bb668662efc53a87cf0be3174c0b687365a155c379a7195e2f1685178",
+  "pdf_sha256": "9374b99346e6f43715edc194a98a8f1bde0818a90cd0c186872df89e80bfe12e",
   "independently_verified": true,
   "note": "EasyChair confirms submission 362 in AIFT, six authors, Hanwool as corresponding/submitting author using operator-selected Gmail. Downloaded PDF has identical extracted text and all eight rendered pages at 900-pixel maximum dimension to the prepared draft, despite different file bytes. No duplicate created.",
   "easychair_submission_id": 7834227,
   "pdf_pages": 8,
   "download_verified": true,
-  "prepared_pdf_sha256": "9a0f46d02662b3c213ee3224f4dbd657472149f3ba10456770c7019a5bda7702",
+  "prepared_pdf_sha256": "6501bb59c575f859554926c712a7c91eb4918979b3540373127b5ab8d762dfde",
   "authors_as_displayed": [
     "Eunbin Shin",
     "Sara Yu",
@@ -21,5 +21,17 @@
     "Hanwool Lee"
   ],
   "declarations": "All three declarations explicitly approved by operator and shown as yes in receipt.",
-  "follow_up": "Honor AI writing-assistance disclosure in Acknowledgment; current anonymous PDF has no Acknowledgment section."
+  "follow_up": "AI-assisted implementation described in Experimental Setup; drafting/restructuring/language revision disclosed in Acknowledgment. No outstanding disclosure insertion for this submitted revision. No registration fee paid.",
+  "history": [
+    {
+      "date": "2026-10-02",
+      "revision": "initial operator submission",
+      "pdf_sha256": "e88a0c1bb668662efc53a87cf0be3174c0b687365a155c379a7195e2f1685178",
+      "pdf_pages": 8
+    }
+  ],
+  "revision": "Final reviewer-oriented revision, ADR-0041",
+  "displayed_last_update": "Oct 02, 06:12 (EasyChair displayed time; timezone not shown)",
+  "abstract_matches": true,
+  "verification": "Layout-preserving extracted text and all eight rendered pages at 1250-pixel maximum dimension match uploaded PDF exactly. PDF byte hashes differ after upload."
 }

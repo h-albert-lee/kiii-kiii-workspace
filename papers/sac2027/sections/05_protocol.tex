@@ -1,13 +1,9 @@
-\section{Separating Extraction Reliability from Detection}
+\section{Evaluation Protocol and Response Diagnostics}
 \label{sec:protocol}
 
-We distinguish three observable questions: can the response be processed under
-the requested contract, can its proposed items be located in the source, and
-do the located spans match the benchmark policy? These questions share an
-evaluation collection but have different denominators. A response may satisfy
-the JSON contract while returning no PII, or contain several correct quotations
-alongside one invalid item. Neither structural compliance nor strict extraction
-F1 alone explains both cases.
+We distinguish response acceptance, item grounding and typed-span recovery.
+They use different denominators: valid JSON may contain no PII, while a
+rejected response may mix correct quotations with invalid items.
 
 \subsection{A fixed output task under different context}
 Let a document contain $n$ Unicode code points. For request $j$, define a
@@ -22,20 +18,14 @@ categories, subject identities or span locations.
 An output item specifies a category, an exact target quotation and a
 one-based occurrence index, counting overlapping occurrences. Its span is
 owned by the request containing its start in $C_j$; its end may extend into
-the following halo but not beyond $T_j$. This ownership rule avoids counting
-the same mention from overlapping requests. Identical category--boundary
-predictions are deduplicated deterministically. The scheme avoids asking the
-model to compute document-wide numeric offsets, but exact quotation and
-occurrence selection remain part of the task. A wrong occurrence can yield
-an incorrect location even when the text exists elsewhere in the target.
+the following halo but not beyond $T_j$. Ownership avoids duplicate mentions across requests; identical category--boundary
+predictions are also deduplicated. Quotation and occurrence replace numeric
+offset generation but still require correct source localization.
 
 The output task is held fixed, not the input length or inference cost.
 Mentions extending beyond their owner's target remain gold false negatives
-if they cannot be represented. We do not shorten the gold collection to make
-either context condition easier. The experiment therefore measures the
-effect of additional input context within this particular extraction
-interface, rather than comparing unconstrained whole-document summarization
-with chunk-by-chunk annotation.
+if they cannot be represented. A boundary audit confirms that all 218,664 gold spans fit their owning
+targets; none is excluded or made unrepresentable by these windows. The contrast measures additional context within this extraction interface.
 
 \subsection{Primary strict extraction}
 Strict evaluation requires normal completion, the specified JSON root and

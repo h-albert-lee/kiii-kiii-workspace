@@ -1,6 +1,6 @@
 # Kiii-Kiii · Kiii²
 
-> **2026-10-02 / SAC 2027 준비 (ADR-0039):** [별도 SAC AIFT 원고·제출 체크리스트](papers/sac2027/README.md)를 준비합니다. 사라가 폴리싱하는 기존 `paper/`·Overleaf와 분리하며, 완료 15시스템·25조건만 사용합니다. 추가 추론은 없습니다. 공식 연장 마감 10/16 (EST 표기), 내부 목표 10/14 KST. 아직 SAC 제출은 하지 않았습니다.
+> **2026-10-02 / SAC 2027 AIFT 제출 완료 #362:** [최종 원고](papers/sac2027/README.md)와 [검증된 접수 기록](docs/submissions/sac2027.json). 리뷰 관점의 마지막 수정과 AI 사용 고지를 반영한 8쪽 PDF·초록을 갱신했고, 제출본 재다운로드 검증을 완료했습니다. 기존 workshop #11과 독립된 제출이며 추가 추론은 없습니다.
 
 > **2026-10-01 최종 범위 (ADR-0038): 추가 추론을 중단하고 완료 결과로 집필합니다.** LLM 12종·22조건 + baseline 3종 = **15시스템·25조건**. 성현의 Gemma 5종 양 조건과 은빈의 Qwen3-30B/EXAONE을 포함합니다. Qwen 2B local·4B full은 pilot-only라 제외합니다. [완료 결과/설정/통계](experiments/results/analyses/1001-completed-manuscript-v1/REPORT.md). 아래 과거 실행 계획은 새 실험 지시가 아닙니다.
 

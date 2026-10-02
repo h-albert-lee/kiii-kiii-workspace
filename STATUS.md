@@ -7,7 +7,9 @@
 
 ## SAC 2027 submitted — 2026-10-02
 
-**Submitted: #362, AIFT**, personally completed by the operator and verified in EasyChair. Six authors; Hanwool is corresponding/submitting author using the operator-selected Gmail address. Downloaded PDF: 8 pages, extracted text and all eight 900-pixel rendered pages identical to the prepared draft, despite different file bytes. [Receipt](docs/submissions/sac2027.json). The operator approved all three submission declarations; AI writing-assistance disclosure in Acknowledgment remains a follow-up obligation. No fee paid.
+**Final revision uploaded and verified (ADR-0041):** #362 updated PDF and matching abstract; 8 pages, 0 compile errors, 16 documented warnings. All eight downloaded pages and text match the approved native Overleaf export. Added precise legal/policy distinctions, baseline label coverage, boundary/length audit, corrected Gemma-12B server provenance and related-work characterization, and factual AI-use disclosure. Scores, cohorts and inference unchanged. [Final review](docs/reviews/2026-10-02-sac-final-revision.md).
+
+**Submitted: #362, AIFT**, personally completed by the operator and verified in EasyChair. Six authors; Hanwool is corresponding/submitting author using the operator-selected Gmail address. Downloaded PDF: 8 pages, extracted text and all eight 900-pixel rendered pages identical to the prepared draft, despite different file bytes. [Receipt](docs/submissions/sac2027.json). The operator approved all three submission declarations; AI writing-assistance disclosure is now included in Acknowledgment. No fee paid.
 
 ### Preparation history
 
