@@ -1,6 +1,8 @@
 # SAC 2027 AIFT submission checklist
 
-Status: preparation only, 2026-10-02. No Kiii² EasyChair record created.
+Status: **submitted #362, AIFT, 2026-10-02**; operator completed submission, agent verified receipt and downloaded PDF. See [receipt](../../../docs/submissions/sac2027.json). Preparation items below are historical, not evidence that every coauthor independently reviewed the final text.
+
+Follow-up: honor the approved generative-AI writing-assistance disclosure in the Acknowledgment section; current anonymous PDF has no Acknowledgment section.
 
 ## Venue facts
 
@@ -30,9 +32,11 @@ Status: preparation only, 2026-10-02. No Kiii² EasyChair record created.
 
 ## Author and workshop handoff
 
-See [detailed author/submission handoff](author-handoff.md) and the shared author record. Workshop #11 is submitted; SAC remains unsubmitted. Never reuse NMIXX #185 or treat the workshop record as a SAC receipt.
+See [detailed author/submission handoff](author-handoff.md) and the shared author record. Workshop #11 and SAC #362 are submitted separately. Never reuse NMIXX #185 or treat the workshop record as a SAC receipt.
 
-## Before submission
+## Historical preparation checklist
+
+Submission is now operator-confirmed. Unchecked items below remain unverified by this session; they are not instructions to submit again.
 
 - [ ] Selectively integrate relevant final workshop corrections after Sara's
   native Overleaf → GitHub export; record that exact commit.
@@ -55,8 +59,7 @@ See [detailed author/submission handoff](author-handoff.md) and the shared autho
 - [ ] Upload the final approved PDF; download it again and verify the file,
   page count and visible content; record the actual submission number/receipt.
 
-The actual form has not been inspected in this task; these are preparation
-items, not assertions about every required EasyChair field. Author names,
+The actual form and saved receipt were inspected: six authors, five keywords, AIFT track, and three operator-approved declarations. Historical preparation items above are not retrospective assertions of all reviews. Author names,
 emails, conflicts and permissions must come from the operator. ORCID is
 requested by ACM for the publishing process. Publication/registration charges
 are not paid or authorized by this preparation task.
@@ -70,7 +73,7 @@ are not paid or authorized by this preparation task.
 coauthor review; do not independently edit form text and let the PDF diverge.
 
 **Keywords:** PII detection; Korean financial NLP; regulation-grounded benchmark;
-long-context extraction; output reliability; data loss prevention.
+long-context extraction; output reliability.
 
 **Internal overlap note:** This SAC manuscript uses the same frozen synthetic
 benchmark and completed runs as the non-archival ICAIF workshop manuscript.
@@ -79,4 +82,4 @@ interpretation. The operator reports Prof. Yongjae Lee confirmed both
 submissions are acceptable. The workshop's actual submission/acceptance status
 must be checked at submission time; this note does not establish either.
 
-- Existing EasyChair account: operator confirmed the account used for NMIXX is available (2026-10-02). Reuse it; Kiii² requires a separate new SAC submission. See [author handoff](author-handoff.md).
+- Existing EasyChair account: operator confirmed the account used for NMIXX is available (2026-10-02). The operator has since confirmed Kiii² was also submitted; do not submit again. See [author handoff](author-handoff.md).

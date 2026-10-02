@@ -1,10 +1,14 @@
-# STATUS — 2026-10-01
+# STATUS — 2026-10-02
 
 ## ICAIF workshop submission — 2026-10-02
 
-**Submitted: #11**, [OpenReview](https://openreview.net/forum?noteId=klGll15Rn5). Six authors in the operator-approved order; paper CC BY 4.0. English-gloss revision (`2d7f6cf`) submitted and downloaded SHA-256 verified; initial `8d73e63` receipt preserved in history. Four main-text pages, six total; five native Overleaf comments preserved. Full abstract unchanged. [Receipt](docs/submissions/icaif2026.json). This is the workshop submission only; SAC remains unsubmitted.
+**Submitted: #11**, [OpenReview](https://openreview.net/forum?noteId=klGll15Rn5). Six authors in the operator-approved order; paper CC BY 4.0. English-gloss revision (`2d7f6cf`) submitted and downloaded SHA-256 verified; initial `8d73e63` receipt preserved in history. Four main-text pages, six total; five native Overleaf comments preserved. Full abstract unchanged. [Receipt](docs/submissions/icaif2026.json). This is the workshop submission; SAC is separately submitted as #362.
 
-## SAC 2027 preparation — 2026-10-02
+## SAC 2027 submitted — 2026-10-02
+
+**Submitted: #362, AIFT**, personally completed by the operator and verified in EasyChair. Six authors; Hanwool is corresponding/submitting author using the operator-selected Gmail address. Downloaded PDF: 8 pages, extracted text and all eight 900-pixel rendered pages identical to the prepared draft, despite different file bytes. [Receipt](docs/submissions/sac2027.json). The operator approved all three submission declarations; AI writing-assistance disclosure in Acknowledgment remains a follow-up obligation. No fee paid.
+
+### Preparation history
 
 [ADR-0039](docs/decisions/0039-sac2027-submission-preparation.md) authorizes a
 separate SAC AIFT manuscript based on the completed ADR-0038 snapshot.
@@ -25,8 +29,7 @@ hash-verified, purposively selected response illustrations. Strict/D scores,
 cohorts and live evaluator source are unchanged. SAC draft: **8 total pages,
 4 main vector figures / 2 tables**, plus a companion taxonomy heatmap. Original
 workshop source/comments remain untouched. **142 offline tests pass**; no new
-inference or claim of verified native capacity. SAC GitHub export remains
-pending the specific approval requested after automatic review rejected it.
+inference or claim of verified native capacity. SAC preparation and English-gloss updates were subsequently exported to GitHub (`72711be`, `1c7b9b5`).
 
 ## Current outcome
 

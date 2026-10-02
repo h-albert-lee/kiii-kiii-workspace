@@ -2,7 +2,7 @@
 
 ## Author/submission handoff — 2026-10-02
 
-Use `docs/authors.yaml` and `papers/sac2027/notes/author-handoff.md` for the six-author order, current affiliations, operator-selected OpenReview IDs and equal-first/corresponding roles. Workshop #11 (`klGll15Rn5`) is submitted; latest PDF/source receipt is `docs/submissions/icaif2026.json`. SAC is still unsubmitted. Do not infer emails from masked profile domains, copy stale profile affiliations, or expose author metadata in anonymous source bundles. Paper license CC BY 4.0 and dataset license CC BY-NC 4.0 are separate.
+Use `docs/authors.yaml` and `papers/sac2027/notes/author-handoff.md` for the six-author order, current affiliations, operator-selected OpenReview IDs and equal-first/corresponding roles. Workshop #11 (`klGll15Rn5`) is submitted; latest PDF/source receipt is `docs/submissions/icaif2026.json`. SAC submission completed, as confirmed by the operator on 2026-10-02; submission number, receipt URL and final uploaded PDF hash have not been provided. Do not create a duplicate submission. Do not infer emails from masked profile domains, copy stale profile affiliations, or expose author metadata in anonymous source bundles. Paper license CC BY 4.0 and dataset license CC BY-NC 4.0 are separate.
 
 ## SAC preparation — ADR-0039 (2026-10-02)
 
@@ -12,8 +12,7 @@ workshop/SAC parallel submission is acceptable. Sara is polishing the workshop
 in the existing Overleaf project; do not overwrite it or sync SAC files into
 it. SAC starts from pinned workshop commit `8d73e63`; later wording updates
 must be selectively ported after inspecting an outbound Overleaf export.
-Collection remains closed under ADR-0038. No Kiii² SAC submission has yet
-been performed. Official extended deadline Oct 16 (EST as printed), internal
+Collection remains closed under ADR-0038. SAC submission completed, as confirmed by the operator on 2026-10-02; submission number, receipt URL and final uploaded PDF hash have not been provided. Do not create a duplicate submission. Official extended deadline Oct 16 (EST as printed), internal
 target Oct 14 KST; prepare <=8 total pages including references. A new SAC
 Overleaf project, if used, must be separate and preserve its own comments.
 

@@ -1,6 +1,6 @@
 # Kiii² — SAC 2027 AIFT submission workspace
 
-**Independent anonymous draft; not submitted.**
+**Submitted to SAC 2027 AIFT as #362 on 2026-10-02.** [Verified receipt](../../docs/submissions/sac2027.json).
 
 [Live SAC Overleaf project](https://www.overleaf.com/project/6abf20099c6d0b7f48e49e71)
 (XeLaTeX / TeX Live 2026). [Submission-format verification](notes/format-verification.md). Workshop polishing remains in
@@ -25,7 +25,7 @@ Target: SAC 2027 **AIFT**, anonymous ACM sigconf, **8 total pages including
 references**. Official extended deadline **Oct 16, 2026 (EST as printed)**;
 exact hour is not established. Internal target Oct 14 KST. The operator reports
 Prof. Yongjae Lee's confirmation that workshop/SAC parallel submission is okay.
-This does not mean either submission has been performed here.
+Workshop #11 and SAC #362 are separately submitted; receipts are in `docs/submissions/`.
 
 ## What differs from the workshop snapshot
 

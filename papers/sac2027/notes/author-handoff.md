@@ -1,6 +1,6 @@
 # Author and submission handoff — 2026-10-02
 
-Use [docs/authors.yaml](../../../docs/authors.yaml) as the shared administrative source of truth. This document is for submission operators, not the anonymous PDF or source archive. The operator supplied the order, affiliations and roles, then personally selected all six OpenReview profiles and reordered them in the workshop form. No email address or ORCID has been supplied for this roster: collect the actual addresses needed by EasyChair rather than guessing from masked profile emails.
+Use [docs/authors.yaml](../../../docs/authors.yaml) as the shared administrative source of truth. This document is for submission operators, not the anonymous PDF or source archive. The operator supplied the order, affiliations and roles, then personally selected all six OpenReview profiles and reordered them in the workshop form. The operator supplied all six emails and completed SAC #362. Hanwool uses the supplied Gmail address in EasyChair. Emails are not repeated in this public handoff; ORCIDs remain unspecified.
 
 | Order | Manuscript/submission name | Operator-specified affiliation | Role | Operator-confirmed OpenReview profile |
 |---|---|---|---|---|
@@ -32,7 +32,7 @@ The observed workshop form had no dedicated equal-first or corresponding-author 
 - Paper license is **CC BY 4.0**, explicitly approved by the operator. Dataset license remains **CC BY-NC 4.0**. Neither changes the other.
 - The operator explicitly approved sharing author emails with Program Chairs and public release of the accepted submission and author names. This was required by the actual OpenReview form, despite the workshop homepage saying papers would not be made public. Do not assert nonpublication is guaranteed.
 - The operator confirmed on October 2 that an **existing EasyChair account used for the NMIXX submission is available**. Reuse that account for SAC; no new account is needed. Login email and credentials are not recorded here, and a currently authenticated session has not been verified by this handoff.
-- SAC is **not submitted**. Create a distinct Kiii² AIFT submission, never reuse NMIXX #185 or workshop #11 as a SAC identifier. The operator reports Prof. Yongjae Lee allowed workshop/SAC parallel submission (ADR-0039); disclose the actual workshop status accurately if asked.
+- SAC is **submitted #362**, verified in EasyChair with the downloaded 8-page PDF. See [receipt](../../../docs/submissions/sac2027.json). EasyChair displays `Minkyeong Shin`; shared preferred manuscript spelling remains `MinKyeong Shin`. NMIXX #185 and workshop #11 are separate records. The operator reports Prof. Yongjae Lee allowed workshop/SAC parallel submission (ADR-0039); disclose the actual workshop status accurately if asked.
 - This handoff is not evidence that every coauthor has separately approved final SAC wording, attendance, conflicts, or any new license/fee terms. Complete the actual form with operator-provided facts.
 
 ## Selective wording port

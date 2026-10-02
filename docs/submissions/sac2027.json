@@ -1,0 +1,11 @@
+{
+  "venue": "SAC 2027 AIFT",
+  "status": "submitted",
+  "confirmation_source": "operator_message",
+  "confirmed_on": "2026-10-02",
+  "submission_number": null,
+  "receipt_url": null,
+  "pdf_sha256": null,
+  "independently_verified": false,
+  "note": "Operator confirmed SAC submission completion. Do not create a duplicate; final submission metadata not supplied."
+}
