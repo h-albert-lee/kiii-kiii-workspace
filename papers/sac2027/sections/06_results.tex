@@ -3,25 +3,7 @@
 
 The descriptive comparison (Figure~\ref{fig:score-portrait}) reports completed extraction systems, with strict scores kept separate from a detection diagnostic. Full breakdowns and paired intervals appear in \S\ref{app:result-layout}. Figure~\ref{fig:context-contrasts} visualizes the ten completed within-model comparisons.
 
-\begin{figure*}[t]
-\centering
-\includegraphics[width=\textwidth]{figures/score-portrait.pdf}
-\caption{\textbf{Output validity and span recovery differ.}
-Strict exact F1 (filled circles) and D-F1 (open diamonds) from the same archived
-outputs, by full (A) and local (B) context. Connecting segments identify two
-scoring views, not causal effects or confidence intervals. (C) Structural
-compliance over all requests, which is not strict response acceptance.
-Baseline squares are document-level strict references; D and format are N/A.
-Missing conditions are explicitly marked. *Kanana-1.5-8B: 1,438 documents;
-others: 1,440. All gold and invalid-item penalties remain in D. Execution
-blocks differ; the display is descriptive, not a verified common-capacity ranking.}
-\Description{Aligned full and local dot plots show all 22 completed LLM
-conditions, with three document-level baseline references. Many Gemma runs
-have near-zero strict F1 but higher diagnostic F1. Adjacent cells display
-format compliance, including high compliance for Qwen3-30B and low compliance
-for Gemma-12B and Gemma-31B. Missing Qwen pairs are not plotted as zeros.}
-\label{fig:score-portrait}
-\end{figure*}
+
 
 \paragraph{Strict rejection can hide valid items.}
 Presidio reaches 10.15 strict F1; the highest LLM strict score is 7.97 (Gemma-26B-A4B, full). For LLMs, strict scoring enforces the frozen response contract: one invalid item can suppress valid siblings. The itemwise replay in \S\ref{sec:protocol} retains valid anchored items while preserving invalid-item penalties and all gold. Its contrast with strict F1 describes usable evidence in the received output, not performance under an improved decoder.
@@ -32,18 +14,4 @@ Gemma-12B local moves from 0.05 strict F1 to 29.81 D-F1; Gemma-31B FP8 local rea
 Local context has higher D-F1 in all ten completed pairs and higher strict F1 in nine. Strict full-minus-local differences range from $-1.89$ points (Gemma-E4B) to $+0.57$ (Gemma-26B-A4B); the latter reverses to $-0.22$ under D. The contrast measures extraction under this fixed output protocol, not an intrinsic inability to use long context. Cohort, decoding and generation differences preclude causal model-size conclusions. Strict recovery concentrates on identifiers: Gemma-26B-A4B full scores 15.99 F1 on L-identifiers but 0.49 on L-attributes and 0.23 on I-attributes. Presidio scores 20.12 on identifiers and zero on both attribute groups. This exposes limited policy coverage; missed categories alone do not establish legal or cultural beliefs.
 
 
-\begin{figure*}[t]
-\centering
-\includegraphics[width=\textwidth]{figures/context-contrasts.pdf}
-\caption{Within-model full-minus-local contrasts on each model's original
-cohort. Negative values favor local context. Left: strict F1 and pointwise
-95\% document-paired bootstrap intervals (2,000 draws, seed 0). Right:
-D-F1 point differences; no diagnostic confidence intervals are implied.
-*Kanana-1.5-8B uses 1,438 documents; other pairs use 1,440. These are
-post-hoc within-model comparisons, not an all-model common-capacity ranking.}
-\Description{Two aligned panels show strict F1 differences with intervals
-and diagnostic F1 point differences for ten models. Nine strict differences
-and all ten diagnostic differences favor local context. Gemma-26B-A4B is
-the strict exception. The intervals for Gemma-E2B and Gemma-12B cross zero.}
-\label{fig:context-contrasts}
-\end{figure*}
+

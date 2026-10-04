@@ -1,18 +1,18 @@
 {
   "date": "2026-10-04",
-  "status": "Reference revision submitted to existing SAC AIFT #362; native source export and downloaded PDF verified",
+  "status": "Layout revision submitted to existing SAC AIFT #362; all floats precede references",
   "pdf_pages": 8,
   "figures": 4,
   "companion_figures": 1,
   "tables": 2,
   "compiler": "Overleaf XeLaTeX / TeX Live 2026 (native PDF export)",
   "pdf": {
-    "path": "output/pdf/sac2027-reference-revision.pdf",
-    "sha256": "10f332768cb62d3e85dd6d0434560aecf8ab2f1e553a9cf909ad02ca23ce8167"
+    "path": "output/pdf/sac2027-layout-revision.pdf",
+    "sha256": "2eff06f99fccb058f51ea974466ebb9fba653eb73c6815221a7e11c70f59c6cf"
   },
   "anonymous_source_bundle": {
-    "path": "output/pdf/sac2027-reference-revision.zip",
-    "sha256": "78b1279efa3c676ebf87bf33a667f555b05fc5a323a9b5f2f5382739115e023e"
+    "path": "output/pdf/sac2027-layout-revision.zip",
+    "sha256": "434e5e5c0f1655392abcb66fffd528e23e6e030410da43bd981f88a50930aecc"
   },
   "source_sha256": {
     "ACM-Reference-Format.bst": "8ec002c927068bfc5b3cfe71b66aa4767b9e485530ac3c67ba5c064df4c2e6ac",
@@ -23,9 +23,9 @@
     "sections/response-table.tex": "b400377c2d5ab441ae122335b6d744b141a13a154f76b6051fccb265917425f4",
     "sections/fig1_overview.tex": "a206bfbcd25e19d725b6d3e2ae06c67aac6fc0a49dfb39c0cc788a7b445ccc42",
     "sections/09_discussion.tex": "1e0005b32928cda5b8276cf9a1a6b9b069d92e1a3b3d3c60f5043106ac09b0ab",
-    "sections/08_diagnostics.tex": "dfbd06def0c825c2d5a9f9740bf55d37c1eda9e376b7dcd1b32fea36e2f83866",
+    "sections/08_diagnostics.tex": "2a977559bb4520163da03c99e10896f42ddbe69b93c0c9bfa76e18ff62c9982a",
     "sections/07_conclusion.tex": "b47d8e5c1c4b25a3fd90f8792a7f317514fb0dff58b698182d9faf6b32fb8ade",
-    "sections/06_results.tex": "de55a24c2bb3359d70bf2869dc9cfb187e7e1af65091b6792b9c776ec16157d8",
+    "sections/06_results.tex": "85d62db122b049045cda7f3454db36f6ff8c7004b54b67b0540f392c90273fff",
     "sections/05_protocol.tex": "7780679e014af164b635dc06e205759afa87f4931a06a84f9fb9fd076a253c8a",
     "sections/05_experiments.tex": "320f9f34e96ca39b9848f08342cee52fc77da86edd3a522397a386e01168ab15",
     "sections/04_benchmark.tex": "70196bffff9643c6c0b2ad66e6771a95038b6960c2b2767ebba9ee0c1088d7da",
@@ -34,7 +34,7 @@
     "sections/01_introduction.tex": "369c9715a6b2f6a06b8af90eac0ac0111c58223cfea3e999c0ed6f557a32bbc3",
     "sections/00_abstract.tex": "6ffec5df866d69e78671ea41a1f0d77db74a9fe18ef996323032c3e45ba2ac78",
     "references.bib": "b1d1a92be05e1d13ad39b400328819578605ae73bb653d69c55c3130b00a5f84",
-    "main.tex": "e334645955c8c5fa362d26814ddc884f0fd649dd9210226068bbbc61bdc1a1f0",
+    "main.tex": "dc7a5e1425cef694f7a307ca4198f2c9518c2844719ac76d4aa01e67784dcbc1",
     "acmart.cls": "2f949e6e3f2a79f2cdc218b9dcdbaa7dd451adb4ee0be1af6dc7ebe00b318ea7"
   },
   "overleaf": {
@@ -44,9 +44,18 @@
     "tex_live": "2026",
     "source_files_byte_identical": 21,
     "pdf_pages": 8,
-    "pdf_sha256": "10f332768cb62d3e85dd6d0434560aecf8ab2f1e553a9cf909ad02ca23ce8167",
-    "source_zip_sha256": "78b1279efa3c676ebf87bf33a667f555b05fc5a323a9b5f2f5382739115e023e",
+    "pdf_sha256": "2eff06f99fccb058f51ea974466ebb9fba653eb73c6815221a7e11c70f59c6cf",
+    "source_zip_sha256": "434e5e5c0f1655392abcb66fffd528e23e6e030410da43bd981f88a50930aecc",
     "errors": 0,
-    "warnings": 12
+    "warnings": 13
+  },
+  "page_layout": {
+    "figure_1": 2,
+    "figure_2": 5,
+    "figure_3": 6,
+    "figure_4": 6,
+    "table_1": 3,
+    "table_2": 7,
+    "discussion_conclusion_references": 8
   }
 }

@@ -5,13 +5,13 @@
   "confirmed_on": "2026-10-04",
   "submission_number": 362,
   "receipt_url": null,
-  "pdf_sha256": "7512f61d5aa84e3db85741bb09d8aa06666ff75c0d8ec37ef94c6590fa18913f",
+  "pdf_sha256": "d5087a8bb4d214349d76eb996ab8da63508b0adaf8ef8090c3cabc0845fdff9c",
   "independently_verified": true,
-  "note": "Existing EasyChair SAC AIFT #362 PDF replaced; upload-confirmation message and Paper timestamp verified. Authors, abstract and declarations unchanged; no duplicate created.",
+  "note": "Existing EasyChair SAC AIFT #362 PDF replaced; upload confirmation and Paper timestamp verified. Only float declarations/placement and blank graphic padding changed; no duplicate submission.",
   "easychair_submission_id": 7834227,
   "pdf_pages": 8,
   "download_verified": true,
-  "prepared_pdf_sha256": "10f332768cb62d3e85dd6d0434560aecf8ab2f1e553a9cf909ad02ca23ce8167",
+  "prepared_pdf_sha256": "2eff06f99fccb058f51ea974466ebb9fba653eb73c6815221a7e11c70f59c6cf",
   "authors_as_displayed": [
     "Eunbin Shin",
     "Sara Yu",
@@ -36,11 +36,19 @@
       "pdf_pages": 8,
       "displayed_last_update": "Oct 02, 06:12 (EasyChair displayed time; timezone not shown)",
       "date": "2026-10-02"
+    },
+    {
+      "revision": "Reference metadata correction and NMIXX v2 pin, 2026-10-04",
+      "pdf_sha256": "7512f61d5aa84e3db85741bb09d8aa06666ff75c0d8ec37ef94c6590fa18913f",
+      "prepared_pdf_sha256": "10f332768cb62d3e85dd6d0434560aecf8ab2f1e553a9cf909ad02ca23ce8167",
+      "pdf_pages": 8,
+      "displayed_paper_upload": "Oct 04, 02:26 (EasyChair displayed time; timezone not shown)",
+      "date": "2026-10-04"
     }
   ],
-  "revision": "Reference metadata correction and NMIXX v2 pin, 2026-10-04",
+  "revision": "Float placement revision: all figures/tables before references, 2026-10-04",
   "displayed_last_update": "Oct 02, 06:12 (information timestamp unchanged by file-only replacement)",
   "abstract_matches": true,
-  "verification": "Layout-preserving text and all eight rendered pages at 1250-pixel maximum dimension match uploaded PDF. First six pages also match previous submission pixel-for-pixel at 1000-pixel maximum dimension. Only references.bib changed in the 21-file native Overleaf export.",
-  "displayed_paper_upload": "Oct 04, 02:26 (EasyChair displayed time; timezone not shown)"
+  "verification": "Re-downloaded PDF matches prepared layout-preserving text and all eight 1250-pixel page rasters. Native source export verified; prose, captions, tables and figure assets unchanged. Figures 1/2/3/4 appear on pages 2/5/6/6, tables 1/2 on pages 3/7, references on page 8. No overfull boxes or compile errors.",
+  "displayed_paper_upload": "Oct 04, 02:35 (EasyChair displayed time; timezone not shown)"
 }

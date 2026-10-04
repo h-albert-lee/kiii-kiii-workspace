@@ -2,7 +2,9 @@
 
 **Submitted to SAC 2027 AIFT as #362 on 2026-10-02.** [Verified receipt](../../docs/submissions/sac2027.json).
 
-**Reference revision uploaded 2026-10-04:** corrected title/author metadata, completed KDPII/PrivacyLens publication fields and pinned NMIXX v2. Still eight pages; native Overleaf export and the re-downloaded submission were verified. Latest local submitted artifact: `output/pdf/kiii-sac2027-submitted-362-references.pdf`.
+**Latest: layout revision uploaded 2026-10-04.** Figures 3–4 share page 6, Table 2 accompanies error analysis on page 7, and references are uninterrupted on page 8. All eight downloaded pages match the approved PDF. Latest submitted artifact: `output/pdf/kiii-sac2027-submitted-362-layout.pdf`. Wide floats are queued before the Results input in `main.tex`; preserve this deliberate placement when editing. Plot scale, captions and all reported results remain unchanged.
+
+**Earlier reference revision, 2026-10-04:** corrected title/author metadata, completed KDPII/PrivacyLens publication fields and pinned NMIXX v2. Still eight pages; native Overleaf export and the re-downloaded submission were verified. Prior artifact: `output/pdf/kiii-sac2027-submitted-362-references.pdf`.
 
 [Live SAC Overleaf project](https://www.overleaf.com/project/6abf20099c6d0b7f48e49e71)
 (XeLaTeX / TeX Live 2026). [Submission-format verification](notes/format-verification.md). Workshop polishing remains in

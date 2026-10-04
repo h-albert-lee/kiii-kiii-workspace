@@ -69,8 +69,69 @@
 \input{sections/02_related_work}
 \input{sections/03_taxonomy}
 \input{sections/04_benchmark}
+
 \input{sections/05_protocol}
 \input{sections/05_experiments}
+% Queue wide floats early so they appear beside results/error analysis,
+% rather than after the conclusion among the references. Captions and data
+% are unchanged; source declaration order controls the printed float order.
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=\textwidth]{figures/score-portrait.pdf}
+\caption{\textbf{Output validity and span recovery differ.}
+Strict exact F1 (filled circles) and D-F1 (open diamonds) from the same archived
+outputs, by full (A) and local (B) context. Connecting segments identify two
+scoring views, not causal effects or confidence intervals. (C) Structural
+compliance over all requests, which is not strict response acceptance.
+Baseline squares are document-level strict references; D and format are N/A.
+Missing conditions are explicitly marked. *Kanana-1.5-8B: 1,438 documents;
+others: 1,440. All gold and invalid-item penalties remain in D. Execution
+blocks differ; the display is descriptive, not a verified common-capacity ranking.}
+\Description{Aligned full and local dot plots show all 22 completed LLM
+conditions, with three document-level baseline references. Many Gemma runs
+have near-zero strict F1 but higher diagnostic F1. Adjacent cells display
+format compliance, including high compliance for Qwen3-30B and low compliance
+for Gemma-12B and Gemma-31B. Missing Qwen pairs are not plotted as zeros.}
+\label{fig:score-portrait}
+\end{figure*}
+
+\begin{figure*}[!t]
+\centering
+% Trim only the verified blank top/bottom PDF padding; preserve plot scale.
+\includegraphics[trim=0 4bp 0 4bp,clip,width=\textwidth]{figures/context-contrasts.pdf}
+\caption{Within-model full-minus-local contrasts on each model's original
+cohort. Negative values favor local context. Left: strict F1 and pointwise
+95\% document-paired bootstrap intervals (2,000 draws, seed 0). Right:
+D-F1 point differences; no diagnostic confidence intervals are implied.
+*Kanana-1.5-8B uses 1,438 documents; other pairs use 1,440. These are
+post-hoc within-model comparisons, not an all-model common-capacity ranking.}
+\Description{Two aligned panels show strict F1 differences with intervals
+and diagnostic F1 point differences for ten models. Nine strict differences
+and all ten diagnostic differences favor local context. Gemma-26B-A4B is
+the strict exception. The intervals for Gemma-E2B and Gemma-12B cross zero.}
+\label{fig:context-contrasts}
+\end{figure*}
+
+\input{sections/response-table}
+
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=\textwidth]{figures/error-atlas.pdf}
+\caption{\textbf{Similar low scores conceal different observable failures.}
+All-gold priority partitions for 22 completed LLM conditions. Exact-hit shares
+are D-recall; integers inside teal bars are rounded percentages. Boundary/category
+mismatches have anchored overlap but fail exact typed matching. Unresolved
+misses with rejected items do not establish detection. Unusable output comprises
+terminal/truncated responses and JSON/root failures; empty output is separate.
+Segments are descriptive, not causal contributions to F1. Missing conditions
+are not zero. *Kanana-1.5-8B: 218,197 gold mentions; others: 218,664.}
+\Description{Paired horizontal stacked bars account for every gold mention.
+Qwen3-30B full is dominated by empty-output misses, Kanana-8B by unusable
+outputs, and Gemma-31B local has larger exact-hit and boundary/category
+overlap portions while retaining a substantial unresolved remainder.}
+\label{fig:error-atlas}
+\end{figure*}
+
 \input{sections/06_results}
 \input{sections/08_diagnostics}
 \input{sections/09_discussion}

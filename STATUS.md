@@ -1,6 +1,10 @@
 <!-- SAC receipt verified: EasyChair #362, AIFT, 8 pages; docs/submissions/sac2027.json. -->
 # STATUS — 2026-10-04
 
+## SAC layout revision — 2026-10-04
+
+**Existing #362 updated and re-downloaded/verified.** Figure 4 moved from page 8 to page 6 alongside Figure 3; Table 2 accompanies detailed error analysis on page 7. Discussion, conclusion and references occupy page 8 with no intervening floats. Eight pages, zero compile errors/overfull boxes; 13 warnings include the intentional figure-only page. Captions, narrative, numbers and figure assets are unchanged; only float declarations/placement and 4 bp of verified blank padding at each vertical edge of Figure 3 changed. Native Overleaf source exported; workshop untouched. [Receipt](docs/submissions/sac2027.json).
+
 ## SAC reference revision — 2026-10-04
 
 Existing **SAC AIFT #362** updated after auditing all 18 cited references. Corrected the ICLR 2025 anonymizer title/link and PII-Bench author capitalization; completed KDPII and PrivacyLens publication metadata; pinned NMIXX to its 2025 v2 in the note/URL. Native SAC Overleaf export differs only in `references.bib`; no active or resolved comments were present. Eight pages, zero compile errors, 12 warnings (down from 16). First six pages are unchanged pixel-for-pixel; reference pages visually checked. Re-downloaded submission matches prepared PDF text and all eight page rasters. [Receipt](docs/submissions/sac2027.json). No changes to results, authors, abstract or workshop files.

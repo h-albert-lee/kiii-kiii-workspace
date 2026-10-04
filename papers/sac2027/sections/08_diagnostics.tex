@@ -8,7 +8,7 @@ compliance and detection on their respective denominators. Each full
 Kanana-1.5-8B has 13,653 requests and 218,197 mentions over 1,438 documents.
 No missing condition is imputed. Baseline format and D scores are N/A.
 
-\input{sections/response-table}
+
 
 \subsection{Where unrecovered gold appears}
 Figure~\ref{fig:error-atlas} partitions every gold mention using a fixed
@@ -20,23 +20,7 @@ schema. Each row sums to its original gold count. These are descriptive
 buckets: an unresolved rejected quotation does not establish detection of
 any particular gold span, and priority assignment does not isolate causes.
 
-\begin{figure*}[t]
-\centering
-\includegraphics[width=\textwidth]{figures/error-atlas.pdf}
-\caption{\textbf{Similar low scores conceal different observable failures.}
-All-gold priority partitions for 22 completed LLM conditions. Exact-hit shares
-are D-recall; integers inside teal bars are rounded percentages. Boundary/category
-mismatches have anchored overlap but fail exact typed matching. Unresolved
-misses with rejected items do not establish detection. Unusable output comprises
-terminal/truncated responses and JSON/root failures; empty output is separate.
-Segments are descriptive, not causal contributions to F1. Missing conditions
-are not zero. *Kanana-1.5-8B: 218,197 gold mentions; others: 218,664.}
-\Description{Paired horizontal stacked bars account for every gold mention.
-Qwen3-30B full is dominated by empty-output misses, Kanana-8B by unusable
-outputs, and Gemma-31B local has larger exact-hit and boundary/category
-overlap portions while retaining a substantial unresolved remainder.}
-\label{fig:error-atlas}
-\end{figure*}
+
 
 \paragraph{Well-formed silence versus unusable output.}
 Qwen3-30B full returns empty lists on 53.06\% of requests; those requests
