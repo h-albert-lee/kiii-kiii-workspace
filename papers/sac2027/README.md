@@ -2,6 +2,8 @@
 
 **Submitted to SAC 2027 AIFT as #362 on 2026-10-02.** [Verified receipt](../../docs/submissions/sac2027.json).
 
+**Reference revision uploaded 2026-10-04:** corrected title/author metadata, completed KDPII/PrivacyLens publication fields and pinned NMIXX v2. Still eight pages; native Overleaf export and the re-downloaded submission were verified. Latest local submitted artifact: `output/pdf/kiii-sac2027-submitted-362-references.pdf`.
+
 [Live SAC Overleaf project](https://www.overleaf.com/project/6abf20099c6d0b7f48e49e71)
 (XeLaTeX / TeX Live 2026). [Submission-format verification](notes/format-verification.md). Workshop polishing remains in
 the existing `paper/` / Overleaf project. This folder starts from workshop

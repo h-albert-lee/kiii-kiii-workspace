@@ -81,3 +81,15 @@ receipt and the independent workshop manuscript.
 ## Final completion verification
 
 Native SAC Overleaf edits exported as 21 source files and matched byte-for-byte to the repository snapshot. Final XeLaTeX build: 8 pages, 0 errors, 16 warnings (14 bibliography metadata, suppressed anonymous ACM reference strip, balance warning); no undefined citations, missing glyphs or overfull boxes. All eight pages visually inspected. The abstract and PDF were updated in existing EasyChair #362; receipt shows Oct 02, 06:12. Downloaded text and all eight page rasters at 1250-pixel maximum dimension exactly match the approved PDF. Hashes and initial receipt history are in `docs/submissions/sac2027.json`. No code/scorer change or new inference; prior unit tests were not rerun for prose-only edits. Native trailing blank lines are retained to match export.
+
+## Reference-only follow-up — 2026-10-04
+
+All 18 cited entries were checked against author-submitted arXiv records, official proceedings and publisher-deposited DOI metadata. Five entries were revised in native SAC Overleaf:
+
+- [15] Use the final ICLR 2025 title, **Language Models are Advanced Anonymizers**, and [accepted OpenReview record](https://openreview.net/forum?id=82p8VHRsaK); the previous entry mixed the preprint title with conference metadata.
+- [12] Correct **Haokai Hong** capitalization from the [PII-Bench author record](https://arxiv.org/abs/2502.18545).
+- [2] Add IEEE Access **12:135626–135641** from [publisher-deposited Crossref metadata](https://api.crossref.org/works/10.1109/ACCESS.2024.3461804). Existing six authors and DOI are correct.
+- [11] Use the official NeurIPS booktitle, volume **37**, pages **89373–89407**, publisher and DOI from the [proceedings BibTeX](https://proceedings.neurips.cc/paper_files/paper/25813-/bibtex).
+- [8] Specify **arXiv:2507.09601v2** in the note and source URL. [This 2025 version](https://arxiv.org/abs/2507.09601v2) explicitly records acceptance at FinAI@CIKM 2025; the general arXiv DOI is retained. TWICE's existing metadata remains correct.
+
+The 21-file native export differs only in `references.bib`. There were no active or resolved SAC comments; the workshop project was not edited. Build: eight pages, zero errors, 12 warnings (ten bibliography metadata warnings and the two existing ACM-strip/balance warnings). No invented publication fields were added to silence warnings. Reference pages 7–8 were rendered and visually inspected; pages 1–6 match the previous submission text and 1000-pixel rasters exactly. Only the PDF was replaced in existing #362: EasyChair displayed “The file(s) have been uploaded” and Paper timestamp **Oct 04, 02:26** (timezone unspecified). The information-update timestamp stays Oct 02, 06:12. Downloaded text and all eight 1250-pixel page rasters match the prepared PDF. Hashes and previous revision history are retained in the receipt. Unit tests were not rerun for bibliography-only changes.

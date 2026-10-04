@@ -2,16 +2,16 @@
   "venue": "SAC 2027 AIFT",
   "status": "submitted",
   "confirmation_source": "operator_message and EasyChair saved-submission page",
-  "confirmed_on": "2026-10-02",
+  "confirmed_on": "2026-10-04",
   "submission_number": 362,
   "receipt_url": null,
-  "pdf_sha256": "9374b99346e6f43715edc194a98a8f1bde0818a90cd0c186872df89e80bfe12e",
+  "pdf_sha256": "7512f61d5aa84e3db85741bb09d8aa06666ff75c0d8ec37ef94c6590fa18913f",
   "independently_verified": true,
-  "note": "EasyChair confirms submission 362 in AIFT, six authors, Hanwool as corresponding/submitting author using operator-selected Gmail. Downloaded PDF has identical extracted text and all eight rendered pages at 900-pixel maximum dimension to the prepared draft, despite different file bytes. No duplicate created.",
+  "note": "Existing EasyChair SAC AIFT #362 PDF replaced; upload-confirmation message and Paper timestamp verified. Authors, abstract and declarations unchanged; no duplicate created.",
   "easychair_submission_id": 7834227,
   "pdf_pages": 8,
   "download_verified": true,
-  "prepared_pdf_sha256": "6501bb59c575f859554926c712a7c91eb4918979b3540373127b5ab8d762dfde",
+  "prepared_pdf_sha256": "10f332768cb62d3e85dd6d0434560aecf8ab2f1e553a9cf909ad02ca23ce8167",
   "authors_as_displayed": [
     "Eunbin Shin",
     "Sara Yu",
@@ -28,10 +28,19 @@
       "revision": "initial operator submission",
       "pdf_sha256": "e88a0c1bb668662efc53a87cf0be3174c0b687365a155c379a7195e2f1685178",
       "pdf_pages": 8
+    },
+    {
+      "revision": "Final reviewer-oriented revision, ADR-0041",
+      "pdf_sha256": "9374b99346e6f43715edc194a98a8f1bde0818a90cd0c186872df89e80bfe12e",
+      "prepared_pdf_sha256": "6501bb59c575f859554926c712a7c91eb4918979b3540373127b5ab8d762dfde",
+      "pdf_pages": 8,
+      "displayed_last_update": "Oct 02, 06:12 (EasyChair displayed time; timezone not shown)",
+      "date": "2026-10-02"
     }
   ],
-  "revision": "Final reviewer-oriented revision, ADR-0041",
-  "displayed_last_update": "Oct 02, 06:12 (EasyChair displayed time; timezone not shown)",
+  "revision": "Reference metadata correction and NMIXX v2 pin, 2026-10-04",
+  "displayed_last_update": "Oct 02, 06:12 (information timestamp unchanged by file-only replacement)",
   "abstract_matches": true,
-  "verification": "Layout-preserving extracted text and all eight rendered pages at 1250-pixel maximum dimension match uploaded PDF exactly. PDF byte hashes differ after upload."
+  "verification": "Layout-preserving text and all eight rendered pages at 1250-pixel maximum dimension match uploaded PDF. First six pages also match previous submission pixel-for-pixel at 1000-pixel maximum dimension. Only references.bib changed in the 21-file native Overleaf export.",
+  "displayed_paper_upload": "Oct 04, 02:26 (EasyChair displayed time; timezone not shown)"
 }
