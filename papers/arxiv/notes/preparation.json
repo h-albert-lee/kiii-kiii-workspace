@@ -1,0 +1,75 @@
+{
+  "status": "prepared_not_submitted_to_arxiv",
+  "date": "2026-10-04",
+  "base_commit": "bd2547b",
+  "base_submission": "SAC 2027 AIFT #362; source remains unchanged",
+  "overleaf_url": "https://www.overleaf.com/project/6ac1bc35b1b29fb31b8139fc",
+  "compiler": "XeLaTeX",
+  "tex_live": "2025",
+  "main_file": "main.tex",
+  "authors": [
+    "Eunbin Shin",
+    "Sara Yu",
+    "Seonghyun Kim",
+    "MinKyeong Shin",
+    "Yewon Hwang",
+    "Hanwool Lee"
+  ],
+  "common_affiliation": "Band Foundation",
+  "public_contact": "https://www.instagram.com/band_foundation",
+  "code_repository_link_in_manuscript": false,
+  "dataset_link_in_manuscript": true,
+  "pages": 9,
+  "compile_errors": 0,
+  "ui_warnings": 11,
+  "warning_notes": "10 incomplete bibliography-field warnings plus intentional float-only page 6; no undefined references, missing-character or overfull-box warnings.",
+  "figure_pages": {
+    "1": 2,
+    "2": 5,
+    "3": 6,
+    "4": 6
+  },
+  "table_pages": {
+    "1": 3,
+    "2": 7
+  },
+  "references_pages": [
+    8,
+    9
+  ],
+  "pdf_sha256": "4affd3f9c50e52cf0ea9e27df4d11f247302056788f9447b498bdd4de0f9f4f4",
+  "source_zip_sha256": "23fe3139891b5b87571a4109ee55af8ae45e3a9b04732b94acef2526a64d0196",
+  "native_export_sha256": "edc965a66c48b4b91d2ecdf55e97952725c06ea7ceed47bc2986dec605a0a51e",
+  "source_files": {
+    "ACM-Reference-Format.bst": "8ec002c927068bfc5b3cfe71b66aa4767b9e485530ac3c67ba5c064df4c2e6ac",
+    "acmart.cls": "2f949e6e3f2a79f2cdc218b9dcdbaa7dd451adb4ee0be1af6dc7ebe00b318ea7",
+    "figures/benchmark-overview.pdf": "56bf93e8a30c2e1ee47763823f84c81df2acae4bfb85dea59cbfc3ecb6ee0840",
+    "figures/context-contrasts.pdf": "278264b935ab0e8118960600aa50d143ebb7e473c717b6a9f7fceb2f7a0c6760",
+    "figures/error-atlas.pdf": "ed78c7b57222e51be0b9a41dce3df3939307aec269b856f26ca4f8cd7df53c7a",
+    "figures/score-portrait.pdf": "443e4b15a965920271eb715b4440f47c1804659f01729e8c5fd899ed6287c5b1",
+    "main.bbl": "caa7c7540ff30b98a29b7e56233ac1e38768f8161a3e3602e8a247b78ccd310a",
+    "main.tex": "3558194d7631f6dd5772bdaf88bb0cf989e2d2116bdfe9f75aba64d1e236a3f1",
+    "references.bib": "b1d1a92be05e1d13ad39b400328819578605ae73bb653d69c55c3130b00a5f84",
+    "sections/00_abstract.tex": "6ffec5df866d69e78671ea41a1f0d77db74a9fe18ef996323032c3e45ba2ac78",
+    "sections/01_introduction.tex": "369c9715a6b2f6a06b8af90eac0ac0111c58223cfea3e999c0ed6f557a32bbc3",
+    "sections/02_related_work.tex": "b7aad7b0f6c7c17ae419e644da63232240e382e22977c8cdd1121d298145a4bd",
+    "sections/03_taxonomy.tex": "f5137accd8d914249fb814aeef44051d0be7d86139855f12a4e9842b27b51b1f",
+    "sections/04_benchmark.tex": "70196bffff9643c6c0b2ad66e6771a95038b6960c2b2767ebba9ee0c1088d7da",
+    "sections/05_experiments.tex": "320f9f34e96ca39b9848f08342cee52fc77da86edd3a522397a386e01168ab15",
+    "sections/05_protocol.tex": "7780679e014af164b635dc06e205759afa87f4931a06a84f9fb9fd076a253c8a",
+    "sections/06_results.tex": "85d62db122b049045cda7f3454db36f6ff8c7004b54b67b0540f392c90273fff",
+    "sections/07_conclusion.tex": "fb97da8959f9ecac6374f99eb8eaa05927ff1e8e080f4b1164f1dd4641551e34",
+    "sections/08_diagnostics.tex": "2a977559bb4520163da03c99e10896f42ddbe69b93c0c9bfa76e18ff62c9982a",
+    "sections/09_discussion.tex": "1e0005b32928cda5b8276cf9a1a6b9b069d92e1a3b3d3c60f5043106ac09b0ab",
+    "sections/fig1_overview.tex": "a206bfbcd25e19d725b6d3e2ae06c67aac6fc0a49dfb39c0cc788a7b445ccc42",
+    "sections/response-table.tex": "b400377c2d5ab441ae122335b6d744b141a13a154f76b6051fccb265917425f4"
+  },
+  "validation": [
+    "All nine pages rendered and visually checked; first-page author block inspected separately.",
+    "Six ordered authors; six Band Foundation affiliations; equal-first and corresponding notes retained.",
+    "No author email or project code URL in extracted manuscript; Instagram and dataset links present.",
+    "18 bibliography entries; references.bib and every figure unchanged from SAC source.",
+    "Only main.tex and conclusion section differ from SAC native source; added compiled main.bbl.",
+    "Overleaf TeX Live 2025 compilation verified; arXiv server compilation not yet exercised."
+  ]
+}

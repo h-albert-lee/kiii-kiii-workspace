@@ -1,0 +1,224 @@
+%%% -*-BibTeX-*-
+%%% Do NOT edit. File created by BibTeX with style
+%%% ACM-Reference-Format-Journals [18-Jan-2012].
+
+\begin{thebibliography}{18}
+
+%%% ====================================================================
+%%% NOTE TO THE USER: you can override these defaults by providing
+%%% customized versions of any of these macros before the \bibliography
+%%% command.  Each of them MUST provide its own final punctuation,
+%%% except for \shownote{} and \showURL{}.  The latter two
+%%% do not use final punctuation, in order to avoid confusing it with
+%%% the Web address.
+%%%
+%%% To suppress output of a particular field, define its macro to expand
+%%% to an empty string, or better, \unskip, like this:
+%%%
+%%% \newcommand{\showURL}[1]{\unskip}   % LaTeX syntax
+%%%
+%%% \def \showURL #1{\unskip}           % plain TeX syntax
+%%%
+%%% ====================================================================
+
+\ifx \showCODEN    \undefined \def \showCODEN     #1{\unskip}     \fi
+\ifx \showISBNx    \undefined \def \showISBNx     #1{\unskip}     \fi
+\ifx \showISBNxiii \undefined \def \showISBNxiii  #1{\unskip}     \fi
+\ifx \showISSN     \undefined \def \showISSN      #1{\unskip}     \fi
+\ifx \showLCCN     \undefined \def \showLCCN      #1{\unskip}     \fi
+\ifx \shownote     \undefined \def \shownote      #1{#1}          \fi
+\ifx \showarticletitle \undefined \def \showarticletitle #1{#1}   \fi
+\ifx \showURL      \undefined \def \showURL       {\relax}        \fi
+% The following commands are used for tagged output and should be
+% invisible to TeX
+\providecommand\bibfield[2]{#2}
+\providecommand\bibinfo[2]{#2}
+\providecommand\natexlab[1]{#1}
+\providecommand\showeprint[2][]{arXiv:#2}
+
+\bibitem[Albanese et~al\mbox{.}(2026)]%
+        {albanese2026anonymous}
+\bibfield{author}{\bibinfo{person}{Federico Albanese}, \bibinfo{person}{Pablo Ronco}, {and} \bibinfo{person}{Nicol{\'a}s D'Ippolito}.} \bibinfo{year}{2026}\natexlab{}.
+\newblock \bibinfo{title}{Anonymous-by-Construction: An {LLM}-Driven Framework for Privacy-Preserving Text}.
+\newblock
+\shownote{arXiv:2603.17217}.
+\newblock
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2603.17217}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Fei et~al\mbox{.}(2024)]%
+        {fei2024kdpii}
+\bibfield{author}{\bibinfo{person}{Li Fei}, \bibinfo{person}{Yejee Kang}, \bibinfo{person}{Seoyoon Park}, \bibinfo{person}{Yeonji Jang}, \bibinfo{person}{Jongkyu Lee}, {and} \bibinfo{person}{Hansaem Kim}.} \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{{KDPII}: A New Korean Dialogic Dataset for the Deidentification of Personally Identifiable Information}.
+\newblock \bibinfo{journal}{\emph{IEEE Access}}  \bibinfo{volume}{12} (\bibinfo{year}{2024}), \bibinfo{pages}{135626--135641}.
+\newblock
+\href{https://doi.org/10.1109/ACCESS.2024.3461804}{doi:\nolinkurl{10.1109/ACCESS.2024.3461804}}
+
+
+\bibitem[Hahm et~al\mbox{.}(2025)]%
+        {hahm2025thunderdeid}
+\bibfield{author}{\bibinfo{person}{Sungeun Hahm}, \bibinfo{person}{Heejin Kim}, \bibinfo{person}{Gyuseong Lee}, \bibinfo{person}{Hyunji~M. Park}, {and} \bibinfo{person}{Jaejin Lee}.} \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{Thunder-DeID: Accurate and Efficient De-identification Framework for Korean Court Judgments}. In \bibinfo{booktitle}{\emph{Findings of the Association for Computational Linguistics: EMNLP 2025}}. \bibinfo{publisher}{Association for Computational Linguistics}, \bibinfo{address}{Suzhou, China}, \bibinfo{pages}{12728--12755}.
+\newblock
+\href{https://doi.org/10.18653/v1/2025.findings-emnlp.682}{doi:\nolinkurl{10.18653/v1/2025.findings-emnlp.682}}
+
+
+\bibitem[Hwang et~al\mbox{.}(2025b)]%
+        {hwang2025kfineval}
+\bibfield{author}{\bibinfo{person}{Bokwang Hwang}, \bibinfo{person}{Seonkyu Lim}, \bibinfo{person}{Taewoong Kim}, {et~al\mbox{.}}} \bibinfo{year}{2025}\natexlab{b}.
+\newblock \bibinfo{title}{{KFinEval-Pilot}: A Comprehensive Benchmark Suite for Korean Financial Language Understanding}.
+\newblock
+\shownote{arXiv:2504.13216}.
+\newblock
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2504.13216}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Hwang et~al\mbox{.}(2025a)]%
+        {hwang2025twice}
+\bibfield{author}{\bibinfo{person}{Yewon Hwang}, \bibinfo{person}{Sungbum Jung}, \bibinfo{person}{Hanwool Lee}, {and} \bibinfo{person}{Sara Yu}.} \bibinfo{year}{2025}\natexlab{a}.
+\newblock \bibinfo{title}{{TWICE}: What Advantages Can Low-Resource Domain-Specific Embedding Model Bring? -- A Case Study on Korea Financial Texts}.
+\newblock
+\shownote{Accepted at FinancialAI@ICLR 2025. arXiv:2502.07131}.
+\newblock
+\href{https://doi.org/10.48550/arXiv.2502.07131}{doi:\nolinkurl{10.48550/arXiv.2502.07131}}
+
+
+\bibitem[Jang et~al\mbox{.}(2024)]%
+        {jang2024koreanpiiner}
+\bibfield{author}{\bibinfo{person}{Sungsoon Jang}, \bibinfo{person}{Yeseul Cho}, \bibinfo{person}{Hyeonmin Seong}, \bibinfo{person}{Taejong Kim}, {and} \bibinfo{person}{Hosung Woo}.} \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{The Development of a Named Entity Recognizer for Detecting Personal Information Using a Korean Pretrained Language Model}.
+\newblock \bibinfo{journal}{\emph{Applied Sciences}} \bibinfo{volume}{14}, \bibinfo{number}{13} (\bibinfo{year}{2024}), \bibinfo{pages}{5682}.
+\newblock
+\href{https://doi.org/10.3390/app14135682}{doi:\nolinkurl{10.3390/app14135682}}
+
+
+\bibitem[Kr{\v{c}}o et~al\mbox{.}(2026)]%
+        {krco2026ratbench}
+\bibfield{author}{\bibinfo{person}{Nata{\v{s}}a Kr{\v{c}}o}, \bibinfo{person}{Zexi Yao}, \bibinfo{person}{Matthieu Meeus}, {and} \bibinfo{person}{Yves-Alexandre de Montjoye}.} \bibinfo{year}{2026}\natexlab{}.
+\newblock \bibinfo{title}{{RAT-Bench}: A Comprehensive Benchmark for Text Anonymization}.
+\newblock
+\shownote{arXiv:2602.12806}.
+\newblock
+
+
+\bibitem[Lee et~al\mbox{.}(2025)]%
+        {lee2025nmixx}
+\bibfield{author}{\bibinfo{person}{Hanwool Lee}, \bibinfo{person}{Sara Yu}, \bibinfo{person}{Yewon Hwang}, \bibinfo{person}{Jonghyun Choi}, \bibinfo{person}{Heejae Ahn}, \bibinfo{person}{Sungbum Jung}, {and} \bibinfo{person}{Youngjae Yu}.} \bibinfo{year}{2025}\natexlab{}.
+\newblock \bibinfo{title}{{NMIXX}: Domain-Adapted Neural Embeddings for Cross-Lingual eXploration of Finance}.
+\newblock
+\shownote{Accepted at FinAI@CIKM 2025. arXiv:2507.09601v2}.
+\newblock
+\href{https://doi.org/10.48550/arXiv.2507.09601}{doi:\nolinkurl{10.48550/arXiv.2507.09601}}
+
+
+\bibitem[Mireshghallah et~al\mbox{.}(2024)]%
+        {mireshghallah2024confaide}
+\bibfield{author}{\bibinfo{person}{Niloofar Mireshghallah}, \bibinfo{person}{Hyunwoo Kim}, \bibinfo{person}{Xuhui Zhou}, \bibinfo{person}{Yulia Tsvetkov}, \bibinfo{person}{Maarten Sap}, \bibinfo{person}{Reza Shokri}, {and} \bibinfo{person}{Yejin Choi}.} \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{Can {LLMs} Keep a Secret? Testing Privacy Implications of Language Models via Contextual Integrity Theory}. In \bibinfo{booktitle}{\emph{International Conference on Learning Representations (ICLR)}}.
+\newblock
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2310.17884}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Pil{\'a}n et~al\mbox{.}(2022)]%
+        {pilan2022tab}
+\bibfield{author}{\bibinfo{person}{Ildik{\'o} Pil{\'a}n}, \bibinfo{person}{Pierre Lison}, \bibinfo{person}{Lilja {\O}vrelid}, \bibinfo{person}{Anthi Papadopoulou}, \bibinfo{person}{David S{\'a}nchez}, {and} \bibinfo{person}{Montserrat Batet}.} \bibinfo{year}{2022}\natexlab{}.
+\newblock \showarticletitle{The Text Anonymization Benchmark ({TAB}): A Dedicated Corpus and Evaluation Framework for Text Anonymization}.
+\newblock \bibinfo{journal}{\emph{Computational Linguistics}} \bibinfo{volume}{48}, \bibinfo{number}{4} (\bibinfo{year}{2022}), \bibinfo{pages}{1053--1101}.
+\newblock
+\href{https://doi.org/10.1162/coli_a_00458}{doi:\nolinkurl{10.1162/coli_a_00458}}
+
+
+\bibitem[Shao et~al\mbox{.}(2024)]%
+        {shao2024privacylens}
+\bibfield{author}{\bibinfo{person}{Yijia Shao}, \bibinfo{person}{Tianshi Li}, \bibinfo{person}{Weiyan Shi}, \bibinfo{person}{Yanchen Liu}, {and} \bibinfo{person}{Diyi Yang}.} \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{{PrivacyLens}: Evaluating Privacy Norm Awareness of Language Models in Action}. In \bibinfo{booktitle}{\emph{Advances in Neural Information Processing Systems}}, Vol.~\bibinfo{volume}{37}. \bibinfo{publisher}{Curran Associates, Inc.}, \bibinfo{pages}{89373--89407}.
+\newblock
+\href{https://doi.org/10.52202/079017-2837}{doi:\nolinkurl{10.52202/079017-2837}}
+
+
+\bibitem[Shen et~al\mbox{.}(2025)]%
+        {shen2025piibench}
+\bibfield{author}{\bibinfo{person}{Hao Shen}, \bibinfo{person}{Zhouhong Gu}, \bibinfo{person}{Haokai Hong}, {and} \bibinfo{person}{Weili Han}.} \bibinfo{year}{2025}\natexlab{}.
+\newblock \bibinfo{title}{{PII-Bench}: Evaluating Query-Aware Privacy Protection Systems}.
+\newblock
+\shownote{arXiv:2502.18545}.
+\newblock
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2502.18545}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Son et~al\mbox{.}(2024)]%
+        {son2024krx}
+\bibfield{author}{\bibinfo{person}{Guijin Son}, \bibinfo{person}{Hyunjun Jeon}, \bibinfo{person}{Chami Hwang}, {and} \bibinfo{person}{Hanearl Jung}.} \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{{KRX} Bench: Automating Financial Benchmark Creation via Large Language Models}. In \bibinfo{booktitle}{\emph{Proceedings of the Joint Workshop of the 7th Financial Technology and Natural Language Processing, the 5th Knowledge Discovery from Unstructured Data in Financial Services, and the 4th Workshop on Economics and Natural Language Processing}}. \bibinfo{publisher}{Association for Computational Linguistics}, \bibinfo{address}{Torino, Italia}, \bibinfo{pages}{10--20}.
+\newblock
+\urldef\tempurl%
+\url{https://aclanthology.org/2024.finnlp-1.2/}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Staab et~al\mbox{.}(2024)]%
+        {staab2024beyond}
+\bibfield{author}{\bibinfo{person}{Robin Staab}, \bibinfo{person}{Mark Vero}, \bibinfo{person}{Mislav Balunovi{\'c}}, {and} \bibinfo{person}{Martin Vechev}.} \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{Beyond Memorization: Violating Privacy via Inference with Large Language Models}. In \bibinfo{booktitle}{\emph{International Conference on Learning Representations (ICLR)}}.
+\newblock
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2310.07298}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Staab et~al\mbox{.}(2025)]%
+        {staab2025anonymizers}
+\bibfield{author}{\bibinfo{person}{Robin Staab}, \bibinfo{person}{Mark Vero}, \bibinfo{person}{Mislav Balunovi{\'c}}, {and} \bibinfo{person}{Martin Vechev}.} \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{Language Models are Advanced Anonymizers}. In \bibinfo{booktitle}{\emph{International Conference on Learning Representations (ICLR)}}.
+\newblock
+\urldef\tempurl%
+\url{https://openreview.net/forum?id=82p8VHRsaK}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Vats et~al\mbox{.}(2026)]%
+        {vats2026redact}
+\bibfield{author}{\bibinfo{person}{Guneesh Vats} {et~al\mbox{.}}} \bibinfo{year}{2026}\natexlab{}.
+\newblock \bibinfo{title}{{REDACT}: A Systematically Controlled Multilingual Benchmark for Personal Information Detection}.
+\newblock
+\shownote{arXiv:2606.19881}.
+\newblock
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2606.19881}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Yang et~al\mbox{.}(2025)]%
+        {yang2025rupta}
+\bibfield{author}{\bibinfo{person}{Tianyu Yang}, \bibinfo{person}{Xiaodan Zhu}, {and} \bibinfo{person}{Iryna Gurevych}.} \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{Robust Utility-Preserving Text Anonymization Based on Large Language Models}. In \bibinfo{booktitle}{\emph{Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)}}. \bibinfo{publisher}{Association for Computational Linguistics}, \bibinfo{address}{Vienna, Austria}, \bibinfo{pages}{28922--28941}.
+\newblock
+\href{https://doi.org/10.18653/v1/2025.acl-long.1404}{doi:\nolinkurl{10.18653/v1/2025.acl-long.1404}}
+
+
+\bibitem[Zafar and Nowaczyk(2026)]%
+        {zafar2026mindthegap}
+\bibfield{author}{\bibinfo{person}{Adeel Zafar} {and} \bibinfo{person}{S{\l}awomir Nowaczyk}.} \bibinfo{year}{2026}\natexlab{}.
+\newblock \bibinfo{title}{Mind the Gap: Robustness Risks in {PII} Detection Systems}.
+\newblock
+\shownote{arXiv:2609.03464}.
+\newblock
+
+
+\end{thebibliography}

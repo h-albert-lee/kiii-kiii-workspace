@@ -1,0 +1,75 @@
+\section{Error Analysis}
+\label{app:diagnostics}
+\label{app:result-layout}
+
+Table~\ref{tab:response-diagnostics} keeps strict extraction, structural
+compliance and detection on their respective denominators. Each full
+1,440-document LLM run has 13,723 requests and 218,664 gold mentions;
+Kanana-1.5-8B has 13,653 requests and 218,197 mentions over 1,438 documents.
+No missing condition is imputed. Baseline format and D scores are N/A.
+
+
+
+\subsection{Where unrecovered gold appears}
+Figure~\ref{fig:error-atlas} partitions every gold mention using a fixed
+priority: exact diagnostic hit; an owning request with unusable output or
+an empty list; an anchored boundary/category mismatch; and otherwise an
+unresolved miss with rejected items, or no overlapping prediction.
+Unusable output includes terminal failure, truncation and invalid JSON/root
+schema. Each row sums to its original gold count. These are descriptive
+buckets: an unresolved rejected quotation does not establish detection of
+any particular gold span, and priority assignment does not isolate causes.
+
+
+
+\paragraph{Well-formed silence versus unusable output.}
+Qwen3-30B full returns empty lists on 53.06\% of requests; those requests
+own 100,873 gold mentions (46.13\% of all gold). In local context this
+share falls to 10.83\%. This distinguishes abstention-like output from
+JSON failure without claiming why the model omitted PII. Kanana-1.5-8B
+local instead places 119,200 of 218,197 mentions (54.63\%) in requests
+with invalid JSON. A single ``format failure'' rate would obscure both
+the empty-output burden and its different gold coverage.
+
+\paragraph{Source grounding includes output ownership.}
+Among Gemma-31B local's 104,568 invalid parsed items, 98,200 (93.91\%)
+quote target text but start outside the owning core; Gemma-26B-A4B local
+has 76,806 such items out of 84,943 (90.42\%). These are not quotations
+absent from the source. In a replay-verified Gemma-26B case, a returned
+address begins 236 characters after the core ends. It exists in the
+following halo, where a span may end but may not start. The result exposes
+a burden of this extraction interface, not solely a failure to recognize
+sensitive text. Invalid items still incur false positives under D, and
+unresolved gold still incurs false negatives.
+
+\paragraph{Recognition does not settle labels or boundaries.}
+Gemma-31B local exactly recovers 34.86\% of gold; another 23.33\% has
+same-category overlap with different boundaries. Exact-boundary wrong
+labels account for 0.65\%, and other wrong-category overlaps for 5.63\%.
+In one synthetic consultation case, the model reproduces the entire gold
+clause but adds its final period. This is an exact-match error with
+substantial textual overlap. Conversely, Qwen-9B local quotes the exact
+contract identifier \texttt{2026-277485} but labels it as a customer ID.
+These observations motivate reporting overlap and typed exact scores
+together; neither proves semantic correctness or remaining disclosure risk.
+
+\paragraph{Wrappers can hide valid evidence.}
+A whole-response JSON fence is parseable in 89.66\% of Gemma-31B local
+requests, despite its 0.017 strict F1. A selected fenced response contains
+an exactly typed bank account and no invalid items: strict rejects the
+response while D retains the account. The total strict--D gap cannot be
+attributed to fences alone because itemwise acceptance and false-positive
+accounting also change. The five archived illustrations use the minimum
+SHA-256 request ID within specified model/error strata, followed by
+lexicographic item/span selection. We verified source and response hashes,
+reconstructed requests and replayed their outcomes. This purposive audit
+illustrates failure definitions; it is not representative human annotation.
+
+\paragraph{Serving provenance.}
+Operator records report vLLM 0.30.0 for Qwen/Kanana/EXAONE (BF16,
+temperature 1, top-$p$ 1), and vLLM 0.19.0 for Gemma, except 12B (0.30.0), on one H100 80GB
+(temperature 1, top-$p$ 0.95, top-$k$ 64; thinking disabled).
+Gemma-31B uses FP8 weights and KV cache; the others use BF16.
+Runner and server inventories are distinct. Archived revisions, request/raw
+hashes and original versus replay-source hashes preserve provenance;
+replay does not establish deployment equivalence or native capacity.

@@ -11,6 +11,10 @@ Use [docs/authors.yaml](../../../docs/authors.yaml) as the shared administrative
 | 5 | Yewon Hwang | kakao mobility | Author | [~Yewon_hwang3](https://openreview.net/profile?id=~Yewon_hwang3) |
 | 6 | Hanwool Lee | Seoul National University **and** AIM Intelligence | Corresponding author | [~Hanwool_Lee1](https://openreview.net/profile?id=~Hanwool_Lee1) |
 
+## Public preprint update — 2026-10-04
+
+For the separate [arXiv manuscript](../../arxiv/README.md), the operator added **Band Foundation** to every author's existing affiliations. Public contact is **www.instagram.com/band_foundation**, with no printed personal email. Order and roles are unchanged. The table above records the submitted SAC affiliations; this update does not assert that venue account metadata was changed.
+
 ## Names and affiliations: avoid carrying over profile artifacts
 
 - MinKyeong Shin is the spelling on the profile selected by the operator; the earlier `Minkyung Shin` was explicitly provisional. Use `MinKyeong Shin` for consistency with the actual workshop submission; ask the author only if a later preferred publication spelling differs.

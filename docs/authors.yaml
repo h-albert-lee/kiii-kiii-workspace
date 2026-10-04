@@ -1,5 +1,5 @@
 # Operator-approved author metadata; exclude from anonymous manuscript bundles.
-updated: '2026-10-02'
+updated: '2026-10-04'
 source: operator_message
 status: operator_specified
 authors:
@@ -7,6 +7,7 @@ authors:
   name: Eunbin Shin
   affiliations:
   - LG AI Research
+  - Band Foundation
   equal_contribution_group: first_authors
   openreview_id: ~Eunbin_Shin2
   openreview_url: https://openreview.net/profile?id=~Eunbin_Shin2
@@ -17,6 +18,7 @@ authors:
   name: Sara Yu
   affiliations:
   - KT
+  - Band Foundation
   equal_contribution_group: first_authors
   openreview_id: ~Sara_Yu1
   openreview_url: https://openreview.net/profile?id=~Sara_Yu1
@@ -27,6 +29,7 @@ authors:
   name: Seonghyun Kim
   affiliations:
   - Toss Securities
+  - Band Foundation
   openreview_id: ~Seonghyun_Kim2
   openreview_url: https://openreview.net/profile?id=~Seonghyun_Kim2
   openreview_display_name: Seonghyun Kim
@@ -37,6 +40,7 @@ authors:
   name_status: operator_selected_OpenReview_profile_spelling
   affiliations:
   - Shinhan Securities
+  - Band Foundation
   openreview_id: ~MinKyeong_Shin1
   openreview_url: https://openreview.net/profile?id=~MinKyeong_Shin1
   openreview_display_name: MinKyeong Shin
@@ -47,6 +51,7 @@ authors:
   name: Yewon Hwang
   affiliations:
   - kakao mobility
+  - Band Foundation
   openreview_id: ~Yewon_hwang3
   openreview_url: https://openreview.net/profile?id=~Yewon_hwang3
   openreview_display_name: Yewon hwang
@@ -57,6 +62,7 @@ authors:
   affiliations:
   - Seoul National University
   - AIM Intelligence
+  - Band Foundation
   corresponding_author: true
   openreview_id: ~Hanwool_Lee1
   openreview_url: https://openreview.net/profile?id=~Hanwool_Lee1
@@ -64,14 +70,19 @@ authors:
   email: null
   orcid: null
 equal_contribution_note: Eunbin Shin and Sara Yu contributed equally to this work.
+public_contact:
+  display: www.instagram.com/band_foundation
+  url: https://www.instagram.com/band_foundation
+  email_policy: Do not print personal email addresses in the public manuscript.
+  source: operator_message_2026-10-04
+common_affiliation: Band Foundation
 pending:
-- Obtain the submission email for each author; masked OpenReview emails were not guessed
-  or copied.
-- Obtain ORCIDs, postal details and other identifiers only if the SAC form requires
-  them.
+- Obtain ORCIDs, postal details and other identifiers only if a future form requires them.
 - Confirm any preferred name capitalization with the author before camera-ready; preserve
   user-specified Yewon Hwang instead of automatically copying lowercase profile display.
 notes:
+- All author emails were supplied privately for SAC; do not repeat them in public manuscripts.
+- Band Foundation and Instagram-only public contact were added for the arXiv version on 2026-10-04; submitted venue metadata was not changed.
 - Use the supplied order; do not alphabetize the two equal first authors.
 - Use Seonghyun Kim and Hanwool Lee for this roster, superseding older manuscript-template
   spellings.

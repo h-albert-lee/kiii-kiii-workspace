@@ -1,6 +1,10 @@
 <!-- SAC receipt verified: EasyChair #362, AIFT, 8 pages; docs/submissions/sac2027.json. -->
 # STATUS — 2026-10-04
 
+## arXiv preprint prepared — 2026-10-04
+
+[Independent public manuscript](papers/arxiv/README.md): nine pages, six authors in the approved order, original affiliations plus Band Foundation for everyone, equal-first/corresponding notes retained. Instagram-only public contact; no personal email or project code link. Dataset link, AI assistance disclosure and Kanana attribution retained. Overleaf XeLaTeX / TeX Live 2025 build: zero errors; all nine pages visually checked. Source ZIP and hashes prepared. **Not submitted to arXiv.** SAC #362 and workshop sources/submissions unchanged.
+
 ## SAC layout revision — 2026-10-04
 
 **Existing #362 updated and re-downloaded/verified.** Figure 4 moved from page 8 to page 6 alongside Figure 3; Table 2 accompanies detailed error analysis on page 7. Discussion, conclusion and references occupy page 8 with no intervening floats. Eight pages, zero compile errors/overfull boxes; 13 warnings include the intentional figure-only page. Captions, narrative, numbers and figure assets are unchanged; only float declarations/placement and 4 bp of verified blank padding at each vertical edge of Figure 3 changed. Native Overleaf source exported; workshop untouched. [Receipt](docs/submissions/sac2027.json).

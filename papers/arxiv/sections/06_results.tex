@@ -1,0 +1,17 @@
+\section{Results and Analysis}
+\label{sec:results}
+
+The descriptive comparison (Figure~\ref{fig:score-portrait}) reports completed extraction systems, with strict scores kept separate from a detection diagnostic. Full breakdowns and paired intervals appear in \S\ref{app:result-layout}. Figure~\ref{fig:context-contrasts} visualizes the ten completed within-model comparisons.
+
+
+
+\paragraph{Strict rejection can hide valid items.}
+Presidio reaches 10.15 strict F1; the highest LLM strict score is 7.97 (Gemma-26B-A4B, full). For LLMs, strict scoring enforces the frozen response contract: one invalid item can suppress valid siblings. The itemwise replay in \S\ref{sec:protocol} retains valid anchored items while preserving invalid-item penalties and all gold. Its contrast with strict F1 describes usable evidence in the received output, not performance under an improved decoder.
+
+Gemma-12B local moves from 0.05 strict F1 to 29.81 D-F1; Gemma-31B FP8 local reaches 31.58 D-F1 (28.86 precision, 34.86 recall). Format compliance alone is also insufficient: Qwen3-30B full has 90.42\% structurally compliant responses but only 7.55 D-F1, and 53.06\% of all requests return an empty list. Thus output acceptance, grounding and missed PII need separate denominators, not a success-only score.
+
+\paragraph{Wider context does not ensure recovery.}
+Local context has higher D-F1 in all ten completed pairs and higher strict F1 in nine. Strict full-minus-local differences range from $-1.89$ points (Gemma-E4B) to $+0.57$ (Gemma-26B-A4B); the latter reverses to $-0.22$ under D. The contrast measures extraction under this fixed output protocol, not an intrinsic inability to use long context. Cohort, decoding and generation differences preclude causal model-size conclusions. Strict recovery concentrates on identifiers: Gemma-26B-A4B full scores 15.99 F1 on L-identifiers but 0.49 on L-attributes and 0.23 on I-attributes. Presidio scores 20.12 on identifiers and zero on both attribute groups. This exposes limited policy coverage; missed categories alone do not establish legal or cultural beliefs.
+
+
+

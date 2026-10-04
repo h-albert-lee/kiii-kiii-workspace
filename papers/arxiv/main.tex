@@ -1,0 +1,164 @@
+%% Kiii-Kiii — public arXiv preprint, prepared 2026-10-04
+%% XeLaTeX / TeX Live 2025. Independent of the anonymous SAC submission.
+\documentclass[sigconf,nonacm]{acmart}
+
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{ragged2e}
+\usepackage{xurl}           % Allow long schema labels and URLs to wrap.
+\usepackage{xcolor}
+\usepackage{kotex}          % Korean examples in text; comment out if Overleaf compiler lacks kotex (use xelatex/lualatex)
+% Keep Hangul upright within Latin emphasis: these fonts have no italic face.
+\setmainhangulfont{UnBatang.ttf}[
+  BoldFont=UnBatangBold.ttf,
+  ItalicFont=UnBatang.ttf,
+  BoldItalicFont=UnBatangBold.ttf,
+  Script=Hangul,Language=Korean]
+\usepackage{enumitem}
+\setlist{nosep,leftmargin=*}
+% A last-pass line-breaking allowance for narrow columns; no changes to
+% ACM margins, type sizes, line spacing, or paragraph spacing.
+\setlength{\emergencystretch}{2em}
+
+%% --- anonymisation helpers: \anonv{visible}{hidden} shows the first arg in review mode
+\newif\ifanonymous\anonymousfalse
+\newcommand{\anonv}[2]{\ifanonymous#1\else#2\fi}   % acmart already defines \anon; ours is \anonv{visible-in-review}{camera-ready}
+\newcommand{\todo}[1]{\textcolor{red}{[TODO: #1]}}
+
+%% Standalone preprint; no claim of conference publication.
+\setcopyright{none}
+\acmDOI{}
+\acmISBN{}
+\settopmatter{printacmref=false,authorsperrow=3}
+\renewcommand\footnotetextcopyrightpermission[1]{}
+
+\begin{document}
+
+
+
+%% Name: \kiii = Kiii^2 (= "Kiii Kiii"). Backronym K-I-I-I = Korean / Identifiers (Tier L) / Identifiability (Tier I) / Ill-formed inputs (variation axis)
+\newcommand{\kiii}{Kiii\textsuperscript{2}}
+%% Title spells the name "Kiii-Kiii" (after the girl group); body text uses \kiii (= Kiii^2) for the dataset.
+\title[Kiii-Kiii: Korean Financial PII Detection]{Kiii-Kiii: Korean Identifiers, Identifiability, and Ill-formed Inputs}
+\subtitle{A Regulation-Grounded Benchmark for Financial PII Detection}
+%% alternatives kept for the record:
+%%  Kiii^2: Benchmarking Korean Financial PII across Identifiers, Identifiability, and Irregular Surface Forms
+%%  Korean Financial PII under Imperfect Inputs: an Identifiability-Aware Benchmark for AI DLP (Kiii^2)
+
+% Public preprint authors; no personal email addresses are included.
+% Institutional affiliations were supplied by the authors. Postal details
+% are not required for this non-ACM preprint and are deliberately not inferred.
+\makeatletter
+\renewcommand\@ACM@checkaffil{}
+\makeatother
+\author{Eunbin Shin}
+\authornote{Eunbin Shin and Sara Yu contributed equally to this work.}
+\affiliation{\institution{LG AI Research}\institution{Band Foundation}}
+\author{Sara Yu}
+\authornotemark[1]
+\affiliation{\institution{KT}\institution{Band Foundation}}
+\author{Seonghyun Kim}
+\affiliation{\institution{Toss Securities}\institution{Band Foundation}}
+\author{MinKyeong Shin}
+\affiliation{\institution{Shinhan Securities}\institution{Band Foundation}}
+\author{Yewon Hwang}
+\affiliation{\institution{kakao mobility}\institution{Band Foundation}}
+\author{Hanwool Lee}
+\authornote{Corresponding author. Contact: \href{https://www.instagram.com/band_foundation}{\nolinkurl{www.instagram.com/band_foundation}}.}
+\affiliation{\institution{Seoul National University}\institution{AIM Intelligence}\institution{Band Foundation}}
+\renewcommand{\shortauthors}{Shin, Yu, et al.}
+
+\begin{abstract}
+\input{sections/00_abstract}
+\end{abstract}
+
+\begin{CCSXML}
+<ccs2012>
+<concept><concept_id>10002978.10003029</concept_id><concept_desc>Security and privacy~Human and societal aspects of security and privacy</concept_desc><concept_significance>500</concept_significance></concept>
+<concept><concept_id>10010147.10010178.10010179</concept_id><concept_desc>Computing methodologies~Natural language processing</concept_desc><concept_significance>300</concept_significance></concept>
+</ccs2012>
+\end{CCSXML}
+\ccsdesc[500]{Security and privacy~Human and societal aspects of security and privacy}
+\ccsdesc[300]{Computing methodologies~Natural language processing}
+\keywords{PII detection, Korean financial NLP, regulation-grounded benchmark, long-context extraction, output reliability}
+
+\maketitle
+
+\input{sections/01_introduction}
+\input{sections/02_related_work}
+\input{sections/03_taxonomy}
+\input{sections/04_benchmark}
+
+\input{sections/05_protocol}
+% Queue wide floats early so they appear beside results/error analysis,
+% rather than after the conclusion among the references. Captions and data
+% are unchanged; source declaration order controls the printed float order.
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=\textwidth]{figures/score-portrait.pdf}
+\caption{\textbf{Output validity and span recovery differ.}
+Strict exact F1 (filled circles) and D-F1 (open diamonds) from the same archived
+outputs, by full (A) and local (B) context. Connecting segments identify two
+scoring views, not causal effects or confidence intervals. (C) Structural
+compliance over all requests, which is not strict response acceptance.
+Baseline squares are document-level strict references; D and format are N/A.
+Missing conditions are explicitly marked. *Kanana-1.5-8B: 1,438 documents;
+others: 1,440. All gold and invalid-item penalties remain in D. Execution
+blocks differ; the display is descriptive, not a verified common-capacity ranking.}
+\Description{Aligned full and local dot plots show all 22 completed LLM
+conditions, with three document-level baseline references. Many Gemma runs
+have near-zero strict F1 but higher diagnostic F1. Adjacent cells display
+format compliance, including high compliance for Qwen3-30B and low compliance
+for Gemma-12B and Gemma-31B. Missing Qwen pairs are not plotted as zeros.}
+\label{fig:score-portrait}
+\end{figure*}
+
+\begin{figure*}[!t]
+\centering
+% Trim only the verified blank top/bottom PDF padding; preserve plot scale.
+\includegraphics[trim=0 4bp 0 4bp,clip,width=\textwidth]{figures/context-contrasts.pdf}
+\caption{Within-model full-minus-local contrasts on each model's original
+cohort. Negative values favor local context. Left: strict F1 and pointwise
+95\% document-paired bootstrap intervals (2,000 draws, seed 0). Right:
+D-F1 point differences; no diagnostic confidence intervals are implied.
+*Kanana-1.5-8B uses 1,438 documents; other pairs use 1,440. These are
+post-hoc within-model comparisons, not an all-model common-capacity ranking.}
+\Description{Two aligned panels show strict F1 differences with intervals
+and diagnostic F1 point differences for ten models. Nine strict differences
+and all ten diagnostic differences favor local context. Gemma-26B-A4B is
+the strict exception. The intervals for Gemma-E2B and Gemma-12B cross zero.}
+\label{fig:context-contrasts}
+\end{figure*}
+
+\input{sections/response-table}
+
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=\textwidth]{figures/error-atlas.pdf}
+\caption{\textbf{Similar low scores conceal different observable failures.}
+All-gold priority partitions for 22 completed LLM conditions. Exact-hit shares
+are D-recall; integers inside teal bars are rounded percentages. Boundary/category
+mismatches have anchored overlap but fail exact typed matching. Unresolved
+misses with rejected items do not establish detection. Unusable output comprises
+terminal/truncated responses and JSON/root failures; empty output is separate.
+Segments are descriptive, not causal contributions to F1. Missing conditions
+are not zero. *Kanana-1.5-8B: 218,197 gold mentions; others: 218,664.}
+\Description{Paired horizontal stacked bars account for every gold mention.
+Qwen3-30B full is dominated by empty-output misses, Kanana-8B by unusable
+outputs, and Gemma-31B local has larger exact-hit and boundary/category
+overlap portions while retaining a substantial unresolved remainder.}
+\label{fig:error-atlas}
+\end{figure*}
+
+\input{sections/05_experiments}
+\input{sections/06_results}
+\input{sections/08_diagnostics}
+\input{sections/09_discussion}
+\input{sections/07_conclusion}
+
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{references}
+
+
+
+\end{document}
