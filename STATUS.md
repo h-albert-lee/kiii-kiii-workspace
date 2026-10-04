@@ -1,9 +1,11 @@
 <!-- SAC receipt verified: EasyChair #362, AIFT, 8 pages; docs/submissions/sac2027.json. -->
 # STATUS — 2026-10-04
 
-## arXiv preprint prepared — 2026-10-04
+## arXiv submission — 2026-10-04
 
-[Independent public manuscript](papers/arxiv/README.md): nine pages, six authors in the approved order, original affiliations plus Band Foundation for everyone, equal-first/corresponding notes retained. Instagram-only public contact; no personal email or project code link. Dataset link, AI assistance disclosure and Kanana attribution retained. Overleaf XeLaTeX / TeX Live 2025 build: zero errors; all nine pages visually checked. Source ZIP and hashes prepared. **Not submitted to arXiv.** SAC #362 and workshop sources/submissions unchanged.
+**Submitted as `submit/8175925`; currently on hold for arXiv checks, without a public arXiv ID yet.** arXiv XeLaTeX / TeX Live 2025 compiled nine pages successfully; all page text matches the prepared PDF except the arXiv watermark on page 1. The user-selected paper license is CC BY 4.0; primary cs.CL, cross-list cs.CR. [Submission record](docs/submissions/arxiv.json). Do not create a duplicate submission while checks are pending.
+
+[Independent public manuscript](papers/arxiv/README.md): nine pages, six authors in the approved order, original affiliations plus Band Foundation for everyone, equal-first/corresponding notes retained. Instagram-only public contact; no personal email or project code link. Dataset link, AI assistance disclosure and Kanana attribution retained. Overleaf XeLaTeX / TeX Live 2025 build: zero errors; all nine pages visually checked. Source ZIP and hashes prepared. SAC #362 and workshop sources/submissions unchanged.
 
 ## SAC layout revision — 2026-10-04
 

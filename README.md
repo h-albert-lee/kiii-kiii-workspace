@@ -1,6 +1,6 @@
 # Kiii-Kiii · Kiii²
 
-> **2026-10-04 / arXiv 준비본:** [독립 프리프린트](papers/arxiv/README.md) 9쪽을 준비했습니다. 기존 저자 순서·소속에 전원 Band Foundation을 추가하고 연락처는 Instagram만 표기했습니다. 데이터셋 링크만 유지하며 코드 링크는 제외했습니다. 아직 arXiv에 제출하지 않았습니다.
+> **2026-10-04 / arXiv 제출:** [독립 프리프린트](papers/arxiv/README.md) 9쪽을 `submit/8175925`로 제출했습니다. 현재 arXiv 확인 중(on hold)이며 공개 번호는 아직 없습니다. 전원 Band Foundation 소속, Instagram 연락처, CC BY 4.0 논문 라이선스를 반영했습니다. [접수 기록](docs/submissions/arxiv.json).
 
 > **2026-10-04 / SAC #362 도표 배치 수정 재제출:** Figure 4를 8쪽 참고문헌 사이에서 6쪽 분석 도표 페이지로 옮겼습니다. 모든 그림·표가 참고문헌 전에 나오며 8쪽 유지. 실제 제출본 전체 페이지 검증 완료. [접수 기록](docs/submissions/sac2027.json).
 

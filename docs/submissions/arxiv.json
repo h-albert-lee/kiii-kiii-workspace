@@ -1,0 +1,40 @@
+{
+  "venue": "arXiv",
+  "submission_id": "submit/8175925",
+  "public_arxiv_id": null,
+  "submission_url": "https://arxiv.org/submit/8175925/preview",
+  "account_url": "https://arxiv.org/user",
+  "submitted_at": "2026-10-04 03:00 UTC (approximately, observed immediately after final submit)",
+  "status_observed": "on hold",
+  "status_observed_at": "2026-10-04 03:01 UTC",
+  "status_evidence": "arXiv user page displayed Article submitted and submit/8175925 on hold after final Submit action.",
+  "public_listing_confirmed": false,
+  "title": "Kiii-Kiii: Korean Identifiers, Identifiability, and Ill-formed Inputs - A Regulation-Grounded Benchmark for Financial PII Detection",
+  "authors": [
+    "Eunbin Shin",
+    "Sara Yu",
+    "Seonghyun Kim",
+    "MinKyeong Shin",
+    "Yewon Hwang",
+    "Hanwool Lee"
+  ],
+  "primary_category": "cs.CL",
+  "cross_list": [
+    "cs.CR"
+  ],
+  "paper_license": "CC BY 4.0",
+  "dataset_license_separate": "CC BY-NC 4.0",
+  "compiler": "xelatex",
+  "tex_live": "2025",
+  "server_compile": "succeeded",
+  "pdf_pages": 9,
+  "prepared_source_zip_sha256": "257ac7c6e7dfc1927d228a9539d6591101ba23ac633260c8e921e764bce90417",
+  "prepared_pdf_sha256": "048e4cda90f45175026d7b96615ab88c144e85a51e671f62eec34404a8d0ff57",
+  "server_preview_pdf_sha256": "a50e77f70cdba7b4e77b64425ba98d3fa842858f409218bd8f586f3bcee1ddb5",
+  "server_preview_verification": "Nine pages. Pages 2-9 have identical extracted text to the prepared PDF; page 1 differs only by the arXiv submission watermark. The arXiv-rendered first page was visually checked for the six-author block, Band Foundation affiliations, Instagram icon/contact and Korean glyphs; all nine prepared pages were previously rendered and visually checked for figures, tables and references. The first-page Instagram URL has a clickable URI annotation.",
+  "metadata_comments": "9 pages, 4 figures, 2 tables. Eunbin Shin and Sara Yu contributed equally.",
+  "moderation_note": "arXiv status help says no action is required while on hold; editors may resolve it or contact the account email. Do not create a duplicate submission.",
+  "source_commit_before_submission": "da05165",
+  "public_dataset": "https://huggingface.co/datasets/nmixx-fin/kiii-kiii",
+  "code_repo_link_in_manuscript": false
+}

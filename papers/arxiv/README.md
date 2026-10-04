@@ -1,6 +1,6 @@
 # Kiii-Kiii — arXiv preprint
 
-**Prepared 2026-10-04; not yet submitted to arXiv.** Nine pages, based on the
+**Submitted 2026-10-04 as `submit/8175925`; currently on hold for arXiv checks. No public arXiv identifier yet.** Nine pages, based on the
 reference- and layout-corrected SAC #362 source at `bd2547b`. The SAC submission
 and Sara's workshop project remain unchanged.
 
@@ -49,7 +49,7 @@ ten missing bibliography publication-field warnings, the intentional
 figure-only page 6, and three Font Awesome/ko.TeX font-shape fallback warnings.
 The Instagram icon and Korean glyphs were visually verified. All nine pages were rendered and inspected. Figures are
 on pages 2, 5 and 6; Table 2 is on page 7; references are uninterrupted on pages
-8–9. The arXiv server itself has not yet compiled or accepted this source.
+8–9. The arXiv server compiled this source with XeLaTeX / TeX Live 2025 and accepted the submission for moderation. See [submission record](../../docs/submissions/arxiv.json).
 
 ## Rebuild and package
 
@@ -73,6 +73,4 @@ PY
 ```
 
 Regenerate the QA record after any change; old hashes do not certify a new build.
-Before actual arXiv publication, inspect the server-generated PDF and complete
-its metadata, category and license fields. This preparation record is not a
-submission receipt or an arXiv identifier.
+The server-generated PDF was inspected. Metadata: primary cs.CL, cross-list cs.CR, paper CC BY 4.0. While the submission is on hold, wait for arXiv checks; do not file a duplicate. Public arXiv identifier will be available only after announcement.
