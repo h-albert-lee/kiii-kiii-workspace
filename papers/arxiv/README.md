@@ -17,7 +17,9 @@ outbound to preserve this project's comments. Do not sync into either venue proj
 5. Yewon Hwang — kakao mobility; Band Foundation
 6. Hanwool Lee — Seoul National University; AIM Intelligence; Band Foundation (corresponding)
 
-Public contact: **www.instagram.com/band_foundation**. No personal email
+Public contact: **www.instagram.com/band_foundation**, centered directly below
+the affiliation block with a monochrome vector Instagram icon (Font Awesome 5).
+The entire line is clickable; the corresponding-author footnote contains the role only. No personal email
 addresses in the manuscript. Institutional spellings and roles follow the
 operator's author record. Postal addresses and ORCIDs have not been inferred.
 The author block disables ACM's mandatory postal-field check for this non-ACM
@@ -42,15 +44,16 @@ from SAC except the conclusion's public data/attribution statements. Only
 `main.tex` and `sections/07_conclusion.tex` differ in the native source.
 
 Compiled successfully in Overleaf with TeX Live 2025: zero errors, no missing
-glyphs, undefined references or overfull boxes. Eleven UI warnings remain:
-ten missing bibliography publication-field warnings and the intentional
-figure-only page 6. All nine pages were rendered and inspected. Figures are
+glyphs, undefined references or overfull boxes. Fourteen UI warnings remain:
+ten missing bibliography publication-field warnings, the intentional
+figure-only page 6, and three Font Awesome/ko.TeX font-shape fallback warnings.
+The Instagram icon and Korean glyphs were visually verified. All nine pages were rendered and inspected. Figures are
 on pages 2, 5 and 6; Table 2 is on page 7; references are uninterrupted on pages
 8–9. The arXiv server itself has not yet compiled or accepted this source.
 
 ## Rebuild and package
 
-From this directory with a TeX Live 2025 installation including ko.TeX and
+From this directory with a TeX Live 2025 installation including ko.TeX, Font Awesome 5 and
 UnBatang, run XeLaTeX → BibTeX → XeLaTeX → XeLaTeX on `main.tex`.
 Fonts are addressed by file name. The checked-in `main.bbl` is the compiled
 bibliography from the verified Overleaf build; regenerate it after citation edits.

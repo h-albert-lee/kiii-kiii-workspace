@@ -7,6 +7,8 @@
 \usepackage{ragged2e}
 \usepackage{xurl}           % Allow long schema labels and URLs to wrap.
 \usepackage{xcolor}
+\usepackage{fontawesome5}   % Vector Instagram icon from TeX Live.
+\usepackage{etoolbox}
 \usepackage{kotex}          % Korean examples in text; comment out if Overleaf compiler lacks kotex (use xelatex/lualatex)
 % Keep Hangul upright within Latin emphasis: these fonts have no italic face.
 \setmainhangulfont{UnBatang.ttf}[
@@ -31,6 +33,16 @@
 \acmISBN{}
 \settopmatter{printacmref=false,authorsperrow=3}
 \renewcommand\footnotetextcopyrightpermission[1]{}
+
+% A single shared, clickable contact line directly below all affiliations.
+\makeatletter
+\patchcmd{\@mkauthors@iii}{\and\par\bigskip}{%
+  \and\par\medskip
+  {\normalfont\small\href{https://www.instagram.com/band_foundation}{%
+    \faInstagram\hspace{0.5em}\textsf{www.instagram.com/band\_foundation}}}\par\bigskip
+}{}{\PackageError{kiii-preprint}{Author contact placement failed}{Check the acmart author layout.}}
+\makeatother
+
 
 \begin{document}
 
@@ -64,7 +76,7 @@
 \author{Yewon Hwang}
 \affiliation{\institution{kakao mobility}\institution{Band Foundation}}
 \author{Hanwool Lee}
-\authornote{Corresponding author. Contact: \href{https://www.instagram.com/band_foundation}{\nolinkurl{www.instagram.com/band_foundation}}.}
+\authornote{Corresponding author.}
 \affiliation{\institution{Seoul National University}\institution{AIM Intelligence}\institution{Band Foundation}}
 \renewcommand{\shortauthors}{Shin, Yu, et al.}
 

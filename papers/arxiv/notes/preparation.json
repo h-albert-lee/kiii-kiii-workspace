@@ -21,8 +21,8 @@
   "dataset_link_in_manuscript": true,
   "pages": 9,
   "compile_errors": 0,
-  "ui_warnings": 11,
-  "warning_notes": "10 incomplete bibliography-field warnings plus intentional float-only page 6; no undefined references, missing-character or overfull-box warnings.",
+  "ui_warnings": 14,
+  "warning_notes": "10 incomplete bibliography-field warnings, intentional float-only page 6, and 3 font-shape fallback warnings from Font Awesome/ko.TeX interaction. No undefined references, missing characters or overfull boxes; Instagram glyph and Hangul visually verified.",
   "figure_pages": {
     "1": 2,
     "2": 5,
@@ -37,9 +37,9 @@
     8,
     9
   ],
-  "pdf_sha256": "4affd3f9c50e52cf0ea9e27df4d11f247302056788f9447b498bdd4de0f9f4f4",
-  "source_zip_sha256": "23fe3139891b5b87571a4109ee55af8ae45e3a9b04732b94acef2526a64d0196",
-  "native_export_sha256": "edc965a66c48b4b91d2ecdf55e97952725c06ea7ceed47bc2986dec605a0a51e",
+  "pdf_sha256": "048e4cda90f45175026d7b96615ab88c144e85a51e671f62eec34404a8d0ff57",
+  "source_zip_sha256": "257ac7c6e7dfc1927d228a9539d6591101ba23ac633260c8e921e764bce90417",
+  "native_export_sha256": "0ac2bac3561d36617a9747f5f34660e2740d78cb3f3170c546c54f307bca12d7",
   "source_files": {
     "ACM-Reference-Format.bst": "8ec002c927068bfc5b3cfe71b66aa4767b9e485530ac3c67ba5c064df4c2e6ac",
     "acmart.cls": "2f949e6e3f2a79f2cdc218b9dcdbaa7dd451adb4ee0be1af6dc7ebe00b318ea7",
@@ -48,7 +48,7 @@
     "figures/error-atlas.pdf": "ed78c7b57222e51be0b9a41dce3df3939307aec269b856f26ca4f8cd7df53c7a",
     "figures/score-portrait.pdf": "443e4b15a965920271eb715b4440f47c1804659f01729e8c5fd899ed6287c5b1",
     "main.bbl": "caa7c7540ff30b98a29b7e56233ac1e38768f8161a3e3602e8a247b78ccd310a",
-    "main.tex": "3558194d7631f6dd5772bdaf88bb0cf989e2d2116bdfe9f75aba64d1e236a3f1",
+    "main.tex": "dbc4222685bbc027d0c530818993c3412af46b89a5a7e7a93cd909256deb2efe",
     "references.bib": "b1d1a92be05e1d13ad39b400328819578605ae73bb653d69c55c3130b00a5f84",
     "sections/00_abstract.tex": "6ffec5df866d69e78671ea41a1f0d77db74a9fe18ef996323032c3e45ba2ac78",
     "sections/01_introduction.tex": "369c9715a6b2f6a06b8af90eac0ac0111c58223cfea3e999c0ed6f557a32bbc3",
@@ -70,6 +70,9 @@
     "No author email or project code URL in extracted manuscript; Instagram and dataset links present.",
     "18 bibliography entries; references.bib and every figure unchanged from SAC source.",
     "Only main.tex and conclusion section differ from SAC native source; added compiled main.bbl.",
-    "Overleaf TeX Live 2025 compilation verified; arXiv server compilation not yet exercised."
-  ]
+    "Overleaf TeX Live 2025 compilation verified; arXiv server compilation not yet exercised.",
+    "Instagram URI annotation verified on page 1; all nine pages re-rendered after contact placement change. Icon and Korean glyphs render correctly despite unused solid/regular Hangul font-shape fallbacks."
+  ],
+  "contact_placement": "Centered single Instagram icon/link line directly below all affiliations; corresponding-author footnote contains role only.",
+  "contact_icon": "fontawesome5 Instagram brand glyph (TeX Live package)"
 }
