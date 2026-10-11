@@ -1,0 +1,9 @@
+{
+  "model": "Qwen/Qwen3.5-2B",
+  "complete": true,
+  "finished_requests": 13723,
+  "planned_requests": 13723,
+  "spent_or_reserved_usd": 0.0,
+  "budget_usd": 0,
+  "stop_reason": "complete"
+}

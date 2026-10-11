@@ -1,0 +1,42 @@
+{
+  "task": "span_extraction",
+  "protocol": {
+    "mode": "local_window",
+    "core_chars": 1200,
+    "halo_chars": 1200,
+    "max_output_tokens": 4096,
+    "version": "span_p1"
+  },
+  "git_commit": "97202b4af899b21e2aa9c1ede3d4bec18ad2617d",
+  "created_at": "2026-09-23T15:09:57.824780+00:00",
+  "taxonomy_sha256": "b9ec20e3491f9dcdabb626fc04b1b85cc73bb45ebbe9de69849a1c402c00ae7e",
+  "data_sha256": "d57b1cb0b8b67fe48a9b45ee985fb01e63b919147a8527f8231459a68b57456d",
+  "requests_sha256": "b526cef377a0d4e42be1bdc7bfc881b05f8602d2f85847d8fa130bd5ecedfeed",
+  "documents": 1440,
+  "requests": 13723,
+  "source_sha256": {
+    "protocol.py": "42a2eb13e5da34a8c67a8939fffb81c17ff9300a23ec3733bab7f55f2cfaf236",
+    "run.py": "327b6b74d3733b2bb37d9eb5e6ade73946a3746d2e7d3dcb31be621c4507d30a",
+    "providers.py": "ccc2d49495c1fbf77db1a4f3d927aa4c65a5a4a72436207a184b205c2b7e48f4",
+    "cohort.py": "da85e4f366023d0f4eaab66a22da2a54f2d7f0a56db7ac9859fc4cbe5e7107d0",
+    "__init__.py": "93dc538d3ddafec97e1a0337b78ae6dcf472988783f5d043d2a1bcc1fdb4d020",
+    "baselines.py": "6e98d212442e56cd8a8a4f3e5ebe0ebfe17001717f78819e4e108c9bccd8e628",
+    "dataset.py": "80cae825524e0c8741ca83894f95859a1ca96b245ba70e8d12b5b4802a030836",
+    "execute.py": "002dda31040c576aae4d33a803b1c9a42e47643c88e29ee6b68c093c8eb5a77a",
+    "metrics.py": "cefad2855667643f524db9eedc45ec04866333eff6cbccd76f8eb557be77a72e",
+    "export.py": "4c629bb28501f5a11d87cf5ea0e1d1c056c925014809a7f2dd27a88db421a6b9"
+  },
+  "purpose": "benchmark",
+  "dataset_source": {
+    "release_version": "kiii-v1",
+    "release_manifest_sha256": "ef964b809abe6cf29e470394a0a8691772a3970f7b04258a8337855fe69f446b",
+    "split": "test",
+    "limit": null,
+    "documents": 1440,
+    "selected_doc_ids": null,
+    "provenance": {
+      "repo": "nmixx-fin/kiii-kiii",
+      "revision": "2df0589d695c18665fd83d4ca5512e03ca0767f6"
+    }
+  }
+}

@@ -91,7 +91,8 @@ def test_changed_config_and_counts_refused(tmp_path):
 @pytest.mark.parametrize('kind,raw,reason,tokens',[
  ('anthropic',{'content':[{'type':'text','text':'{}'}],'stop_reason':'end_turn','usage':{'input_tokens':2,'cache_read_input_tokens':3,'output_tokens':4}},'stop',4),
  ('gemini',{'candidates':[{'content':{'parts':[{'text':'secret thought','thought':True},{'text':'{}'}]},'finishReason':'STOP'}],'usageMetadata':{'promptTokenCount':2,'candidatesTokenCount':3,'thoughtsTokenCount':4}},'stop',7),
- ('openai_compatible',{'choices':[{'message':{'content':'{}'},'finish_reason':'length'}],'usage':{'prompt_tokens':2,'completion_tokens':8}},'length',8)])
+ ('openai_compatible',{'choices':[{'message':{'content':'{}'},'finish_reason':'length'}],'usage':{'prompt_tokens':2,'completion_tokens':8}},'length',8),
+ ('openai_compatible',{'choices':[{'message':{'content':'{}'},'finish_reason':'stop'}],'usage':{'prompt_tokens':2,'completion_tokens':5,'completion_tokens_details':None}},'stop',5)])
 def test_normalization(kind,raw,reason,tokens):
     text,finish,usage=normalize(kind,raw)
     assert text=='{}' and finish==reason and usage['output_tokens']==tokens
