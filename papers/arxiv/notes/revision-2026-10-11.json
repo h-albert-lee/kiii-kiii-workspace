@@ -1,0 +1,30 @@
+{
+  "date": "2026-10-11",
+  "scope": "arXiv only; SAC and workshop unchanged",
+  "submission_id": "submit/8175925",
+  "submitted": true,
+  "status_after_submission": "on hold",
+  "changes": [
+    "Seonghyun Kim: Toss Securities replaced by Korea University; Band Foundation retained",
+    "Removed manuscript-writing AI-assistance sentence from Acknowledgment; methods disclosures and Kanana attribution retained"
+  ],
+  "pages": 9,
+  "compile_errors": 0,
+  "overleaf_warnings": 14,
+  "changed_source_files": [
+    "sections/07_conclusion.tex",
+    "main.tex"
+  ],
+  "prepared_pdf_sha256": "7d88c81fe7cf662812d3281c674a3cf1b5bd265c1e62a4f86296b7b0efcc8bc5",
+  "source_zip_sha256": "29ac01710cff13f1136acef8df6d6883597c68e53d7c9a8858f13b3d9004b18d",
+  "server_pdf_sha256": "63b82ad93e44ec8209a8eed7eff84eb6b196627fdc86411de5c122da3d58ca58",
+  "verification": "All nine prepared pages visually inspected. Server pages 2-9 have identical extracted text; page 1 visually verified with updated affiliation and arXiv submission watermark. Native source export differs in exactly two files. Edited documents have no comment anchors.",
+  "moderation_contact": {
+    "sent": true,
+    "date": "2026-10-11",
+    "recipient": "moderation@arxiv.org",
+    "subject": "Submission submit/8175925: affiliation correction and on-hold status inquiry",
+    "gmail_message_id": "1a12b4271dbea50a",
+    "summary": "Reported same-ID revision and both changes; asked whether further information/action is needed. No private registered email/account ID sent."
+  }
+}

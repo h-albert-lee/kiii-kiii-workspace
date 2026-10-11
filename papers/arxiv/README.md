@@ -8,11 +8,13 @@ and Sara's workshop project remain unchanged.
 — main file `main.tex`, **XeLaTeX / TeX Live 2025**. Edit natively and export
 outbound to preserve this project's comments. Do not sync into either venue project.
 
+**2026-10-11 revision submitted under the same ID:** Seonghyun Kim’s affiliation corrected to Korea University (Band Foundation retained), and manuscript-writing AI-assistance sentence removed from Acknowledgment. Nine pages; server PDF verified. Status remains on hold. Moderation inquiry sent with both changes. [Revision/QA record](notes/revision-2026-10-11.json). October 4 artifacts below are historical; latest PDF/source filenames are `kiii-arxiv-revision-2026-10-11.pdf` and `kiii-arxiv-revision-2026-10-11-source.zip` under `output/pdf/`.
+
 ## Public author presentation
 
 1. Eunbin Shin — LG AI Research; Band Foundation (equal first)
 2. Sara Yu — KT; Band Foundation (equal first)
-3. Seonghyun Kim — Toss Securities; Band Foundation
+3. Seonghyun Kim — Korea University; Band Foundation
 4. MinKyeong Shin — Shinhan Securities; Band Foundation
 5. Yewon Hwang — kakao mobility; Band Foundation
 6. Hanwool Lee — Seoul National University; AIM Intelligence; Band Foundation (corresponding)
@@ -28,7 +30,7 @@ preprint; it does not suppress citation or compilation checks.
 The paper links the public dataset only. **Do not add the project code repository
 link to this manuscript** (operator preference, 2026-10-04). Dataset CC BY-NC 4.0
 is distinct from the paper license; select the paper license separately at upload.
-AI writing-assistance disclosure and the Kanana attribution are retained.
+The October 11 arXiv-only revision removes the manuscript-writing AI disclosure from Acknowledgment. Methods disclosures and Kanana attribution are retained.
 
 ## Artifacts and validation
 

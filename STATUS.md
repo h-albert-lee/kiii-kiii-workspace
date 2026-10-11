@@ -1,6 +1,10 @@
 <!-- SAC receipt verified: EasyChair #362, AIFT, 8 pages; docs/submissions/sac2027.json. -->
 # STATUS — 2026-10-04
 
+## arXiv affiliation revision — 2026-10-11
+
+Updated existing `submit/8175925` with arXiv-only Korea University affiliation for Seonghyun Kim (Band Foundation retained) and removal of manuscript-writing AI acknowledgement. Nine-page server PDF verified; still on hold after successful submission. Moderation email sent reporting both changes and asking whether action is needed. [Revision receipt](papers/arxiv/notes/revision-2026-10-11.json). SAC/workshop unchanged.
+
 ## arXiv submission — 2026-10-04
 
 **Submitted as `submit/8175925`; currently on hold for arXiv checks, without a public arXiv ID yet.** arXiv XeLaTeX / TeX Live 2025 compiled nine pages successfully; all page text matches the prepared PDF except the arXiv watermark on page 1. The user-selected paper license is CC BY 4.0; primary cs.CL, cross-list cs.CR. [Submission record](docs/submissions/arxiv.json). Do not create a duplicate submission while checks are pending.
